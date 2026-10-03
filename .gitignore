@@ -12,3 +12,8 @@ art-src/
 Thumbs.db
 __pycache__/
 node_modules/
+# Smoke-test screenshots are build output (keep only the M0 evidence set in git)
+production/screens/*
+!production/screens/m0_*.png
+!production/screens/web_desktop.png
+!production/screens/web_phone.png

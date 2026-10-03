@@ -69,9 +69,6 @@ func required_links() -> Array:
 	return result
 
 
-const MAX_CABLES_PER_JACK := 2
-
-
 func jack_load(ext: int) -> int:
 	var n := 0
 	for p in patches:

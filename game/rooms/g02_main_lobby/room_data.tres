@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_mqvjg"]
 [ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_bngbf"]
+[ext_resource type="Texture2D" path="res://game/rooms/g02_main_lobby/bg/cam_a.webp" id="2_l26le"]
+[ext_resource type="Texture2D" path="res://game/rooms/g02_main_lobby/bg/cam_b.webp" id="3_60k41"]
 [ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_jsdnr"]
 [ext_resource type="Script" path="res://game/core/actions/start_script.gd" id="4_l26le"]
+[ext_resource type="Texture2D" path="res://game/rooms/g02_main_lobby/bg/cam_c.webp" id="4_wvysx"]
 [ext_resource type="Script" path="res://game/core/conditions/condition.gd" id="5_60k41"]
 [ext_resource type="Script" path="res://game/core/conditions/has_item.gd" id="6_wvysx"]
 [ext_resource type="Script" path="res://game/core/conditions/flag_is.gd" id="7_bh0ng"]
@@ -11,49 +14,52 @@
 [ext_resource type="PackedScene" path="res://game/rooms/g02_main_lobby/g02_main_lobby.tscn" id="9_53oxy"]
 [ext_resource type="Script" path="res://game/schemas/room_data.gd" id="10_gstnt"]
 
-[sub_resource type="Resource" id="Resource_6jc8q"]
+[sub_resource type="Resource" id="Resource_l26le"]
 script = ExtResource("1_mqvjg")
 id = &"cam_a"
+background = ExtResource("2_l26le")
 
-[sub_resource type="Resource" id="Resource_rgp54"]
+[sub_resource type="Resource" id="Resource_60k41"]
 script = ExtResource("1_mqvjg")
 id = &"cam_b"
+background = ExtResource("3_60k41")
 
-[sub_resource type="Resource" id="Resource_ebqi1"]
+[sub_resource type="Resource" id="Resource_wvysx"]
 script = ExtResource("1_mqvjg")
 id = &"cam_c"
+background = ExtResource("4_wvysx")
 
-[sub_resource type="Resource" id="Resource_7ot52"]
+[sub_resource type="Resource" id="Resource_bh0ng"]
 script = ExtResource("4_l26le")
 script_name = &"act1_chase"
 
-[sub_resource type="Resource" id="Resource_4iakr"]
+[sub_resource type="Resource" id="Resource_4onho"]
 script = ExtResource("6_wvysx")
 item_id = &"item_choleric_key"
 
-[sub_resource type="Resource" id="Resource_rhftr"]
+[sub_resource type="Resource" id="Resource_53oxy"]
 script = ExtResource("7_bh0ng")
 flag = &"act1.chase_done"
 value = false
 
-[sub_resource type="Resource" id="Resource_5mjc4"]
+[sub_resource type="Resource" id="Resource_gstnt"]
 script = ExtResource("2_bngbf")
-conditions = Array[ExtResource("5_60k41")]([SubResource("Resource_4iakr"), SubResource("Resource_rhftr")])
-actions = Array[ExtResource("3_jsdnr")]([SubResource("Resource_7ot52")])
+conditions = Array[ExtResource("5_60k41")]([SubResource("Resource_4onho"), SubResource("Resource_53oxy")])
+actions = Array[ExtResource("3_jsdnr")]([SubResource("Resource_bh0ng")])
 
-[sub_resource type="Resource" id="Resource_7hjh3"]
+[sub_resource type="Resource" id="Resource_6jc8q"]
 script = ExtResource("8_4onho")
 id = &"to_g01"
 target_room = &"G01"
 target_spawn = &"spawn_from_g02"
 
-[sub_resource type="Resource" id="Resource_6fpdv"]
+[sub_resource type="Resource" id="Resource_rgp54"]
 script = ExtResource("8_4onho")
 id = &"to_g03"
 target_room = &"G03"
 target_spawn = &"spawn_from_g02"
 
-[sub_resource type="Resource" id="Resource_qk3vj"]
+[sub_resource type="Resource" id="Resource_ebqi1"]
 script = ExtResource("8_4onho")
 id = &"to_g04"
 target_room = &"G04"
@@ -61,7 +67,7 @@ target_spawn = &"spawn_from_g02"
 lock_flag = &"g02.gate_open"
 locked_message_key = "rooms.g02.gate.locked"
 
-[sub_resource type="Resource" id="Resource_pnajq"]
+[sub_resource type="Resource" id="Resource_7ot52"]
 script = ExtResource("8_4onho")
 id = &"to_g06"
 target_room = &"G06"
@@ -72,8 +78,8 @@ script = ExtResource("10_gstnt")
 id = &"G02"
 name_key = "rooms.g02.name"
 scene = ExtResource("9_53oxy")
-cameras = Array[ExtResource("1_mqvjg")]([SubResource("Resource_6jc8q"), SubResource("Resource_rgp54"), SubResource("Resource_ebqi1")])
-exits = Array[ExtResource("8_4onho")]([SubResource("Resource_7hjh3"), SubResource("Resource_6fpdv"), SubResource("Resource_qk3vj"), SubResource("Resource_pnajq")])
+cameras = Array[ExtResource("1_mqvjg")]([SubResource("Resource_l26le"), SubResource("Resource_60k41"), SubResource("Resource_wvysx")])
+exits = Array[ExtResource("8_4onho")]([SubResource("Resource_6jc8q"), SubResource("Resource_rgp54"), SubResource("Resource_ebqi1"), SubResource("Resource_7ot52")])
 access = 0
 map_rect = Rect2(40, 140, 240, 160)
-enter_triggers = Array[ExtResource("2_bngbf")]([SubResource("Resource_5mjc4")])
+enter_triggers = Array[ExtResource("2_bngbf")]([SubResource("Resource_gstnt")])

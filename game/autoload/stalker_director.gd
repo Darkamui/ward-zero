@@ -14,8 +14,10 @@ enum State { DORMANT, PATROL, INVESTIGATE, SEARCH, CHASE, LOSE }
 ## Minimum warning before any entry into the player's room (rule R9).
 const MIN_TELEGRAPH_SECONDS := 3.0
 ## Act 1 chase: faster than the player's walk, slower than their run, so it teaches that
-## running saves you (docs/02-milestone-1.md M1-18).
-const ACT1_SPEED_FACTOR := 1.1
+## running saves you (docs/02-milestone-1.md M1-18). 1.1x (the plan's first guess) never
+## caught a walking player across the Lobby; 1.6x (2.56 m/s vs 3.6 m/s running) does,
+## while a player who reacts to the telegraph can still walk out.
+const ACT1_SPEED_FACTOR := 1.6
 const STALKER_SCENE := preload("res://game/characters/man_in_white/man_in_white.tscn")
 const ACT1_CHASE_ROOM := &"G02"
 

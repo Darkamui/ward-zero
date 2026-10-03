@@ -126,9 +126,9 @@ func run(_tree: SceneTree, _args: PackedStringArray) -> int:
 	g.hotspot(
 		"hs_hymnal",
 		kind.EXAMINE,
-		Vector3(1.8, 0.95, 0.4),
+		Vector3(1.8, 0.95, -0.4),
 		Vector3(2.4, 0.3, 0.6),
-		Vector3(1.8, 0, 1.2),
+		Vector3(0.1, 0, -0.4),
 		[GB.doc("doc_hymnal_page")]
 	)
 	g.hotspot(

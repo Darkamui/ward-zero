@@ -108,7 +108,7 @@ func run(_tree: SceneTree, _args: PackedStringArray) -> int:
 	)
 	g.hotspot(
 		"hs_corridor",
-		kind.EXIT,
+		kind.USE,
 		Vector3(3.5, 1.3, -4.9),
 		Vector3(1.6, 2.6, 0.4),
 		Vector3(3.5, 0, -4.2),

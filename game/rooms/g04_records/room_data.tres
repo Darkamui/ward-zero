@@ -1,26 +1,30 @@
 [gd_resource type="Resource" script_class="RoomData" format=3]
 
 [ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_y425e"]
+[ext_resource type="Texture2D" path="res://game/rooms/g04_records/bg/cam_a.webp" id="2_c45w2"]
 [ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_yppl4"]
+[ext_resource type="Texture2D" path="res://game/rooms/g04_records/bg/cam_b.webp" id="3_575wm"]
 [ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_c45w2"]
 [ext_resource type="PackedScene" path="res://game/rooms/g04_records/g04_records.tscn" id="4_575wm"]
 [ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_55qy4"]
 
-[sub_resource type="Resource" id="Resource_xepux"]
+[sub_resource type="Resource" id="Resource_55qy4"]
 script = ExtResource("1_y425e")
 id = &"cam_a"
+background = ExtResource("2_c45w2")
 
-[sub_resource type="Resource" id="Resource_osf4o"]
+[sub_resource type="Resource" id="Resource_xepux"]
 script = ExtResource("1_y425e")
 id = &"cam_b"
+background = ExtResource("3_575wm")
 
-[sub_resource type="Resource" id="Resource_uul6v"]
+[sub_resource type="Resource" id="Resource_osf4o"]
 script = ExtResource("3_c45w2")
 id = &"to_g02"
 target_room = &"G02"
 target_spawn = &"spawn_from_g04"
 
-[sub_resource type="Resource" id="Resource_gdcup"]
+[sub_resource type="Resource" id="Resource_uul6v"]
 script = ExtResource("3_c45w2")
 id = &"to_g05"
 target_room = &"G05"
@@ -31,6 +35,6 @@ script = ExtResource("5_55qy4")
 id = &"G04"
 name_key = "rooms.g04.name"
 scene = ExtResource("4_575wm")
-cameras = Array[ExtResource("1_y425e")]([SubResource("Resource_xepux"), SubResource("Resource_osf4o")])
-exits = Array[ExtResource("3_c45w2")]([SubResource("Resource_uul6v"), SubResource("Resource_gdcup")])
+cameras = Array[ExtResource("1_y425e")]([SubResource("Resource_55qy4"), SubResource("Resource_xepux")])
+exits = Array[ExtResource("3_c45w2")]([SubResource("Resource_osf4o"), SubResource("Resource_uul6v")])
 map_rect = Rect2(40, 60, 140, 80)

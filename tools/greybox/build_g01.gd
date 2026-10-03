@@ -130,7 +130,8 @@ func run(_tree: SceneTree, _args: PackedStringArray) -> int:
 	data.name_key = "rooms.g01.name"
 	data.access = RoomData.Access.NEVER
 	data.safe_room = true
-	data.has_memory_variant = true
+	# GDD §6.1 gives G01 a 1976 variant; it is built in M3 (only the Chapel is in M1).
+	data.has_memory_variant = false
 	data.map_rect = Rect2(40, 300, 180, 140)
 
 	var err := g.save(DIR, "g01_dayroom", data)

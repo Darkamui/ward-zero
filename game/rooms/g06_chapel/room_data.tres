@@ -1,20 +1,28 @@
 [gd_resource type="Resource" script_class="RoomData" format=3]
 
 [ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_pripk"]
+[ext_resource type="Texture2D" path="res://game/rooms/g06_chapel/bg/cam_a.webp" id="2_fdti5"]
 [ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_xvavk"]
 [ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_ogb6c"]
+[ext_resource type="Texture2D" path="res://game/rooms/g06_chapel/bg_mem/cam_a.webp" id="3_v27e6"]
 [ext_resource type="PackedScene" path="res://game/rooms/g06_chapel/g06_chapel.tscn" id="4_3rb2q"]
+[ext_resource type="Texture2D" path="res://game/rooms/g06_chapel/bg/cam_b.webp" id="4_lbiwd"]
 [ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_fdti5"]
+[ext_resource type="Texture2D" path="res://game/rooms/g06_chapel/bg_mem/cam_b.webp" id="5_rqp5w"]
+
+[sub_resource type="Resource" id="Resource_fdti5"]
+script = ExtResource("1_pripk")
+id = &"cam_a"
+background = ExtResource("2_fdti5")
+memory_background = ExtResource("3_v27e6")
 
 [sub_resource type="Resource" id="Resource_v27e6"]
 script = ExtResource("1_pripk")
-id = &"cam_a"
+id = &"cam_b"
+background = ExtResource("4_lbiwd")
+memory_background = ExtResource("5_rqp5w")
 
 [sub_resource type="Resource" id="Resource_lbiwd"]
-script = ExtResource("1_pripk")
-id = &"cam_b"
-
-[sub_resource type="Resource" id="Resource_rqp5w"]
 script = ExtResource("3_ogb6c")
 id = &"to_g02"
 target_room = &"G02"
@@ -25,7 +33,7 @@ script = ExtResource("5_fdti5")
 id = &"G06"
 name_key = "rooms.g06.name"
 scene = ExtResource("4_3rb2q")
-cameras = Array[ExtResource("1_pripk")]([SubResource("Resource_v27e6"), SubResource("Resource_lbiwd")])
-exits = Array[ExtResource("3_ogb6c")]([SubResource("Resource_rqp5w")])
+cameras = Array[ExtResource("1_pripk")]([SubResource("Resource_fdti5"), SubResource("Resource_v27e6")])
+exits = Array[ExtResource("3_ogb6c")]([SubResource("Resource_lbiwd")])
 has_memory_variant = true
 map_rect = Rect2(0, 180, 40, 120)

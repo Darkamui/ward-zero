@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_ajtx3"]
+[ext_resource type="Texture2D" path="res://game/rooms/u05_observation_theatre/bg/cam_a.webp" id="2_mg41w"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_uhkbh"]
+[ext_resource type="Texture2D" path="res://game/rooms/u05_observation_theatre/bg/cam_b.webp" id="3_300sl"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_mg41w"]
+[ext_resource type="PackedScene" path="res://game/rooms/u05_observation_theatre/u05_observation_theatre.tscn" id="4_300sl"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_ajb5y"]
+
+[sub_resource type="Resource" id="Resource_mg41w"]
+script = ExtResource("1_ajtx3")
+id = &"cam_a"
+background = ExtResource("2_mg41w")
+
+[sub_resource type="Resource" id="Resource_300sl"]
+script = ExtResource("1_ajtx3")
+id = &"cam_b"
+background = ExtResource("3_300sl")
+
+[sub_resource type="Resource" id="Resource_ajb5y"]
+script = ExtResource("3_mg41w")
+id = &"to_u01"
+target_room = &"U01"
+target_spawn = &"spawn_from_u05"
+
+[resource]
+script = ExtResource("5_ajb5y")
+id = &"U05"
+name_key = "rooms.u05.name"
+scene = ExtResource("4_300sl")
+cameras = Array[ExtResource("1_ajtx3")]([SubResource("Resource_mg41w"), SubResource("Resource_300sl")])
+exits = Array[ExtResource("3_mg41w")]([SubResource("Resource_ajb5y")])
+map_floor = 3
+map_rect = Rect2(290, 40, 110, 100)

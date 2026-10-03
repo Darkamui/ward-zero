@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_odthb"]
+[ext_resource type="Texture2D" path="res://game/rooms/u02_library/bg/cam_a.webp" id="2_7pt58"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_8wram"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_7pt58"]
+[ext_resource type="Texture2D" path="res://game/rooms/u02_library/bg/cam_b.webp" id="3_g5v7k"]
+[ext_resource type="PackedScene" path="res://game/rooms/u02_library/u02_library.tscn" id="4_g5v7k"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_eb0xg"]
+
+[sub_resource type="Resource" id="Resource_eb0xg"]
+script = ExtResource("1_odthb")
+id = &"cam_a"
+background = ExtResource("2_7pt58")
+
+[sub_resource type="Resource" id="Resource_6jcik"]
+script = ExtResource("1_odthb")
+id = &"cam_b"
+background = ExtResource("3_g5v7k")
+
+[sub_resource type="Resource" id="Resource_cwao6"]
+script = ExtResource("3_7pt58")
+id = &"to_u01"
+target_room = &"U01"
+target_spawn = &"spawn_from_u02"
+
+[sub_resource type="Resource" id="Resource_ha7kb"]
+script = ExtResource("3_7pt58")
+id = &"to_u06"
+target_room = &"U06"
+target_spawn = &"spawn_from_u02"
+lock_flag = &"u02.secret_open"
+locked_message_key = "rooms.u02.shelf_d"
+
+[resource]
+script = ExtResource("5_eb0xg")
+id = &"U02"
+name_key = "rooms.u02.name"
+scene = ExtResource("4_g5v7k")
+cameras = Array[ExtResource("1_odthb")]([SubResource("Resource_eb0xg"), SubResource("Resource_6jcik")])
+exits = Array[ExtResource("3_7pt58")]([SubResource("Resource_cwao6"), SubResource("Resource_ha7kb")])
+map_floor = 3
+map_rect = Rect2(100, 40, 110, 100)

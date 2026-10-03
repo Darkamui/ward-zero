@@ -12,37 +12,37 @@
 [ext_resource type="PackedScene" path="res://game/rooms/g09_main_corridor/g09_main_corridor.tscn" id="7_n3gfn"]
 [ext_resource type="Script" path="res://game/schemas/room_data.gd" id="8_tutsw"]
 
-[sub_resource type="Resource" id="Resource_n3gfn"]
+[sub_resource type="Resource" id="Resource_1wmhn"]
 script = ExtResource("1_ngmkh")
 id = &"cam_a"
 background = ExtResource("2_1wmhn")
 
-[sub_resource type="Resource" id="Resource_tutsw"]
+[sub_resource type="Resource" id="Resource_t1ctn"]
 script = ExtResource("1_ngmkh")
 id = &"cam_b"
 background = ExtResource("3_t1ctn")
 
-[sub_resource type="Resource" id="Resource_papnx"]
+[sub_resource type="Resource" id="Resource_7ehlf"]
 script = ExtResource("1_ngmkh")
 id = &"cam_c"
 background = ExtResource("4_7ehlf")
 
-[sub_resource type="Resource" id="Resource_kue0u"]
+[sub_resource type="Resource" id="Resource_n3gfn"]
 script = ExtResource("4_1wmhn")
 script_name = &"act2_start"
 
-[sub_resource type="Resource" id="Resource_j2gxb"]
+[sub_resource type="Resource" id="Resource_tutsw"]
 script = ExtResource("2_n6mt1")
-actions = Array[ExtResource("3_l8oef")]([SubResource("Resource_kue0u")])
+actions = Array[ExtResource("3_l8oef")]([SubResource("Resource_n3gfn")])
 once_flag = &"act2.started"
 
-[sub_resource type="Resource" id="Resource_bal7n"]
+[sub_resource type="Resource" id="Resource_papnx"]
 script = ExtResource("6_7ehlf")
 id = &"to_g02"
 target_room = &"G02"
 target_spawn = &"spawn_from_g09"
 
-[sub_resource type="Resource" id="Resource_xdcy4"]
+[sub_resource type="Resource" id="Resource_kue0u"]
 script = ExtResource("6_7ehlf")
 id = &"to_w01"
 target_room = &"W01"
@@ -50,19 +50,19 @@ target_spawn = &"spawn_from_g09"
 required_key = &"item_melancholic_key"
 locked_message_key = "rooms.g09.west.locked"
 
-[sub_resource type="Resource" id="Resource_rshqd"]
+[sub_resource type="Resource" id="Resource_j2gxb"]
 script = ExtResource("6_7ehlf")
 id = &"to_e01"
 target_room = &"E01"
 target_spawn = &"spawn_from_g09"
 
-[sub_resource type="Resource" id="Resource_lt50g"]
+[sub_resource type="Resource" id="Resource_bal7n"]
 script = ExtResource("6_7ehlf")
 id = &"to_g07"
 target_room = &"G07"
 target_spawn = &"spawn_from_g09"
 
-[sub_resource type="Resource" id="Resource_m5yx0"]
+[sub_resource type="Resource" id="Resource_xdcy4"]
 script = ExtResource("6_7ehlf")
 id = &"to_b01"
 target_room = &"B01"
@@ -70,13 +70,21 @@ target_spawn = &"spawn_from_g09"
 required_key = &"item_phlegmatic_key"
 locked_message_key = "rooms.g09.stairs.locked"
 
+[sub_resource type="Resource" id="Resource_rshqd"]
+script = ExtResource("6_7ehlf")
+id = &"to_u01"
+target_room = &"U01"
+target_spawn = &"spawn_from_g09"
+lock_flag = &"b01.power_on"
+locked_message_key = "rooms.g09.elevator.dead"
+
 [resource]
 script = ExtResource("8_tutsw")
 id = &"G09"
 name_key = "rooms.g09.name"
 scene = ExtResource("7_n3gfn")
-cameras = Array[ExtResource("1_ngmkh")]([SubResource("Resource_n3gfn"), SubResource("Resource_tutsw"), SubResource("Resource_papnx")])
-exits = Array[ExtResource("6_7ehlf")]([SubResource("Resource_bal7n"), SubResource("Resource_xdcy4"), SubResource("Resource_rshqd"), SubResource("Resource_lt50g"), SubResource("Resource_m5yx0")])
+cameras = Array[ExtResource("1_ngmkh")]([SubResource("Resource_1wmhn"), SubResource("Resource_t1ctn"), SubResource("Resource_7ehlf")])
+exits = Array[ExtResource("6_7ehlf")]([SubResource("Resource_papnx"), SubResource("Resource_kue0u"), SubResource("Resource_j2gxb"), SubResource("Resource_bal7n"), SubResource("Resource_xdcy4"), SubResource("Resource_rshqd")])
 access = 0
 map_rect = Rect2(300, 40, 240, 30)
-enter_triggers = Array[ExtResource("2_n6mt1")]([SubResource("Resource_j2gxb")])
+enter_triggers = Array[ExtResource("2_n6mt1")]([SubResource("Resource_tutsw")])

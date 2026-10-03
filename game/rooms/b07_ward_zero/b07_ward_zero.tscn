@@ -1,0 +1,274 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/core/room/room.gd" id="1_bokry"]
+[ext_resource type="Script" path="res://game/core/room/camera_trigger.gd" id="2_vo1fm"]
+[ext_resource type="Script" path="res://game/core/interactable/interactable.gd" id="3_b4866"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="4_amt5k"]
+[ext_resource type="Script" path="res://game/core/actions/start_script.gd" id="5_ku06r"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bokry"]
+size = Vector3(6, 0.1, 16)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vo1fm"]
+size = Vector3(6, 0.1, 16)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b4866"]
+size = Vector3(6, 3.4, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_amt5k"]
+size = Vector3(2.3, 3.4, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ku06r"]
+size = Vector3(2.3, 3.4, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c5m0b"]
+size = Vector3(1.4, 1.2, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r3bnp"]
+size = Vector3(0.2, 3.4, 16)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vfwmk"]
+size = Vector3(0.2, 3.4, 16)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fbebf"]
+size = Vector3(1.4, 2.2, 0.08)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d7ho3"]
+size = Vector3(1, 0.6, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5vm0y"]
+size = Vector3(1, 0.6, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_enwl3"]
+size = Vector3(1, 0.6, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2uo2s"]
+size = Vector3(1.4, 2.2, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_21s8u"]
+size = Vector3(6, 2, 5.9333334)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m0mi5"]
+size = Vector3(6, 2, 5.9333334)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xixhs"]
+size = Vector3(6, 2, 5.9333334)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_08ggk"]
+size = Vector3(1.4, 2.2, 0.4)
+
+[sub_resource type="Resource" id="Resource_cxv6d"]
+script = ExtResource("5_ku06r")
+script_name = &"finale_exit"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rg8u5"]
+size = Vector3(1.4, 2.2, 0.4)
+
+[node name="B07" type="Node3D" unique_id=1989185014]
+script = ExtResource("1_bokry")
+
+[node name="Geometry" type="Node3D" parent="." unique_id=1369715918]
+
+[node name="floor_main" type="MeshInstance3D" parent="Geometry" unique_id=951648944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+mesh = SubResource("BoxMesh_bokry")
+metadata/clay_color = Color(0.42, 0.44, 0.4, 1)
+
+[node name="art_ceiling" type="MeshInstance3D" parent="Geometry" unique_id=1051131364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.45, 0)
+mesh = SubResource("BoxMesh_vo1fm")
+metadata/clay_color = Color(0.75, 0.74, 0.7, 1)
+
+[node name="col_wall_n_0" type="MeshInstance3D" parent="Geometry" unique_id=139248515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, -8.1)
+mesh = SubResource("BoxMesh_b4866")
+metadata/clay_color = Color(0.6, 0.6, 0.57, 1)
+
+[node name="col_wall_s_0" type="MeshInstance3D" parent="Geometry" unique_id=897710240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85, 1.7, 8.1)
+mesh = SubResource("BoxMesh_amt5k")
+metadata/clay_color = Color(0.6, 0.6, 0.57, 1)
+
+[node name="col_wall_s_1" type="MeshInstance3D" parent="Geometry" unique_id=1977555620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85, 1.7, 8.1)
+mesh = SubResource("BoxMesh_ku06r")
+metadata/clay_color = Color(0.6, 0.6, 0.57, 1)
+
+[node name="art_lintel_s_2" type="MeshInstance3D" parent="Geometry" unique_id=171973369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8, 8.1)
+mesh = SubResource("BoxMesh_c5m0b")
+metadata/clay_color = Color(0.6, 0.6, 0.57, 1)
+
+[node name="col_wall_e_0" type="MeshInstance3D" parent="Geometry" unique_id=1446386109]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 1.7, 0)
+mesh = SubResource("BoxMesh_r3bnp")
+metadata/clay_color = Color(0.6, 0.6, 0.57, 1)
+
+[node name="col_wall_w_0" type="MeshInstance3D" parent="Geometry" unique_id=220429071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1, 1.7, 0)
+mesh = SubResource("BoxMesh_vfwmk")
+metadata/clay_color = Color(0.6, 0.6, 0.57, 1)
+
+[node name="col_door_0" type="MeshInstance3D" parent="Geometry" unique_id=1004880773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 8.02)
+mesh = SubResource("BoxMesh_fbebf")
+metadata/clay_color = Color(0.36, 0.26, 0.18, 1)
+
+[node name="occ_bed_-4" type="MeshInstance3D" parent="Geometry" unique_id=1422069273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 0.3, -4)
+mesh = SubResource("BoxMesh_d7ho3")
+metadata/clay_color = Color(0.5, 0.5, 0.48, 1)
+
+[node name="occ_bed_0" type="MeshInstance3D" parent="Geometry" unique_id=2004538959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 0.3, 0)
+mesh = SubResource("BoxMesh_5vm0y")
+metadata/clay_color = Color(0.5, 0.5, 0.48, 1)
+
+[node name="occ_bed_4" type="MeshInstance3D" parent="Geometry" unique_id=2126316781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 0.3, 4)
+mesh = SubResource("BoxMesh_enwl3")
+metadata/clay_color = Color(0.5, 0.5, 0.48, 1)
+
+[node name="art_exit_door" type="MeshInstance3D" parent="Geometry" unique_id=1801461394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -7.97)
+mesh = SubResource("BoxMesh_2uo2s")
+metadata/clay_color = Color(0.45, 0.33, 0.24, 1)
+
+[node name="Navigation" type="NavigationRegion3D" parent="." unique_id=2136419051]
+
+[node name="Cameras" type="Node3D" parent="." unique_id=1988180467]
+
+[node name="cam_a" type="Camera3D" parent="Cameras" unique_id=899348644]
+transform = Transform3D(0.76987934, -0.24223302, 0.59043115, 0, 0.92516595, 0.37956288, -0.63818944, -0.2922176, 0.7122662, 2.7, 3.1, -1.8666667)
+fov = 62.0
+far = 60.0
+
+[node name="LightRig" type="Node3D" parent="Cameras/cam_a" unique_id=2013666173]
+top_level = true
+
+[node name="Key" type="DirectionalLight3D" parent="Cameras/cam_a/LightRig" unique_id=1201646228]
+transform = Transform3D(0.81915206, -0.43938506, 0.36868784, 0, 0.64278764, 0.76604444, -0.57357645, -0.62750685, 0.5265408, 0, 0, 0)
+light_energy = 1.1
+shadow_enabled = true
+directional_shadow_max_distance = 20.0
+
+[node name="Fill" type="OmniLight3D" parent="Cameras/cam_a/LightRig" unique_id=1113410807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 3.1, -1.8666667)
+light_energy = 0.7
+light_cull_mask = 2
+omni_range = 14.0
+
+[node name="cam_b" type="Camera3D" parent="Cameras" unique_id=1682379864]
+transform = Transform3D(0.76987934, -0.24223302, 0.59043115, 0, 0.92516595, 0.37956288, -0.63818944, -0.2922176, 0.7122662, 2.7, 3.1, 3.4666667)
+fov = 62.0
+far = 60.0
+
+[node name="LightRig" type="Node3D" parent="Cameras/cam_b" unique_id=1030998809]
+top_level = true
+
+[node name="Key" type="DirectionalLight3D" parent="Cameras/cam_b/LightRig" unique_id=1481892964]
+transform = Transform3D(0.81915206, -0.43938506, 0.36868784, 0, 0.64278764, 0.76604444, -0.57357645, -0.62750685, 0.5265408, 0, 0, 0)
+light_energy = 1.1
+shadow_enabled = true
+directional_shadow_max_distance = 20.0
+
+[node name="Fill" type="OmniLight3D" parent="Cameras/cam_b/LightRig" unique_id=1945934121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 3.1, 3.4666667)
+light_energy = 0.7
+light_cull_mask = 2
+omni_range = 14.0
+
+[node name="cam_c" type="Camera3D" parent="Cameras" unique_id=352145873]
+transform = Transform3D(0.6866235, -0.30782124, 0.65863055, 0, 0.9059403, 0.42340532, -0.7270132, -0.29072005, 0.6220399, 2.7, 3.1, 7.7)
+fov = 62.0
+far = 60.0
+
+[node name="LightRig" type="Node3D" parent="Cameras/cam_c" unique_id=302192663]
+top_level = true
+
+[node name="Key" type="DirectionalLight3D" parent="Cameras/cam_c/LightRig" unique_id=1391523861]
+transform = Transform3D(0.81915206, -0.43938506, 0.36868784, 0, 0.64278764, 0.76604444, -0.57357645, -0.62750685, 0.5265408, 0, 0, 0)
+light_energy = 1.1
+shadow_enabled = true
+directional_shadow_max_distance = 20.0
+
+[node name="Fill" type="OmniLight3D" parent="Cameras/cam_c/LightRig" unique_id=1379741969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 3.1, 7.7)
+light_energy = 0.7
+light_cull_mask = 2
+omni_range = 14.0
+
+[node name="Triggers" type="Node3D" parent="." unique_id=1814057177]
+
+[node name="trigger_cam_a" type="Area3D" parent="Triggers" unique_id=1912891705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5.3333335)
+script = ExtResource("2_vo1fm")
+camera_id = &"cam_a"
+
+[node name="Shape" type="CollisionShape3D" parent="Triggers/trigger_cam_a" unique_id=1223825918]
+shape = SubResource("BoxShape3D_21s8u")
+
+[node name="trigger_cam_b" type="Area3D" parent="Triggers" unique_id=1829291365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4.440892e-16)
+script = ExtResource("2_vo1fm")
+camera_id = &"cam_b"
+
+[node name="Shape" type="CollisionShape3D" parent="Triggers/trigger_cam_b" unique_id=198147552]
+shape = SubResource("BoxShape3D_m0mi5")
+
+[node name="trigger_cam_c" type="Area3D" parent="Triggers" unique_id=1476253661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5.3333335)
+script = ExtResource("2_vo1fm")
+camera_id = &"cam_c"
+
+[node name="Shape" type="CollisionShape3D" parent="Triggers/trigger_cam_c" unique_id=1760142959]
+shape = SubResource("BoxShape3D_xixhs")
+
+[node name="Spawns" type="Node3D" parent="." unique_id=325726572]
+
+[node name="spawn_from_b02" type="Marker3D" parent="Spawns" unique_id=1200512728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.3)
+
+[node name="spawn_stalker" type="Marker3D" parent="Spawns" unique_id=979838324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7.2)
+
+[node name="Hotspots" type="Node3D" parent="." unique_id=455511636]
+
+[node name="hs_to_b02" type="Area3D" parent="Hotspots" unique_id=1193128274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 7.9)
+script = ExtResource("3_b4866")
+kind = 3
+exit_id = &"to_b02"
+
+[node name="Shape" type="CollisionShape3D" parent="Hotspots/hs_to_b02" unique_id=1316846453]
+shape = SubResource("BoxShape3D_08ggk")
+
+[node name="Approach" type="Marker3D" parent="Hotspots/hs_to_b02" unique_id=1777402752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, -0.5999999)
+
+[node name="hs_exit" type="Area3D" parent="Hotspots" unique_id=2003470271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -7.8)
+script = ExtResource("3_b4866")
+kind = 2
+actions = Array[ExtResource("4_amt5k")]([SubResource("Resource_cxv6d")])
+
+[node name="Shape" type="CollisionShape3D" parent="Hotspots/hs_exit" unique_id=104483592]
+shape = SubResource("BoxShape3D_rg8u5")
+
+[node name="Approach" type="Marker3D" parent="Hotspots/hs_exit" unique_id=289255165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0.6000004)
+
+[node name="RenderLights" type="Node3D" parent="." unique_id=361848181]
+
+[node name="Sun" type="DirectionalLight3D" parent="RenderLights" unique_id=2037891833]
+transform = Transform3D(0.81915206, -0.43938506, 0.36868784, 0, 0.64278764, 0.76604444, -0.57357645, -0.62750685, 0.5265408, 0, 0, 0)
+light_energy = 0.6
+shadow_enabled = true
+directional_shadow_max_distance = 25.0
+
+[node name="Lamp" type="OmniLight3D" parent="RenderLights" unique_id=977237165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1, 0)
+light_color = Color(1, 0.92, 0.8, 1)
+light_energy = 0.6
+shadow_enabled = true
+omni_range = 16.0

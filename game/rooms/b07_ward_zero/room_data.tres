@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_xxjr0"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_82buc"]
+[ext_resource type="Texture2D" path="res://game/rooms/b07_ward_zero/bg/cam_a.webp" id="2_eq7nv"]
+[ext_resource type="Texture2D" path="res://game/rooms/b07_ward_zero/bg/cam_b.webp" id="3_0k7fn"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_nhh7g"]
+[ext_resource type="Script" path="res://game/core/actions/start_script.gd" id="4_eq7nv"]
+[ext_resource type="Texture2D" path="res://game/rooms/b07_ward_zero/bg/cam_c.webp" id="4_ifppx"]
+[ext_resource type="Script" path="res://game/core/conditions/condition.gd" id="5_0k7fn"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="6_ifppx"]
+[ext_resource type="PackedScene" path="res://game/rooms/b07_ward_zero/b07_ward_zero.tscn" id="7_8f7l8"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="8_afit7"]
+
+[sub_resource type="Resource" id="Resource_8f7l8"]
+script = ExtResource("1_xxjr0")
+id = &"cam_a"
+background = ExtResource("2_eq7nv")
+
+[sub_resource type="Resource" id="Resource_afit7"]
+script = ExtResource("1_xxjr0")
+id = &"cam_b"
+background = ExtResource("3_0k7fn")
+
+[sub_resource type="Resource" id="Resource_exvd2"]
+script = ExtResource("1_xxjr0")
+id = &"cam_c"
+background = ExtResource("4_ifppx")
+
+[sub_resource type="Resource" id="Resource_fa84u"]
+script = ExtResource("4_eq7nv")
+script_name = &"finale_start"
+
+[sub_resource type="Resource" id="Resource_lgtmd"]
+script = ExtResource("2_82buc")
+actions = Array[ExtResource("3_nhh7g")]([SubResource("Resource_fa84u")])
+
+[sub_resource type="Resource" id="Resource_ncpww"]
+script = ExtResource("6_ifppx")
+id = &"to_b02"
+target_room = &"B02"
+target_spawn = &"spawn_from_b07"
+
+[resource]
+script = ExtResource("8_afit7")
+id = &"B07"
+name_key = "rooms.b07.name"
+scene = ExtResource("7_8f7l8")
+cameras = Array[ExtResource("1_xxjr0")]([SubResource("Resource_8f7l8"), SubResource("Resource_afit7"), SubResource("Resource_exvd2")])
+exits = Array[ExtResource("6_ifppx")]([SubResource("Resource_ncpww")])
+access = 0
+map_floor = 4
+unlit = true
+enter_triggers = Array[ExtResource("2_82buc")]([SubResource("Resource_lgtmd")])

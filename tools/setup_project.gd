@@ -13,6 +13,7 @@ const AUTOLOADS := [
 	["CameraDirector", "res://game/autoload/camera_director.gd"],
 	["AudioDirector", "res://game/autoload/audio_director.gd"],
 	["StalkerDirector", "res://game/autoload/stalker_director.gd"],
+	["Finale", "res://game/autoload/finale.gd"],
 	["ComposureSystem", "res://game/autoload/composure_system.gd"],
 	["MemoryShiftSystem", "res://game/autoload/memory_shift_system.gd"],
 	["Settings", "res://game/autoload/settings.gd"],

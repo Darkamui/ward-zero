@@ -12,6 +12,7 @@ var save_screen: SaveScreen
 var pause_menu: PauseMenu
 var game_over: GameOverScreen
 var end_of_slice: EndOfSliceScreen
+var ending_screen: EndingScreen
 
 @onready var world: Node3D = $World
 @onready var player: Player = $Player
@@ -28,9 +29,11 @@ func _ready() -> void:
 	pause_menu = _add(PauseMenu.new())
 	game_over = _add(GameOverScreen.new())
 	end_of_slice = _add(EndOfSliceScreen.new())
+	ending_screen = _add(EndingScreen.new())
 	_add(HidingHud.new())
 	if not OS.has_feature("release"):
 		add_child(DebugOverlay.new())
+	Finale.cancel()
 	StalkerDirector.restore(GameState.stalker)
 	StalkerDirector.player_caught.connect(_on_player_caught)
 	RoomManager.setup(world, player)

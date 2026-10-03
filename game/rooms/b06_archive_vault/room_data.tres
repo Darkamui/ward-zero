@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_bg3om"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_c1a1k"]
+[ext_resource type="Texture2D" path="res://game/rooms/b06_archive_vault/bg/cam_a.webp" id="2_shovu"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_shovu"]
+[ext_resource type="PackedScene" path="res://game/rooms/b06_archive_vault/b06_archive_vault.tscn" id="4_s2xdt"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_cfu4v"]
+
+[sub_resource type="Resource" id="Resource_s2xdt"]
+script = ExtResource("1_bg3om")
+id = &"cam_a"
+background = ExtResource("2_shovu")
+
+[sub_resource type="Resource" id="Resource_cfu4v"]
+script = ExtResource("3_shovu")
+id = &"to_b05"
+target_room = &"B05"
+target_spawn = &"spawn_from_b06"
+
+[resource]
+script = ExtResource("5_cfu4v")
+id = &"B06"
+name_key = "rooms.b06.name"
+scene = ExtResource("4_s2xdt")
+cameras = Array[ExtResource("1_bg3om")]([SubResource("Resource_s2xdt")])
+exits = Array[ExtResource("3_shovu")]([SubResource("Resource_cfu4v")])
+access = 2
+map_floor = 4
+map_rect = Rect2(390, 200, 60, 60)

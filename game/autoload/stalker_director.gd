@@ -40,6 +40,19 @@ const ACT2_ROUTE: Array[StringName] = [
 	&"G09",
 ]
 const ACT2_START := &"E05"
+## Act 3 (Upper Floor): the hall is the only open room up here, so he walks between it
+## and the ground floor, and moves faster.
+const ACT3_ROUTE: Array[StringName] = [&"U01", &"G09"]
+const ACT3_START := &"G09"
+## Act 4 (Basement): relentless. He paces the corridor and the room behind the wall that
+## isn't there yet; hears further, searches longer, walks faster.
+const ACT4_ROUTE: Array[StringName] = [&"B02", &"B07"]
+const ACT4_START := &"B07"
+const ZONES := {
+	"act2": {},
+	"act3": {"speed": 1.2},
+	"act4": {"speed": 1.15, "hearing": 1, "search": 1.5},
+}
 
 var state: State = State.DORMANT
 ## Recent noise events for the debug overlay: [{ room, hops, time }].
@@ -55,6 +68,8 @@ var ai_active := false
 var breath: BreathCheck
 ## Tests set this to simulate holding Space; null means read the input.
 var breath_override: Variant = null
+## Key into ZONES for the running AI (saved with it).
+var zone := "act2"
 var _telegraph_started_at := 0.0
 var _approach_token := 0
 var _follow_pending := false
@@ -81,9 +96,12 @@ func _on_noise_emitted(room_id: StringName, hops: int) -> void:
 # --- Room-graph AI (docs/03-milestone-2.md §3) ---------------------------------
 
 
-## Starts the AI patrolling `route` (rooms), optionally from a given room.
-func activate(route: Array[StringName], at := &"") -> void:
+## Starts the AI patrolling `route` (rooms), optionally from a given room, with the
+## modifiers of `zone_name` (ZONES).
+func activate(route: Array[StringName], at := &"", zone_name := "act2") -> void:
 	sim = StalkerSim.new()
+	sim.zone = ZONES.get(zone_name, {})
+	zone = zone_name
 	sim.approaching_player.connect(_on_approaching)
 	sim.state_changed.connect(func(st: int) -> void: set_state(_map_state(st)))
 	sim.player_room = StringName(GameState.current_room)
@@ -103,6 +121,7 @@ func snapshot() -> Dictionary:
 		"state": int(sim.state),
 		"target": String(sim.target_room),
 		"search_left": sim.search_left,
+		"zone": zone,
 	}
 
 
@@ -116,7 +135,7 @@ func restore(d: Dictionary) -> void:
 		route.append(StringName(r))
 	if route.is_empty():
 		return
-	activate(route, StringName(d.get("room", route[0])))
+	activate(route, StringName(d.get("room", route[0])), String(d.get("zone", "act2")))
 	sim.patrol_index = clampi(int(d.get("patrol_index", 0)), 0, route.size() - 1)
 	sim.target_room = StringName(d.get("target", ""))
 	sim.search_left = float(d.get("search_left", 0.0))
@@ -194,8 +213,9 @@ func _spawn_ai(room: Room, spawn: Marker3D, from_room: StringName) -> void:
 	room.add_child(stalker)
 	stalker.global_position = spawn.global_position
 	stalker.rotation.y = spawn.global_rotation.y
-	stalker.walk_speed = t.walk_speed
-	stalker.run_speed = t.run_speed
+	var speed := float(sim.zone.get("speed", 1.0)) if sim else 1.0
+	stalker.walk_speed = t.walk_speed * speed
+	stalker.run_speed = t.run_speed * speed
 	stalker.caught_player.connect(_handle_catch)
 	stalker.left_room.connect(_on_stalker_left)
 	stalker.approaching_spot.connect(_on_approaching_spot)
@@ -317,6 +337,14 @@ func _on_script_requested(script_name: StringName) -> void:
 			GameState.set_flag("act", 2)
 			if not ai_active:
 				activate(ACT2_ROUTE, ACT2_START)
+		&"act3_start":
+			GameState.set_flag("act", 3)
+			deactivate()
+			activate(ACT3_ROUTE, ACT3_START, "act3")
+		&"act4_start":
+			GameState.set_flag("act", 4)
+			deactivate()
+			activate(ACT4_ROUTE, ACT4_START, "act4")
 
 
 func set_state(new_state: State) -> void:

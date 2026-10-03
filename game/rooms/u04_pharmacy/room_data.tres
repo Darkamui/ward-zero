@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_vlshy"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_8nb2l"]
+[ext_resource type="Texture2D" path="res://game/rooms/u04_pharmacy/bg/cam_a.webp" id="2_fyamu"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_fyamu"]
+[ext_resource type="PackedScene" path="res://game/rooms/u04_pharmacy/u04_pharmacy.tscn" id="4_n28h5"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_222wh"]
+
+[sub_resource type="Resource" id="Resource_8nb2l"]
+script = ExtResource("1_vlshy")
+id = &"cam_a"
+background = ExtResource("2_fyamu")
+
+[sub_resource type="Resource" id="Resource_fyamu"]
+script = ExtResource("3_fyamu")
+id = &"to_u01"
+target_room = &"U01"
+target_spawn = &"spawn_from_u04"
+
+[resource]
+script = ExtResource("5_222wh")
+id = &"U04"
+name_key = "rooms.u04.name"
+scene = ExtResource("4_n28h5")
+cameras = Array[ExtResource("1_vlshy")]([SubResource("Resource_8nb2l")])
+exits = Array[ExtResource("3_fyamu")]([SubResource("Resource_fyamu")])
+map_floor = 3
+map_rect = Rect2(200, 200, 90, 60)

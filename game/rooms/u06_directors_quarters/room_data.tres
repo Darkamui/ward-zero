@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_7i4dn"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_j23qy"]
+[ext_resource type="Texture2D" path="res://game/rooms/u06_directors_quarters/bg/cam_a.webp" id="2_ymbbx"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_4qvlh"]
+[ext_resource type="Texture2D" path="res://game/rooms/u06_directors_quarters/bg_mem/cam_a.webp" id="3_cd1uf"]
+[ext_resource type="PackedScene" path="res://game/rooms/u06_directors_quarters/u06_directors_quarters.tscn" id="4_0ei2m"]
+[ext_resource type="Texture2D" path="res://game/rooms/u06_directors_quarters/bg/cam_b.webp" id="4_223vb"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_ackwv"]
+[ext_resource type="Texture2D" path="res://game/rooms/u06_directors_quarters/bg_mem/cam_b.webp" id="5_ruqiw"]
+[ext_resource type="Texture2D" path="res://game/rooms/u06_directors_quarters/bg/cam_c.webp" id="6_rl3ai"]
+[ext_resource type="Texture2D" path="res://game/rooms/u06_directors_quarters/bg_mem/cam_c.webp" id="7_4lq5b"]
+
+[sub_resource type="Resource" id="Resource_d5m3y"]
+script = ExtResource("1_7i4dn")
+id = &"cam_a"
+background = ExtResource("2_ymbbx")
+memory_background = ExtResource("3_cd1uf")
+
+[sub_resource type="Resource" id="Resource_odruf"]
+script = ExtResource("1_7i4dn")
+id = &"cam_b"
+background = ExtResource("4_223vb")
+memory_background = ExtResource("5_ruqiw")
+
+[sub_resource type="Resource" id="Resource_476wu"]
+script = ExtResource("1_7i4dn")
+id = &"cam_c"
+background = ExtResource("6_rl3ai")
+memory_background = ExtResource("7_4lq5b")
+
+[sub_resource type="Resource" id="Resource_d4vmt"]
+script = ExtResource("3_4qvlh")
+id = &"to_u02"
+target_room = &"U02"
+target_spawn = &"spawn_from_u06"
+
+[sub_resource type="Resource" id="Resource_ac7a2"]
+script = ExtResource("3_4qvlh")
+id = &"to_b03"
+target_room = &"B03"
+target_spawn = &"spawn_from_u06"
+lock_flag = &"u06.dumbwaiter_open"
+locked_message_key = "rooms.u06.dumbwaiter.locked"
+
+[resource]
+script = ExtResource("5_ackwv")
+id = &"U06"
+name_key = "rooms.u06.name"
+scene = ExtResource("4_0ei2m")
+cameras = Array[ExtResource("1_7i4dn")]([SubResource("Resource_d5m3y"), SubResource("Resource_odruf"), SubResource("Resource_476wu")])
+exits = Array[ExtResource("3_4qvlh")]([SubResource("Resource_d4vmt"), SubResource("Resource_ac7a2")])
+map_floor = 3
+has_memory_variant = true
+map_rect = Rect2(0, 40, 100, 100)

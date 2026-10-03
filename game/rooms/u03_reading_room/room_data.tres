@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_ty2gj"]
+[ext_resource type="Texture2D" path="res://game/rooms/u03_reading_room/bg/cam_a.webp" id="2_4otr4"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_thaem"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_4otr4"]
+[ext_resource type="PackedScene" path="res://game/rooms/u03_reading_room/u03_reading_room.tscn" id="4_op1mo"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_gxgnf"]
+
+[sub_resource type="Resource" id="Resource_op1mo"]
+script = ExtResource("1_ty2gj")
+id = &"cam_a"
+background = ExtResource("2_4otr4")
+
+[sub_resource type="Resource" id="Resource_gxgnf"]
+script = ExtResource("3_4otr4")
+id = &"to_u01"
+target_room = &"U01"
+target_spawn = &"spawn_from_u03"
+
+[resource]
+script = ExtResource("5_gxgnf")
+id = &"U03"
+name_key = "rooms.u03.name"
+scene = ExtResource("4_op1mo")
+cameras = Array[ExtResource("1_ty2gj")]([SubResource("Resource_op1mo")])
+exits = Array[ExtResource("3_4otr4")]([SubResource("Resource_gxgnf")])
+access = 2
+map_floor = 3
+safe_room = true
+map_rect = Rect2(210, 90, 70, 60)

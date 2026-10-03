@@ -30,6 +30,9 @@ var player_room: StringName = &""
 var player_in_memory := false
 ## Extra hearing hops (composure Breaking adds 1).
 var hearing_extra := 0
+## Per-act modifiers (docs/05-milestone-4.md M4-05): speed and search multipliers and
+## extra hearing hops, e.g. {"speed": 1.2} upstairs, {"hearing": 1, "search": 1.5} below.
+var zone: Dictionary = {}
 
 
 func start(route: Array[StringName], tuning_res: StalkerTuning, at := &"") -> void:
@@ -84,7 +87,7 @@ func tick(delta: float) -> void:
 func hear(noise_room: StringName, hops: int) -> bool:
 	if state == State.DORMANT or holding:
 		return false
-	var reach := hops + (tuning.hearing_bonus if tuning else 0) + hearing_extra
+	var reach := hops + (tuning.hearing_bonus if tuning else 0) + hearing_extra + int(zone.get("hearing", 0))
 	if reach < 0:
 		return false
 	# Sound travels through every room; only his movement is limited by access flags.
@@ -127,7 +130,7 @@ func leave_player_room(to_room: StringName) -> void:
 
 func _speed() -> float:
 	var walk := tuning.walk_speed if tuning else 1.5
-	return walk * (1.3 if state == State.INVESTIGATE else 1.0)
+	return walk * float(zone.get("speed", 1.0)) * (1.3 if state == State.INVESTIGATE else 1.0)
 
 
 func _step_toward(goal: StringName) -> void:
@@ -157,7 +160,7 @@ func _on_arrived() -> void:
 
 
 func _begin_search() -> void:
-	search_left = tuning.search_time if tuning else 10.0
+	search_left = (tuning.search_time if tuning else 10.0) * float(zone.get("search", 1.0))
 	_set_state(State.SEARCH)
 
 

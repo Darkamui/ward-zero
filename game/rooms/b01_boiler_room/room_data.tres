@@ -8,23 +8,23 @@
 [ext_resource type="PackedScene" path="res://game/rooms/b01_boiler_room/b01_boiler_room.tscn" id="4_7g4t4"]
 [ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_p1qoe"]
 
-[sub_resource type="Resource" id="Resource_p1qoe"]
+[sub_resource type="Resource" id="Resource_etsge"]
 script = ExtResource("1_8yobu")
 id = &"cam_a"
 background = ExtResource("2_etsge")
 
-[sub_resource type="Resource" id="Resource_tm5tf"]
+[sub_resource type="Resource" id="Resource_7g4t4"]
 script = ExtResource("1_8yobu")
 id = &"cam_b"
 background = ExtResource("3_7g4t4")
 
-[sub_resource type="Resource" id="Resource_odidd"]
+[sub_resource type="Resource" id="Resource_p1qoe"]
 script = ExtResource("3_etsge")
 id = &"to_g09"
 target_room = &"G09"
 target_spawn = &"spawn_from_b01"
 
-[sub_resource type="Resource" id="Resource_5t240"]
+[sub_resource type="Resource" id="Resource_tm5tf"]
 script = ExtResource("3_etsge")
 id = &"to_g08"
 target_room = &"G08"
@@ -32,13 +32,21 @@ target_spawn = &"spawn_from_b01"
 lock_flag = &"b01.shortcut_open"
 locked_message_key = "rooms.b01.shortcut.locked"
 
+[sub_resource type="Resource" id="Resource_odidd"]
+script = ExtResource("3_etsge")
+id = &"to_b02"
+target_room = &"B02"
+target_spawn = &"spawn_from_b01"
+lock_flag = &"act4.started"
+locked_message_key = "rooms.b01.basement.locked"
+
 [resource]
 script = ExtResource("5_p1qoe")
 id = &"B01"
 name_key = "rooms.b01.name"
 scene = ExtResource("4_7g4t4")
-cameras = Array[ExtResource("1_8yobu")]([SubResource("Resource_p1qoe"), SubResource("Resource_tm5tf")])
-exits = Array[ExtResource("3_etsge")]([SubResource("Resource_odidd"), SubResource("Resource_5t240")])
+cameras = Array[ExtResource("1_8yobu")]([SubResource("Resource_etsge"), SubResource("Resource_7g4t4")])
+exits = Array[ExtResource("3_etsge")]([SubResource("Resource_p1qoe"), SubResource("Resource_tm5tf"), SubResource("Resource_odidd")])
 map_floor = 4
 unlit = true
 map_rect = Rect2(150, 80, 140, 110)

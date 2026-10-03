@@ -17,7 +17,7 @@ B01 Boiler --> B02 Basement Corridor --+-- B03 Morgue (P19, mem) <--------------
                                        +-(after P21)- B07 Ward Zero (P22)
 ```
 
-The elevator in G09 (Act 2's end) goes up to U01. Act 4 starts when P18's dumbwaiter drops the player into the Morgue. B02 is also reachable from B01.
+The elevator in G09 (Act 2's end) goes up to U01. Act 4 starts when P18's dumbwaiter drops the player into the Morgue (one way). The B01–B02 door is bolted from the basement side until Act 4 starts, like the kitchen shortcut in Act 2.
 
 ## 2. Puzzles (proposed)
 
@@ -31,7 +31,7 @@ The elevator in G09 (Act 2's end) goes up to U01. Act 4 starts when P18's dumbwa
 | P19 Morgue | Open the drawer the death registry gives for "the girl from the fire". In 1976 that drawer is empty. | Drawer number | | F11 (optional), Drawing (Anchor 4), vault code part |
 | P20 Humors panel | Place the 4 temperament keys by season, following the mural (Choleric = summer/fire, Melancholic = autumn/earth, Phlegmatic = winter/water, Sanguine = spring/air) | Slot order | Easy: elements written on the slots | Vault access, F12 tape |
 | P21 Archive Vault | Place collected fragments on a 1975→1998 timeline. The number placed correctly decides the ending. | — | — | Ending flag |
-| P22 Ward Zero | Finale chase toward the exit. Choice: run (ending by P21 count), or stay and let him reach you (Claire ending if 12/12). | — | — | Ending |
+| P22 Ward Zero | He walks out of the dark behind the player, slower than a walk (0.8×). Take the exit door (ending by P21 score), or stand still and let him reach you (Claire at 12/12, Relapse otherwise). The GDD's chained memory shifts are cut from the greybox and noted as a later polish item. | — | — | Ending |
 
 **Fragment timeline (P21, proposed dates):** F04 drawing (1975), F02 fire (1976), F11 morgue registry (1976), F01 admission (1976), F05 essay (1976), F03 nurse log (1977), F06 scratchings (1978), F08 Director's journal (1979), F10 case-study slide (1984), F07 session 1 (1998), F09 pharmacy label (1998), F12 "last night" tape (1998).
 
@@ -45,11 +45,20 @@ The elevator in G09 (Act 2's end) goes up to U01. Act 4 starts when P18's dumbwa
 
 Endings seen and NG+ unlocks are stored in `user://profile.cfg`, separate from saves.
 
-## 4. New Game+ (GDD §8.3)
+## 4. Stalker in Acts 3–4 (as built)
+
+He only patrols `open` rooms (M2 rule), and the GDD makes most of the new rooms `scripted`:
+
+- **Act 3:** route U01 ↔ G09, speed ×1.2. Starts in G09, so he follows the player up.
+- **Act 4:** route B02 ↔ B07 (the room behind the wall), speed ×1.15, +1 hearing hop, searches ×1.5. Starts in B07.
+
+The zone is saved with the AI state.
+
+## 5. New Game+ (GDD §8.3)
 
 New seed and the same difficulty choice. Every document and tape stays in Files. A Files entry hints at the Claire ending.
 
-## 5. Tasks
+## 6. Tasks
 
 | ID | Task |
 |---|---|

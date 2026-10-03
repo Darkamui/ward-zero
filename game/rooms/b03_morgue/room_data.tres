@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_78wmn"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_2powh"]
+[ext_resource type="Texture2D" path="res://game/rooms/b03_morgue/bg/cam_a.webp" id="2_er85a"]
+[ext_resource type="Texture2D" path="res://game/rooms/b03_morgue/bg_mem/cam_a.webp" id="3_2gv4x"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_muvne"]
+[ext_resource type="Texture2D" path="res://game/rooms/b03_morgue/bg/cam_b.webp" id="4_hh840"]
+[ext_resource type="Script" path="res://game/core/actions/start_script.gd" id="4_v3h4b"]
+[ext_resource type="Script" path="res://game/core/conditions/condition.gd" id="5_er85a"]
+[ext_resource type="Texture2D" path="res://game/rooms/b03_morgue/bg_mem/cam_b.webp" id="5_lau8n"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="6_2gv4x"]
+[ext_resource type="PackedScene" path="res://game/rooms/b03_morgue/b03_morgue.tscn" id="7_hh840"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="8_lau8n"]
+
+[sub_resource type="Resource" id="Resource_fgsib"]
+script = ExtResource("1_78wmn")
+id = &"cam_a"
+background = ExtResource("2_er85a")
+memory_background = ExtResource("3_2gv4x")
+
+[sub_resource type="Resource" id="Resource_svuyq"]
+script = ExtResource("1_78wmn")
+id = &"cam_b"
+background = ExtResource("4_hh840")
+memory_background = ExtResource("5_lau8n")
+
+[sub_resource type="Resource" id="Resource_3g4ao"]
+script = ExtResource("4_v3h4b")
+script_name = &"act4_start"
+
+[sub_resource type="Resource" id="Resource_4ogo5"]
+script = ExtResource("2_2powh")
+actions = Array[ExtResource("3_muvne")]([SubResource("Resource_3g4ao")])
+once_flag = &"act4.started"
+
+[sub_resource type="Resource" id="Resource_qoj5v"]
+script = ExtResource("6_2gv4x")
+id = &"to_b02"
+target_room = &"B02"
+target_spawn = &"spawn_from_b03"
+
+[resource]
+script = ExtResource("8_lau8n")
+id = &"B03"
+name_key = "rooms.b03.name"
+scene = ExtResource("7_hh840")
+cameras = Array[ExtResource("1_78wmn")]([SubResource("Resource_fgsib"), SubResource("Resource_svuyq")])
+exits = Array[ExtResource("6_2gv4x")]([SubResource("Resource_qoj5v")])
+map_floor = 4
+unlit = true
+has_memory_variant = true
+map_rect = Rect2(320, 40, 100, 70)
+enter_triggers = Array[ExtResource("2_2powh")]([SubResource("Resource_4ogo5")])

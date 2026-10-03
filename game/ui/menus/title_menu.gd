@@ -7,6 +7,7 @@ const ENABLED_PUZZLE := ["easy", "normal", "hard"]
 
 var _threat := "patient"
 var _puzzle := "normal"
+var _ng_plus := false
 var _panel: Control
 
 
@@ -37,7 +38,9 @@ func _main() -> void:
 	box.position = Vector2(170, 460)
 	box.add_theme_constant_override("separation", 16)
 	_panel.add_child(box)
-	box.add_child(UiStyle.button("ui.menu.new_game", _new_game, 32))
+	box.add_child(UiStyle.button("ui.menu.new_game", _begin.bind(false), 32))
+	if Profile.ng_plus_unlocked():
+		box.add_child(UiStyle.button("ui.menu.new_game_plus", _begin.bind(true), 32))
 	var load_btn := UiStyle.button("ui.menu.load", _load, 32)
 	load_btn.disabled = SaveSystem.list_slots().is_empty()
 	box.add_child(load_btn)
@@ -47,10 +50,17 @@ func _main() -> void:
 		box.add_child(UiStyle.button("ui.menu.quit", func() -> void: get_tree().quit(), 32))
 
 
+func _begin(ng_plus: bool) -> void:
+	_ng_plus = ng_plus
+	_new_game()
+
+
 func _new_game() -> void:
 	_clear()
 	var box := UiStyle.centered_panel(_panel, Vector2(1100, 700))
-	box.add_child(UiStyle.label("ui.menu.new_game", 40, UiStyle.ACCENT))
+	box.add_child(
+		UiStyle.label("ui.menu.new_game_plus" if _ng_plus else "ui.menu.new_game", 40, UiStyle.ACCENT)
+	)
 	box.add_child(UiStyle.label("ui.difficulty.threat", 28))
 	box.add_child(_choice_row(GameState.THREAT_LEVELS, ENABLED_THREAT, "threat"))
 	box.add_child(UiStyle.label("ui.difficulty.threat_%s" % _threat, 22, UiStyle.INK_DIM))
@@ -83,7 +93,7 @@ func _choose(which: String, level: String) -> void:
 
 
 func _start() -> void:
-	NewGame.start(_threat, _puzzle)
+	NewGame.start(_threat, _puzzle, -1, _ng_plus)
 	get_tree().change_scene_to_file("res://game/main/game.tscn")
 
 

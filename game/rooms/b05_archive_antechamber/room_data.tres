@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_2em1j"]
+[ext_resource type="Texture2D" path="res://game/rooms/b05_archive_antechamber/bg/cam_a.webp" id="2_aqpsb"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_crj4s"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_aqpsb"]
+[ext_resource type="PackedScene" path="res://game/rooms/b05_archive_antechamber/b05_archive_antechamber.tscn" id="4_iotjb"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_tnxrp"]
+
+[sub_resource type="Resource" id="Resource_iotjb"]
+script = ExtResource("1_2em1j")
+id = &"cam_a"
+background = ExtResource("2_aqpsb")
+
+[sub_resource type="Resource" id="Resource_tnxrp"]
+script = ExtResource("3_aqpsb")
+id = &"to_b02"
+target_room = &"B02"
+target_spawn = &"spawn_from_b05"
+
+[sub_resource type="Resource" id="Resource_76jst"]
+script = ExtResource("3_aqpsb")
+id = &"to_b06"
+target_room = &"B06"
+target_spawn = &"spawn_from_b05"
+lock_flag = &"b04.vault_open"
+locked_message_key = "rooms.b05.vault.locked"
+
+[resource]
+script = ExtResource("5_tnxrp")
+id = &"B05"
+name_key = "rooms.b05.name"
+scene = ExtResource("4_iotjb")
+cameras = Array[ExtResource("1_2em1j")]([SubResource("Resource_iotjb")])
+exits = Array[ExtResource("3_aqpsb")]([SubResource("Resource_tnxrp"), SubResource("Resource_76jst")])
+access = 2
+map_floor = 4
+safe_room = true
+map_rect = Rect2(320, 200, 70, 60)

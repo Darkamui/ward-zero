@@ -1,6 +1,7 @@
 extends RefCounted
 ## Greybox builder for every Act 2 room (docs/04-milestone-3.md §1):
 ## G07-G09, E01-E05, W01-W06, B01. One table-driven script instead of one per room.
+## build_act34.gd reuses it for the Upper Floor and the Basement.
 ##   godot --headless res://tools/run_tool.tscn -- res://tools/greybox/build_act2.gd [ROOM_ID...]
 
 const GB := preload("res://tools/greybox/greybox_lib.gd")
@@ -27,6 +28,7 @@ const ROOMS := {
 			["e", 0.0, "E01", {}],
 			["n", -2.0, "G07", {}],
 			["n", 4.5, "B01", {"key": "item_phlegmatic_key", "locked": "rooms.g09.stairs.locked"}],
+			["n", 7.0, "U01", {"flag": "b01.power_on", "locked": "rooms.g09.elevator.dead"}],
 		],
 	},
 	"G07":
@@ -196,6 +198,7 @@ const ROOMS := {
 		[
 			["s", -3.0, "G09", {}],
 			["e", 2.0, "G08", {"flag": "b01.shortcut_open", "locked": "rooms.b01.shortcut.locked"}],
+			["w", 3.0, "B02", {"flag": "act4.started", "locked": "rooms.b01.basement.locked"}],
 		],
 	},
 }
@@ -272,7 +275,6 @@ func _build(id: String, spec: Dictionary) -> Error:
 
 func _content_g09(g: GB, _w: float, _d: float, _h: float) -> void:
 	g.box(g.geometry, "occ_bench", Vector3(1.5, 0.5, 0.5), Vector3(1.0, 0.25, 1.6), WOOD)
-	g.box(g.geometry, "art_elevator", Vector3(1.4, 2.2, 0.05), Vector3(7.0, 1.1, -1.97), METAL)
 	g.box(g.geometry, "occ_locker", Vector3(0.8, 2.0, 0.5), Vector3(-0.5, 1.0, -1.75), METAL)
 	g.hiding_spot(
 		"hs_locker",
@@ -280,14 +282,6 @@ func _content_g09(g: GB, _w: float, _d: float, _h: float) -> void:
 		Vector3(0.9, 2.0, 0.6),
 		Vector3(-0.5, 0, -0.9),
 		Vector3(-0.5, 0, -1.75)
-	)
-	g.hotspot(
-		"hs_elevator",
-		KIND.USE,
-		Vector3(7.0, 1.1, -1.85),
-		Vector3(1.4, 2.2, 0.4),
-		Vector3(7.0, 0, -1.0),
-		[GB.when([GB.flag("b01.power_on")], [GB.ui("end_of_slice")], [GB.text("rooms.g09.elevator.dead")])]
 	)
 
 

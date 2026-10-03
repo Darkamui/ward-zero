@@ -1,0 +1,84 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_m6awv"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_8k7s8"]
+[ext_resource type="Texture2D" path="res://game/rooms/b02_basement_corridor/bg/cam_a.webp" id="2_q132a"]
+[ext_resource type="Texture2D" path="res://game/rooms/b02_basement_corridor/bg/cam_b.webp" id="3_36rm3"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_bk18n"]
+[ext_resource type="Texture2D" path="res://game/rooms/b02_basement_corridor/bg/cam_c.webp" id="4_amkpu"]
+[ext_resource type="Script" path="res://game/core/actions/start_script.gd" id="4_q132a"]
+[ext_resource type="Script" path="res://game/core/conditions/condition.gd" id="5_36rm3"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="6_amkpu"]
+[ext_resource type="PackedScene" path="res://game/rooms/b02_basement_corridor/b02_basement_corridor.tscn" id="7_gmg83"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="8_r8pcg"]
+
+[sub_resource type="Resource" id="Resource_gmg83"]
+script = ExtResource("1_m6awv")
+id = &"cam_a"
+background = ExtResource("2_q132a")
+
+[sub_resource type="Resource" id="Resource_r8pcg"]
+script = ExtResource("1_m6awv")
+id = &"cam_b"
+background = ExtResource("3_36rm3")
+
+[sub_resource type="Resource" id="Resource_g2u1t"]
+script = ExtResource("1_m6awv")
+id = &"cam_c"
+background = ExtResource("4_amkpu")
+
+[sub_resource type="Resource" id="Resource_bx81p"]
+script = ExtResource("4_q132a")
+script_name = &"act4_start"
+
+[sub_resource type="Resource" id="Resource_yrpji"]
+script = ExtResource("2_8k7s8")
+actions = Array[ExtResource("3_bk18n")]([SubResource("Resource_bx81p")])
+once_flag = &"act4.started"
+
+[sub_resource type="Resource" id="Resource_dtg7f"]
+script = ExtResource("6_amkpu")
+id = &"to_b01"
+target_room = &"B01"
+target_spawn = &"spawn_from_b02"
+
+[sub_resource type="Resource" id="Resource_ts2b6"]
+script = ExtResource("6_amkpu")
+id = &"to_b03"
+target_room = &"B03"
+target_spawn = &"spawn_from_b02"
+
+[sub_resource type="Resource" id="Resource_y4lkf"]
+script = ExtResource("6_amkpu")
+id = &"to_b04"
+target_room = &"B04"
+target_spawn = &"spawn_from_b02"
+required_key = &"item_sanguine_key"
+locked_message_key = "rooms.b02.treatment.locked"
+
+[sub_resource type="Resource" id="Resource_v3mdn"]
+script = ExtResource("6_amkpu")
+id = &"to_b05"
+target_room = &"B05"
+target_spawn = &"spawn_from_b02"
+
+[sub_resource type="Resource" id="Resource_2y186"]
+script = ExtResource("6_amkpu")
+id = &"to_b07"
+target_room = &"B07"
+target_spawn = &"spawn_from_b02"
+lock_flag = &"b06.file_sealed"
+locked_message_key = "rooms.b02.ward_zero.locked"
+
+[resource]
+script = ExtResource("8_r8pcg")
+id = &"B02"
+name_key = "rooms.b02.name"
+scene = ExtResource("7_gmg83")
+cameras = Array[ExtResource("1_m6awv")]([SubResource("Resource_gmg83"), SubResource("Resource_r8pcg"), SubResource("Resource_g2u1t")])
+exits = Array[ExtResource("6_amkpu")]([SubResource("Resource_dtg7f"), SubResource("Resource_ts2b6"), SubResource("Resource_y4lkf"), SubResource("Resource_v3mdn"), SubResource("Resource_2y186")])
+access = 0
+map_floor = 4
+unlit = true
+map_rect = Rect2(290, 40, 30, 220)
+enter_triggers = Array[ExtResource("2_8k7s8")]([SubResource("Resource_yrpji")])

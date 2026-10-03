@@ -117,3 +117,13 @@ ui.day.friday,Friday,vendredi
 ui.day.saturday,Saturday,samedi
 ui.day.sunday,Sunday,dimanche
 ui.bed,Bed,Lit
+ui.menu.new_game_plus,New Game+,Nouvelle partie+
+ending.relapse.title,Relapse,Rechute
+ending.relapse.body,"The door opens onto the Dayroom. The radio hisses. The dictaphone is in my hand, and a child’s voice says: “Mathieu… viens me chercher.” I have been here before.","La porte s’ouvre sur la salle commune. La radio grésille. J’ai le dictaphone à la main, et une voix d’enfant dit : « Mathieu… viens me chercher. » Je suis déjà venu ici."
+ending.discharge.title,Discharge,Congé
+ending.discharge.body,"Sunlight. A hospital room, 1998. Dr. Bouchard sits by the bed with a file on her knees. “Good morning, Mathieu. Do you know where you are?” For the first time, I do.","Du soleil. Une chambre d’hôpital, 1998. La Dre Bouchard est assise près du lit, un dossier sur les genoux. « Bonjour, Mathieu. Savez-vous où vous êtes ? » Pour la première fois, je le sais."
+ending.claire.title,Claire,Claire
+ending.claire.body,"I stop running. He walks up to me and lifts his hand to his face. Under the white mask is a nine-year-old boy, smelling of smoke. Behind him, a girl with a red ribbon. “It’s okay, Mathieu,” she says. “You can stop looking for me now.”","J’arrête de courir. Il s’approche et porte la main à son visage. Sous le masque blanc, il y a un garçon de neuf ans qui sent la fumée. Derrière lui, une fillette au ruban rouge. « C’est correct, Mathieu, dit-elle. Tu peux arrêter de me chercher, maintenant. »"
+ending.stats,Fragments in place: {score} / 12   ·   Puzzles solved: {solved} / {total}   ·   Time: {time},Fragments à leur place : {score} / 12   ·   Énigmes résolues : {solved} / {total}   ·   Temps : {time}
+ending.ng_plus_unlocked,"New Game+ unlocked: new codes, and your Files carry over.","Nouvelle partie+ débloquée : nouveaux codes, et vos dossiers sont conservés."
+ending.to_title,Return to title,Retour au titre

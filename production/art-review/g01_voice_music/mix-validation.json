@@ -1,0 +1,11 @@
+{
+  "seconds": 33.90113378684807,
+  "sample_rate": 44100,
+  "channels": 2,
+  "peak_dbfs": -6.659564347086872,
+  "clipped_samples": 0,
+  "last_250ms_peak": 0.0,
+  "music_loop_seam_step": 0.0014262869954109192,
+  "music_adjacent_step_99_percentile": 0.0054595925658941225,
+  "assets_bytes": 1538542
+}

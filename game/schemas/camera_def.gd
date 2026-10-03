@@ -6,3 +6,6 @@ extends Resource
 @export var background: Texture2D
 ## Background for the 1976 variant. Only used when the room has a memory variant.
 @export var memory_background: Texture2D
+## Optional present-day variant selected by a persistent gameplay flag.
+@export var state_flag: StringName
+@export var state_background: Texture2D

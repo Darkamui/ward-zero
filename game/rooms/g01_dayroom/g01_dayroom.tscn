@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://game/core/interactable/interactable.gd" id="3_j3egs"]
 [ext_resource type="Script" path="res://game/core/actions/action.gd" id="4_fbvss"]
 [ext_resource type="Script" path="res://game/core/actions/show_text.gd" id="5_s061w"]
+[ext_resource type="PackedScene" path="res://game/rooms/g01_dayroom/proxy.glb" id="6_dayroom_proxy"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6fdyq"]
 size = Vector3(9, 0.1, 7)
@@ -115,6 +116,8 @@ script = ExtResource("1_6fdyq")
 
 [node name="Geometry" type="Node3D" parent="." unique_id=64341962]
 
+[node name="VisualProxies" parent="Geometry" instance=ExtResource("6_dayroom_proxy")]
+
 [node name="floor_main" type="MeshInstance3D" parent="Geometry" unique_id=1064732541]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 mesh = SubResource("BoxMesh_6fdyq")
@@ -170,17 +173,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.9, 3.49)
 mesh = SubResource("BoxMesh_kwf8r")
 metadata/clay_color = Color(0.85, 0.88, 0.92, 1)
 
-[node name="occ_pillar" type="MeshInstance3D" parent="Geometry" unique_id=783629504]
+[node name="col_pillar" type="MeshInstance3D" parent="Geometry" unique_id=783629504]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3, 1.6, 0.5)
 mesh = SubResource("BoxMesh_hwubw")
 metadata/clay_color = Color(0.7, 0.7, 0.66, 1)
 
-[node name="occ_couch" type="MeshInstance3D" parent="Geometry" unique_id=1394380280]
+[node name="col_couch" type="MeshInstance3D" parent="Geometry" unique_id=1394380280]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 0.4, 2.3)
 mesh = SubResource("BoxMesh_3ah5w")
 metadata/clay_color = Color(0.4, 0.28, 0.22, 1)
 
-[node name="occ_table_radio" type="MeshInstance3D" parent="Geometry" unique_id=217597806]
+[node name="col_table_radio" type="MeshInstance3D" parent="Geometry" unique_id=217597806]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.375, -1.4)
 mesh = SubResource("BoxMesh_7bsvm")
 metadata/clay_color = Color(0.45, 0.33, 0.24, 1)
@@ -190,7 +193,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05, 0.9, -1.4)
 mesh = SubResource("BoxMesh_gnvtj")
 metadata/clay_color = Color(0.25, 0.22, 0.2, 1)
 
-[node name="occ_table_recorder" type="MeshInstance3D" parent="Geometry" unique_id=1729238831]
+[node name="col_table_recorder" type="MeshInstance3D" parent="Geometry" unique_id=1729238831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7, 0.375, -2.8)
 mesh = SubResource("BoxMesh_a0myo")
 metadata/clay_color = Color(0.45, 0.33, 0.24, 1)
@@ -200,7 +203,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7, 0.81, -2.8)
 mesh = SubResource("BoxMesh_yefsw")
 metadata/clay_color = Color(0.15, 0.15, 0.16, 1)
 
-[node name="occ_bin" type="MeshInstance3D" parent="Geometry" unique_id=1654085422]
+[node name="col_bin" type="MeshInstance3D" parent="Geometry" unique_id=1654085422]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.3, -0.4)
 mesh = SubResource("BoxMesh_61g4s")
 metadata/clay_color = Color(0.3, 0.34, 0.3, 1)
@@ -210,7 +213,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.6, -3.49)
 mesh = SubResource("BoxMesh_np6qm")
 metadata/clay_color = Color(0.9, 0.88, 0.8, 1)
 
-[node name="occ_chair" type="MeshInstance3D" parent="Geometry" unique_id=1659489844]
+[node name="col_chair" type="MeshInstance3D" parent="Geometry" unique_id=1659489844]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0.45, 1.4)
 mesh = SubResource("BoxMesh_dcx5o")
 metadata/clay_color = Color(0.45, 0.33, 0.24, 1)
@@ -228,16 +231,25 @@ far = 60.0
 top_level = true
 
 [node name="Key" type="DirectionalLight3D" parent="Cameras/cam_a/LightRig" unique_id=1538542438]
-transform = Transform3D(-0.9396926, -0.25417057, 0.22885618, 0, 0.66913056, 0.74314487, -0.3420202, 0.6983277, -0.628777, 0, 0, 0)
-light_energy = 1.1
+rotation_degrees = Vector3(-15.56, 33.84, 0)
+light_color = Color(0.62, 0.74, 1, 1)
+light_energy = 0.55
 shadow_enabled = true
 directional_shadow_max_distance = 20.0
 
 [node name="Fill" type="OmniLight3D" parent="Cameras/cam_a/LightRig" unique_id=1202259698]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 2.8, 3.2)
-light_energy = 0.7
+light_color = Color(0.65, 0.73, 1, 1)
+light_energy = 0.14
 light_cull_mask = 2
 omni_range = 14.0
+
+[node name="RecorderLamp" type="OmniLight3D" parent="Cameras/cam_a/LightRig"]
+position = Vector3(-3.75, 1.1, -2.93)
+light_color = Color(1, 0.61, 0.28, 1)
+light_energy = 0.45
+light_cull_mask = 2
+omni_range = 2.0
 
 [node name="cam_b" type="Camera3D" parent="Cameras" unique_id=1190791526]
 transform = Transform3D(0.58363605, 0.22747305, -0.77950305, 0, 0.95996094, 0.28013393, 0.81201535, -0.16349626, 0.56026787, -4.2, 2.8, 3.2)
@@ -248,16 +260,25 @@ far = 60.0
 top_level = true
 
 [node name="Key" type="DirectionalLight3D" parent="Cameras/cam_b/LightRig" unique_id=209587453]
-transform = Transform3D(-0.9396926, -0.25417057, 0.22885618, 0, 0.66913056, 0.74314487, -0.3420202, 0.6983277, -0.628777, 0, 0, 0)
-light_energy = 1.1
+rotation_degrees = Vector3(-15.56, 33.84, 0)
+light_color = Color(0.62, 0.74, 1, 1)
+light_energy = 0.55
 shadow_enabled = true
 directional_shadow_max_distance = 20.0
 
 [node name="Fill" type="OmniLight3D" parent="Cameras/cam_b/LightRig" unique_id=2061290117]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, 2.8, 3.2)
-light_energy = 0.7
+light_color = Color(0.65, 0.73, 1, 1)
+light_energy = 0.14
 light_cull_mask = 2
 omni_range = 14.0
+
+[node name="RecorderLamp" type="OmniLight3D" parent="Cameras/cam_b/LightRig"]
+position = Vector3(-3.75, 1.1, -2.93)
+light_color = Color(1, 0.61, 0.28, 1)
+light_energy = 0.45
+light_cull_mask = 2
+omni_range = 2.0
 
 [node name="Triggers" type="Node3D" parent="." unique_id=890559101]
 

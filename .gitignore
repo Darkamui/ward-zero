@@ -17,3 +17,7 @@ production/screens/*
 !production/screens/m0_*.png
 !production/screens/web_desktop.png
 !production/screens/web_phone.png
+# Reproducible art-review output stays local; keep raw voice sources and provenance.
+production/art-review/**/*.png
+production/art-review/**/*.webp
+production/art-review/**/gameplay-mix.wav

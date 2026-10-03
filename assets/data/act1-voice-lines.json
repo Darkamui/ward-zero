@@ -1,0 +1,29 @@
+{
+  "status": "Historical starter-pack draft; not used by the game. Current dialogue and timing are in game/localization/tapes.csv and game/data/tapes/.",
+  "lines": [
+    {
+      "id": "claire_opening",
+      "speaker": "Claire, age six",
+      "en": "Mathieu… come and find me.",
+      "fr": "Mathieu… viens me chercher.",
+      "direction": "Quiet and intimate, a child speaking normally through a worn cassette, not a demonic whisper.",
+      "subtitle_default": true
+    },
+    {
+      "id": "radio_unlocked",
+      "speaker": "Institutional announcement",
+      "en": "Evening rounds are complete. The dayroom door is released.",
+      "fr": "La tournée du soir est terminée. La porte de la salle de séjour est déverrouillée.",
+      "direction": "Neutral period institutional delivery.",
+      "subtitle_default": true
+    },
+    {
+      "id": "mathieu_photo",
+      "speaker": "Mathieu",
+      "en": "I remember this house.",
+      "fr": "Je me souviens de cette maison.",
+      "direction": "Optional short restrained reaction, no exposition.",
+      "subtitle_default": true
+    }
+  ]
+}

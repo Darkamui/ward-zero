@@ -1,0 +1,136 @@
+{
+  "room": "G01",
+  "stage": "camera-matched room art with detailed visual proxies",
+  "source_scene": "game\\rooms\\g01_dayroom\\g01_dayroom.tscn",
+  "source_sha256": "8a1e3506043ced14c84e9796ae21bec093636189ed5e805dd02d0b0dcf57f1cf",
+  "cameras": {
+    "cam_a": {
+      "godot_transform": [
+        0.57874703,
+        -0.23614314,
+        0.7805692,
+        0.0,
+        0.957158,
+        0.289566,
+        -0.8155071,
+        -0.16758546,
+        0.5539524,
+        4.2,
+        2.8,
+        3.2
+      ],
+      "vertical_fov": 55.0,
+      "blender_matrix": [
+        [
+          0.578747034072876,
+          -0.23614314198493958,
+          0.7805691957473755,
+          4.199999809265137
+        ],
+        [
+          0.8155071139335632,
+          0.16758546233177185,
+          -0.5539523959159851,
+          -3.200000047683716
+        ],
+        [
+          0.0,
+          0.9571580290794373,
+          0.2895660102367401,
+          2.799999952316284
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "cam_b": {
+      "godot_transform": [
+        0.58363605,
+        0.22747305,
+        -0.77950305,
+        0.0,
+        0.95996094,
+        0.28013393,
+        0.81201535,
+        -0.16349626,
+        0.56026787,
+        -4.2,
+        2.8,
+        3.2
+      ],
+      "vertical_fov": 55.0,
+      "blender_matrix": [
+        [
+          0.5836360454559326,
+          0.22747305035591125,
+          -0.7795030474662781,
+          -4.199999809265137
+        ],
+        [
+          -0.8120153546333313,
+          0.1634962558746338,
+          -0.5602678656578064,
+          -3.200000047683716
+        ],
+        [
+          0.0,
+          0.9599609375,
+          0.2801339328289032,
+          2.799999952316284
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  },
+  "resolution": [
+    1920,
+    1080
+  ],
+  "renderer": "Cycles",
+  "samples": 160,
+  "materials": [
+    "WZ / black bakelite",
+    "WZ / clouded glass",
+    "WZ / dark endgrain",
+    "WZ / dark walnut grain",
+    "WZ / dark water marks",
+    "WZ / faded moss upholstery",
+    "WZ / floor grout",
+    "WZ / linoleum 00",
+    "WZ / linoleum 01",
+    "WZ / linoleum 02",
+    "WZ / linoleum 03",
+    "WZ / linoleum 04",
+    "WZ / linoleum 05",
+    "WZ / linoleum 06",
+    "WZ / linoleum 07",
+    "WZ / old cream enamel",
+    "WZ / oxblood paint",
+    "WZ / oxidized steel",
+    "WZ / stained chalk plaster",
+    "WZ / tarnished brass",
+    "WZ / unprinted aged paper",
+    "WZ / worn institutional sage"
+  ],
+  "rendered_cameras": [
+    "cam_a",
+    "cam_b"
+  ],
+  "rendered_states": [
+    "locked",
+    "released"
+  ],
+  "external_models": [
+    "painted_wooden_chair_01"
+  ],
+  "note": "No AI paintover. Existing gameplay anchors retained. Detailed visual occluders exported separately from collision footprints."
+}

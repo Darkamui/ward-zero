@@ -1,0 +1,17 @@
+# First room and shared assets
+
+Work through these groups one at a time. Prefer suitable free, ready-made assets when they improve quality or save time. Reuse the supplied pack where useful. Custom work is for missing pieces, layout-specific geometry and interactive parts; it is not the default for every prop. Record downloaded sources in `credits.md`.
+
+| Group | Current state | Next work |
+|---|---|---|
+| G01 environment | Both 1080p camera backgrounds integrated, matching detailed visual occluders, original collision/navigation footprints retained. Downloaded CC0 chair and peeling-paint maps; other supplied models reused. | Visual direction can still be refined. Current present-day environment is playable. |
+| Radio puzzle | Supplied housing, needle and knobs integrated. Coarse/fine tuning, seeded scale, signal meter, keyboard input, saved tuning and easy-mode marker work. EN/fr_CA layouts reviewed at 1080p and 720p; six GUI integration tests pass. Static/detent audio follows tuning; English/French radio voice candidates now play on solve. | Visual/control pass complete. Listen to the voice candidates in `art-review/g01_voice_music/listen.html`. |
+| Door and chain | Locked and released chain states rendered for both cameras, driven by `g01.chain_released`. Immediate refresh, saved-state restore and room reentry verified. CC0 chain-release sound plays once on P01 completion. | State art and first sound pass complete. |
+| Items and documents | Supplied dictaphone and wristband models integrated with matching rendered icons. Wristband inner print uses the seeded birth date and its existing reveal. Paper reader supports live EN/fr_CA text, scrolling and enlargement. | First-room item/document pass complete. Remaining rooms' items retain their current assets. |
+| Shared UI | Supplied satchel, folder, slot states and interface icons integrated. Six/eight-slot layouts, effects-bin transfers, Files previews and reader navigation checked in EN/fr_CA at 1080p and 720p. | Focused shared-UI pass complete; see `art-review/shared_ui/README.md`. Map, title and endings remain separate future work. |
+| Characters | New reference sheets are the approved direction: Mathieu in olive shirt/jeans, orderly with visible face. Generated separate full-body A-pose images in `assets/references/characters/meshy/`. The attempted adapted free base was rejected; runtime characters remain placeholders. | Explicitly deferred by the user. User will create models in Meshy and rig/animate with Mixamo; integrate when returned. |
+| Audio | G01/shared foley and room tone integrated. Claire and radio have generated English/French voice candidates with tape/radio processing. A ready-made CC0 safe-room theme starts after the Act 1 chase, restores on reentry and lowers under voices. | Listen to `art-review/g01_voice_music/listen.html` and `art-review/g01_audio/listen.html`. Performance/accent and mix review pending. Next non-character group: shared stalker/threat audio. Other rooms' ambience/surfaces and remaining tapes/music are still outstanding. |
+
+See `art-review/g01_dayroom/README.md` for reproducible builds and validation evidence.
+
+Repository hygiene: generated review PNG/WebP files and `gameplay-mix.wav` captures stay locally available but are Git-ignored. A fresh checkout must regenerate these outputs using the linked review instructions. Raw generated voice WAVs, source/licence records, prompts, manifests and review pages remain versioned. Supplied future-use library assets are preserved, with unused stock excluded from Web export.

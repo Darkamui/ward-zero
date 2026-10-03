@@ -1,0 +1,44 @@
+{
+  "seed": 1976,
+  "difficulty": "normal prototype",
+  "bindings": {
+    "frequency": "88.1",
+    "birthdate": "1967-03-12",
+    "founding_year": "1904",
+    "offset": "1",
+    "ext_admin": "239",
+    "ext_nurse": "230",
+    "ext_chapel": "224",
+    "ext_records": "227",
+    "hymn_1": "250",
+    "hymn_2": "214",
+    "hymn_3": "395",
+    "file_id": "ML-1967-0312",
+    "fire_time": "21:40"
+  },
+  "solutions": {
+    "P01": 88.1,
+    "P02": {
+      "admin": 239,
+      "nurse": 230,
+      "chapel": 224,
+      "records": 227
+    },
+    "P03": {
+      "drawer": "1976 admissions",
+      "card_birthdate": "1967-03-12"
+    },
+    "P04": "1520",
+    "P05": [
+      250,
+      214,
+      395
+    ]
+  },
+  "notes": [
+    "Authoring example, not the production game RNG.",
+    "Safe implementation uses a dial to select and confirm each of four digits, not a real-world three-number safe sequence.",
+    "P03 direct misfile note currently represents an easy clue; refine Normal/Hard during puzzle implementation.",
+    "Keep fixed story dates stable; never reseed when language changes."
+  ]
+}

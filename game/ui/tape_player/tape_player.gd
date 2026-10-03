@@ -13,6 +13,7 @@ var _time := 0.0
 var _duration := 0.0
 var _panel: PanelContainer
 var _label: Label
+var _locale := ""
 
 
 func _ready() -> void:
@@ -46,11 +47,10 @@ func play(tape_id: StringName) -> void:
 		return
 	tape = t
 	if t.listed_in_files:
+		AudioDirector.play_sfx(AudioDirector.CASSETTE, -12.0)
 		GameState.add_tape(String(t.id))
 	_time = 0.0
-	_duration = 0.0
-	for line in t.subtitles_for(TranslationServer.get_locale()):
-		_duration = maxf(_duration, line.end)
+	_locale = TranslationServer.get_locale()
 	_start_audio(0.0)
 
 
@@ -60,6 +60,7 @@ func stop() -> void:
 	var id := tape.id
 	tape = null
 	_player.stop()
+	AudioDirector.set_voice_active(self, false)
 	_panel.visible = false
 	finished.emit(id)
 
@@ -73,11 +74,16 @@ func current_line_text() -> String:
 
 
 func _start_audio(from: float) -> void:
-	var stream := tape.audio_for(TranslationServer.get_locale())
+	_player.stop()
+	_duration = 0.0
+	for line in tape.subtitles_for(_locale):
+		_duration = maxf(_duration, line.end)
+	var stream := tape.audio_for(_locale)
+	_player.stream = stream
 	if stream:
-		_player.stream = stream
 		_player.play(from)
 		_duration = maxf(_duration, stream.get_length())
+	AudioDirector.set_voice_active(self, stream != null)
 
 
 func _process(delta: float) -> void:
@@ -97,12 +103,21 @@ func _process(delta: float) -> void:
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_TRANSLATION_CHANGED and tape:
-		var line_start := 0.0
-		for line in tape.subtitles_for(TranslationServer.get_locale()):
+		var line_key := ""
+		for line in tape.subtitles_for(_locale):
 			if _time >= line.start:
+				line_key = line.key
+		_locale = TranslationServer.get_locale()
+		var line_start := 0.0
+		for line in tape.subtitles_for(_locale):
+			if line.key == line_key:
 				line_start = line.start
 		_time = line_start
 		_start_audio(line_start)
+
+
+func _exit_tree() -> void:
+	AudioDirector.set_voice_active(self, false)
 
 
 func _apply_style() -> void:

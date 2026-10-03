@@ -31,4 +31,8 @@ func audio_for(locale: String) -> AudioStream:
 func subtitles_for(locale: String) -> Array:
 	if per_locale_subtitles.has(locale):
 		return per_locale_subtitles[locale]
+	var lang := locale.get_slice("_", 0)
+	for k in per_locale_subtitles.keys():
+		if k.get_slice("_", 0) == lang:
+			return per_locale_subtitles[k]
 	return subtitles

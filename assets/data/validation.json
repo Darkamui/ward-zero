@@ -1,0 +1,14 @@
+{
+  "svg_files": 132,
+  "json_files": 8,
+  "glb_files": 25,
+  "png_files": 42,
+  "wav_files": 19,
+  "glb_triangles": 156392,
+  "notes": [
+    "Structural validation and software inspection previews; not tested in Blender or Godot.",
+    "Two sample documents rendered and visually reviewed.",
+    "Generated artwork visually reviewed; RGBA asset alpha verified.",
+    "Audio peaks checked, not subjectively auditioned."
+  ]
+}

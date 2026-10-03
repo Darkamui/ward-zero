@@ -1,0 +1,44 @@
+[
+  {
+    "id": "quiet_hours",
+    "bindings": [
+      "frequency"
+    ],
+    "en": {
+      "title": "Quiet Hours",
+      "body": "DAYROOM\nQuiet hours begin after evening rounds.\nFor the evening announcement, tune the radio to {frequency} MHz.\nPlease leave the receiver switched on."
+    },
+    "fr": {
+      "title": "Heures de silence",
+      "body": "SALLE DE SÉJOUR\nLe silence est demandé après la tournée du soir.\nPour le message du soir, réglez la radio sur {frequency} MHz.\nVeuillez laisser le récepteur allumé."
+    }
+  },
+  {
+    "id": "wristband",
+    "bindings": [
+      "birthdate"
+    ],
+    "en": {
+      "title": "Patient wristband",
+      "body": "LAVOIE, Mathieu\nDate of birth: {birthdate}"
+    },
+    "fr": {
+      "title": "Bracelet du patient",
+      "body": "LAVOIE, Mathieu\nDate de naissance : {birthdate}"
+    }
+  },
+  {
+    "id": "founding_plaque",
+    "bindings": [
+      "founding_year"
+    ],
+    "en": {
+      "title": "Founding plaque",
+      "body": "INSTITUT SAINTE-ODILE\nFounded {founding_year}"
+    },
+    "fr": {
+      "title": "Plaque de fondation",
+      "body": "INSTITUT SAINTE-ODILE\nFondé en {founding_year}"
+    }
+  }
+]

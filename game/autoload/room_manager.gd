@@ -21,6 +21,7 @@ var _fader: ColorRect
 
 
 func _ready() -> void:
+	GameState.flag_changed.connect(_on_music_flag_changed)
 	var layer := CanvasLayer.new()
 	layer.layer = 50
 	_fader = ColorRect.new()
@@ -34,6 +35,7 @@ func _ready() -> void:
 
 ## Called by the game scene once its World and Player exist.
 func setup(world_node: Node3D, player_node: Player) -> void:
+	AudioDirector.clear_room_audio()
 	# A new game scene means the old world (and its room) is gone.
 	if current and is_instance_valid(current):
 		CameraDirector.unregister_room()
@@ -54,6 +56,7 @@ func go_to(room_id: StringName, spawn: StringName) -> void:
 	transitioning = true
 	EventBus.ui_opened.emit(UI_NAME)
 	if current:
+		AudioDirector.play_sfx(AudioDirector.DOOR, -8.0)
 		await _fade(1.0, FADE_OUT)
 		if not skip_door_animation:
 			await get_tree().create_timer(DOOR_PAUSE).timeout
@@ -103,6 +106,8 @@ func load_room_now(data: RoomData, spawn: StringName) -> Room:
 		player.teleport(marker)
 	CameraDirector.register_room(current)
 	CameraDirector.cut_to(current.camera_for_point(marker.global_position))
+	AudioDirector.play_ambience(data.ambience_present)
+	_refresh_music()
 	return current
 
 
@@ -110,7 +115,21 @@ func set_timeline(memory: bool) -> void:
 	GameState.set_memory(memory)
 	if current:
 		current.set_timeline(memory)
+		var data := current.room_data
+		AudioDirector.play_ambience(data.ambience_memory if memory else data.ambience_present)
+		_refresh_music()
 	timeline_switched.emit(memory)
+
+
+func _on_music_flag_changed(flag: String, _value: Variant) -> void:
+	if current and flag == String(current.room_data.music_unlock_flag):
+		_refresh_music()
+
+
+func _refresh_music() -> void:
+	var data := current.room_data
+	var unlocked: bool = data.music_unlock_flag == &"" or GameState.get_flag(String(data.music_unlock_flag))
+	AudioDirector.play_music(data.music_present if unlocked and not GameState.in_memory() else null)
 
 
 ## Brief full-screen flash (memory shift, being caught). Colour and timings are

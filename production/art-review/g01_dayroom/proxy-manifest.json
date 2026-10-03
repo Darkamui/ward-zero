@@ -1,0 +1,14 @@
+{
+  "path": "game\\rooms\\g01_dayroom\\proxy.glb",
+  "triangles": {
+    "vis_pillar": 188,
+    "vis_details": 29168,
+    "vis_chair": 724,
+    "vis_table_recorder": 648,
+    "vis_table_radio": 648,
+    "vis_bin": 864,
+    "vis_couch": 2632
+  },
+  "total_triangles": 34872,
+  "collision": "Existing room col_ boxes; vis_ meshes have no collision"
+}

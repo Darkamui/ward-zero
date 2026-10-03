@@ -1,0 +1,26 @@
+[
+	{
+		"event": "English opening with room tone",
+		"seconds": 0.0
+	},
+	{
+		"event": "English radio solve, immediate chain then calm voice",
+		"seconds": 7.593
+	},
+	{
+		"event": "Post-chase return unlocks theme",
+		"seconds": 11.975
+	},
+	{
+		"event": "French Claire; music lowers under voice",
+		"seconds": 18.991
+	},
+	{
+		"event": "French radio; music lowers under voice",
+		"seconds": 27.804
+	},
+	{
+		"event": "World cleanup: silence",
+		"seconds": 33.536
+	}
+]

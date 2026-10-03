@@ -1,5 +1,9 @@
 # Asset List and Sourcing
 
+Current focused queue: [first room and shared assets](g01_asset_progress.md). Use suitable free, ready-made assets where they save work or improve quality; custom creation is one option, not the default.
+
+G01 audio now includes English/French Claire and radio voice candidates plus a ready-made CC0 safe-room theme. [Listen to the current mix and individual assets](art-review/g01_voice_music/listen.html); performance and accent review is pending. Character work remains deferred for the user's Meshy/Mixamo workflow.
+
 Every asset the greybox build still needs, with the recommended source for each. Counts come from the current build: 33 rooms, 70 present-day backgrounds, 15 memory backgrounds, 22 close-ups, 30 items, 41 documents, 6 tapes.
 
 **How to read the Source column.** "Free" means a free library. "AI" means generated. "Make" means it's quicker or better to make it yourself. Check the licence of every downloaded file and log it in `production/credits.md`. Avoid NC (non-commercial) and ND (no-derivatives) licences.

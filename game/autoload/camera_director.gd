@@ -27,6 +27,8 @@ func _ready() -> void:
 	_backdrop.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	_backdrop.extra_cull_margin = 1000.0
 	GameState.timeline_changed.connect(func(_m: bool) -> void: refresh())
+	GameState.flag_changed.connect(_on_flag_changed)
+	GameState.state_loaded.connect(refresh)
 
 
 func register_room(new_room: Room) -> void:
@@ -63,7 +65,7 @@ func cut_to(camera_id: StringName) -> void:
 	camera_cut.emit(camera_id)
 
 
-## Re-applies the background (after a timeline switch).
+## Re-applies the shared backdrop/proxy texture after timeline or state changes.
 func refresh() -> void:
 	if room and active_id != &"":
 		RenderingServer.global_shader_parameter_set(&"wz_background", background_for(active_id))
@@ -74,9 +76,20 @@ func background_for(camera_id: StringName) -> Texture2D:
 	if def:
 		if GameState.in_memory() and def.memory_background:
 			return def.memory_background
+		if def.state_background and def.state_flag != &"" and GameState.get_flag(def.state_flag):
+			return def.state_background
 		if def.background:
 			return def.background
 	return _placeholder_texture()
+
+
+func _on_flag_changed(flag: String, _value: Variant) -> void:
+	if room == null or room.room_data == null:
+		return
+	for def in room.room_data.cameras:
+		if def.state_flag == flag:
+			refresh()
+			return
 
 
 func _attach_backdrop(cam: Camera3D) -> void:

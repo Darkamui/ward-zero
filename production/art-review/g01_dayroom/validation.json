@@ -1,0 +1,49 @@
+{
+  "source_scene_hash_matches": true,
+  "png_size": [
+    1920,
+    1080
+  ],
+  "webp_size": [
+    1920,
+    1080
+  ],
+  "webp_quality": 82,
+  "files": {
+    "cam_a.png": {
+      "bytes": 2238258,
+      "sha256": "982628c55c4f72337652fc4ef6f679fc937f7d9b276ff327f1b9505831313f8c"
+    },
+    "cam_a.webp": {
+      "bytes": 66446,
+      "sha256": "b1a81c3edbaa257d13c08ebe275a0a90a5a1e542b6e34ceecbe324945c965745"
+    },
+    "cam_b.png": {
+      "bytes": 2202991,
+      "sha256": "1df8816d9a0e55d293a4e93d58f206bead69a975d27b9f07a445f8ef4ab6af62"
+    },
+    "cam_b.webp": {
+      "bytes": 58214,
+      "sha256": "228b16de47fe12c343fa7b64a74d9680a5d63eed19d45ee6939d245bbe20e2d8"
+    },
+    "cam_a_released.png": {
+      "bytes": 2238193,
+      "sha256": "224460cbb9dabb5acebf1a7183177b8f3e797c328e4914f71ec175c1d1f1ba95"
+    },
+    "cam_a_released.webp": {
+      "bytes": 66314,
+      "sha256": "3418140c2df5aeda1003f9227b44fb868ef8a04b7fd320b10cc83d0980ab178c"
+    },
+    "cam_b_released.png": {
+      "bytes": 2204553,
+      "sha256": "0a2e4a7a953b641aa17081ef58fb45bed0d551de585aa6f8bde2c5181082dcb3"
+    },
+    "cam_b_released.webp": {
+      "bytes": 58428,
+      "sha256": "01c066b0b1f21d3e2b1f9717ee6a07f983accb446ea8ba5c5b5e7d53fe993a3f"
+    }
+  },
+  "runtime_integrated": true,
+  "runtime_occlusion_tested": true,
+  "runtime_report": "runtime/validation.json"
+}

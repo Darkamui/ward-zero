@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/models/patient_wristband.glb" id="1_model"]
+[ext_resource type="Script" path="res://game/items/wristband/wristband.gd" id="2_script"]
+[ext_resource type="FontFile" path="res://game/ui/fonts/CourierPrime-Regular.ttf" id="3_font"]
+
+[node name="Wristband" type="Node3D"]
+scale = Vector3(10, 10, 10)
+script = ExtResource("2_script")
+
+[node name="Model" parent="." instance=ExtResource("1_model")]
+position = Vector3(0, -0.009, 0)
+
+[node name="FrontPrint" type="Label3D" parent="."]
+position = Vector3(0, 0, 0.0019)
+pixel_size = 0.00008
+font = ExtResource("3_font")
+font_size = 48
+outline_size = 0
+modulate = Color(0.12, 0.14, 0.12, 1)
+text = "INSTITUT\nSAINTE-ODILE"
+double_sided = false
+
+[node name="InsidePrint" type="Label3D" parent="."]
+position = Vector3(0, 0, -0.0007)
+rotation_degrees = Vector3(0, 180, 0)
+pixel_size = 0.00008
+font = ExtResource("3_font")
+font_size = 48
+outline_size = 0
+modulate = Color(0.12, 0.14, 0.12, 1)
+double_sided = false

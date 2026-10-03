@@ -43,6 +43,7 @@ func _ready() -> void:
 
 
 func _exit_tree() -> void:
+	AudioDirector.clear_room_audio()
 	if StalkerDirector.player_caught.is_connected(_on_player_caught):
 		StalkerDirector.player_caught.disconnect(_on_player_caught)
 

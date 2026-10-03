@@ -1,0 +1,30 @@
+[
+  {
+    "id": "room-tone",
+    "page": "https://opengameart.org/content/the-shop",
+    "download": "https://opengameart.org/sites/default/files/legit_audio_-_the_shop_free_sfx_wav.zip",
+    "sha256": "87d49c4431fdf5647f3c434455b3bcd402fc757f97f2640b2ef84e2e5db9d86e"
+  },
+  {
+    "id": "owlish",
+    "page": "https://opengameart.org/content/sound-effects-pack",
+    "download": "https://opengameart.org/sites/default/files/Owlish%20Media%20Sound%20Effects.zip",
+    "sha256": "57d7059fe2c0ea5f47c7554ace22a538ea22ab40bfc0906b71aa259afffd3d18"
+  },
+  {
+    "id": "kenney-interface",
+    "download": "https://kenney.nl/media/pages/assets/interface-sounds/fa43c1dd4d-1677589452/kenney_interface-sounds.zip",
+    "sha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232"
+  },
+  {
+    "id": "kenney-rpg",
+    "download": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip",
+    "sha256": "6dbeaf8544da958d8f2adcb4a4a4b76c1ade34a05f8ab9edccd327da7375f38b"
+  },
+  {
+    "id": "rubberduck",
+    "page": "https://opengameart.org/node/86018",
+    "download": "https://opengameart.org/sites/default/files/80-CC0-RPG-SFX_0.zip",
+    "sha256": "1c2f06ff4e8563b5b8b745b23cf213c1474142a69bb82bd8f5e10d9b3f7a7bbd"
+  }
+]

@@ -1,23 +1,39 @@
 [gd_resource type="Resource" script_class="TapeData" format=3]
 
-[ext_resource type="Script" path="res://game/schemas/tape_data.gd" id="1_pj4ji"]
-[ext_resource type="Script" path="res://game/schemas/sub_line.gd" id="2_37i51"]
+[ext_resource type="Script" path="res://game/schemas/tape_data.gd" id="1"]
+[ext_resource type="Script" path="res://game/schemas/sub_line.gd" id="2"]
+[ext_resource type="AudioStream" path="res://game/audio/g01/radio_en.ogg" id="en"]
+[ext_resource type="AudioStream" path="res://game/audio/g01/radio_fr_CA.ogg" id="fr_CA"]
 
-[sub_resource type="Resource" id="Resource_pj4ji"]
-script = ExtResource("2_37i51")
-start = 0.3
-end = 4.5
-key = "tape.vo_p01_radio.line1"
-
-[sub_resource type="Resource" id="Resource_37i51"]
-script = ExtResource("2_37i51")
-start = 4.8
-end = 6.5
+[sub_resource type="Resource" id="en_0"]
+script = ExtResource("2")
+start = 0.000
+end = 0.600
 key = "tape.vo_p01_radio.line2"
 
+[sub_resource type="Resource" id="en_1"]
+script = ExtResource("2")
+start = 0.650
+end = 3.570
+key = "tape.vo_p01_radio.line1"
+
+[sub_resource type="Resource" id="fr_CA_0"]
+script = ExtResource("2")
+start = 0.000
+end = 0.600
+key = "tape.vo_p01_radio.line2"
+
+[sub_resource type="Resource" id="fr_CA_1"]
+script = ExtResource("2")
+start = 0.650
+end = 3.431
+key = "tape.vo_p01_radio.line1"
+
 [resource]
-script = ExtResource("1_pj4ji")
+script = ExtResource("1")
 id = &"vo_p01_radio"
 title_key = "tape.vo_p01_radio.title"
-subtitles = Array[ExtResource("2_37i51")]([SubResource("Resource_pj4ji"), SubResource("Resource_37i51")])
+audio = Dictionary[String, AudioStream]({"en": ExtResource("en"), "fr_CA": ExtResource("fr_CA")})
+subtitles = Array[ExtResource("2")]([SubResource("en_0"), SubResource("en_1")])
+per_locale_subtitles = Dictionary[String, Array]({"fr_CA": [SubResource("fr_CA_0"), SubResource("fr_CA_1")]})
 listed_in_files = false

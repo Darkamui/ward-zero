@@ -1,0 +1,87 @@
+[
+  {
+    "id": "claire_en",
+    "file": "game/audio/g01/claire_en.ogg",
+    "seconds": 7.3,
+    "peak_dbfs": -8.89,
+    "sha256": "856e2681c18a6a521e3f55996e63bb8e708e2e9c247e07494918982612868a72",
+    "subtitles": [
+      [
+        0.5,
+        3,
+        "tape.01_claire.line1"
+      ],
+      [
+        3.5,
+        7,
+        "tape.01_claire.line2"
+      ]
+    ]
+  },
+  {
+    "id": "radio_en",
+    "file": "game/audio/g01/radio_en.ogg",
+    "seconds": 3.87,
+    "peak_dbfs": -8.27,
+    "sha256": "8f80b11800af76732590576cbbefdaa3710f0caf200b8568fc40fbebcbbb9fc3",
+    "subtitles": [
+      [
+        0,
+        0.6,
+        "tape.vo_p01_radio.line2"
+      ],
+      [
+        0.65,
+        3.5702916666666664,
+        "tape.vo_p01_radio.line1"
+      ]
+    ]
+  },
+  {
+    "id": "claire_fr_CA",
+    "file": "game/audio/g01/claire_fr_CA.ogg",
+    "seconds": 7.3,
+    "peak_dbfs": -6.63,
+    "sha256": "95aafd93dbfb73b55ed656b028cf2af5010c7bcaf670a50a8d1f538c045d17ee",
+    "subtitles": [
+      [
+        0.5,
+        3,
+        "tape.01_claire.line1"
+      ],
+      [
+        3.5,
+        7,
+        "tape.01_claire.line2"
+      ]
+    ]
+  },
+  {
+    "id": "radio_fr_CA",
+    "file": "game/audio/g01/radio_fr_CA.ogg",
+    "seconds": 3.731,
+    "peak_dbfs": -10.42,
+    "sha256": "abb6da310ed8fd801ceb1191b8271b913106e1687cb89b2733f6b6d9cb74da9d",
+    "subtitles": [
+      [
+        0,
+        0.6,
+        "tape.vo_p01_radio.line2"
+      ],
+      [
+        0.65,
+        3.430833333333333,
+        "tape.vo_p01_radio.line1"
+      ]
+    ]
+  },
+  {
+    "id": "safe_room",
+    "file": "game/audio/g01/safe_room.ogg",
+    "seconds": 148.314,
+    "peak_dbfs": -5.95,
+    "sha256": "edad6ca149fec6304b52f153b94eb22e8f2291b802a0ef0866709ae62b3bc5f7",
+    "loop": true,
+    "source_sha256": "159a2bb84cfdbdbd6a519699d7a76bb1d4305a1afcaccf941fbea5d09b063e66"
+  }
+]

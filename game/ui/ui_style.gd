@@ -15,6 +15,39 @@ const UI_FONT := preload("res://game/ui/fonts/IBMPlexSans.ttf")
 const TYPEWRITER_FONT := preload("res://game/ui/fonts/CourierPrime-Regular.ttf")
 const TYPEWRITER_BOLD := preload("res://game/ui/fonts/CourierPrime-Bold.ttf")
 const HANDWRITTEN_FONT := preload("res://game/ui/fonts/Caveat.ttf")
+const ICONS := {
+	"eye": preload("res://assets/icons/eye-ivory.svg"),
+	"hand": preload("res://assets/icons/hand-ivory.svg"),
+	"combine": preload("res://assets/icons/combine-ivory.svg"),
+	"folder": preload("res://assets/icons/folder-ivory.svg"),
+	"key": preload("res://assets/icons/key-ivory.svg"),
+	"cassette": preload("res://assets/icons/cassette-ivory.svg"),
+	"back": preload("res://assets/icons/back-ivory.svg"),
+	"exit": preload("res://assets/icons/exit-ivory.svg"),
+	"play": preload("res://assets/icons/play-ivory.svg"),
+}
+const PAPER_ICONS := {
+	"eye": preload("res://assets/icons/eye-ink.svg"),
+	"folder": preload("res://assets/icons/folder-ink.svg"),
+	"cassette": preload("res://assets/icons/cassette-ink.svg"),
+	"play": preload("res://assets/icons/play-ink.svg"),
+}
+const BUTTON_ICONS := {
+	"ui.common.back": "back",
+	"puzzle.common.back": "back",
+	"ui.inventory.examine": "eye",
+	"ui.inventory.use": "hand",
+	"ui.inventory.combine": "combine",
+	"ui.inventory.drop": "exit",
+	"ui.inventory.key_pouch": "key",
+	"ui.bin.store": "folder",
+	"ui.bin.take": "hand",
+	"ui.files.documents": "folder",
+	"ui.files.fragments": "folder",
+	"ui.files.tapes": "cassette",
+	"ui.files.read": "eye",
+	"ui.files.play": "play",
+}
 
 static var _theme: Theme
 
@@ -81,7 +114,35 @@ static func button(text_key: String, on_pressed: Callable, size := 28) -> Button
 	b.text = text_key
 	b.add_theme_font_size_override("font_size", size)
 	b.pressed.connect(on_pressed)
+	b.pressed.connect(AudioDirector.play_ui_click)
+	if BUTTON_ICONS.has(text_key):
+		b.icon = ICONS[BUTTON_ICONS[text_key]]
+		b.add_theme_constant_override("h_separation", 10)
 	return b
+
+
+static func paper_button(text_key: String, on_pressed: Callable, size := 26) -> Button:
+	var b := button(text_key, on_pressed, size)
+	if BUTTON_ICONS.has(text_key):
+		b.icon = PAPER_ICONS.get(BUTTON_ICONS[text_key])
+	for state in ["font_color", "font_hover_color", "font_focus_color", "font_pressed_color"]:
+		b.add_theme_color_override(state, PAPER_INK)
+	b.add_theme_stylebox_override("normal", _box(Color(0, 0, 0, 0), 1, Color(0.4, 0.3, 0.2, 0.4)))
+	b.add_theme_stylebox_override("hover", _box(Color(1, 1, 1, 0.2), 2, PAPER_INK))
+	b.add_theme_stylebox_override("pressed", _box(Color(0.3, 0.2, 0.1, 0.18), 2, PAPER_INK))
+	b.add_theme_stylebox_override("focus", _box(Color(0, 0, 0, 0), 2, PAPER_INK))
+	return b
+
+
+static func artwork(texture: Texture2D, at: Vector2, dimensions: Vector2) -> TextureRect:
+	var art := TextureRect.new()
+	art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	art.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	art.texture = texture
+	art.position = at
+	art.size = dimensions
+	art.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	return art
 
 
 ## Panel of at least the given size, centered in parent (which should fill the screen).

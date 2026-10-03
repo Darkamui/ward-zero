@@ -44,6 +44,20 @@ func test_cameras_match_room_data() -> void:
 	assert_eq(CameraDirector.active_id, &"cam_a")
 
 
+func test_visual_proxies_keep_collision_separate() -> void:
+	var room := _load(&"spawn_start")
+	for part in ["chair", "couch", "pillar", "table_radio", "table_recorder", "bin"]:
+		var collider := room.get_node("Geometry/col_" + part) as MeshInstance3D
+		assert_false(collider.visible, "collision box must not hide the player: " + part)
+		assert_true(collider.get_child_count() > 0, "collision body retained: " + part)
+		var visual := room.get_node("Geometry/VisualProxies").find_child("vis_" + part, true, false)
+		assert_true(visual is MeshInstance3D, "detailed silhouette: " + part)
+		if visual is MeshInstance3D:
+			assert_true(visual.visible, "visual proxy active: " + part)
+			assert_eq(visual.get_child_count(), 0, "visual mesh creates no collision: " + part)
+			assert_true(visual.material_override is ShaderMaterial, "background shader: " + part)
+
+
 func test_zone_hysteresis() -> void:
 	_load(&"spawn_start")
 	assert_eq(CameraDirector.zone_camera_for(Vector3(-2, 0, 0)), &"cam_a")
@@ -130,3 +144,52 @@ func test_walk_across_cut_arrives() -> void:
 	CameraDirector.camera_cut.disconnect(on_cut)
 	assert_true(arrived[0], "player reached the door (at %s)" % _player.global_position)
 	assert_eq(cuts, [&"cam_b"], "one cut on the way")
+
+
+func test_radio_reward_updates_both_chain_backgrounds_without_cut() -> void:
+	var room := _load(&"spawn_start")
+	CameraDirector.cut_to(&"cam_a")
+	for def in room.room_data.cameras:
+		assert_true(def.state_background != null, "released art for " + String(def.id))
+		assert_eq(CameraDirector.background_for(def.id), def.background)
+	var cuts: Array[StringName] = []
+	var on_cut := func(id: StringName) -> void: cuts.append(id)
+	CameraDirector.camera_cut.connect(on_cut)
+	var puzzle := PuzzleBase.new()
+	puzzle.data = ContentDB.get_puzzle(&"P01")
+	puzzle.logic = PuzzleValues.make_logic(puzzle.data)
+	assert_true(puzzle.logic.apply_solution())
+	puzzle.report_attempt(true)
+	puzzle.free()
+	for def in room.room_data.cameras:
+		assert_eq(
+			CameraDirector.background_for(def.id), def.state_background, "radio switches " + String(def.id)
+		)
+	assert_eq(cuts.size(), 0, "state refresh does not move the camera")
+	CameraDirector.camera_cut.disconnect(on_cut)
+	CameraDirector.cut_to(&"cam_b")
+	assert_eq(CameraDirector.background_for(&"cam_b"), room.room_data.get_camera(&"cam_b").state_background)
+	GameState.set_flag("g01.chain_released", false)
+	assert_eq(CameraDirector.background_for(&"cam_b"), room.room_data.get_camera(&"cam_b").background)
+
+
+func test_chain_art_survives_state_restore_and_room_reentry() -> void:
+	var room := _load(&"spawn_start")
+	GameState.set_flag("g01.chain_released")
+	var saved := GameState.to_dict()
+	GameState.set_flag("g01.chain_released", false)
+	GameState.from_dict(saved)
+	assert_eq(CameraDirector.background_for(&"cam_a"), room.room_data.get_camera(&"cam_a").state_background)
+	var lobby := RoomManager.load_room_now(ContentDB.get_room(&"G02"), &"spawn_from_g01")
+	for def in lobby.room_data.cameras:
+		assert_eq(
+			CameraDirector.background_for(def.id), def.background, "G01 flag does not change another room"
+		)
+	room = _load(&"spawn_from_g02")
+	for def in room.room_data.cameras:
+		assert_eq(CameraDirector.background_for(def.id), def.state_background, "released on return")
+	assert_false((room.get_node("Hotspots/hs_door") as Interactable).is_locked())
+	GameState.reset()
+	room = _load(&"spawn_start")
+	for def in room.room_data.cameras:
+		assert_eq(CameraDirector.background_for(def.id), def.background, "new game starts chained")

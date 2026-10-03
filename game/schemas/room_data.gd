@@ -27,6 +27,9 @@ const SCHEMA_VERSION := 1
 @export var enter_triggers: Array[EnterTrigger] = []
 @export var ambience_present: AudioStream
 @export var ambience_memory: AudioStream
+## Optional present-day score, unlocked by a story flag when specified.
+@export var music_present: AudioStream
+@export var music_unlock_flag: StringName
 
 
 func get_exit(exit_id: StringName) -> ExitDef:

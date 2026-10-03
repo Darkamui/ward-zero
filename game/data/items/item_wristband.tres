@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_li6ex"]
 [ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_2jtw7"]
 [ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_2jtw7"]
+[ext_resource type="PackedScene" path="res://game/items/wristband/wristband.tscn" id="4_model"]
+[ext_resource type="Texture2D" path="res://game/items/icons/item_wristband.png" id="5_icon"]
 
 [sub_resource type="Resource" id="Resource_2jtw7"]
 script = ExtResource("1_li6ex")
@@ -14,6 +16,8 @@ script = ExtResource("2_2jtw7")
 id = &"item_wristband"
 name_key = "item.wristband.name"
 desc_key = "item.wristband.desc"
+examine_model = ExtResource("4_model")
+icon = ExtResource("5_icon")
 examine_reveals = Array[ExtResource("1_li6ex")]([SubResource("Resource_2jtw7")])
 storage = 1
 kind = 5

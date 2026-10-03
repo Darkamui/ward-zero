@@ -1,0 +1,247 @@
+[
+  {
+    "id": "claire_name",
+    "endpoint_id": "google/gemini-3.8-flash-tts",
+    "input": {
+      "prompt": "Mathieu…",
+      "voice": "Leda",
+      "style_instructions": "An original fictional little girl calling quietly to her brother. Small, young, natural voice, restrained and lonely, not squeaky, not theatrical. Speak the French name Mathieu as mah-TYEW, softly, with a trailing breath. No music or sound effects."
+    },
+    "status": "submitted",
+    "recipe": {
+      "endpoint_id": "google/gemini-3.8-flash-tts",
+      "input": {
+        "prompt": "Mathieu…",
+        "voice": "Leda",
+        "style_instructions": "An original fictional little girl calling quietly to her brother. Small, young, natural voice, restrained and lonely, not squeaky, not theatrical. Speak the French name Mathieu as mah-TYEW, softly, with a trailing breath. No music or sound effects."
+      },
+      "note": "These are the submitted inputs, not resolved server defaults. For a variation, copy them and change only requested fields; reuse returned_seed when supported by the schema. Source URLs may expire."
+    },
+    "request_id": "01a1040e-f941-7bf3-9e47-fdcd525fa3de",
+    "status_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040e-f941-7bf3-9e47-fdcd525fa3de/status",
+    "response_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040e-f941-7bf3-9e47-fdcd525fa3de",
+    "cancel_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040e-f941-7bf3-9e47-fdcd525fa3de/cancel",
+    "poll_after_seconds": 20,
+    "polling_hint": "Wait poll_after_seconds before calling check_job with the same request_id and status_url. This interval is not an ETA. Report meaningful status changes rather than repeating unchanged progress. Do not submit another job to check progress.",
+    "hint": "Job submitted. Use check_job with status_url to check status, then get_job_result with response_url when it completes.",
+    "result": {
+      "status": "completed",
+      "endpoint_id": "google/gemini-3.8-flash-tts",
+      "request_id": "01a1040e-f941-7bf3-9e47-fdcd525fa3de",
+      "response_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040e-f941-7bf3-9e47-fdcd525fa3de",
+      "result": {
+        "audio": {
+          "url": "https://v3b.fal.media/files/b/0aacf481/8nkCAsrSq69sSxT4LDvoh_gemini_tts_output.wav",
+          "content_type": "audio/wav",
+          "file_name": "gemini_tts_output.wav",
+          "file_size": 69426
+        }
+      },
+      "media": [
+        {
+          "url": "https://v3b.fal.media/files/b/0aacf481/8nkCAsrSq69sSxT4LDvoh_gemini_tts_output.wav",
+          "json_path": "result.audio.url",
+          "content_type": "audio/wav",
+          "file_name": "gemini_tts_output.wav"
+        }
+      ],
+      "display_hint": "Present completed media to the user. Forward attached image content blocks to the host's image display helper (for example, image(block)); do not stringify image blocks as text. For Markdown previews use previews[].preview_url, and separately link original_url as the full-resolution file. If no preview is available, show a clearly labeled original-file link. Do not claim a preview rendered unless it is visible. Video, audio and 3D URLs are original result files, not queue URLs."
+    }
+  },
+  {
+    "id": "claire_en",
+    "endpoint_id": "google/gemini-3.8-flash-tts",
+    "input": {
+      "prompt": "Mathieu… come and get me.",
+      "voice": "Leda",
+      "style_instructions": "An original fictional little girl, about six, quietly calling to her older brother. Same small youthful natural voice, soft and lonely, restrained, not squeaky or theatrical. English with a subtle French-Canadian accent. Mathieu is pronounced mah-TYEW. A short pause after the name. No music or sound effects."
+    },
+    "status": "submitted",
+    "recipe": {
+      "endpoint_id": "google/gemini-3.8-flash-tts",
+      "input": {
+        "prompt": "Mathieu… come and get me.",
+        "voice": "Leda",
+        "style_instructions": "An original fictional little girl, about six, quietly calling to her older brother. Same small youthful natural voice, soft and lonely, restrained, not squeaky or theatrical. English with a subtle French-Canadian accent. Mathieu is pronounced mah-TYEW. A short pause after the name. No music or sound effects."
+      },
+      "note": "These are the submitted inputs, not resolved server defaults. For a variation, copy them and change only requested fields; reuse returned_seed when supported by the schema. Source URLs may expire."
+    },
+    "request_id": "01a1040e-ff1c-7e70-9ef1-7120f07de9ff",
+    "status_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040e-ff1c-7e70-9ef1-7120f07de9ff/status",
+    "response_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040e-ff1c-7e70-9ef1-7120f07de9ff",
+    "cancel_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040e-ff1c-7e70-9ef1-7120f07de9ff/cancel",
+    "poll_after_seconds": 20,
+    "polling_hint": "Wait poll_after_seconds before calling check_job with the same request_id and status_url. This interval is not an ETA. Report meaningful status changes rather than repeating unchanged progress. Do not submit another job to check progress.",
+    "hint": "Job submitted. Use check_job with status_url to check status, then get_job_result with response_url when it completes.",
+    "result": {
+      "status": "completed",
+      "endpoint_id": "google/gemini-3.8-flash-tts",
+      "request_id": "01a1040e-ff1c-7e70-9ef1-7120f07de9ff",
+      "response_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040e-ff1c-7e70-9ef1-7120f07de9ff",
+      "result": {
+        "audio": {
+          "url": "https://v3b.fal.media/files/b/0aacf481/e1GBqwMz0A9_zb_lbyaJq_gemini_tts_output.wav",
+          "content_type": "audio/wav",
+          "file_name": "gemini_tts_output.wav",
+          "file_size": 138546
+        }
+      },
+      "media": [
+        {
+          "url": "https://v3b.fal.media/files/b/0aacf481/e1GBqwMz0A9_zb_lbyaJq_gemini_tts_output.wav",
+          "json_path": "result.audio.url",
+          "content_type": "audio/wav",
+          "file_name": "gemini_tts_output.wav"
+        }
+      ],
+      "display_hint": "Present completed media to the user. Forward attached image content blocks to the host's image display helper (for example, image(block)); do not stringify image blocks as text. For Markdown previews use previews[].preview_url, and separately link original_url as the full-resolution file. If no preview is available, show a clearly labeled original-file link. Do not claim a preview rendered unless it is visible. Video, audio and 3D URLs are original result files, not queue URLs."
+    }
+  },
+  {
+    "id": "claire_fr_CA",
+    "endpoint_id": "google/gemini-3.8-flash-tts",
+    "input": {
+      "prompt": "Mathieu… viens me chercher.",
+      "voice": "Leda",
+      "style_instructions": "Une petite fille fictive de six ans appelle doucement son frère. Voix petite, jeune, naturelle, douce et solitaire, sans caricature ni jeu théâtral. Français québécois naturel, pas un accent parisien. Une courte pause après Mathieu. Aucun bruit ni musique."
+    },
+    "status": "submitted",
+    "recipe": {
+      "endpoint_id": "google/gemini-3.8-flash-tts",
+      "input": {
+        "prompt": "Mathieu… viens me chercher.",
+        "voice": "Leda",
+        "style_instructions": "Une petite fille fictive de six ans appelle doucement son frère. Voix petite, jeune, naturelle, douce et solitaire, sans caricature ni jeu théâtral. Français québécois naturel, pas un accent parisien. Une courte pause après Mathieu. Aucun bruit ni musique."
+      },
+      "note": "These are the submitted inputs, not resolved server defaults. For a variation, copy them and change only requested fields; reuse returned_seed when supported by the schema. Source URLs may expire."
+    },
+    "request_id": "01a1040f-0341-7960-a03d-0dd407a1667b",
+    "status_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040f-0341-7960-a03d-0dd407a1667b/status",
+    "response_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040f-0341-7960-a03d-0dd407a1667b",
+    "cancel_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040f-0341-7960-a03d-0dd407a1667b/cancel",
+    "poll_after_seconds": 20,
+    "polling_hint": "Wait poll_after_seconds before calling check_job with the same request_id and status_url. This interval is not an ETA. Report meaningful status changes rather than repeating unchanged progress. Do not submit another job to check progress.",
+    "hint": "Job submitted. Use check_job with status_url to check status, then get_job_result with response_url when it completes.",
+    "result": {
+      "status": "completed",
+      "endpoint_id": "google/gemini-3.8-flash-tts",
+      "request_id": "01a1040f-0341-7960-a03d-0dd407a1667b",
+      "response_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040f-0341-7960-a03d-0dd407a1667b",
+      "result": {
+        "audio": {
+          "url": "https://v3b.fal.media/files/b/0aacf481/BimLE2OnLXEank4rBa47e_gemini_tts_output.wav",
+          "content_type": "audio/wav",
+          "file_name": "gemini_tts_output.wav",
+          "file_size": 178866
+        }
+      },
+      "media": [
+        {
+          "url": "https://v3b.fal.media/files/b/0aacf481/BimLE2OnLXEank4rBa47e_gemini_tts_output.wav",
+          "json_path": "result.audio.url",
+          "content_type": "audio/wav",
+          "file_name": "gemini_tts_output.wav"
+        }
+      ],
+      "display_hint": "Present completed media to the user. Forward attached image content blocks to the host's image display helper (for example, image(block)); do not stringify image blocks as text. For Markdown previews use previews[].preview_url, and separately link original_url as the full-resolution file. If no preview is available, show a clearly labeled original-file link. Do not claim a preview rendered unless it is visible. Video, audio and 3D URLs are original result files, not queue URLs."
+    }
+  },
+  {
+    "id": "radio_en",
+    "endpoint_id": "google/gemini-3.8-flash-tts",
+    "input": {
+      "prompt": "…it’s all right. You can open the door now.",
+      "voice": "Sulafat",
+      "style_instructions": "An original fictional woman in her forties, calm, low-key reassurance, quietly authoritative, intimate conversational English with a subtle French-Canadian accent. Gentle but slightly detached, no menace or theatricality. Natural unhurried pace. No music or sound effects."
+    },
+    "status": "submitted",
+    "recipe": {
+      "endpoint_id": "google/gemini-3.8-flash-tts",
+      "input": {
+        "prompt": "…it’s all right. You can open the door now.",
+        "voice": "Sulafat",
+        "style_instructions": "An original fictional woman in her forties, calm, low-key reassurance, quietly authoritative, intimate conversational English with a subtle French-Canadian accent. Gentle but slightly detached, no menace or theatricality. Natural unhurried pace. No music or sound effects."
+      },
+      "note": "These are the submitted inputs, not resolved server defaults. For a variation, copy them and change only requested fields; reuse returned_seed when supported by the schema. Source URLs may expire."
+    },
+    "request_id": "01a1040f-07ef-7620-aa15-6767f68db3d7",
+    "status_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040f-07ef-7620-aa15-6767f68db3d7/status",
+    "response_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040f-07ef-7620-aa15-6767f68db3d7",
+    "cancel_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040f-07ef-7620-aa15-6767f68db3d7/cancel",
+    "poll_after_seconds": 20,
+    "polling_hint": "Wait poll_after_seconds before calling check_job with the same request_id and status_url. This interval is not an ETA. Report meaningful status changes rather than repeating unchanged progress. Do not submit another job to check progress.",
+    "hint": "Job submitted. Use check_job with status_url to check status, then get_job_result with response_url when it completes.",
+    "result": {
+      "status": "completed",
+      "endpoint_id": "google/gemini-3.8-flash-tts",
+      "request_id": "01a1040f-07ef-7620-aa15-6767f68db3d7",
+      "response_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040f-07ef-7620-aa15-6767f68db3d7",
+      "result": {
+        "audio": {
+          "url": "https://v3b.fal.media/files/b/0aacf481/mjI9Eyvf7f5fCUcR5zxpU_gemini_tts_output.wav",
+          "content_type": "audio/wav",
+          "file_name": "gemini_tts_output.wav",
+          "file_size": 167346
+        }
+      },
+      "media": [
+        {
+          "url": "https://v3b.fal.media/files/b/0aacf481/mjI9Eyvf7f5fCUcR5zxpU_gemini_tts_output.wav",
+          "json_path": "result.audio.url",
+          "content_type": "audio/wav",
+          "file_name": "gemini_tts_output.wav"
+        }
+      ],
+      "display_hint": "Present completed media to the user. Forward attached image content blocks to the host's image display helper (for example, image(block)); do not stringify image blocks as text. For Markdown previews use previews[].preview_url, and separately link original_url as the full-resolution file. If no preview is available, show a clearly labeled original-file link. Do not claim a preview rendered unless it is visible. Video, audio and 3D URLs are original result files, not queue URLs."
+    }
+  },
+  {
+    "id": "radio_fr_CA",
+    "endpoint_id": "google/gemini-3.8-flash-tts",
+    "input": {
+      "prompt": "…c’est correct. Tu peux ouvrir la porte maintenant.",
+      "voice": "Sulafat",
+      "style_instructions": "Une femme fictive dans la quarantaine, voix calme et rassurante, légèrement distante. Français québécois naturel et familier, pas un accent parisien. Douce autorité, débit naturel posé, sans théâtralité. Aucun bruit ni musique."
+    },
+    "status": "submitted",
+    "recipe": {
+      "endpoint_id": "google/gemini-3.8-flash-tts",
+      "input": {
+        "prompt": "…c’est correct. Tu peux ouvrir la porte maintenant.",
+        "voice": "Sulafat",
+        "style_instructions": "Une femme fictive dans la quarantaine, voix calme et rassurante, légèrement distante. Français québécois naturel et familier, pas un accent parisien. Douce autorité, débit naturel posé, sans théâtralité. Aucun bruit ni musique."
+      },
+      "note": "These are the submitted inputs, not resolved server defaults. For a variation, copy them and change only requested fields; reuse returned_seed when supported by the schema. Source URLs may expire."
+    },
+    "request_id": "01a1040f-0c5c-78a3-9ad3-3c6cb76cf261",
+    "status_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040f-0c5c-78a3-9ad3-3c6cb76cf261/status",
+    "response_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040f-0c5c-78a3-9ad3-3c6cb76cf261",
+    "cancel_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040f-0c5c-78a3-9ad3-3c6cb76cf261/cancel",
+    "poll_after_seconds": 20,
+    "polling_hint": "Wait poll_after_seconds before calling check_job with the same request_id and status_url. This interval is not an ETA. Report meaningful status changes rather than repeating unchanged progress. Do not submit another job to check progress.",
+    "hint": "Job submitted. Use check_job with status_url to check status, then get_job_result with response_url when it completes.",
+    "result": {
+      "status": "completed",
+      "endpoint_id": "google/gemini-3.8-flash-tts",
+      "request_id": "01a1040f-0c5c-78a3-9ad3-3c6cb76cf261",
+      "response_url": "https://queue.fal.run/google/gemini-3.8-flash-tts/requests/01a1040f-0c5c-78a3-9ad3-3c6cb76cf261",
+      "result": {
+        "audio": {
+          "url": "https://v3b.fal.media/files/b/0aacf482/1vdhJmH-mhjHmMoOnkkKm_gemini_tts_output.wav",
+          "content_type": "audio/wav",
+          "file_name": "gemini_tts_output.wav",
+          "file_size": 153906
+        }
+      },
+      "media": [
+        {
+          "url": "https://v3b.fal.media/files/b/0aacf482/1vdhJmH-mhjHmMoOnkkKm_gemini_tts_output.wav",
+          "json_path": "result.audio.url",
+          "content_type": "audio/wav",
+          "file_name": "gemini_tts_output.wav"
+        }
+      ],
+      "display_hint": "Present completed media to the user. Forward attached image content blocks to the host's image display helper (for example, image(block)); do not stringify image blocks as text. For Markdown previews use previews[].preview_url, and separately link original_url as the full-resolution file. If no preview is available, show a clearly labeled original-file link. Do not claim a preview rendered unless it is visible. Video, audio and 3D URLs are original result files, not queue URLs."
+    }
+  }
+]

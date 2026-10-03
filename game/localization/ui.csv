@@ -23,6 +23,8 @@ ui.month.11,November,novembre
 ui.month.12,December,décembre
 ui.common.back,Back,Retour
 ui.inventory.title,Satchel,Sacoche
+ui.inventory.capacity,{used} / {total} slots occupied,{used} / {total} emplacements occupés
+ui.inventory.select,Select an item to examine or use it.,Choisissez un objet pour l’examiner ou l’utiliser.
 ui.inventory.key_pouch,Key pouch,Pochette à clés
 ui.inventory.examine,Examine,Examiner
 ui.inventory.use,Use,Utiliser
@@ -30,14 +32,22 @@ ui.inventory.combine,Combine,Combiner
 ui.inventory.drop,Drop,Déposer
 ui.inventory.combine_pick,Choose the item to combine it with.,Choisissez l’objet avec lequel le combiner.
 ui.inventory.no_combine,Those don’t go together.,Ça ne va pas ensemble.
-ui.inventory.examine_hint,Drag to turn. Scroll to zoom. Right-click to stop.,Faites glisser pour tourner. Molette pour zoomer. Clic droit pour arrêter.
+ui.inventory.examine_hint,Drag / arrows: turn. Wheel / + −: zoom. Home: reset.,Glisser / flèches : tourner. Molette / + − : zoomer. Début : réinitialiser.
+ui.document.larger,Larger text (+),Agrandir le texte (+)
+ui.document.smaller,Smaller text (−),Réduire le texte (−)
+ui.document.controls,Scroll / PgUp / PgDn to read,Molette / Page préc. / Page suiv. pour lire
 ui.bin.title,Effects bin,Coffre d’effets
 ui.bin.hint,Double-click an item in the bin to take it.,Double-cliquez sur un objet du coffre pour le prendre.
 ui.bin.store,Store,Ranger
+ui.bin.take,Take selected item,Prendre l’objet choisi
 ui.files.title,Patient file,Dossier du patient
 ui.files.documents,Documents,Documents
 ui.files.tapes,Tapes,Cassettes
 ui.files.fragments,Fragments,Fragments
+ui.files.empty,No entries yet.,Aucun élément pour le moment.
+ui.files.read,Read document,Lire le document
+ui.files.play,Play tape,Écouter la cassette
+ui.files.tape_hint,Replay this recording on the dictaphone.,Réécoutez cet enregistrement sur le dictaphone.
 ui.options.title,Options,Options
 ui.options.language,Language,Langue
 ui.options.lang_en,English,English

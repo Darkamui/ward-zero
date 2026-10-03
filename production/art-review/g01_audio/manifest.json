@@ -1,0 +1,90 @@
+[
+  {
+    "id": "ui_click",
+    "source": "kenney-interface/Audio/click_001.ogg",
+    "file": "game/audio/g01/ui_click.wav",
+    "seconds": 0.033,
+    "peak_dbfs": -12.0,
+    "loop": false
+  },
+  {
+    "id": "satchel",
+    "source": "kenney-rpg/Audio/handleSmallLeather.ogg",
+    "file": "game/audio/g01/satchel.wav",
+    "seconds": 0.206,
+    "peak_dbfs": -9.0,
+    "loop": false
+  },
+  {
+    "id": "folder",
+    "source": "kenney-rpg/Audio/bookOpen.ogg",
+    "file": "game/audio/g01/folder.wav",
+    "seconds": 0.153,
+    "peak_dbfs": -9.0,
+    "loop": false
+  },
+  {
+    "id": "paper",
+    "source": "owlish/Paper/pageturn1.wav",
+    "file": "game/audio/g01/paper.wav",
+    "seconds": 0.45,
+    "peak_dbfs": -9.0,
+    "loop": false
+  },
+  {
+    "id": "door_close",
+    "source": "kenney-rpg/Audio/doorClose_1.ogg",
+    "file": "game/audio/g01/door_close.wav",
+    "seconds": 0.43,
+    "peak_dbfs": -6.0,
+    "loop": false
+  },
+  {
+    "id": "step_1",
+    "source": "owlish/Footsteps/hard-footstep1.wav",
+    "file": "game/audio/g01/step_1.wav",
+    "seconds": 0.369,
+    "peak_dbfs": -9.0,
+    "loop": false
+  },
+  {
+    "id": "step_2",
+    "source": "owlish/Footsteps/hard-footstep2.wav",
+    "file": "game/audio/g01/step_2.wav",
+    "seconds": 0.36,
+    "peak_dbfs": -9.0,
+    "loop": false
+  },
+  {
+    "id": "step_3",
+    "source": "owlish/Footsteps/hard-footstep3.wav",
+    "file": "game/audio/g01/step_3.wav",
+    "seconds": 0.425,
+    "peak_dbfs": -9.0,
+    "loop": false
+  },
+  {
+    "id": "step_4",
+    "source": "owlish/Footsteps/hard-footstep4.wav",
+    "file": "game/audio/g01/step_4.wav",
+    "seconds": 0.25,
+    "peak_dbfs": -9.0,
+    "loop": false
+  },
+  {
+    "id": "chain_release",
+    "source": "rubberduck/chain_01.ogg",
+    "file": "game/audio/g01/chain_release.wav",
+    "seconds": 0.367,
+    "peak_dbfs": -6.0,
+    "loop": false
+  },
+  {
+    "id": "dayroom_loop",
+    "source": "room-tone/TheShopCollection_convenience_store_drinks_fridge_drone.wav",
+    "file": "game/audio/g01/dayroom_loop.ogg",
+    "seconds": 10.437,
+    "peak_dbfs": -13.49,
+    "loop": true
+  }
+]

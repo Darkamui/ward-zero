@@ -1,0 +1,173 @@
+[
+  {
+    "id": "ui_click_1",
+    "seconds": 0.14,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Small dry mechanical interface click",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "ui_click_2",
+    "seconds": 0.14,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Small dry mechanical interface click",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "ui_click_3",
+    "seconds": 0.14,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Small dry mechanical interface click",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "radio_detent",
+    "seconds": 0.22,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Tuning knob detent",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "patch_plug_insert",
+    "seconds": 0.45,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Short plug seating knock",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "safe_latch",
+    "seconds": 0.65,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Safe latch release",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "chain_release",
+    "seconds": 0.8,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Synthetic chain rattle",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "paper_turn",
+    "seconds": 0.9,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Paper-like noise sweep",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "cassette_transport",
+    "seconds": 0.5,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Cassette transport click",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "footstep_1",
+    "seconds": 0.48,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Synthetic shoe impact variation; replace with foley for final realism",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "footstep_2",
+    "seconds": 0.48,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Synthetic shoe impact variation; replace with foley for final realism",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "footstep_3",
+    "seconds": 0.48,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Synthetic shoe impact variation; replace with foley for final realism",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "footstep_4",
+    "seconds": 0.48,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Synthetic shoe impact variation; replace with foley for final realism",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "door_close",
+    "seconds": 1.2,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Low door-closing impact",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "telephone_ring",
+    "seconds": 1.8,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Stylized telephone ring pulse, not period-authentic bell foley",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "memory_shift",
+    "seconds": 3.0,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Gentle harmonic memory transition, no sudden transient",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "heartbeat",
+    "seconds": 1.1,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": false,
+    "description": "Two-beat pulse, timing controlled by engine",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "electrical_hum_loop",
+    "seconds": 8.0,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": true,
+    "description": "Low electrical room hum; adjust volume conservatively",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  },
+  {
+    "id": "radio_static_loop",
+    "seconds": 8.0,
+    "sample_rate": 48000,
+    "channels": 1,
+    "loop": true,
+    "description": "Broadband synthetic radio static; use at low level and attenuate near target frequency",
+    "status": "synthesized prototype effect; requires listening and in-game mix review"
+  }
+]

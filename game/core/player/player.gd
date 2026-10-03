@@ -21,6 +21,7 @@ var locomotion: StringName = &"idle"
 var _moving := false
 var _on_arrive: Callable
 var _noise_timer := 0.0
+var _step_distance := 0.0
 
 @onready var agent: NavigationAgent3D = $NavigationAgent3D
 
@@ -52,6 +53,7 @@ func stop() -> void:
 	_moving = false
 	_on_arrive = Callable()
 	velocity = Vector3.ZERO
+	_step_distance = 0.0
 	_set_locomotion(&"idle")
 	if was_moving:
 		move_cancelled.emit()
@@ -125,7 +127,17 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = 0.0
 		velocity.z = 0.0
+	var previous := global_position
 	move_and_slide()
+	var distance := Vector2(global_position.x - previous.x, global_position.z - previous.z).length()
+	if _moving and is_on_floor() and not is_hidden() and distance < 0.5:
+		_step_distance += distance
+		var stride := 0.85 if running else 0.7
+		if _step_distance >= stride:
+			_step_distance = fmod(_step_distance, stride)
+			AudioDirector.play_footstep(running)
+	else:
+		_step_distance = 0.0
 
 
 func _finish() -> void:

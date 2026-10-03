@@ -28,6 +28,7 @@ Both produce the same room layout, so the game code doesn't care which one made 
 |---|---|---|
 | `floor_` | invisible proxy (draws the background), collision `floor`, navmesh source, receives shadow | clay |
 | `occ_` | invisible proxy, collision `walls`, hides the character behind it | clay |
+| `vis_` | detailed invisible occluder, no collision/navmesh source; pair with a `col_` footprint | clay |
 | `col_` | hidden, collision `walls` | clay |
 | `shadow_` | invisible proxy, shadow only | clay |
 | `art_` | hidden | clay |

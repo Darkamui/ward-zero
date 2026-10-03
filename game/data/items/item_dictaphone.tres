@@ -3,12 +3,16 @@
 [ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_vxbc7"]
 [ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_ckbuq"]
 [ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_ckbuq"]
+[ext_resource type="PackedScene" path="res://game/items/dictaphone/dictaphone.tscn" id="4_model"]
+[ext_resource type="Texture2D" path="res://game/items/icons/item_dictaphone.png" id="5_icon"]
 
 [resource]
 script = ExtResource("2_ckbuq")
 id = &"item_dictaphone"
 name_key = "item.dictaphone.name"
 desc_key = "item.dictaphone.desc"
+examine_model = ExtResource("4_model")
+icon = ExtResource("5_icon")
 storage = 1
 kind = 5
 droppable = false

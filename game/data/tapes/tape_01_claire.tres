@@ -1,22 +1,38 @@
 [gd_resource type="Resource" script_class="TapeData" format=3]
 
-[ext_resource type="Script" path="res://game/schemas/tape_data.gd" id="1_ah5d4"]
-[ext_resource type="Script" path="res://game/schemas/sub_line.gd" id="2_uns4m"]
+[ext_resource type="Script" path="res://game/schemas/tape_data.gd" id="1"]
+[ext_resource type="Script" path="res://game/schemas/sub_line.gd" id="2"]
+[ext_resource type="AudioStream" path="res://game/audio/g01/claire_en.ogg" id="en"]
+[ext_resource type="AudioStream" path="res://game/audio/g01/claire_fr_CA.ogg" id="fr_CA"]
 
-[sub_resource type="Resource" id="Resource_ah5d4"]
-script = ExtResource("2_uns4m")
-start = 0.5
-end = 3.0
+[sub_resource type="Resource" id="en_0"]
+script = ExtResource("2")
+start = 0.500
+end = 3.000
 key = "tape.01_claire.line1"
 
-[sub_resource type="Resource" id="Resource_uns4m"]
-script = ExtResource("2_uns4m")
-start = 3.5
-end = 7.0
+[sub_resource type="Resource" id="en_1"]
+script = ExtResource("2")
+start = 3.500
+end = 7.000
+key = "tape.01_claire.line2"
+
+[sub_resource type="Resource" id="fr_CA_0"]
+script = ExtResource("2")
+start = 0.500
+end = 3.000
+key = "tape.01_claire.line1"
+
+[sub_resource type="Resource" id="fr_CA_1"]
+script = ExtResource("2")
+start = 3.500
+end = 7.000
 key = "tape.01_claire.line2"
 
 [resource]
-script = ExtResource("1_ah5d4")
+script = ExtResource("1")
 id = &"tape_01_claire"
 title_key = "tape.01_claire.title"
-subtitles = Array[ExtResource("2_uns4m")]([SubResource("Resource_ah5d4"), SubResource("Resource_uns4m")])
+audio = Dictionary[String, AudioStream]({"en": ExtResource("en"), "fr_CA": ExtResource("fr_CA")})
+subtitles = Array[ExtResource("2")]([SubResource("en_0"), SubResource("en_1")])
+per_locale_subtitles = Dictionary[String, Array]({"fr_CA": [SubResource("fr_CA_0"), SubResource("fr_CA_1")]})

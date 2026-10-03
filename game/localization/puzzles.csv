@@ -1,7 +1,10 @@
 keys,en,fr_CA
 puzzle.p01.name,Radio,Radio
-puzzle.p01.hint,Drag the dial. Release it on a station.,Faites glisser le cadran. Relâchez-le sur une station.
+puzzle.p01.hint,Drag the needle or turn a knob. Release on the station.,Déplacez l’aiguille ou tournez un bouton. Relâchez sur la station.
 puzzle.p01.signal,Signal,Signal
+puzzle.p01.tuning,Tuning,Syntonisation
+puzzle.p01.fine,Fine tuning,Réglage fin
+puzzle.p01.controls,← →  1 kHz    ·    PgUp / PgDn  10 kHz    ·    Release to tune    ·    Tab  Switch control,← →  1 kHz    ·    Pg. préc. / suiv.  10 kHz    ·    Relâcher pour syntoniser    ·    Tab  Changer de commande
 puzzle.p02.name,Switchboard,Standard téléphonique
 puzzle.p02.hint,Click two jacks to connect them. Click a patched jack to unplug it.,Cliquez sur deux prises pour les relier. Cliquez sur une prise branchée pour la débrancher.
 puzzle.p02.ring,RING,SONNER

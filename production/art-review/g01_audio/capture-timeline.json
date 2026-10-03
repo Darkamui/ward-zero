@@ -1,0 +1,42 @@
+[
+	{
+		"event": "Dayroom room tone",
+		"seconds": 0.073
+	},
+	{
+		"event": "Walk on dayroom floor",
+		"seconds": 1.852
+	},
+	{
+		"event": "Open and close satchel",
+		"seconds": 3.653
+	},
+	{
+		"event": "Open Files and Quiet Hours",
+		"seconds": 4.871
+	},
+	{
+		"event": "Cassette transport starter effect",
+		"seconds": 6.777
+	},
+	{
+		"event": "Radio off station",
+		"seconds": 7.477
+	},
+	{
+		"event": "Radio near station",
+		"seconds": 8.978
+	},
+	{
+		"event": "Radio tuned",
+		"seconds": 9.978
+	},
+	{
+		"event": "Solve: chain release, static stops",
+		"seconds": 10.978
+	},
+	{
+		"event": "Leave world: silence",
+		"seconds": 12.595
+	}
+]

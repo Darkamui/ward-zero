@@ -1,0 +1,300 @@
+{
+  "rooms": [
+    {
+      "id": "G01_dayroom",
+      "size_m": [
+        6,
+        3.3,
+        5
+      ],
+      "doors": [
+        "east"
+      ],
+      "cameras": [
+        {
+          "id": "G01_dayroom_cam_1",
+          "position": [
+            2.6,
+            2.7,
+            2.1
+          ],
+          "target": [
+            0,
+            1,
+            -0.35
+          ]
+        },
+        {
+          "id": "G01_dayroom_cam_2",
+          "position": [
+            -2.6,
+            2.6,
+            -2.1
+          ],
+          "target": [
+            0,
+            1,
+            -0.35
+          ]
+        }
+      ],
+      "status": "furnished blockout; no collision/navmesh/hotspots",
+      "triangles": 16740
+    },
+    {
+      "id": "G02_lobby",
+      "size_m": [
+        8,
+        3.3,
+        7
+      ],
+      "doors": [
+        "west",
+        "east",
+        "north",
+        "south"
+      ],
+      "cameras": [
+        {
+          "id": "G02_lobby_cam_1",
+          "position": [
+            3.6,
+            2.7,
+            3.1
+          ],
+          "target": [
+            0,
+            1,
+            -0.35
+          ]
+        },
+        {
+          "id": "G02_lobby_cam_2",
+          "position": [
+            -3.6,
+            2.6,
+            -3.1
+          ],
+          "target": [
+            0,
+            1,
+            -0.35
+          ]
+        },
+        {
+          "id": "G02_lobby_cam_3",
+          "position": [
+            0,
+            2.8,
+            3.1
+          ],
+          "target": [
+            0,
+            1,
+            -0.35
+          ]
+        }
+      ],
+      "status": "furnished blockout; no collision/navmesh/hotspots",
+      "triangles": 11808
+    },
+    {
+      "id": "G03_reception",
+      "size_m": [
+        4.5,
+        3.3,
+        4
+      ],
+      "doors": [
+        "west",
+        "east"
+      ],
+      "cameras": [
+        {
+          "id": "G03_reception_cam_1",
+          "position": [
+            1.85,
+            2.7,
+            1.6
+          ],
+          "target": [
+            0,
+            1,
+            -0.35
+          ]
+        }
+      ],
+      "status": "furnished blockout; no collision/navmesh/hotspots",
+      "triangles": 24012
+    },
+    {
+      "id": "G04_records",
+      "size_m": [
+        5,
+        3.3,
+        4.5
+      ],
+      "doors": [
+        "west",
+        "east"
+      ],
+      "cameras": [
+        {
+          "id": "G04_records_cam_1",
+          "position": [
+            2.1,
+            2.7,
+            1.85
+          ],
+          "target": [
+            0,
+            1,
+            -0.35
+          ]
+        },
+        {
+          "id": "G04_records_cam_2",
+          "position": [
+            -2.1,
+            2.6,
+            -1.85
+          ],
+          "target": [
+            0,
+            1,
+            -0.35
+          ]
+        }
+      ],
+      "status": "furnished blockout; no collision/navmesh/hotspots",
+      "triangles": 30888
+    },
+    {
+      "id": "G05_administrator",
+      "size_m": [
+        5,
+        3.3,
+        5
+      ],
+      "doors": [
+        "west"
+      ],
+      "cameras": [
+        {
+          "id": "G05_administrator_cam_1",
+          "position": [
+            2.1,
+            2.7,
+            2.1
+          ],
+          "target": [
+            0,
+            1,
+            -0.35
+          ]
+        },
+        {
+          "id": "G05_administrator_cam_2",
+          "position": [
+            -2.1,
+            2.6,
+            -2.1
+          ],
+          "target": [
+            0,
+            1,
+            -0.35
+          ]
+        }
+      ],
+      "status": "furnished blockout; no collision/navmesh/hotspots",
+      "triangles": 10200
+    },
+    {
+      "id": "G06_chapel",
+      "size_m": [
+        6,
+        3.3,
+        9
+      ],
+      "doors": [
+        "south"
+      ],
+      "cameras": [
+        {
+          "id": "G06_chapel_cam_1",
+          "position": [
+            2.6,
+            2.7,
+            4.1
+          ],
+          "target": [
+            0,
+            1,
+            -0.35
+          ]
+        },
+        {
+          "id": "G06_chapel_cam_2",
+          "position": [
+            -2.6,
+            2.6,
+            -4.1
+          ],
+          "target": [
+            0,
+            1,
+            -0.35
+          ]
+        }
+      ],
+      "status": "furnished blockout; no collision/navmesh/hotspots",
+      "triangles": 10152
+    }
+  ],
+  "links": [
+    [
+      "G01_dayroom",
+      "east",
+      "G02_lobby",
+      "west"
+    ],
+    [
+      "G02_lobby",
+      "east",
+      "G03_reception",
+      "west"
+    ],
+    [
+      "G03_reception",
+      "east",
+      "G04_records",
+      "west"
+    ],
+    [
+      "G04_records",
+      "east",
+      "G05_administrator",
+      "west"
+    ],
+    [
+      "G02_lobby",
+      "north",
+      "G06_chapel",
+      "south"
+    ]
+  ],
+  "future_exit": [
+    "G02_lobby",
+    "south"
+  ],
+  "chase_path": [
+    "G02_lobby",
+    "G01_dayroom"
+  ],
+  "notes": [
+    "Graph proposal for this blockout; not final GDD architecture.",
+    "Chapel memory uses exactly the same geometry/cameras with changed wall materials.",
+    "Generated concept images are not matched to these cameras."
+  ]
+}

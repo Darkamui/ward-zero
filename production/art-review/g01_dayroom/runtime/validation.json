@@ -1,0 +1,17 @@
+{
+	"asset_sha256": {
+		"game/rooms/g01_dayroom/bg/cam_a.webp": "b1a81c3edbaa257d13c08ebe275a0a90a5a1e542b6e34ceecbe324945c965745",
+		"game/rooms/g01_dayroom/bg/cam_a_released.webp": "3418140c2df5aeda1003f9227b44fb868ef8a04b7fd320b10cc83d0980ab178c",
+		"game/rooms/g01_dayroom/bg/cam_b.webp": "228b16de47fe12c343fa7b64a74d9680a5d63eed19d45ee6939d245bbe20e2d8",
+		"game/rooms/g01_dayroom/bg/cam_b_released.webp": "01c066b0b1f21d3e2b1f9717ee6a07f983accb446ea8ba5c5b5e7d53fe993a3f",
+		"game/rooms/g01_dayroom/proxy.glb": "6ba905814a206ae09c34abd8c808dad261769a229918bf6c54983c31a29f7222"
+	},
+	"camera_cuts": [
+		"cam_b"
+	],
+	"engine": "4.7.2-stable (official)",
+	"failures": 0,
+	"max_projection_error_px": 0.000339336576871574,
+	"screenshots": 13,
+	"walk_reached_door": true
+}

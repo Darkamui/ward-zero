@@ -1,0 +1,27 @@
+{
+  "asset": "Peeling Painted Wall",
+  "author": "Dimitrios Savva",
+  "source": "https://polyhaven.com/a/peeling_painted_wall",
+  "license": "CC0-1.0",
+  "license_url": "https://polyhaven.com/license",
+  "files": [
+    {
+      "path": "art-src\\shared\\materials\\peeling_painted_wall\\diff.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/peeling_painted_wall/peeling_painted_wall_diff_2k.jpg",
+      "bytes": 1742944,
+      "sha256": "49e438e8a0195c20b1ac73fa2a4763409ec7d6bc005fb48d53f30a1ec5d73d05"
+    },
+    {
+      "path": "art-src\\shared\\materials\\peeling_painted_wall\\disp.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/peeling_painted_wall/peeling_painted_wall_disp_2k.jpg",
+      "bytes": 867840,
+      "sha256": "3a960ed588b9f763bc5a10a2ae825264d8ae192f703fd8ca5a16b7faf5b3007f"
+    },
+    {
+      "path": "art-src\\shared\\materials\\peeling_painted_wall\\rough.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/peeling_painted_wall/peeling_painted_wall_rough_2k.jpg",
+      "bytes": 514284,
+      "sha256": "6f0dd514a4dcad7fd23bdec501b6443c31b3b4cf56a5c37d1516aa3d48fd75a5"
+    }
+  ]
+}

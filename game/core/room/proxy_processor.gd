@@ -5,6 +5,7 @@ extends RefCounted
 ##
 ##   floor_   walkable floor: collision (layer floor), navmesh source, proxy material
 ##   occ_     foreground occluder: collision (layer walls), proxy material
+##   vis_     detailed visual occluder: proxy material, no collision/navigation
 ##   col_     wall/obstacle collision only: hidden in game, clay in renders
 ##   shadow_  shadow catcher only: proxy material, no collision
 ##   art_     render-only detail: hidden in game, clay in renders
@@ -33,6 +34,8 @@ static func apply(root: Node, mode: Mode) -> void:
 			_setup(mesh, mode, LAYER_FLOOR, true)
 		elif name.begins_with("occ_"):
 			_setup(mesh, mode, LAYER_WALLS, true)
+		elif name.begins_with("vis_"):
+			_setup(mesh, mode, 0, true)
 		elif name.begins_with("col_"):
 			_setup(mesh, mode, LAYER_WALLS, false)
 		elif name.begins_with("shadow_"):

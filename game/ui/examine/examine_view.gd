@@ -5,6 +5,7 @@ extends Control
 ## sets a flag, shows text).
 
 signal revealed(reveal: ExamineReveal)
+signal close_requested
 
 var item: ItemData
 var _pivot: Node3D
@@ -15,6 +16,12 @@ var _fired: Array[ExamineReveal] = []
 
 func setup(item_data: ItemData) -> void:
 	item = item_data
+	focus_mode = Control.FOCUS_ALL
+	var backing := ColorRect.new()
+	backing.color = Color(0.035, 0.045, 0.043, 1.0)
+	backing.set_anchors_preset(Control.PRESET_FULL_RECT)
+	backing.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(backing)
 	var container := SubViewportContainer.new()
 	container.stretch = true
 	container.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -23,6 +30,7 @@ func setup(item_data: ItemData) -> void:
 	var vp := SubViewport.new()
 	vp.own_world_3d = true
 	vp.transparent_bg = true
+	vp.msaa_3d = Viewport.MSAA_4X
 	container.add_child(vp)
 	_pivot = Node3D.new()
 	vp.add_child(_pivot)
@@ -37,18 +45,26 @@ func setup(item_data: ItemData) -> void:
 	vp.add_child(_camera)
 	var key := DirectionalLight3D.new()
 	key.rotation_degrees = Vector3(-35, 30, 0)
+	key.light_energy = 1.2
+	key.shadow_enabled = true
 	vp.add_child(key)
+	var fill := DirectionalLight3D.new()
+	fill.rotation_degrees = Vector3(20, -140, 0)
+	fill.light_energy = 0.4
+	vp.add_child(fill)
 	var env := WorldEnvironment.new()
 	env.environment = Environment.new()
 	env.environment.background_mode = Environment.BG_CLEAR_COLOR
 	env.environment.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
 	env.environment.ambient_light_color = Color(0.5, 0.5, 0.55)
+	env.environment.ambient_light_energy = 0.3
 	vp.add_child(env)
 	for r in item.examine_reveals:
 		if r.sets_flag != &"" and GameState.get_flag(r.sets_flag, false):
 			_fired.append(r)
 		elif r.adds_document != &"" and GameState.documents.has(String(r.adds_document)):
 			_fired.append(r)
+	grab_focus.call_deferred()
 
 
 ## Placeholder until examine models exist: a box with a marked face for each reveal.
@@ -81,15 +97,42 @@ func _placeholder() -> Node3D:
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+			accept_event()
+			close_requested.emit()
+		elif event.button_index == MOUSE_BUTTON_LEFT:
 			_dragging = event.pressed
-		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			if event.pressed:
+				grab_focus()
+			accept_event()
+		elif event.pressed and event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			_camera.position.z = maxf(1.2, _camera.position.z - 0.15)
-		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			accept_event()
+		elif event.pressed and event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			_camera.position.z = minf(4.0, _camera.position.z + 0.15)
-		accept_event()
+			accept_event()
 	elif event is InputEventMouseMotion and _dragging:
 		rotate_by(event.relative * 0.01)
+		accept_event()
+	elif event is InputEventKey and event.pressed:
+		match event.keycode:
+			KEY_LEFT:
+				rotate_by(Vector2(-0.15, 0))
+			KEY_RIGHT:
+				rotate_by(Vector2(0.15, 0))
+			KEY_UP:
+				rotate_by(Vector2(0, -0.15))
+			KEY_DOWN:
+				rotate_by(Vector2(0, 0.15))
+			KEY_EQUAL, KEY_PLUS, KEY_KP_ADD:
+				_camera.position.z = maxf(1.2, _camera.position.z - 0.15)
+			KEY_MINUS, KEY_KP_SUBTRACT:
+				_camera.position.z = minf(4.0, _camera.position.z + 0.15)
+			KEY_HOME:
+				_pivot.rotation = Vector3.ZERO
+				_camera.position.z = 2.2
+			_:
+				return
 		accept_event()
 
 
@@ -111,6 +154,7 @@ func _check_reveals() -> void:
 			continue
 		if rad_to_deg(view.angle_to(r.view_direction.normalized())) <= r.tolerance_degrees:
 			_fired.append(r)
+			_dragging = false
 			if r.sets_flag != &"":
 				GameState.set_flag(r.sets_flag, true)
 			if r.adds_document != &"":

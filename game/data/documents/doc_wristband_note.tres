@@ -10,4 +10,4 @@ body_key = "doc.wristband_note.body"
 placeholders = Dictionary[StringName, String]({
 &"birthdate": "puzzle:P03.birthdate"
 })
-style = 4
+style = 2

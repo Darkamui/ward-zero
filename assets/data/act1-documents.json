@@ -1,0 +1,158 @@
+[
+  {
+    "id": "quiet_hours",
+    "room": "G01",
+    "fragment": null,
+    "en": {
+      "title": "Quiet Hours",
+      "body": "DAYROOM\nQuiet hours begin after evening rounds.\nFor the evening announcement, tune the receiver to {frequency} MHz.\nLeave the radio switched on."
+    },
+    "fr": {
+      "title": "Heures de silence",
+      "body": "SALLE DE SÉJOUR\nLe silence est demandé après la tournée du soir.\nPour le message du soir, réglez le récepteur sur {frequency} MHz.\nLaissez la radio allumée."
+    }
+  },
+  {
+    "id": "wristband",
+    "room": "G01",
+    "fragment": null,
+    "en": {
+      "title": "Patient wristband",
+      "body": "LAVOIE, Mathieu\nDate of birth: {birthdate}\nDo not remove."
+    },
+    "fr": {
+      "title": "Bracelet du patient",
+      "body": "LAVOIE, Mathieu\nDate de naissance : {birthdate}\nNe pas retirer."
+    }
+  },
+  {
+    "id": "directory",
+    "room": "G03",
+    "fragment": null,
+    "en": {
+      "title": "Internal directory",
+      "body": "Administrator — {ext_admin}\nNurse station — {ext_nurse}\nChapel — {ext_chapel}\nRecords — {ext_records}"
+    },
+    "fr": {
+      "title": "Annuaire interne",
+      "body": "Administration — {ext_admin}\nPoste infirmier — {ext_nurse}\nChapelle — {ext_chapel}\nArchives — {ext_records}"
+    }
+  },
+  {
+    "id": "switchboard_memo",
+    "room": "G03",
+    "fragment": null,
+    "en": {
+      "title": "Reception instructions",
+      "body": "Connect each department lead to its listed extension.\nThe administrator will release the internal gate once the board is correctly patched.\nPress CALL after completing the connections."
+    },
+    "fr": {
+      "title": "Consignes de réception",
+      "body": "Branchez le cordon de chaque service au poste indiqué dans l’annuaire.\nL’administration déverrouillera la grille intérieure lorsque les branchements seront corrects.\nAppuyez sur APPELER une fois les branchements terminés."
+    }
+  },
+  {
+    "id": "catalog_instructions",
+    "room": "G04",
+    "fragment": null,
+    "en": {
+      "title": "Catalog procedure",
+      "body": "Patient cards are filed by birth year, then month.\nDuring the move, the LAVOIE card was put with admissions for 1976. Retrieve it there, then match the full birthdate to the wristband."
+    },
+    "fr": {
+      "title": "Classement des dossiers",
+      "body": "Les fiches des patients sont classées par année, puis par mois de naissance.\nLors du déménagement, la fiche LAVOIE a été rangée avec les admissions de 1976. Cherchez-la à cet endroit, puis comparez la date de naissance complète avec le bracelet."
+    }
+  },
+  {
+    "id": "admission_file",
+    "room": "G04",
+    "fragment": "F01",
+    "en": {
+      "title": "Admission record — M. Lavoie",
+      "body": "INSTITUT SAINTE-ODILE\nRecord: {file_id}\nPatient: Mathieu Lavoie\nBorn: {birthdate}\nAdmitted: 18 October 1976\nAge at admission: 9\nReason: observation following a serious domestic incident.\nPersonal effects: one family photograph.\nThe child repeatedly asks to see Claire."
+    },
+    "fr": {
+      "title": "Fiche d’admission — M. Lavoie",
+      "body": "INSTITUT SAINTE-ODILE\nDossier : {file_id}\nPatient : Mathieu Lavoie\nNaissance : {birthdate}\nAdmission : 18 octobre 1976\nÂge à l’admission : 9 ans\nMotif : observation à la suite d’un grave incident familial.\nEffets personnels : une photographie de famille.\nL’enfant demande à voir Claire à plusieurs reprises."
+    }
+  },
+  {
+    "id": "founding_plaque",
+    "room": "G02",
+    "fragment": null,
+    "en": {
+      "title": "Founding plaque",
+      "body": "INSTITUT SAINTE-ODILE\nFounded {founding_year}\nCare. Order. Rest."
+    },
+    "fr": {
+      "title": "Plaque de fondation",
+      "body": "INSTITUT SAINTE-ODILE\nFondé en {founding_year}\nSoins. Ordre. Repos."
+    }
+  },
+  {
+    "id": "safe_memo",
+    "room": "G05",
+    "fragment": null,
+    "en": {
+      "title": "Private memorandum",
+      "body": "The founding year is on the lobby plaque.\nMove its last two digits in front of the first two.\nAdvance EACH digit by {offset}, wrapping after 9 to 0.\nThe four resulting digits open the safe.\nEnter them left to right."
+    },
+    "fr": {
+      "title": "Note personnelle",
+      "body": "L’année de fondation figure sur la plaque du hall.\nPlacez ses deux derniers chiffres devant les deux premiers.\nAvancez CHAQUE chiffre de {offset}, en revenant à 0 après 9.\nLes quatre chiffres obtenus ouvrent le coffre.\nSaisissez-les de gauche à droite."
+    }
+  },
+  {
+    "id": "fire_clipping",
+    "room": "G05",
+    "fragment": "F02",
+    "en": {
+      "title": "Child dies in house fire",
+      "body": "REGIONAL NEWS — 17 OCTOBER 1976\nA fire broke out at the Lavoie family home yesterday evening. Emergency services were alerted at {fire_time}.\nClaire Lavoie, six, died in the blaze. Her older brother Mathieu was rescued.\nThe cause of the fire remains under investigation."
+    },
+    "fr": {
+      "title": "Une enfant meurt dans un incendie",
+      "body": "NOUVELLES RÉGIONALES — 17 OCTOBRE 1976\nUn incendie s’est déclaré hier soir au domicile de la famille Lavoie. Les services d’urgence ont été alertés à {fire_time}.\nClaire Lavoie, six ans, a perdu la vie. Son frère aîné Mathieu a été secouru.\nLa cause de l’incendie fait toujours l’objet d’une enquête."
+    }
+  },
+  {
+    "id": "hymn_notice",
+    "room": "G06",
+    "fragment": null,
+    "en": {
+      "title": "Choir notice",
+      "body": "The loft latch follows the hymn board.\nRestore the three hymn numbers in their original order, top to bottom.\nThe old photograph belongs here."
+    },
+    "fr": {
+      "title": "Avis à la chorale",
+      "body": "Le loquet de la tribune est relié au tableau des cantiques.\nRétablissez les trois numéros dans leur ordre d’origine, de haut en bas.\nL’ancienne photographie a sa place ici."
+    }
+  },
+  {
+    "id": "effects_bin_notice",
+    "room": "G01",
+    "fragment": null,
+    "en": {
+      "title": "Personal effects",
+      "body": "Place unneeded objects in the effects bin.\nKeys and personal records remain with you."
+    },
+    "fr": {
+      "title": "Effets personnels",
+      "body": "Déposez les objets inutilisés dans le coffre des effets personnels.\nGardez vos clés et vos documents personnels avec vous."
+    }
+  },
+  {
+    "id": "recorder_notice",
+    "room": "G01",
+    "fragment": null,
+    "en": {
+      "title": "Tape recorder",
+      "body": "Record your progress before leaving.\nOn Committed difficulty, each recording uses one blank cassette."
+    },
+    "fr": {
+      "title": "Magnétophone",
+      "body": "Enregistrez votre progression avant de partir.\nAu niveau Interné, chaque enregistrement consomme une cassette vierge."
+    }
+  }
+]

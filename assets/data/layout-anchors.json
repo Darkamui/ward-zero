@@ -1,0 +1,125 @@
+{
+  "coordinate_space": "native source image pixels",
+  "status": "initial layout guides; verify against final imported texture",
+  "radio": {
+    "image_size": [
+      1536,
+      1024
+    ],
+    "scale_rect": [
+      805,
+      370,
+      585,
+      90
+    ],
+    "tuning_knob_center": [
+      1117,
+      639
+    ],
+    "volume_knob_center": [
+      1276,
+      639
+    ],
+    "knob_diameter": 110
+  },
+  "switchboard": {
+    "image_size": [
+      1536,
+      1024
+    ],
+    "header_rect": [
+      165,
+      125,
+      1195,
+      70
+    ],
+    "usable_panel_rect": [
+      190,
+      265,
+      1155,
+      485
+    ],
+    "recommended_socket_grid": [
+      6,
+      3
+    ]
+  },
+  "hymn": {
+    "image_size": [
+      1024,
+      1536
+    ],
+    "header_rect": [
+      145,
+      345,
+      730,
+      115
+    ],
+    "number_rows": [
+      [
+        190,
+        535,
+        640,
+        215
+      ],
+      [
+        190,
+        850,
+        640,
+        215
+      ],
+      [
+        190,
+        1160,
+        640,
+        215
+      ]
+    ],
+    "tiles_per_row": 3
+  },
+  "ui": {
+    "background": "#101513",
+    "ivory": "#E8E0CB",
+    "ink": "#292D2B",
+    "focus": "#E8BD70",
+    "unresolved": "#8E4D47",
+    "cleared": "#4D7180",
+    "reference_resolution": [
+      1920,
+      1080
+    ],
+    "inventory_grid": [
+      3,
+      2
+    ],
+    "minimum_hit_area": 44,
+    "document_font_px": 24,
+    "subtitle_font_px": 28,
+    "image_safe_regions_normalized": {
+      "folder_left": [
+        0.09,
+        0.2,
+        0.43,
+        0.84
+      ],
+      "folder_right": [
+        0.55,
+        0.2,
+        0.91,
+        0.84
+      ],
+      "satchel_grid": [
+        0.13,
+        0.18,
+        0.74,
+        0.82
+      ],
+      "paper_text": [
+        0.13,
+        0.13,
+        0.87,
+        0.87
+      ]
+    }
+  }
+}

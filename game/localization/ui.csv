@@ -109,3 +109,11 @@ ui.glint.nothing,There’s nothing there. There never was.,Il n’y a rien. Il n
 ui.breath.hold,Hold SPACE to hold your breath,Maintenez ESPACE pour retenir votre souffle
 ui.breath.coming,He is coming closer…,Il s’approche…
 ui.hiding.hint,Hidden. Right-click to come out.,Caché. Clic droit pour sortir.
+ui.day.monday,Monday,lundi
+ui.day.tuesday,Tuesday,mardi
+ui.day.wednesday,Wednesday,mercredi
+ui.day.thursday,Thursday,jeudi
+ui.day.friday,Friday,vendredi
+ui.day.saturday,Saturday,samedi
+ui.day.sunday,Sunday,dimanche
+ui.bed,Bed,Lit

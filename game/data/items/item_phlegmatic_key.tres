@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_0c7am"]
+[ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_3lssu"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_uyf5n"]
+
+[resource]
+script = ExtResource("2_3lssu")
+id = &"item_phlegmatic_key"
+name_key = "item.phlegmatic_key.name"
+desc_key = "item.phlegmatic_key.desc"
+storage = 1
+kind = 1
+droppable = false

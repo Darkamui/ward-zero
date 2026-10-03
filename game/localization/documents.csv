@@ -195,3 +195,134 @@ Douce nuit ..... {n8}
 Grâce infinie ..... {n9}
 Le Roi d’amour ..... {n10}
 Salve Regina ..... {n11}"
+doc.med_charts.body,"EAST WING — EVENING ROUND
+
+{p0}: one {s0} tablet at 20:00
+{p1}: one {s1} tablet at 20:00
+{p2}: one {s2} tablet at 20:00
+{p3}: one {s3} tablet at 20:00","AILE EST — TOURNÉE DU SOIR
+
+{p0} : un comprimé {s0} à 20 h
+{p1} : un comprimé {s1} à 20 h
+{p2} : un comprimé {s2} à 20 h
+{p3} : un comprimé {s3} à 20 h"
+doc.shift_log.body,"Night shift. Colours given out, as usual:
+{p0} — the {c0} one
+{p1} — the {c1} one
+{p2} — the {c2} one
+{p3} — the {c3} one","Quart de nuit. Couleurs distribuées, comme d’habitude :
+{p0} — le {c0}
+{p1} — le {c1}
+{p2} — le {c2}
+{p3} — le {c3}"
+doc.med_charts.body_easy,"EAST WING — EVENING ROUND
+
+{p0}: one {c0} {s0} tablet at 20:00
+{p1}: one {c1} {s1} tablet at 20:00
+{p2}: one {c2} {s2} tablet at 20:00","AILE EST — TOURNÉE DU SOIR
+
+{p0} : un comprimé {c0} et {s0} à 20 h
+{p1} : un comprimé {c1} et {s1} à 20 h
+{p2} : un comprimé {c2} et {s2} à 20 h"
+doc.shift_log.body_easy,"Night shift. Colours given out, as usual:
+{p0} — the {c0} one
+{p1} — the {c1} one
+{p2} — the {c2} one","Quart de nuit. Couleurs distribuées, comme d’habitude :
+{p0} — le {c0}
+{p1} — le {c1}
+{p2} — le {c2}"
+doc.med_charts.body_hard,"EAST WING — EVENING ROUND
+
+{p0}: one {s0} tablet at 20:00
+{p1}: one {s1} tablet at 20:00
+{p2}: one {s2} tablet at 20:00
+{p3}: one {s3} tablet at 20:00
+{p4}: one {s4} tablet at 20:00","AILE EST — TOURNÉE DU SOIR
+
+{p0} : un comprimé {s0} à 20 h
+{p1} : un comprimé {s1} à 20 h
+{p2} : un comprimé {s2} à 20 h
+{p3} : un comprimé {s3} à 20 h
+{p4} : un comprimé {s4} à 20 h"
+doc.shift_log.body_hard,"Night shift. Colours given out, as usual:
+{p0} — the {c0} one
+{p1} — the {c1} one
+{p2} — the {c2} one
+{p3} — the {c3} one
+{p4} — the {c4} one","Quart de nuit. Couleurs distribuées, comme d’habitude :
+{p0} — le {c0}
+{p1} — le {c1}
+{p2} — le {c2}
+{p3} — le {c3}
+{p4} — le {c4}"
+doc.med_charts.title,Medication Charts,Fiches de médication
+doc.shift_log.title,Shift Log,Registre de quart
+doc.f03_nurse_log.title,Nurse’s Log,Journal de l’infirmière
+doc.f03_nurse_log.body,"March 3, 1977. The Lavoie boy again. Awake at 2:00, sitting up, talking to the empty bed beside him. When I asked who he was talking to he said, “Claire. She’s cold.” There is no Claire on this ward.","3 mars 1977. Encore le petit Lavoie. Réveillé à 2 h, assis, il parlait au lit vide à côté de lui. Quand je lui ai demandé à qui il parlait, il a répondu : « Claire. Elle a froid. » Il n’y a pas de Claire dans cette aile."
+doc.laundry_ledger.title,Laundry Ledger,Registre de buanderie
+doc.laundry_ledger.body,"LAUNDRY LEDGER — LINEN ROOM
+
+{r0}
+{r1}
+{r2}
+{r3}
+{r4}
+{r5}","REGISTRE DE BUANDERIE — LINGERIE
+
+{r0}
+{r1}
+{r2}
+{r3}
+{r4}
+{r5}"
+doc.laundry_note.title,Note,Note
+doc.laundry_note.body,"The sheet from bed {bed}, {day} night, came back stained. Find it in the ledger and pull it before Sister sees.
+— M.","Le drap du lit {bed}, la nuit de {day}, est revenu taché. Trouvez-le dans le registre et retirez-le avant que la Sœur le voie.
+— M."
+doc.laundry_note.body_easy,"The sheet tagged {tag} came back stained. Pull it before Sister sees.
+— M.","Le drap étiqueté {tag} est revenu taché. Retirez-le avant que la Sœur le voie.
+— M."
+doc.sheet_label.title,Laundry Tag,Étiquette de buanderie
+doc.sheet_label.body,"Pinned to the stained sheet:
+WARD E — LOCKBOX {a}{b}{c}","Épinglée au drap taché :
+AILE E — COFFRET {a}{b}{c}"
+doc.f04_drawing.title,Claire’s Drawing,Dessin de Claire
+doc.f04_drawing.body,"A crayon drawing: a farmhouse, two children holding hands. The girl has a red ribbon. Above the house, in an adult’s neat print, someone has written: “Before.”","Un dessin aux crayons de cire : une ferme, deux enfants qui se tiennent la main. La fille porte un ruban rouge. Au-dessus de la maison, d’une écriture soignée d’adulte, quelqu’un a écrit : « Avant. »"
+doc.board_1998.title,Chalkboard (now),Tableau (maintenant)
+doc.board_1998.body,"Half-erased chalk on the board:
+{d0}  _  {d2}  _","De la craie à moitié effacée au tableau :
+{d0}  _  {d2}  _"
+doc.board_1998.body_easy,"Half-erased chalk on the board:
+{d0}  {d1}  {d2}  _","De la craie à moitié effacée au tableau :
+{d0}  {d1}  {d2}  _"
+doc.board_1976.title,Chalkboard (1976),Tableau (1976)
+doc.board_1976.body,"The teacher is still writing the lesson:
+_  {d1}  _  {d3}","L’institutrice écrit encore la leçon :
+_  {d1}  _  {d3}"
+doc.f05_essay.title,“Ma famille”,« Ma famille »
+doc.f05_essay.body,"Ma famille, by Mathieu L., age 9.
+There is Papa and Maman and Claire. Claire is six. She is afraid of the dark so I leave the candle on. The teacher asked why I wrote “was” and crossed it out. I don’t know.","Ma famille, par Mathieu L., 9 ans.
+Il y a Papa et Maman et Claire. Claire a six ans. Elle a peur du noir alors je laisse la chandelle allumée. Madame m’a demandé pourquoi j’ai écrit « avait » et que je l’ai rayé. Je sais pas."
+doc.lid_sheet.title,Music Box Lid,Couvercle de la boîte à musique
+doc.lid_sheet.body,"Inside the lid, in pencil, a child’s note of the tune:
+{n0} {n1} {n2} {n3} {n4} {n5}","À l’intérieur du couvercle, au crayon, la mélodie notée par un enfant :
+{n0} {n1} {n2} {n3} {n4} {n5}"
+doc.lid_sheet.body_easy,"Inside the lid, in pencil, a child’s note of the tune:
+{n0} {n1} {n2} {n3}","À l’intérieur du couvercle, au crayon, la mélodie notée par un enfant :
+{n0} {n1} {n2} {n3}"
+doc.lid_sheet.body_hard,"Inside the lid, in pencil, a child’s note of the tune:
+{n0} {n1} {n2} {n3} {n4} {n5} {n6} {n7}","À l’intérieur du couvercle, au crayon, la mélodie notée par un enfant :
+{n0} {n1} {n2} {n3} {n4} {n5} {n6} {n7}"
+doc.f06_scratchings.title,Wall Scratchings,Gravures au mur
+doc.f06_scratchings.body,"Tally marks, hundreds of them, in rows of five. Under them, pressed hard enough to break a nail:
+MY FAULT","Des traits de décompte, des centaines, en rangées de cinq. En dessous, gravé assez fort pour casser un ongle :
+MA FAUTE"
+doc.boiler_manual.title,Boiler Manual,Manuel de la chaudière
+doc.boiler_manual.body,RESTARTING: fit a 60 A fuse. Each valve feeds two gauges. Keep every needle in the green band (10–14). Above 18 the safety whistle sounds.,"REDÉMARRAGE : installer un fusible de 60 A. Chaque vanne alimente deux manomètres. Gardez chaque aiguille dans la bande verte (10 à 14). Au-dessus de 18, le sifflet de sécurité se déclenche."
+doc.boiler_manual.body_easy,RESTARTING: fit a 60 A fuse. Each valve feeds one gauge. Keep every needle in the green band (10–14). Above 18 the safety whistle sounds.,"REDÉMARRAGE : installer un fusible de 60 A. Chaque vanne alimente un seul manomètre. Gardez chaque aiguille dans la bande verte (10 à 14). Au-dessus de 18, le sifflet de sécurité se déclenche."
+doc.dining_menu.title,Menu,Menu
+doc.dining_menu.body,"FRIDAY
+Pea soup — fish — bread pudding
+No second helpings.","VENDREDI
+Soupe aux pois — poisson — pouding au pain
+Pas de deuxième portion."

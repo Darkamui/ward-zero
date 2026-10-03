@@ -36,3 +36,60 @@ hymn.title.8,Silent Night,Douce nuit
 hymn.title.9,Amazing Grace,Grâce infinie
 hymn.title.10,The King of Love,Le Roi d’amour
 hymn.title.11,Salve Regina,Salve Regina
+pill.color.white,white,blanc
+pill.color.yellow,yellow,jaune
+pill.color.pink,pink,rose
+pill.color.blue,blue,bleu
+pill.color.green,green,vert
+pill.shape.round,round,rond
+pill.shape.oval,oval,ovale
+pill.shape.square,square,carré
+pill.shape.triangle,triangular,triangulaire
+pill.shape.capsule,capsule-shaped,en forme de gélule
+note.c,C,do
+note.d,D,ré
+note.e,E,mi
+note.g,G,sol
+note.a,A,la
+puzzle.p06.name,Medication Cart,Chariot à médicaments
+puzzle.p06.hint,"Click a patient’s drawer, then a pill. Then close the cart.","Cliquez sur le tiroir d’un patient, puis sur un comprimé. Puis fermez le chariot."
+puzzle.p06.submit,Close the cart,Fermer le chariot
+puzzle.p06.wrong,Somewhere a buzzer sounds. That isn’t right.,"Quelque part, un avertisseur sonne. Ce n’est pas ça."
+puzzle.p07.name,Hydrotherapy Tubs,Bains d’hydrothérapie
+puzzle.p07.hint,"Pour, drain, or open the main valve to start over. Match every marked level.","Versez, videz, ou ouvrez la vanne principale pour recommencer. Atteignez chaque niveau marqué."
+puzzle.p07.pour,Pour {a} → {b},Verser {a} → {b}
+puzzle.p07.drain,Drain {a},Vider {a}
+puzzle.p07.fill,Fill {a},Remplir {a}
+puzzle.p07.reset,Main valve (start over),Vanne principale (recommencer)
+puzzle.p07.tub,Tub {a}: {n} of {cap} (mark {mark}),Bain {a} : {n} sur {cap} (marque {mark})
+puzzle.p08.name,Laundry Shelves,Étagères de linge
+puzzle.p08.hint,Pull a sheet to read its tag. Every wrong pull makes noise.,Tirez un drap pour lire son étiquette. Chaque mauvais drap fait du bruit.
+puzzle.p08.wrong,The pile slumps loudly to the floor.,La pile s’effondre bruyamment sur le plancher.
+puzzle.p08l.name,Lockbox,Coffret
+puzzle.p08l.hint,Three wheels.,Trois molettes.
+puzzle.p08l.wrong,The lid stays shut.,Le couvercle reste fermé.
+puzzle.p09.name,Children’s Drawings,Dessins d’enfants
+puzzle.p09.hint,"Click a frame, then a drawing. Turn a drawing over to read its back.","Cliquez sur un cadre, puis sur un dessin. Retournez un dessin pour lire le verso."
+puzzle.p09.submit,Step back,Reculer
+puzzle.p09.wrong,No. That isn’t how it happened.,Non. Ça ne s’est pas passé comme ça.
+puzzle.p09.back,Back: dated the {date},Verso : daté du {date}
+puzzle.p09.missing,One frame has no drawing to go in it.,Il manque un dessin pour un des cadres.
+puzzle.p10.name,Desk Padlock,Cadenas du pupitre
+puzzle.p10.hint,Four wheels.,Quatre molettes.
+puzzle.p10.wrong,The padlock doesn’t give.,Le cadenas ne cède pas.
+puzzle.p11.name,Music Box,Boîte à musique
+puzzle.p11.hint,"Set one pin per step, then wind the crank.","Placez un picot par temps, puis tournez la manivelle."
+puzzle.p11.play,Wind,Remonter
+puzzle.p11.wrong,The tune is wrong. It sounds like someone else’s song.,L’air est faux. On dirait la chanson de quelqu’un d’autre.
+puzzle.p12.name,Cell Doors,Portes des cellules
+puzzle.p12.hint,Watch the doors. Open the peepholes in the order of the knocks.,Observez les portes. Ouvrez les judas dans l’ordre des coups.
+puzzle.p12.listen,Listen again,Écouter de nouveau
+puzzle.p12.wrong,Silence. Then the knocking starts over.,Silence. Puis les coups recommencent.
+puzzle.p13.name,Boiler Valves,Vannes de la chaudière
+puzzle.p13.hint,Keep every needle in the green band. Above 18 the whistle screams.,"Gardez chaque aiguille dans la bande verte. Au-dessus de 18, le sifflet hurle."
+puzzle.p13.gauge,Gauge {n}: {v} ({band}),Manomètre {n} : {v} ({band})
+puzzle.p13.band_green,green band,bande verte
+puzzle.p13.band_red,RED,ROUGE
+puzzle.p13.band_low,low,bas
+puzzle.p13.band_high,high,haut
+puzzle.p13.wrong,The safety whistle screams through the pipes.,Le sifflet de sécurité hurle dans la tuyauterie.

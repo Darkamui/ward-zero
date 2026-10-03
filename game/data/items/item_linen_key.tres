@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_r5dfu"]
+[ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_dstqs"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_roqdh"]
+
+[resource]
+script = ExtResource("2_dstqs")
+id = &"item_linen_key"
+name_key = "item.linen_key.name"
+desc_key = "item.linen_key.desc"
+storage = 1
+kind = 1
+droppable = false

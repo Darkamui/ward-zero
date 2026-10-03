@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_e614h"]
+[ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_1aiwq"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_b34d2"]
+
+[resource]
+script = ExtResource("2_1aiwq")
+id = &"item_cylinder"
+name_key = "item.cylinder.name"
+desc_key = "item.cylinder.desc"
+storage = 1
+kind = 2
+droppable = false

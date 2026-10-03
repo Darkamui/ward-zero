@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3]
+
+[ext_resource type="Script" path="res://game/core/puzzle/code_lock_logic.gd" id="1_pfc4a"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_kwrlw"]
+[ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="3_fqcre"]
+[ext_resource type="Script" path="res://game/core/actions/open_document.gd" id="4_cwrvq"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="5_gbcmq"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="6_jvr6x"]
+
+[sub_resource type="Resource" id="Resource_pfc4a"]
+script = ExtResource("3_fqcre")
+item_id = &"item_f05_essay"
+
+[sub_resource type="Resource" id="Resource_kwrlw"]
+script = ExtResource("4_cwrvq")
+document_id = &"doc_f05_essay"
+
+[sub_resource type="Resource" id="Resource_fqcre"]
+script = ExtResource("3_fqcre")
+item_id = &"item_cylinder"
+
+[sub_resource type="Resource" id="Resource_cwrvq"]
+script = ExtResource("6_jvr6x")
+name = &"code_number"
+min_value = 1000
+max_value = 9999
+
+[resource]
+script = ExtResource("5_gbcmq")
+id = &"P10"
+room_id = &"W03"
+logic_script = ExtResource("1_pfc4a")
+name_key = "puzzle.p10.name"
+params = {
+"normal": {
+"code_field": "code_number",
+"digits": 4
+}
+}
+seed_fields = Array[ExtResource("6_jvr6x")]([SubResource("Resource_cwrvq")])
+rewards = Array[ExtResource("2_kwrlw")]([SubResource("Resource_pfc4a"), SubResource("Resource_kwrlw"), SubResource("Resource_fqcre")])
+solved_flag = &"p10.solved"

@@ -17,3 +17,29 @@ item.blank_cassette.name,Blank Cassette,Cassette vierge
 item.blank_cassette.desc,"An unused cassette, still in its case. Enough for one recording.","Une cassette inutilisée, encore dans son boîtier. Assez pour un enregistrement."
 item.sedatives.name,Sedatives,Sédatifs
 item.sedatives.desc,A small bottle of pills. They would steady my hands.,Un petit flacon de comprimés. Ils calmeraient mes mains.
+item.linen_key.name,Linen Room Key,Clé de la lingerie
+item.linen_key.desc,A small key on a cardboard tag: LINGERIE.,Une petite clé avec une étiquette de carton : LINGERIE.
+item.valve_wheel.name,Valve Wheel,Volant de vanne
+item.valve_wheel.desc,A cast-iron wheel with a square socket. It would fit a valve stem.,Un volant en fonte avec une douille carrée. Il irait sur une tige de vanne.
+item.melancholic_key.name,Melancholic Key,Clé mélancolique
+item.melancholic_key.desc,A black iron key stamped with a stone and the word MELANCHOLIC.,Une clé de fer noir frappée d’une pierre et du mot MÉLANCOLIQUE.
+item.phlegmatic_key.name,Phlegmatic Key,Clé flegmatique
+item.phlegmatic_key.desc,A white enamel key stamped with a wave and the word PHLEGMATIC.,Une clé émaillée blanche frappée d’une vague et du mot FLEGMATIQUE.
+item.satchel.name,Orderly’s Satchel,Sacoche d’infirmier
+item.satchel.desc,A canvas satchel. More room to carry things.,Une sacoche en toile. Plus de place pour transporter des choses.
+item.ribbon.name,Claire’s Ribbon,Ruban de Claire
+item.ribbon.desc,A faded red hair ribbon. It still smells faintly of smoke.,Un ruban à cheveux rouge délavé. Il sent encore un peu la fumée.
+item.cylinder.name,Music Box Cylinder,Cylindre de boîte à musique
+item.cylinder.desc,A brass cylinder studded with movable pins.,Un cylindre de laiton hérissé de picots mobiles.
+item.fuse.name,Fuse,Fusible
+item.fuse.desc,"A heavy ceramic fuse, rated 60 amps.",Un gros fusible en céramique de 60 ampères.
+item.f03_nurse_log.name,Nurse’s Log,Journal de l’infirmière
+item.f03_nurse_log.desc,A page from the night nurse’s log.,Une page du journal de l’infirmière de nuit.
+item.f04_drawing.name,Claire’s Drawing,Dessin de Claire
+item.f04_drawing.desc,A crayon drawing of a house and two children.,Un dessin aux crayons de cire : une maison et deux enfants.
+item.f05_essay.name,Class Essay,Rédaction
+item.f05_essay.desc,"“Ma famille”, by M.L.","« Ma famille », par M.L."
+item.f06_scratchings.name,Wall Scratchings,Gravures au mur
+item.f06_scratchings.desc,I copied what was scratched into the cell wall.,J’ai recopié ce qui était gravé dans le mur de la cellule.
+item.f07_tape.name,Tape: Session 1,Cassette : séance 1
+item.f07_tape.desc,"A cassette labelled “Dr. H. Bouchard – L., session 1 – 1998”.","Une cassette étiquetée « Dre H. Bouchard – L., séance 1 – 1998 »."

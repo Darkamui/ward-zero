@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_wkmpn"]
+[ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_iqjea"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_h3v3l"]
+
+[resource]
+script = ExtResource("2_iqjea")
+id = &"item_f03_nurse_log"
+name_key = "item.f03_nurse_log.name"
+desc_key = "item.f03_nurse_log.desc"
+storage = 1
+kind = 3
+droppable = false
+fragment_id = &"F03"

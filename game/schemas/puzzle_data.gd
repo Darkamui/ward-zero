@@ -14,6 +14,8 @@ const SCHEMA_VERSION := 1
 ## Parameter sets keyed "easy", "normal", "hard". Missing sets fall back to "normal".
 @export var params: Dictionary = {"normal": {}}
 @export var seed_fields: Array[SeedField] = []
+## Share another puzzle's seeded values (and computed values) as well as its own.
+@export var values_from: StringName
 @export var fail_noise_hops: int = 1
 @export var rewards: Array[Action] = []
 @export var prerequisite_flags: Array[StringName] = []

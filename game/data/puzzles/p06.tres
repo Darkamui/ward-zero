@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3]
+
+[ext_resource type="Script" path="res://game/puzzles/p06_medication_cart/p06_logic.gd" id="1_b30a1"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_bqcy8"]
+[ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="3_rr7x5"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="4_5dckt"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="5_6atkl"]
+
+[sub_resource type="Resource" id="Resource_b30a1"]
+script = ExtResource("3_rr7x5")
+item_id = &"item_linen_key"
+
+[sub_resource type="Resource" id="Resource_bqcy8"]
+script = ExtResource("3_rr7x5")
+item_id = &"item_sedatives"
+
+[sub_resource type="Resource" id="Resource_rr7x5"]
+script = ExtResource("5_6atkl")
+name = &"colors"
+kind = 3
+max_value = 4
+count = 5
+
+[sub_resource type="Resource" id="Resource_5dckt"]
+script = ExtResource("5_6atkl")
+name = &"shapes"
+kind = 3
+max_value = 4
+count = 5
+
+[resource]
+script = ExtResource("4_5dckt")
+id = &"P06"
+room_id = &"E02"
+logic_script = ExtResource("1_b30a1")
+name_key = "puzzle.p06.name"
+params = {
+"easy": {
+"patients": 3
+},
+"hard": {
+"patients": 5
+},
+"normal": {
+"patients": 4
+}
+}
+seed_fields = Array[ExtResource("5_6atkl")]([SubResource("Resource_rr7x5"), SubResource("Resource_5dckt")])
+rewards = Array[ExtResource("2_bqcy8")]([SubResource("Resource_b30a1"), SubResource("Resource_bqcy8")])
+solved_flag = &"p06.solved"

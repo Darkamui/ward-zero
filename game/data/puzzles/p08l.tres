@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3]
+
+[ext_resource type="Script" path="res://game/core/puzzle/code_lock_logic.gd" id="1_bsitx"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_atqhx"]
+[ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="3_xmejx"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="4_3s7vr"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="5_ewxbr"]
+
+[sub_resource type="Resource" id="Resource_bsitx"]
+script = ExtResource("3_xmejx")
+item_id = &"item_valve_wheel"
+
+[resource]
+script = ExtResource("4_3s7vr")
+id = &"P08L"
+room_id = &"E05"
+logic_script = ExtResource("1_bsitx")
+name_key = "puzzle.p08l.name"
+params = {
+"normal": {
+"code_field": "lockbox_code",
+"digits": 3
+}
+}
+values_from = &"P08"
+rewards = Array[ExtResource("2_atqhx")]([SubResource("Resource_bsitx")])
+solved_flag = &"p08l.solved"

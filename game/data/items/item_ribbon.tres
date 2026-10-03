@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_ysj8k"]
+[ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_utcia"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_7y1is"]
+
+[resource]
+script = ExtResource("2_utcia")
+id = &"item_ribbon"
+name_key = "item.ribbon.name"
+desc_key = "item.ribbon.desc"
+storage = 1
+kind = 2
+droppable = false

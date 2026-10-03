@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_wpyoa"]
+[ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_wj1ha"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_qd82p"]
+
+[resource]
+script = ExtResource("2_wj1ha")
+id = &"item_satchel"
+name_key = "item.satchel.name"
+desc_key = "item.satchel.desc"
+storage = 1
+kind = 5
+droppable = false

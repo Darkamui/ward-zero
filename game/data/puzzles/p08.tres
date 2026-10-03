@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3]
+
+[ext_resource type="Script" path="res://game/puzzles/p08_linen/p08_logic.gd" id="1_tvcjy"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_qr8ft"]
+[ext_resource type="Script" path="res://game/core/actions/open_document.gd" id="3_3dhbv"]
+[ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="4_q5o6w"]
+[ext_resource type="Script" path="res://game/core/actions/grow_inventory.gd" id="5_qr8ft"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="5_tqg4w"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="6_jrw3h"]
+
+[sub_resource type="Resource" id="Resource_3dhbv"]
+script = ExtResource("3_3dhbv")
+document_id = &"doc_sheet_label"
+
+[sub_resource type="Resource" id="Resource_q5o6w"]
+script = ExtResource("4_q5o6w")
+item_id = &"item_satchel"
+
+[sub_resource type="Resource" id="Resource_tqg4w"]
+script = ExtResource("5_qr8ft")
+
+[sub_resource type="Resource" id="Resource_jrw3h"]
+script = ExtResource("6_jrw3h")
+name = &"tags"
+kind = 3
+max_value = 35
+count = 12
+
+[sub_resource type="Resource" id="Resource_06jeh"]
+script = ExtResource("6_jrw3h")
+name = &"target"
+max_value = 11
+
+[sub_resource type="Resource" id="Resource_ewclf"]
+script = ExtResource("6_jrw3h")
+name = &"bed"
+min_value = 1
+max_value = 12
+
+[sub_resource type="Resource" id="Resource_ol5wx"]
+script = ExtResource("6_jrw3h")
+name = &"day"
+max_value = 6
+
+[sub_resource type="Resource" id="Resource_a0ohq"]
+script = ExtResource("6_jrw3h")
+name = &"lockbox_code"
+min_value = 100
+max_value = 999
+
+[resource]
+script = ExtResource("5_tqg4w")
+id = &"P08"
+room_id = &"E04"
+logic_script = ExtResource("1_tvcjy")
+name_key = "puzzle.p08.name"
+seed_fields = Array[ExtResource("6_jrw3h")]([SubResource("Resource_jrw3h"), SubResource("Resource_06jeh"), SubResource("Resource_ewclf"), SubResource("Resource_ol5wx"), SubResource("Resource_a0ohq")])
+rewards = Array[ExtResource("2_qr8ft")]([SubResource("Resource_3dhbv"), SubResource("Resource_q5o6w"), SubResource("Resource_tqg4w")])
+solved_flag = &"p08.solved"

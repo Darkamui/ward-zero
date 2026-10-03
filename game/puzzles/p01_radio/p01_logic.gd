@@ -53,6 +53,17 @@ func solution() -> Variant:
 	return float(frequency())
 
 
+func apply_solution() -> bool:
+	set_dial(solution())
+	return release()
+
+
+func random_input(rng: RandomNumberGenerator) -> void:
+	set_dial(rng.randf_range(400, 1800))
+	if not is_tuned():
+		release()
+
+
 ## Hard: the notice gives the station as a sum, riddle_a + riddle_b (GDD §8.2).
 static func computed_value(v: Dictionary, field: StringName) -> Variant:
 	var f := int(v.get(&"frequency", 700))

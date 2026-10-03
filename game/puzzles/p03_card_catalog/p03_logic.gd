@@ -73,6 +73,19 @@ func solution() -> Variant:
 	return null
 
 
+func apply_solution() -> bool:
+	var s: Dictionary = solution()
+	open_drawer(s["drawer"])
+	return open_cabinet(s["cabinet"])
+
+
+func random_input(rng: RandomNumberGenerator) -> void:
+	open_drawer(rng.randi_range(1, 12))
+	var c := rng.randi_range(1, 12)
+	if c != cabinet():
+		open_cabinet(c)
+
+
 ## Birthdate shown on the wristband and in F01, e.g. "14/03/1967".
 static func computed_value(v: Dictionary, field: StringName) -> Variant:
 	if field == &"birthdate":

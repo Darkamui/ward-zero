@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3]
+
+[ext_resource type="Script" path="res://game/puzzles/p07_hydrotherapy/p07_logic.gd" id="1_v54tn"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_ev63j"]
+[ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="3_442qt"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="4_p533s"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="5_2k5dn"]
+
+[sub_resource type="Resource" id="Resource_v54tn"]
+script = ExtResource("3_442qt")
+item_id = &"item_melancholic_key"
+
+[sub_resource type="Resource" id="Resource_ev63j"]
+script = ExtResource("5_2k5dn")
+name = &"config"
+max_value = 1
+
+[resource]
+script = ExtResource("4_p533s")
+id = &"P07"
+room_id = &"E03"
+logic_script = ExtResource("1_v54tn")
+name_key = "puzzle.p07.name"
+params = {
+"easy": {
+"configs": [{
+"caps": [5, 3],
+"goal": [4, 0],
+"start": [0, 0],
+"tap": true
+}]
+},
+"hard": {
+"configs": [{
+"caps": [12, 7, 5],
+"goal": [6, 6, 0],
+"start": [12, 0, 0]
+}]
+},
+"normal": {}
+}
+seed_fields = Array[ExtResource("5_2k5dn")]([SubResource("Resource_ev63j")])
+fail_noise_hops = 0
+rewards = Array[ExtResource("2_ev63j")]([SubResource("Resource_v54tn")])
+solved_flag = &"p07.solved"

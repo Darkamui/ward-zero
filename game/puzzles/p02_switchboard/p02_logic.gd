@@ -140,6 +140,27 @@ func solution() -> Variant:
 	return required_links()
 
 
+func apply_solution() -> bool:
+	patches = []
+	for link in solution():
+		connect_jacks(link[0], link[1])
+	return ring()
+
+
+func random_input(rng: RandomNumberGenerator) -> void:
+	var j := jacks()
+	match rng.randi() % 3:
+		0:
+			connect_jacks(j[rng.randi() % j.size()], j[rng.randi() % j.size()])
+		1:
+			unplug_link(j[rng.randi() % j.size()], j[rng.randi() % j.size()])
+		2:
+			if not patches.is_empty():
+				var saved := patches.duplicate(true)
+				if not ring():
+					patches = saved
+
+
 ## Directory placeholders: "ext_<role>".
 static func computed_value(v: Dictionary, field: StringName) -> Variant:
 	var f := String(field)

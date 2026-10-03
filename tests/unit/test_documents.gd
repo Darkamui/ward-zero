@@ -80,7 +80,10 @@ func test_fragments_have_documents() -> void:
 			for doc in ContentDB.documents.values():
 				if doc.fragment_id == item.fragment_id:
 					found = true
-			assert_true(found, "fragment %s has a document" % item.fragment_id)
+			for tape in ContentDB.tapes.values():
+				if tape.fragment_id == item.fragment_id:
+					found = true
+			assert_true(found, "fragment %s has a document or tape" % item.fragment_id)
 
 
 func test_item_text_translated() -> void:
@@ -135,3 +138,58 @@ func test_easy_clues() -> void:
 		var p02 := PuzzleValues.make_logic(ContentDB.get_puzzle(&"P02")) as P02Logic
 		assert_eq(p02.cable_count(), 2)
 		assert_true(_body(&"doc_desk_memo").contains("Two cables"))
+
+
+func test_act2_clues_match_solutions() -> void:
+	for difficulty in ["easy", "normal", "hard"]:
+		GameState.set_difficulty("patient", difficulty)
+		for s in 15:
+			Seed.set_seed(s * 31 + 7)
+			# P06: chart shape + log colour identify each patient's pill.
+			var p06 := PuzzleValues.make_logic(ContentDB.get_puzzle(&"P06")) as P06Logic
+			var charts := _body(&"doc_med_charts")
+			var shift_log := _body(&"doc_shift_log")
+			for i in p06.patient_count():
+				var name: String = PuzzleValues.value(&"P06", StringName("patient_%d" % i))
+				var shape := tr(PuzzleValues.value(&"P06", StringName("shape_key_%d" % i)))
+				var color := tr(PuzzleValues.value(&"P06", StringName("color_key_%d" % i)))
+				assert_true(
+					charts.contains("%s: one %s" % [name, color if difficulty == "easy" else shape]),
+					"%s chart (%s)" % [name, difficulty]
+				)
+				assert_true(shift_log.contains("%s — the %s one" % [name, color]), "%s log" % name)
+			# P08: the ledger row matching the note's bed and day has the target tag.
+			var p08 := PuzzleValues.make_logic(ContentDB.get_puzzle(&"P08")) as P08Logic
+			var key := (
+				"Bed %d — %s —"
+				% [PuzzleValues.value(&"P08", &"bed"), PuzzleValues.value(&"P08", &"day_name")]
+			)
+			var matches := []
+			for line in _body(&"doc_laundry_ledger").split("\n"):
+				if line.begins_with(key):
+					matches.append(line)
+			assert_eq(matches.size(), 1, "exactly one ledger row for the note's bed and day")
+			if matches.size() == 1:
+				assert_true(
+					matches[0].ends_with(p08.tag(p08.target())), "that row has the stained sheet's tag"
+				)
+			# P08 label shows the lockbox code.
+			var lock := PuzzleValues.make_logic(ContentDB.get_puzzle(&"P08L")) as CodeLockLogic
+			assert_true(
+				_body(&"doc_sheet_label").ends_with("%d%d%d" % lock.code()), "label gives the lockbox code"
+			)
+			# P10: the two boards together give the padlock code.
+			var p10 := PuzzleValues.make_logic(ContentDB.get_puzzle(&"P10")) as CodeLockLogic
+			var c := p10.code()
+			assert_true(
+				_body(&"doc_board_1998").contains(str(c[0])) and _body(&"doc_board_1976").ends_with(str(c[3]))
+			)
+			# P11: the lid sheet lists the melody, note by note.
+			var p11 := PuzzleValues.make_logic(ContentDB.get_puzzle(&"P11")) as P11Logic
+			var names := []
+			for n in p11.melody():
+				names.append(tr("note.%s" % P11Logic.NOTES[n]))
+			assert_true(
+				_body(&"doc_lid_sheet").ends_with(" ".join(names)), "lid sheet = melody (%s)" % difficulty
+			)
+	GameState.set_difficulty("patient", "normal")

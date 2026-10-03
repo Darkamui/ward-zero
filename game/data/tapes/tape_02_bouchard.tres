@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="TapeData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/tape_data.gd" id="1_pqgjw"]
+[ext_resource type="Script" path="res://game/schemas/sub_line.gd" id="2_ax1yg"]
+
+[sub_resource type="Resource" id="Resource_1iwpu"]
+script = ExtResource("2_ax1yg")
+start = 0.5
+end = 4.5
+key = "tape.02_bouchard.line1"
+
+[sub_resource type="Resource" id="Resource_ukuqi"]
+script = ExtResource("2_ax1yg")
+start = 5.0
+end = 9.5
+key = "tape.02_bouchard.line2"
+
+[sub_resource type="Resource" id="Resource_anqt6"]
+script = ExtResource("2_ax1yg")
+start = 10.0
+end = 14.0
+key = "tape.02_bouchard.line3"
+
+[sub_resource type="Resource" id="Resource_os3al"]
+script = ExtResource("2_ax1yg")
+start = 14.5
+end = 18.0
+key = "tape.02_bouchard.line4"
+
+[resource]
+script = ExtResource("1_pqgjw")
+id = &"tape_02_bouchard"
+title_key = "tape.02_bouchard.title"
+subtitles = Array[ExtResource("2_ax1yg")]([SubResource("Resource_1iwpu"), SubResource("Resource_ukuqi"), SubResource("Resource_anqt6"), SubResource("Resource_os3al")])
+fragment_id = &"F07"

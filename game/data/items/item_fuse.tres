@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_siikd"]
+[ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_yo7s3"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_r1t3q"]
+
+[resource]
+script = ExtResource("2_yo7s3")
+id = &"item_fuse"
+name_key = "item.fuse.name"
+desc_key = "item.fuse.desc"
+kind = 5

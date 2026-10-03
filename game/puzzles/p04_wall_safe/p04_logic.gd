@@ -49,3 +49,15 @@ func deserialize(d: Dictionary) -> void:
 
 func solution() -> Variant:
 	return code()
+
+
+func apply_solution() -> bool:
+	for i in 4:
+		set_wheel(i, code()[i])
+	return pull()
+
+
+func random_input(rng: RandomNumberGenerator) -> void:
+	turn_wheel(rng.randi() % 4, rng.randi_range(-3, 3))
+	if wheels != code():
+		pull()

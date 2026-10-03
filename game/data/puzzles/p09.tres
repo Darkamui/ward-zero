@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3]
+
+[ext_resource type="Script" path="res://game/puzzles/p09_drawings/p09_logic.gd" id="1_gblat"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_ceh64"]
+[ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="3_lodrl"]
+[ext_resource type="Script" path="res://game/core/actions/open_document.gd" id="4_oad1e"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="5_3od1t"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="6_bmw0s"]
+
+[sub_resource type="Resource" id="Resource_gblat"]
+script = ExtResource("3_lodrl")
+item_id = &"item_f04_drawing"
+
+[sub_resource type="Resource" id="Resource_ceh64"]
+script = ExtResource("4_oad1e")
+document_id = &"doc_f04_drawing"
+
+[sub_resource type="Resource" id="Resource_lodrl"]
+script = ExtResource("3_lodrl")
+item_id = &"item_ribbon"
+
+[sub_resource type="Resource" id="Resource_oad1e"]
+script = ExtResource("6_bmw0s")
+name = &"dates"
+kind = 3
+min_value = 1
+max_value = 28
+count = 6
+
+[resource]
+script = ExtResource("5_3od1t")
+id = &"P09"
+room_id = &"W02"
+logic_script = ExtResource("1_gblat")
+name_key = "puzzle.p09.name"
+params = {
+"easy": {
+"dates_on_front": true
+},
+"hard": {},
+"normal": {}
+}
+seed_fields = Array[ExtResource("6_bmw0s")]([SubResource("Resource_oad1e")])
+rewards = Array[ExtResource("2_ceh64")]([SubResource("Resource_gblat"), SubResource("Resource_ceh64"), SubResource("Resource_lodrl")])
+solved_flag = &"p09.solved"

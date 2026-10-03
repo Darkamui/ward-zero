@@ -7,6 +7,11 @@ extends RefCounted
 
 static func all_for(data: PuzzleData) -> Dictionary:
 	var result := {}
+	# A puzzle can share another puzzle's seeded values (e.g. the E05 lockbox uses P08's).
+	if data.values_from != &"":
+		var source: PuzzleData = ContentDB.get_puzzle(data.values_from)
+		if source:
+			result = all_for(source)
 	for f in data.seed_fields:
 		result[f.name] = derive(data.id, f)
 	return result
@@ -22,6 +27,13 @@ static func derive(puzzle_id: StringName, f: SeedField) -> Variant:
 			return Seed.derive_choice(puzzle_id, f.name, f.choices)
 		SeedField.Kind.UNIQUE_INTS:
 			return Seed.derive_unique_ints(puzzle_id, f.name, f.count, f.min_value, f.max_value)
+		SeedField.Kind.INT_LIST:
+			var list: Array[int] = []
+			for i in f.count:
+				list.append(
+					Seed.derive_int(puzzle_id, StringName("%s#%d" % [f.name, i]), f.min_value, f.max_value)
+				)
+			return list
 	return null
 
 
@@ -34,6 +46,10 @@ static func value(puzzle_id: StringName, field: StringName) -> Variant:
 	var f := data.get_seed_field(field)
 	if f:
 		return derive(puzzle_id, f)
+	if data.values_from != &"":
+		var shared: Variant = value(data.values_from, field)
+		if shared != null:
+			return shared
 	if data.logic_script:
 		return data.logic_script.call(&"computed_value", all_for(data), field)
 	return null

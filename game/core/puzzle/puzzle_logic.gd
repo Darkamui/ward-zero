@@ -41,3 +41,15 @@ static func computed_value(_values: Dictionary, _field: StringName) -> Variant:
 ## critical-path smoke test; never by the game.
 func solution() -> Variant:
 	return null
+
+
+## Tests only: enters the solution and makes the final attempt. Returns its result.
+func apply_solution() -> bool:
+	push_error("apply_solution() not implemented in %s" % get_script().resource_path)
+	return false
+
+
+## Tests only: one random input (any kind, right or wrong). Must never make the puzzle
+## unsolvable (rule R7); it may solve it by chance only if that is unavoidable.
+func random_input(_rng: RandomNumberGenerator) -> void:
+	pass

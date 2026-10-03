@@ -79,6 +79,26 @@ func solution() -> Variant:
 	return hymns()
 
 
+func apply_solution() -> bool:
+	var h := hymns()
+	for r in h.size():
+		var n: int = h[r]
+		place(r, 0, n / 100)
+		place(r, 1, (n / 10) % 10)
+		place(r, 2, n % 10)
+	return submit()
+
+
+func random_input(rng: RandomNumberGenerator) -> void:
+	var r := rng.randi() % rows()
+	if rng.randf() < 0.3:
+		clear(r, rng.randi() % 3)
+	else:
+		place(r, rng.randi() % 3, rng.randi() % 10)
+	if is_full():
+		submit()
+
+
 ## Hard (GDD §8.2): the 1976 board shows hymn titles; the hymnal index maps every title to
 ## a number. title_key_<k>: title of hymn k. number_<i>: index entry for title i.
 static func computed_value(v: Dictionary, field: StringName) -> Variant:

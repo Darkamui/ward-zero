@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_gb715")
 threat = "committed"
+autosave_act_start = false
 saves_cost_cassette = true
 walk_speed = 1.7
 run_speed = 3.1

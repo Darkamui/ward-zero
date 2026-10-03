@@ -6,6 +6,9 @@ extends Resource
 @export var threat: String = "patient"
 @export var catch_lethal := true
 @export var autosave_every_room := false
+## Autosave when an act starts (GDD §8.1: Patient). Off on Committed, where every save
+## costs a Blank Cassette.
+@export var autosave_act_start := true
 @export var saves_cost_cassette := false
 @export var close_ups_pause := false
 @export var walk_speed := 1.5

@@ -10,19 +10,19 @@
 [ext_resource type="Texture2D" path="res://game/rooms/w04_playroom/bg_mem/cam_b.webp" id="5_kykpk"]
 [ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_ng60n"]
 
-[sub_resource type="Resource" id="Resource_v8vlj"]
+[sub_resource type="Resource" id="Resource_ng60n"]
 script = ExtResource("1_a12ul")
 id = &"cam_a"
 background = ExtResource("2_ng60n")
 memory_background = ExtResource("3_7vwet")
 
-[sub_resource type="Resource" id="Resource_cswdv"]
+[sub_resource type="Resource" id="Resource_7vwet"]
 script = ExtResource("1_a12ul")
 id = &"cam_b"
 background = ExtResource("4_iwbn1")
 memory_background = ExtResource("5_kykpk")
 
-[sub_resource type="Resource" id="Resource_donb0"]
+[sub_resource type="Resource" id="Resource_iwbn1"]
 script = ExtResource("3_1d5g2")
 id = &"to_w01"
 target_room = &"W01"
@@ -33,8 +33,8 @@ script = ExtResource("5_ng60n")
 id = &"W04"
 name_key = "rooms.w04.name"
 scene = ExtResource("4_juaia")
-cameras = Array[ExtResource("1_a12ul")]([SubResource("Resource_v8vlj"), SubResource("Resource_cswdv")])
-exits = Array[ExtResource("3_1d5g2")]([SubResource("Resource_donb0")])
+cameras = Array[ExtResource("1_a12ul")]([SubResource("Resource_ng60n"), SubResource("Resource_7vwet")])
+exits = Array[ExtResource("3_1d5g2")]([SubResource("Resource_iwbn1")])
 map_floor = 2
 has_memory_variant = true
 map_rect = Rect2(100, 20, 100, 70)

@@ -27,7 +27,7 @@ Both are stored in `GameState` and saved with the game. New Game+ uses the same 
 | | **Observer** | **Patient** | **Committed** |
 |---|---|---|---|
 | Caught | Not lethal: whiteout, wake in the nearest safe room, one droppable item left where you were caught, composure −0.3 | Game over → retry checkpoint or load | Game over → retry checkpoint or load |
-| Saving | Autosave on every room entry + unlimited saves at tape recorders | Unlimited saves at recorders; autosave at New Game | Each save uses up a **Blank Cassette** |
+| Saving | Autosave on every room entry + unlimited saves at tape recorders | Unlimited saves at recorders; autosave at New Game and at the start of each act | Each save uses up a **Blank Cassette** |
 | Stalker walk / run (m/s) | 1.2 / 2.2 | 1.5 / 2.8 | 1.7 / 3.1 |
 | Hearing (extra hops) | −1 | 0 | +1 |
 | Search time per room (s) | 6 | 10 | 14 |
@@ -62,6 +62,7 @@ flowchart LR
   H -- yes --> U[Use it up] --> OK
   H -- no --> X[Can't save]
   E[Room entry] -- Observer only --> A[Autosave slot]
+  S[Act starts] -- "Observer, Patient" --> A
 ```
 
 10 manual slots plus an autosave slot. Any save can be exported as a text code (`WZ1-…`) and imported on another device.
@@ -214,7 +215,6 @@ flowchart LR
 | Puzzle lover who hates being chased | Observer | Hard |
 | Everything at once | Committed | Hard |
 
-## 6. Known gaps (to fix before release)
+## 6. Blank Cassettes (Committed)
 
-- **Blank Cassettes:** only 2 are placed (G03, G06). The GDD targets about 12, spread through Acts 2–4. Committed players run out after Act 1.
-- **Patient act-start autosave:** the game autosaves at New Game only. Acts 2–4 don't autosave yet.
+They only appear on Committed, and every floor has some. Rooms: G03, G06, G07, E05, W04, W06, B01 (Acts 1–2); U01, U03, U05 (Act 3); B02, B05 (Act 4). That makes 12 in all. A test checks there are at least 12 and that each floor has one.

@@ -7,12 +7,12 @@
 [ext_resource type="PackedScene" path="res://game/rooms/w06_staff_lounge/w06_staff_lounge.tscn" id="4_tprqb"]
 [ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_7tmgt"]
 
-[sub_resource type="Resource" id="Resource_tprqb"]
+[sub_resource type="Resource" id="Resource_d51xs"]
 script = ExtResource("1_7vocj")
 id = &"cam_a"
 background = ExtResource("2_dmg2m")
 
-[sub_resource type="Resource" id="Resource_7tmgt"]
+[sub_resource type="Resource" id="Resource_dmg2m"]
 script = ExtResource("3_dmg2m")
 id = &"to_w01"
 target_room = &"W01"
@@ -23,8 +23,8 @@ script = ExtResource("5_7tmgt")
 id = &"W06"
 name_key = "rooms.w06.name"
 scene = ExtResource("4_tprqb")
-cameras = Array[ExtResource("1_7vocj")]([SubResource("Resource_tprqb")])
-exits = Array[ExtResource("3_dmg2m")]([SubResource("Resource_7tmgt")])
+cameras = Array[ExtResource("1_7vocj")]([SubResource("Resource_d51xs")])
+exits = Array[ExtResource("3_dmg2m")]([SubResource("Resource_dmg2m")])
 access = 2
 map_floor = 2
 safe_room = true

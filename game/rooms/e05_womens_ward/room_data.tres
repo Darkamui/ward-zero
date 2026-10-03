@@ -8,17 +8,17 @@
 [ext_resource type="PackedScene" path="res://game/rooms/e05_womens_ward/e05_womens_ward.tscn" id="4_nyljy"]
 [ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_5au75"]
 
-[sub_resource type="Resource" id="Resource_5au75"]
+[sub_resource type="Resource" id="Resource_m7fwx"]
 script = ExtResource("1_ee8uw")
 id = &"cam_a"
 background = ExtResource("2_m7fwx")
 
-[sub_resource type="Resource" id="Resource_nyevg"]
+[sub_resource type="Resource" id="Resource_nyljy"]
 script = ExtResource("1_ee8uw")
 id = &"cam_b"
 background = ExtResource("3_nyljy")
 
-[sub_resource type="Resource" id="Resource_ieafx"]
+[sub_resource type="Resource" id="Resource_5au75"]
 script = ExtResource("3_m7fwx")
 id = &"to_e01"
 target_room = &"E01"
@@ -29,8 +29,8 @@ script = ExtResource("5_5au75")
 id = &"E05"
 name_key = "rooms.e05.name"
 scene = ExtResource("4_nyljy")
-cameras = Array[ExtResource("1_ee8uw")]([SubResource("Resource_5au75"), SubResource("Resource_nyevg")])
-exits = Array[ExtResource("3_m7fwx")]([SubResource("Resource_ieafx")])
+cameras = Array[ExtResource("1_ee8uw")]([SubResource("Resource_m7fwx"), SubResource("Resource_nyljy")])
+exits = Array[ExtResource("3_m7fwx")]([SubResource("Resource_5au75")])
 access = 0
 map_floor = 1
 map_rect = Rect2(230, 140, 120, 80)

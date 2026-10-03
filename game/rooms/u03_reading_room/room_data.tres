@@ -7,12 +7,12 @@
 [ext_resource type="PackedScene" path="res://game/rooms/u03_reading_room/u03_reading_room.tscn" id="4_op1mo"]
 [ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_gxgnf"]
 
-[sub_resource type="Resource" id="Resource_op1mo"]
+[sub_resource type="Resource" id="Resource_thaem"]
 script = ExtResource("1_ty2gj")
 id = &"cam_a"
 background = ExtResource("2_4otr4")
 
-[sub_resource type="Resource" id="Resource_gxgnf"]
+[sub_resource type="Resource" id="Resource_4otr4"]
 script = ExtResource("3_4otr4")
 id = &"to_u01"
 target_room = &"U01"
@@ -23,8 +23,8 @@ script = ExtResource("5_gxgnf")
 id = &"U03"
 name_key = "rooms.u03.name"
 scene = ExtResource("4_op1mo")
-cameras = Array[ExtResource("1_ty2gj")]([SubResource("Resource_op1mo")])
-exits = Array[ExtResource("3_4otr4")]([SubResource("Resource_gxgnf")])
+cameras = Array[ExtResource("1_ty2gj")]([SubResource("Resource_thaem")])
+exits = Array[ExtResource("3_4otr4")]([SubResource("Resource_4otr4")])
 access = 2
 map_floor = 3
 safe_room = true

@@ -198,6 +198,7 @@ func _content_u01(g: GB, _w: float, _d: float, _h: float) -> void:
 		Vector3(-6.2, 0, 0.0),
 		[GB.text("rooms.u01.portrait")]
 	)
+	_cassette(g, Vector3(-1.5, 0.6, 2.1), Vector3(-1.5, 0, 1.3))
 
 
 func _triggers_u01() -> Array:
@@ -263,6 +264,7 @@ func _content_u03(g: GB, _w: float, _d: float, _h: float) -> void:
 		Vector3(-1.0, 0, -1.0),
 		[GB.doc("doc_reading_list")]
 	)
+	_cassette(g, Vector3(2.4, 0.2, 1.8), Vector3(1.6, 0, 1.8))
 
 
 func _content_u04(g: GB, _w: float, _d: float, _h: float) -> void:
@@ -342,6 +344,7 @@ func _content_u05(g: GB, _w: float, _d: float, _h: float) -> void:
 		Vector3(-3.8, 0, 0.5),
 		Vector3(-4.7, 0, 0.5)
 	)
+	_cassette(g, Vector3(3.0, 0.5, 1.0), Vector3(3.0, 0, 0.2))
 
 
 func _content_u06(g: GB, _w: float, _d: float, _h: float) -> void:
@@ -409,6 +412,7 @@ func _content_b02(g: GB, _w: float, _d: float, _h: float) -> void:
 		Vector3(-1.75, 0, 3.0)
 	)
 	g.box(g.geometry, "occ_gurney", Vector3(0.7, 0.9, 2.0), Vector3(-1.4, 0.45, -3.0), METAL)
+	_cassette(g, Vector3(-1.4, 1.0, -3.0), Vector3(-0.6, 0, -3.0))
 
 
 func _triggers_b02() -> Array:
@@ -540,6 +544,7 @@ func _content_b05(g: GB, _w: float, _d: float, _h: float) -> void:
 		Vector3(-0.4, 0, -1.1),
 		[GB.doc("doc_vault_rules")]
 	)
+	_cassette(g, Vector3(2.2, 0.2, 1.6), Vector3(1.4, 0, 1.6))
 
 
 func _content_b06(g: GB, _w: float, _d: float, _h: float) -> void:

@@ -7,18 +7,18 @@
 [ext_resource type="PackedScene" path="res://game/rooms/b05_archive_antechamber/b05_archive_antechamber.tscn" id="4_iotjb"]
 [ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_tnxrp"]
 
-[sub_resource type="Resource" id="Resource_iotjb"]
+[sub_resource type="Resource" id="Resource_crj4s"]
 script = ExtResource("1_2em1j")
 id = &"cam_a"
 background = ExtResource("2_aqpsb")
 
-[sub_resource type="Resource" id="Resource_tnxrp"]
+[sub_resource type="Resource" id="Resource_aqpsb"]
 script = ExtResource("3_aqpsb")
 id = &"to_b02"
 target_room = &"B02"
 target_spawn = &"spawn_from_b05"
 
-[sub_resource type="Resource" id="Resource_76jst"]
+[sub_resource type="Resource" id="Resource_iotjb"]
 script = ExtResource("3_aqpsb")
 id = &"to_b06"
 target_room = &"B06"
@@ -31,8 +31,8 @@ script = ExtResource("5_tnxrp")
 id = &"B05"
 name_key = "rooms.b05.name"
 scene = ExtResource("4_iotjb")
-cameras = Array[ExtResource("1_2em1j")]([SubResource("Resource_iotjb")])
-exits = Array[ExtResource("3_aqpsb")]([SubResource("Resource_tnxrp"), SubResource("Resource_76jst")])
+cameras = Array[ExtResource("1_2em1j")]([SubResource("Resource_crj4s")])
+exits = Array[ExtResource("3_aqpsb")]([SubResource("Resource_aqpsb"), SubResource("Resource_iotjb")])
 access = 2
 map_floor = 4
 safe_room = true

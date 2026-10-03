@@ -122,3 +122,35 @@ func test_sedatives_restore_composure() -> void:
 	assert_between(GameState.composure, 0.59, 0.61)
 	assert_false(inv.consume("item_music_box_crank"), "not a consumable")
 	inv.free()
+
+
+func test_committed_has_enough_cassettes() -> void:
+	# GDD §8.1: about 12 Blank Cassettes in the whole game, spread across the acts.
+	GameState.set_difficulty("committed", "normal")
+	var total := 0
+	var floors := {}
+	for room_id in ContentDB.rooms:
+		var data: RoomData = ContentDB.get_room(room_id)
+		var room := data.scene.instantiate() as Room
+		for h in room.hotspots():
+			if h.item_id == &"item_blank_cassette":
+				total += 1
+				floors[data.map_floor] = true
+		room.free()
+	assert_true(total >= 12, "at least 12 cassettes placed (found %d)" % total)
+	assert_eq(floors.size(), RoomData.Floor.size(), "cassettes on every floor")
+
+
+func test_act_start_autosaves_except_committed() -> void:
+	for threat in ["patient", "committed"]:
+		SaveSystem.delete_slot(SaveSystem.AUTOSAVE_SLOT)
+		GameState.set_difficulty(threat, "normal")
+		GameState.set_flag("act3.started", false)
+		enter(&"U01", &"spawn_from_g09")
+		var saved := SaveSystem.has_save(SaveSystem.AUTOSAVE_SLOT)
+		assert_eq(saved, threat == "patient", "act-start autosave on %s" % threat)
+		StalkerDirector.reset()
+	SaveSystem.delete_slot(SaveSystem.AUTOSAVE_SLOT)
+	GameState.set_difficulty("patient", "normal")
+	enter(&"U01", &"spawn_from_g09")
+	assert_false(SaveSystem.has_save(SaveSystem.AUTOSAVE_SLOT), "once per act, not every entry")

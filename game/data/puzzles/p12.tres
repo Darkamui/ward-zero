@@ -8,19 +8,19 @@
 [ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="5_mr10k"]
 [ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="6_4pp1a"]
 
-[sub_resource type="Resource" id="Resource_mxqg3"]
+[sub_resource type="Resource" id="Resource_g8sw5"]
 script = ExtResource("3_mxqg3")
 item_id = &"item_phlegmatic_key"
 
-[sub_resource type="Resource" id="Resource_jqyai"]
+[sub_resource type="Resource" id="Resource_mxqg3"]
 script = ExtResource("3_mxqg3")
 item_id = &"item_f06_scratchings"
 
-[sub_resource type="Resource" id="Resource_mr10k"]
+[sub_resource type="Resource" id="Resource_jqyai"]
 script = ExtResource("4_jqyai")
 document_id = &"doc_f06_scratchings"
 
-[sub_resource type="Resource" id="Resource_4pp1a"]
+[sub_resource type="Resource" id="Resource_mr10k"]
 script = ExtResource("6_4pp1a")
 name = &"knocks"
 kind = 4
@@ -45,6 +45,6 @@ params = {
 "length": 4
 }
 }
-seed_fields = Array[ExtResource("6_4pp1a")]([SubResource("Resource_4pp1a")])
-rewards = Array[ExtResource("2_g8sw5")]([SubResource("Resource_mxqg3"), SubResource("Resource_jqyai"), SubResource("Resource_mr10k")])
+seed_fields = Array[ExtResource("6_4pp1a")]([SubResource("Resource_mr10k")])
+rewards = Array[ExtResource("2_g8sw5")]([SubResource("Resource_g8sw5"), SubResource("Resource_mxqg3"), SubResource("Resource_jqyai")])
 solved_flag = &"p12.solved"

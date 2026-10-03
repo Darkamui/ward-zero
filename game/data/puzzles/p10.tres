@@ -8,19 +8,19 @@
 [ext_resource type="PackedScene" path="res://game/puzzles/p10_chalkboard/p10.tscn" id="5_kwrlw"]
 [ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="6_jvr6x"]
 
-[sub_resource type="Resource" id="Resource_fqcre"]
+[sub_resource type="Resource" id="Resource_kwrlw"]
 script = ExtResource("3_fqcre")
 item_id = &"item_f05_essay"
 
-[sub_resource type="Resource" id="Resource_cwrvq"]
+[sub_resource type="Resource" id="Resource_fqcre"]
 script = ExtResource("4_cwrvq")
 document_id = &"doc_f05_essay"
 
-[sub_resource type="Resource" id="Resource_gbcmq"]
+[sub_resource type="Resource" id="Resource_cwrvq"]
 script = ExtResource("3_fqcre")
 item_id = &"item_cylinder"
 
-[sub_resource type="Resource" id="Resource_jvr6x"]
+[sub_resource type="Resource" id="Resource_gbcmq"]
 script = ExtResource("6_jvr6x")
 name = &"code_number"
 min_value = 1000
@@ -39,6 +39,6 @@ params = {
 "digits": 4
 }
 }
-seed_fields = Array[ExtResource("6_jvr6x")]([SubResource("Resource_jvr6x")])
-rewards = Array[ExtResource("2_kwrlw")]([SubResource("Resource_fqcre"), SubResource("Resource_cwrvq"), SubResource("Resource_gbcmq")])
+seed_fields = Array[ExtResource("6_jvr6x")]([SubResource("Resource_gbcmq")])
+rewards = Array[ExtResource("2_kwrlw")]([SubResource("Resource_kwrlw"), SubResource("Resource_fqcre"), SubResource("Resource_cwrvq")])
 solved_flag = &"p10.solved"

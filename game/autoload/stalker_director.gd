@@ -25,6 +25,21 @@ const MIN_TELEGRAPH_SECONDS := 3.0
 const ACT1_SPEED_FACTOR := 1.6
 const STALKER_SCENE := preload("res://game/characters/man_in_white/man_in_white.tscn")
 const ACT1_CHASE_ROOM := &"G02"
+## Act 2 patrol (docs/04-milestone-3.md §2): East and West wings and the Dining Hall.
+const ACT2_ROUTE: Array[StringName] = [
+	&"G07",
+	&"G09",
+	&"E01",
+	&"E05",
+	&"E04",
+	&"E01",
+	&"G09",
+	&"W01",
+	&"W05",
+	&"W01",
+	&"G09",
+]
+const ACT2_START := &"E05"
 
 var state: State = State.DORMANT
 ## Recent noise events for the debug overlay: [{ room, hops, time }].
@@ -76,6 +91,41 @@ func activate(route: Array[StringName], at := &"") -> void:
 	ai_active = true
 
 
+## AI state for saving (GameState.stalker). Restored by restore().
+func snapshot() -> Dictionary:
+	if not ai_active or sim == null:
+		return {"active": false}
+	return {
+		"active": true,
+		"route": sim.patrol_route.map(func(r: StringName) -> String: return String(r)),
+		"room": String(sim.room),
+		"patrol_index": sim.patrol_index,
+		"state": int(sim.state),
+		"target": String(sim.target_room),
+		"search_left": sim.search_left,
+	}
+
+
+## Resumes the AI from a saved snapshot (after loading a game).
+func restore(d: Dictionary) -> void:
+	reset()
+	if not d.get("active", false):
+		return
+	var route: Array[StringName] = []
+	for r in d.get("route", []):
+		route.append(StringName(r))
+	if route.is_empty():
+		return
+	activate(route, StringName(d.get("room", route[0])))
+	sim.patrol_index = clampi(int(d.get("patrol_index", 0)), 0, route.size() - 1)
+	sim.target_room = StringName(d.get("target", ""))
+	sim.search_left = float(d.get("search_left", 0.0))
+	var st := int(d.get("state", StalkerSim.State.PATROL))
+	if st == StalkerSim.State.INVESTIGATE and sim.target_room == &"":
+		st = StalkerSim.State.PATROL
+	sim._set_state(st as StalkerSim.State)
+
+
 func deactivate() -> void:
 	ai_active = false
 	if sim:
@@ -91,6 +141,7 @@ func _physics_process(delta: float) -> void:
 	sim.player_in_memory = GameState.in_memory()
 	sim.hearing_extra = 1 if ComposureSystem.band() == ComposureSystem.Band.BREAKING else 0
 	sim.tick(delta)
+	GameState.stalker = snapshot()
 	if breath:
 		var holding: bool = (
 			breath_override if breath_override != null else Input.is_action_pressed(&"hold_breath")
@@ -259,8 +310,13 @@ static func _map_state(sim_state: int) -> State:
 
 
 func _on_script_requested(script_name: StringName) -> void:
-	if script_name == &"act1_chase":
-		start_act1_chase()
+	match script_name:
+		&"act1_chase":
+			start_act1_chase()
+		&"act2_start":
+			GameState.set_flag("act", 2)
+			if not ai_active:
+				activate(ACT2_ROUTE, ACT2_START)
 
 
 func set_state(new_state: State) -> void:

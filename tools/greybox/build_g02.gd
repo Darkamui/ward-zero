@@ -67,6 +67,7 @@ func run(_tree: SceneTree, _args: PackedStringArray) -> int:
 	g.spawn("spawn_from_g04", Vector3(-3.0, 0, -4.2), 180.0)
 	g.spawn("spawn_from_g06", Vector3(-5.2, 0, 1.0), -90.0)
 	g.spawn("spawn_stalker", Vector3(3.5, 0, -4.2), 180.0)
+	g.spawn("spawn_from_g09", Vector3(3.5, 0, -4.1), 180.0)
 
 	var kind := Interactable.Kind
 	g.hotspot_exit(
@@ -106,19 +107,16 @@ func run(_tree: SceneTree, _args: PackedStringArray) -> int:
 		[GB.text("rooms.g02.barricade")],
 		[GB.flag("g02.barricade_broken", false)]
 	)
-	g.hotspot(
+	var corridor := g.hotspot(
 		"hs_corridor",
-		kind.USE,
+		kind.EXIT,
 		Vector3(3.5, 1.3, -4.9),
 		Vector3(1.6, 2.6, 0.4),
 		Vector3(3.5, 0, -4.2),
-		[
-			GB.when(
-				[GB.has("item_choleric_key")], [GB.ui("end_of_slice")], [GB.text("rooms.g02.corridor.locked")]
-			)
-		],
+		[],
 		[GB.flag("g02.barricade_broken")]
 	)
+	corridor.exit_id = &"to_g09"
 
 	var data := (
 		g
@@ -130,6 +128,7 @@ func run(_tree: SceneTree, _args: PackedStringArray) -> int:
 				g.exit_def("to_g03", "G03", "spawn_from_g02"),
 				g.exit_def("to_g04", "G04", "spawn_from_g02", "g02.gate_open", "rooms.g02.gate.locked"),
 				g.exit_def("to_g06", "G06", "spawn_from_g02"),
+				_corridor_exit(g),
 			]
 		)
 	)
@@ -144,3 +143,10 @@ func run(_tree: SceneTree, _args: PackedStringArray) -> int:
 	var err := g.save(DIR, "g02_main_lobby", data)
 	print("build_g02: ", error_string(err))
 	return 0 if err == OK else 1
+
+
+## The corridor to G09 (Act 2): behind the barricade until the chase, then the Choleric key.
+func _corridor_exit(g: GB) -> ExitDef:
+	var e := g.exit_def("to_g09", "G09", "spawn_from_g02", "", "rooms.g02.corridor.locked")
+	e.required_key = &"item_choleric_key"
+	return e

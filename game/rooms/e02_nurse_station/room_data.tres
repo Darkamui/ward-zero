@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_7oi32"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_dod2q"]
+[ext_resource type="Texture2D" path="res://game/rooms/e02_nurse_station/bg/cam_a.webp" id="2_kyfnb"]
+[ext_resource type="Texture2D" path="res://game/rooms/e02_nurse_station/bg/cam_b.webp" id="3_2asyu"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_kyfnb"]
+[ext_resource type="PackedScene" path="res://game/rooms/e02_nurse_station/e02_nurse_station.tscn" id="4_2asyu"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_w1f3j"]
+
+[sub_resource type="Resource" id="Resource_w1f3j"]
+script = ExtResource("1_7oi32")
+id = &"cam_a"
+background = ExtResource("2_kyfnb")
+
+[sub_resource type="Resource" id="Resource_3qkd0"]
+script = ExtResource("1_7oi32")
+id = &"cam_b"
+background = ExtResource("3_2asyu")
+
+[sub_resource type="Resource" id="Resource_qewdu"]
+script = ExtResource("3_kyfnb")
+id = &"to_e01"
+target_room = &"E01"
+target_spawn = &"spawn_from_e02"
+
+[resource]
+script = ExtResource("5_w1f3j")
+id = &"E02"
+name_key = "rooms.e02.name"
+scene = ExtResource("4_2asyu")
+cameras = Array[ExtResource("1_7oi32")]([SubResource("Resource_w1f3j"), SubResource("Resource_3qkd0")])
+exits = Array[ExtResource("3_kyfnb")]([SubResource("Resource_qewdu")])
+map_floor = 1
+map_rect = Rect2(100, 40, 100, 60)

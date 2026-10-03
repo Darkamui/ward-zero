@@ -31,7 +31,7 @@ func _ready() -> void:
 	_add(HidingHud.new())
 	if not OS.has_feature("release"):
 		add_child(DebugOverlay.new())
-	StalkerDirector.reset()
+	StalkerDirector.restore(GameState.stalker)
 	StalkerDirector.player_caught.connect(_on_player_caught)
 	RoomManager.setup(world, player)
 	if GameState.current_room == "":

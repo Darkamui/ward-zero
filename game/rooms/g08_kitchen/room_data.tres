@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_iujyq"]
+[ext_resource type="Texture2D" path="res://game/rooms/g08_kitchen/bg/cam_a.webp" id="2_028c8"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_pxxpd"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_028c8"]
+[ext_resource type="Texture2D" path="res://game/rooms/g08_kitchen/bg/cam_b.webp" id="3_o136g"]
+[ext_resource type="PackedScene" path="res://game/rooms/g08_kitchen/g08_kitchen.tscn" id="4_o136g"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_wru2k"]
+
+[sub_resource type="Resource" id="Resource_wru2k"]
+script = ExtResource("1_iujyq")
+id = &"cam_a"
+background = ExtResource("2_028c8")
+
+[sub_resource type="Resource" id="Resource_4e4se"]
+script = ExtResource("1_iujyq")
+id = &"cam_b"
+background = ExtResource("3_o136g")
+
+[sub_resource type="Resource" id="Resource_n1iik"]
+script = ExtResource("3_028c8")
+id = &"to_g07"
+target_room = &"G07"
+target_spawn = &"spawn_from_g08"
+
+[sub_resource type="Resource" id="Resource_5do46"]
+script = ExtResource("3_028c8")
+id = &"to_b01"
+target_room = &"B01"
+target_spawn = &"spawn_from_g08"
+lock_flag = &"b01.shortcut_open"
+locked_message_key = "rooms.g08.shortcut.locked"
+
+[resource]
+script = ExtResource("5_wru2k")
+id = &"G08"
+name_key = "rooms.g08.name"
+scene = ExtResource("4_o136g")
+cameras = Array[ExtResource("1_iujyq")]([SubResource("Resource_wru2k"), SubResource("Resource_4e4se")])
+exits = Array[ExtResource("3_028c8")]([SubResource("Resource_n1iik"), SubResource("Resource_5do46")])
+access = 0
+map_rect = Rect2(450, -40, 80, 60)

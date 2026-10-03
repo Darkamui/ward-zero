@@ -446,7 +446,12 @@ func _act2_puzzles() -> void:
 	var p13 := _puzzle("P13", "B01", "p13_boiler", P13Logic, 2, &"p13.solved")
 	p13.seed_fields = [_field("solution", SeedField.Kind.INT_LIST, 1, 5, 1, 3)]
 	p13.params = {"easy": {"simple": true}, "normal": {}, "hard": {}}
-	p13.rewards = [_set_flag("b01.power_on"), _give("item_f07_tape"), _play_tape("tape_02_bouchard")]
+	p13.rewards = [
+		_set_flag("b01.power_on"),
+		_set_flag("b01.shortcut_open"),
+		_give("item_f07_tape"),
+		_play_tape("tape_02_bouchard")
+	]
 	_save_puzzle(p13)
 
 

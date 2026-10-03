@@ -1,10 +1,9 @@
 class_name EndOfSliceScreen
 extends CanvasLayer
-## End of the M1 vertical slice (docs/02-milestone-1.md §2.1, M1-16): puzzles solved,
-## fragments found, play time.
+## End of the playable build (Act 1 in M1, Act 2 from M3): puzzles solved, fragments
+## found, play time. Counts every puzzle that has a close-up scene.
 
 const UI_NAME := &"end_of_slice"
-const ACT1_PUZZLES := ["P01", "P02", "P03", "P04", "P05"]
 
 
 func _ready() -> void:
@@ -20,12 +19,16 @@ func _on_ui_requested(ui_name: StringName) -> void:
 
 static func stats() -> Dictionary:
 	var solved := 0
-	for p in ACT1_PUZZLES:
-		if GameState.is_puzzle_solved(p):
+	var total := 0
+	for p in ContentDB.puzzles.values():
+		if p.scene == null:
+			continue
+		total += 1
+		if GameState.is_puzzle_solved(String(p.id)):
 			solved += 1
 	return {
 		"solved": solved,
-		"total": ACT1_PUZZLES.size(),
+		"total": total,
 		"fragments": GameState.fragments().size(),
 		"time": "%d:%02d" % [int(GameState.play_time) / 3600, (int(GameState.play_time) / 60) % 60],
 	}

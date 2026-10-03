@@ -9,9 +9,13 @@
 [ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="6_weflb"]
 [ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="7_jx35c"]
 
-[sub_resource type="Resource" id="Resource_1w0fa"]
+[sub_resource type="Resource" id="Resource_0nqyc"]
 script = ExtResource("3_1w0fa")
 flag = &"b01.power_on"
+
+[sub_resource type="Resource" id="Resource_1w0fa"]
+script = ExtResource("3_1w0fa")
+flag = &"b01.shortcut_open"
 
 [sub_resource type="Resource" id="Resource_fnrij"]
 script = ExtResource("4_fnrij")
@@ -45,5 +49,5 @@ params = {
 }
 seed_fields = Array[ExtResource("7_jx35c")]([SubResource("Resource_weflb")])
 fail_noise_hops = 2
-rewards = Array[ExtResource("2_0nqyc")]([SubResource("Resource_1w0fa"), SubResource("Resource_fnrij"), SubResource("Resource_1kdp8")])
+rewards = Array[ExtResource("2_0nqyc")]([SubResource("Resource_0nqyc"), SubResource("Resource_1w0fa"), SubResource("Resource_fnrij"), SubResource("Resource_1kdp8")])
 solved_flag = &"p13.solved"

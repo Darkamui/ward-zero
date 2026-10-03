@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_7vocj"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_d51xs"]
+[ext_resource type="Texture2D" path="res://game/rooms/w06_staff_lounge/bg/cam_a.webp" id="2_dmg2m"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_dmg2m"]
+[ext_resource type="PackedScene" path="res://game/rooms/w06_staff_lounge/w06_staff_lounge.tscn" id="4_tprqb"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_7tmgt"]
+
+[sub_resource type="Resource" id="Resource_tprqb"]
+script = ExtResource("1_7vocj")
+id = &"cam_a"
+background = ExtResource("2_dmg2m")
+
+[sub_resource type="Resource" id="Resource_7tmgt"]
+script = ExtResource("3_dmg2m")
+id = &"to_w01"
+target_room = &"W01"
+target_spawn = &"spawn_from_w06"
+
+[resource]
+script = ExtResource("5_7tmgt")
+id = &"W06"
+name_key = "rooms.w06.name"
+scene = ExtResource("4_tprqb")
+cameras = Array[ExtResource("1_7vocj")]([SubResource("Resource_tprqb")])
+exits = Array[ExtResource("3_dmg2m")]([SubResource("Resource_7tmgt")])
+access = 2
+map_floor = 2
+safe_room = true
+map_rect = Rect2(110, 190, 90, 60)

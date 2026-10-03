@@ -27,3 +27,44 @@ rooms.g06.altar.use_anchor,The photograph feels warm in my pocket. Maybe I shoul
 rooms.g06.altar.wrong_item,Nothing happens.,Rien ne se passe.
 rooms.g06.loft.locked,"The choir loft gate is locked. A small slot is cut into it, like a mail slot.","La grille du jubé est verrouillée. Une petite fente y est découpée, comme une fente à courrier."
 rooms.g06.crank.taken,The loft gate swung open. A small brass crank lay on the top step.,La grille du jubé s’est ouverte. Une petite manivelle en laiton était sur la dernière marche.
+rooms.g09.name,Main Corridor,Corridor principal
+rooms.g09.west.locked,The West Wing door. A stone is engraved around the lock.,La porte de l’aile ouest. Une pierre est gravée autour de la serrure.
+rooms.g09.stairs.locked,The basement stairs door. A wave is engraved around the lock.,La porte de l’escalier du sous-sol. Une vague est gravée autour de la serrure.
+rooms.g09.elevator.dead,I press the call button. Nothing. The elevator has no power.,J’appuie sur le bouton d’appel. Rien. L’ascenseur n’a pas de courant.
+rooms.g07.name,Dining Hall,Réfectoire
+rooms.g08.name,Kitchen,Cuisine
+rooms.g08.shortcut.locked,"A service door, bolted from the other side.","Une porte de service, verrouillée de l’autre côté."
+rooms.e01.name,East Corridor,Corridor est
+rooms.e01.linen.locked,"LINGERIE, says the plate. Locked.","LINGERIE, dit la plaque. Verrouillé."
+rooms.e02.name,Nurse Station,Poste des infirmières
+rooms.e02.cart.solved,Every drawer is filled. The cart is quiet.,Chaque tiroir est rempli. Le chariot est silencieux.
+rooms.e03.name,Hydrotherapy,Hydrothérapie
+rooms.e03.valves.no_wheel,The valve stems are bare. Someone took the wheel.,Les tiges des vannes sont nues. Quelqu’un a pris le volant.
+rooms.e03.valves.solved,The tubs stand still at their marks.,Les bains restent immobiles à leurs marques.
+rooms.e04.name,Linen Room,Lingerie
+rooms.e04.shelves.solved,The stained sheet is gone from the shelf.,Le drap taché n’est plus sur l’étagère.
+rooms.e05.name,Women’s Ward,Salle des femmes
+rooms.e05.lockbox.solved,The lockbox is open and empty.,Le coffret est ouvert et vide.
+rooms.w01.name,West Corridor,Corridor ouest
+rooms.w02.name,Children’s Dormitory,Dortoir des enfants
+rooms.w02.drawings.solved,The drawings hang in order now. The story ends in a white building.,Les dessins sont en ordre maintenant. L’histoire se termine dans un bâtiment blanc.
+rooms.w02.drawings_1976,"All six drawings are pinned up. The last one, a white building with many windows, comes loose in my hand.","Les six dessins sont épinglés. Le dernier, un bâtiment blanc avec beaucoup de fenêtres, se détache dans ma main."
+rooms.w02.radiator,"The radiator is cold. There’s a narrow gap behind it, thick with dust.","Le radiateur est froid. Il y a une mince fente derrière, pleine de poussière."
+rooms.w02.radiator_hide,I slide the drawing into the gap behind the radiator. It will keep.,Je glisse le dessin dans la fente derrière le radiateur. Il s’y conservera.
+rooms.w02.radiator_found,"Behind the radiator, flattened and grey with dust: the drawing. Twenty-two years.","Derrière le radiateur, aplati et gris de poussière : le dessin. Vingt-deux ans."
+rooms.w02.resonant,The little bed hums. The air smells of wax crayons.,Le petit lit bourdonne. L’air sent les crayons de cire.
+rooms.w03.name,Classroom,Salle de classe
+rooms.w03.padlock.solved,The desk drawer hangs open.,Le tiroir du pupitre est ouvert.
+rooms.w03.resonant,The coat hook by the door hums. Something red used to hang here.,Le crochet près de la porte bourdonne. Quelque chose de rouge y était accroché.
+rooms.w04.name,Playroom,Salle de jeux
+rooms.w04.music_box.missing,"A music box. No crank, and the cylinder cradle is empty.","Une boîte à musique. Pas de manivelle, et le support du cylindre est vide."
+rooms.w04.music_box.solved,The music box has wound down.,La boîte à musique s’est arrêtée.
+rooms.w04.resonant,"The rocking horse rocks once, by itself.","Le cheval à bascule se balance une fois, tout seul."
+rooms.w04.toy_1976,In 1976 the toys are new. A red ribbon is tied to the horse’s mane.,"En 1976, les jouets sont neufs. Un ruban rouge est noué à la crinière du cheval."
+rooms.w05.name,Isolation Cells,Cellules d’isolement
+rooms.w05.cells.solved,The knocking has stopped.,Les coups ont cessé.
+rooms.w06.name,Staff Lounge,Salon du personnel
+rooms.b01.name,Boiler Room,Chaufferie
+rooms.b01.boiler.no_fuse,The control panel is dead. An empty fuse holder gapes open.,Le panneau de commande est mort. Un porte-fusible vide est grand ouvert.
+rooms.b01.boiler.solved,"The boiler hums. Somewhere above, the elevator motor wakes.","La chaudière ronronne. Quelque part en haut, le moteur de l’ascenseur se réveille."
+rooms.b01.shortcut.locked,A service door to the kitchen. It won’t open from this side yet.,Une porte de service vers la cuisine. Elle ne s’ouvre pas encore de ce côté.

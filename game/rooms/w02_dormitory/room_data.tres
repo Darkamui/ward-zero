@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_jedm4"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_121e8"]
+[ext_resource type="Texture2D" path="res://game/rooms/w02_dormitory/bg/cam_a.webp" id="2_bod2s"]
+[ext_resource type="Texture2D" path="res://game/rooms/w02_dormitory/bg_mem/cam_a.webp" id="3_nj6vh"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_s8704"]
+[ext_resource type="Texture2D" path="res://game/rooms/w02_dormitory/bg/cam_b.webp" id="4_m2i83"]
+[ext_resource type="PackedScene" path="res://game/rooms/w02_dormitory/w02_dormitory.tscn" id="4_t2b0s"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_bod2s"]
+[ext_resource type="Texture2D" path="res://game/rooms/w02_dormitory/bg_mem/cam_b.webp" id="5_ihqap"]
+
+[sub_resource type="Resource" id="Resource_id1ee"]
+script = ExtResource("1_jedm4")
+id = &"cam_a"
+background = ExtResource("2_bod2s")
+memory_background = ExtResource("3_nj6vh")
+
+[sub_resource type="Resource" id="Resource_jo6hj"]
+script = ExtResource("1_jedm4")
+id = &"cam_b"
+background = ExtResource("4_m2i83")
+memory_background = ExtResource("5_ihqap")
+
+[sub_resource type="Resource" id="Resource_st3sd"]
+script = ExtResource("3_s8704")
+id = &"to_w01"
+target_room = &"W01"
+target_spawn = &"spawn_from_w02"
+
+[resource]
+script = ExtResource("5_bod2s")
+id = &"W02"
+name_key = "rooms.w02.name"
+scene = ExtResource("4_t2b0s")
+cameras = Array[ExtResource("1_jedm4")]([SubResource("Resource_id1ee"), SubResource("Resource_jo6hj")])
+exits = Array[ExtResource("3_s8704")]([SubResource("Resource_st3sd")])
+map_floor = 2
+has_memory_variant = true
+map_rect = Rect2(230, 20, 110, 70)

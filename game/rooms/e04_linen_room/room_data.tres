@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_wm5fp"]
+[ext_resource type="Texture2D" path="res://game/rooms/e04_linen_room/bg/cam_a.webp" id="2_8u6va"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_a2x3f"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_8u6va"]
+[ext_resource type="Texture2D" path="res://game/rooms/e04_linen_room/bg/cam_b.webp" id="3_f0s0p"]
+[ext_resource type="PackedScene" path="res://game/rooms/e04_linen_room/e04_linen_room.tscn" id="4_f0s0p"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_mylgx"]
+
+[sub_resource type="Resource" id="Resource_mylgx"]
+script = ExtResource("1_wm5fp")
+id = &"cam_a"
+background = ExtResource("2_8u6va")
+
+[sub_resource type="Resource" id="Resource_06t87"]
+script = ExtResource("1_wm5fp")
+id = &"cam_b"
+background = ExtResource("3_f0s0p")
+
+[sub_resource type="Resource" id="Resource_5tib6"]
+script = ExtResource("3_8u6va")
+id = &"to_e01"
+target_room = &"E01"
+target_spawn = &"spawn_from_e04"
+
+[resource]
+script = ExtResource("5_mylgx")
+id = &"E04"
+name_key = "rooms.e04.name"
+scene = ExtResource("4_f0s0p")
+cameras = Array[ExtResource("1_wm5fp")]([SubResource("Resource_mylgx"), SubResource("Resource_06t87")])
+exits = Array[ExtResource("3_8u6va")]([SubResource("Resource_5tib6")])
+access = 0
+map_floor = 1
+map_rect = Rect2(100, 140, 90, 70)

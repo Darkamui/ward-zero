@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_1qark"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_d5tfj"]
+[ext_resource type="Texture2D" path="res://game/rooms/w03_classroom/bg/cam_a.webp" id="2_noxbu"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_f1shq"]
+[ext_resource type="Texture2D" path="res://game/rooms/w03_classroom/bg_mem/cam_a.webp" id="3_ocw3q"]
+[ext_resource type="Texture2D" path="res://game/rooms/w03_classroom/bg/cam_b.webp" id="4_8h0a7"]
+[ext_resource type="PackedScene" path="res://game/rooms/w03_classroom/w03_classroom.tscn" id="4_3035i"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_noxbu"]
+[ext_resource type="Texture2D" path="res://game/rooms/w03_classroom/bg_mem/cam_b.webp" id="5_ymttj"]
+
+[sub_resource type="Resource" id="Resource_ecqhi"]
+script = ExtResource("1_1qark")
+id = &"cam_a"
+background = ExtResource("2_noxbu")
+memory_background = ExtResource("3_ocw3q")
+
+[sub_resource type="Resource" id="Resource_jg45x"]
+script = ExtResource("1_1qark")
+id = &"cam_b"
+background = ExtResource("4_8h0a7")
+memory_background = ExtResource("5_ymttj")
+
+[sub_resource type="Resource" id="Resource_uqaag"]
+script = ExtResource("3_f1shq")
+id = &"to_w01"
+target_room = &"W01"
+target_spawn = &"spawn_from_w03"
+
+[resource]
+script = ExtResource("5_noxbu")
+id = &"W03"
+name_key = "rooms.w03.name"
+scene = ExtResource("4_3035i")
+cameras = Array[ExtResource("1_1qark")]([SubResource("Resource_ecqhi"), SubResource("Resource_jg45x")])
+exits = Array[ExtResource("3_f1shq")]([SubResource("Resource_uqaag")])
+map_floor = 2
+has_memory_variant = true
+map_rect = Rect2(230, 110, 110, 80)

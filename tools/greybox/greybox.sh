@@ -1,5 +1,5 @@
 #!/bin/sh
-# Build, clay-render, import and link one greybox room. Run from ward-zero/.
+# Build, clay-render, import and link one greybox room. Run from the repo root.
 # Usage: tools/greybox/greybox.sh G01 build_g01 [--memory]
 set -e
 ROOM="$1"; BUILDER="res://tools/greybox/$2.gd"; shift 2

@@ -2,7 +2,7 @@
 
 Greybox rooms are built from code so layouts are reproducible, then clay-rendered to stand-in backgrounds through the same path the final Blender renders will use (docs/02-milestone-1.md §7).
 
-One room, from `ward-zero/`:
+One room, from the repo root:
 
 ```
 godot --headless res://tools/run_tool.tscn -- res://tools/greybox/build_g01.gd

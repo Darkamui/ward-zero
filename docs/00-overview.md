@@ -16,7 +16,7 @@
 | [`adr/`](./adr/) | Architecture decision records | Before changing a decision |
 | `03-…` onward | M2–M5. Write each one at the end of the milestone before it, using the measurements from that milestone | Later |
 
-> **Repo location:** the project lives in the `ward-zero/` folder of the `Z-Pong` repo until its own `ward-zero` repo exists (task F-01). That folder is self-contained: it becomes the new repo's root as-is (`git subtree split --prefix ward-zero` keeps history).
+> **Repo location:** `Darkamui/ward-zero` (task F-01). It began in the `ward-zero/` folder of `Z-Pong`, and its history was carried over with `git subtree split`.
 
 ---
 

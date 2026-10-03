@@ -4,13 +4,14 @@
 [ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_uwk1i"]
 [ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="3_y4a3e"]
 [ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="4_n0sms"]
+[ext_resource type="PackedScene" path="res://game/puzzles/p11_music_box/p11.tscn" id="4_uwk1i"]
 [ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="5_jvsh8"]
 
-[sub_resource type="Resource" id="Resource_off4h"]
+[sub_resource type="Resource" id="Resource_y4a3e"]
 script = ExtResource("3_y4a3e")
 item_id = &"item_fuse"
 
-[sub_resource type="Resource" id="Resource_uwk1i"]
+[sub_resource type="Resource" id="Resource_n0sms"]
 script = ExtResource("5_jvsh8")
 name = &"melody"
 kind = 4
@@ -21,6 +22,7 @@ count = 8
 script = ExtResource("4_n0sms")
 id = &"P11"
 room_id = &"W04"
+scene = ExtResource("4_uwk1i")
 logic_script = ExtResource("1_off4h")
 name_key = "puzzle.p11.name"
 params = {
@@ -34,6 +36,6 @@ params = {
 "length": 6
 }
 }
-seed_fields = Array[ExtResource("5_jvsh8")]([SubResource("Resource_uwk1i")])
-rewards = Array[ExtResource("2_uwk1i")]([SubResource("Resource_off4h")])
+seed_fields = Array[ExtResource("5_jvsh8")]([SubResource("Resource_n0sms")])
+rewards = Array[ExtResource("2_uwk1i")]([SubResource("Resource_y4a3e")])
 solved_flag = &"p11.solved"

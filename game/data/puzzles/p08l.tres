@@ -4,9 +4,10 @@
 [ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_atqhx"]
 [ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="3_xmejx"]
 [ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="4_3s7vr"]
+[ext_resource type="PackedScene" path="res://game/puzzles/p08l_lockbox/p08l.tscn" id="4_atqhx"]
 [ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="5_ewxbr"]
 
-[sub_resource type="Resource" id="Resource_bsitx"]
+[sub_resource type="Resource" id="Resource_xmejx"]
 script = ExtResource("3_xmejx")
 item_id = &"item_valve_wheel"
 
@@ -14,6 +15,7 @@ item_id = &"item_valve_wheel"
 script = ExtResource("4_3s7vr")
 id = &"P08L"
 room_id = &"E05"
+scene = ExtResource("4_atqhx")
 logic_script = ExtResource("1_bsitx")
 name_key = "puzzle.p08l.name"
 params = {
@@ -23,5 +25,5 @@ params = {
 }
 }
 values_from = &"P08"
-rewards = Array[ExtResource("2_atqhx")]([SubResource("Resource_bsitx")])
+rewards = Array[ExtResource("2_atqhx")]([SubResource("Resource_xmejx")])
 solved_flag = &"p08l.solved"

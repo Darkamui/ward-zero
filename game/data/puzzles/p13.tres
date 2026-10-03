@@ -5,22 +5,23 @@
 [ext_resource type="Script" path="res://game/core/actions/set_flag.gd" id="3_1w0fa"]
 [ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="4_fnrij"]
 [ext_resource type="Script" path="res://game/core/actions/play_tape.gd" id="5_1kdp8"]
+[ext_resource type="PackedScene" path="res://game/puzzles/p13_boiler/p13.tscn" id="6_0nqyc"]
 [ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="6_weflb"]
 [ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="7_jx35c"]
 
-[sub_resource type="Resource" id="Resource_kb25o"]
+[sub_resource type="Resource" id="Resource_1w0fa"]
 script = ExtResource("3_1w0fa")
 flag = &"b01.power_on"
 
-[sub_resource type="Resource" id="Resource_0nqyc"]
+[sub_resource type="Resource" id="Resource_fnrij"]
 script = ExtResource("4_fnrij")
 item_id = &"item_f07_tape"
 
-[sub_resource type="Resource" id="Resource_1w0fa"]
+[sub_resource type="Resource" id="Resource_1kdp8"]
 script = ExtResource("5_1kdp8")
 tape_id = &"tape_02_bouchard"
 
-[sub_resource type="Resource" id="Resource_fnrij"]
+[sub_resource type="Resource" id="Resource_weflb"]
 script = ExtResource("7_jx35c")
 name = &"solution"
 kind = 4
@@ -32,6 +33,7 @@ count = 3
 script = ExtResource("6_weflb")
 id = &"P13"
 room_id = &"B01"
+scene = ExtResource("6_0nqyc")
 logic_script = ExtResource("1_kb25o")
 name_key = "puzzle.p13.name"
 params = {
@@ -41,7 +43,7 @@ params = {
 "hard": {},
 "normal": {}
 }
-seed_fields = Array[ExtResource("7_jx35c")]([SubResource("Resource_fnrij")])
+seed_fields = Array[ExtResource("7_jx35c")]([SubResource("Resource_weflb")])
 fail_noise_hops = 2
-rewards = Array[ExtResource("2_0nqyc")]([SubResource("Resource_kb25o"), SubResource("Resource_0nqyc"), SubResource("Resource_1w0fa")])
+rewards = Array[ExtResource("2_0nqyc")]([SubResource("Resource_1w0fa"), SubResource("Resource_fnrij"), SubResource("Resource_1kdp8")])
 solved_flag = &"p13.solved"

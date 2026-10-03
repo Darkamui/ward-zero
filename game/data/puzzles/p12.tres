@@ -4,22 +4,23 @@
 [ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_g8sw5"]
 [ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="3_mxqg3"]
 [ext_resource type="Script" path="res://game/core/actions/open_document.gd" id="4_jqyai"]
+[ext_resource type="PackedScene" path="res://game/puzzles/p12_knocks/p12.tscn" id="5_g8sw5"]
 [ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="5_mr10k"]
 [ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="6_4pp1a"]
 
-[sub_resource type="Resource" id="Resource_558yv"]
+[sub_resource type="Resource" id="Resource_mxqg3"]
 script = ExtResource("3_mxqg3")
 item_id = &"item_phlegmatic_key"
 
-[sub_resource type="Resource" id="Resource_g8sw5"]
+[sub_resource type="Resource" id="Resource_jqyai"]
 script = ExtResource("3_mxqg3")
 item_id = &"item_f06_scratchings"
 
-[sub_resource type="Resource" id="Resource_mxqg3"]
+[sub_resource type="Resource" id="Resource_mr10k"]
 script = ExtResource("4_jqyai")
 document_id = &"doc_f06_scratchings"
 
-[sub_resource type="Resource" id="Resource_jqyai"]
+[sub_resource type="Resource" id="Resource_4pp1a"]
 script = ExtResource("6_4pp1a")
 name = &"knocks"
 kind = 4
@@ -30,6 +31,7 @@ count = 6
 script = ExtResource("5_mr10k")
 id = &"P12"
 room_id = &"W05"
+scene = ExtResource("5_g8sw5")
 logic_script = ExtResource("1_558yv")
 name_key = "puzzle.p12.name"
 params = {
@@ -43,6 +45,6 @@ params = {
 "length": 4
 }
 }
-seed_fields = Array[ExtResource("6_4pp1a")]([SubResource("Resource_jqyai")])
-rewards = Array[ExtResource("2_g8sw5")]([SubResource("Resource_558yv"), SubResource("Resource_g8sw5"), SubResource("Resource_mxqg3")])
+seed_fields = Array[ExtResource("6_4pp1a")]([SubResource("Resource_4pp1a")])
+rewards = Array[ExtResource("2_g8sw5")]([SubResource("Resource_mxqg3"), SubResource("Resource_jqyai"), SubResource("Resource_mr10k")])
 solved_flag = &"p12.solved"

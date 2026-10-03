@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://game/schemas/tape_data.gd" id="1_kh1ka"]
 [ext_resource type="Script" path="res://game/schemas/sub_line.gd" id="2_w82ql"]
 
-[sub_resource type="Resource" id="Resource_078qd"]
+[sub_resource type="Resource" id="Resource_kh1ka"]
 script = ExtResource("2_w82ql")
 start = 0.5
 end = 6.0
 key = "tape.03_lullaby.line1"
 
-[sub_resource type="Resource" id="Resource_h824q"]
+[sub_resource type="Resource" id="Resource_w82ql"]
 script = ExtResource("2_w82ql")
 start = 6.5
 end = 10.0
@@ -19,4 +19,4 @@ key = "tape.03_lullaby.line2"
 script = ExtResource("1_kh1ka")
 id = &"tape_03_lullaby"
 title_key = "tape.03_lullaby.title"
-subtitles = Array[ExtResource("2_w82ql")]([SubResource("Resource_078qd"), SubResource("Resource_h824q")])
+subtitles = Array[ExtResource("2_w82ql")]([SubResource("Resource_kh1ka"), SubResource("Resource_w82ql")])

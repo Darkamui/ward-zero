@@ -93,3 +93,12 @@ puzzle.p13.band_red,RED,ROUGE
 puzzle.p13.band_low,low,bas
 puzzle.p13.band_high,high,haut
 puzzle.p13.wrong,The safety whistle screams through the pipes.,Le sifflet de sécurité hurle dans la tuyauterie.
+puzzle.p09.drawing_0,"A farmhouse in the sun, two children in the yard.","Une ferme au soleil, deux enfants dans la cour."
+puzzle.p09.drawing_1,The children hold hands under a big tree.,Les enfants se tiennent la main sous un grand arbre.
+puzzle.p09.drawing_2,Night. A candle on the windowsill.,La nuit. Une chandelle sur le rebord de la fenêtre.
+puzzle.p09.drawing_3,Orange scribbles over the house.,Des gribouillis orange sur la maison.
+puzzle.p09.drawing_4,"The boy alone in the yard, very small.","Le garçon seul dans la cour, tout petit."
+puzzle.p09.drawing_5,A white building with many windows.,Un bâtiment blanc avec beaucoup de fenêtres.
+puzzle.p09.turn,Turn the drawings over,Retourner les dessins
+puzzle.p12.cell,Cell {n},Cellule {n}
+puzzle.p12.dust,· dust falls ·,· la poussière tombe ·

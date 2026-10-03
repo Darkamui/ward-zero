@@ -1,0 +1,13 @@
+# Godot
+.godot/
+*.translation
+# Exports
+build/
+export/build/
+# Source art lives outside the repo (docs/01-foundation.md §3)
+art-src/
+# Misc
+*.tmp
+.DS_Store
+Thumbs.db
+__pycache__/

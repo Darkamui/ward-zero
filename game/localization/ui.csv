@@ -1,0 +1,9 @@
+keys,en,fr_CA
+ui.title,Ward Zero,Aile Zéro
+ui.door.locked,It's locked.,C’est verrouillé.
+ui.save.error_no_save,There is no save in this slot.,Il n’y a aucune sauvegarde dans cet emplacement.
+ui.save.error_bad_format,"This save code is not valid.","Ce code de sauvegarde n’est pas valide."
+ui.save.error_bad_checksum,"This save code is damaged. Copy it again in full.","Ce code de sauvegarde est endommagé. Copiez-le de nouveau au complet."
+ui.save.error_too_new,This save comes from a newer version of the game.,Cette sauvegarde provient d’une version plus récente du jeu.
+ui.save.error_write_failed,The game could not be saved.,La partie n’a pas pu être sauvegardée.
+ui.test.greeting,"Hello, {name}.","Bonjour, {name}."

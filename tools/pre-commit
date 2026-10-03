@@ -1,0 +1,8 @@
+#!/bin/sh
+# Install: cp tools/pre-commit .git/hooks/pre-commit  (run from the repo root)
+set -e
+cd "$(git rev-parse --show-toplevel)"
+[ -d ward-zero ] && cd ward-zero
+gdformat --line-length 110 --check game tests tools
+gdlint game tests tools
+python3 tools/loc_lint.py

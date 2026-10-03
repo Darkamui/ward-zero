@@ -1,0 +1,5 @@
+max-line-length: 110
+max-file-lines: 1000
+max-public-methods: 60
+max-returns: 10
+function-arguments-number: 10

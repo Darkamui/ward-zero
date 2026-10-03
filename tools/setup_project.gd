@@ -1,0 +1,104 @@
+extends SceneTree
+## Applies the baseline project settings (docs/01-foundation.md §4) and saves project.godot.
+## Run: godot --headless --script res://tools/setup_project.gd
+## Idempotent. Edit this file rather than project.godot for the settings it owns.
+
+const AUTOLOADS := [
+	["EventBus", "res://game/autoload/event_bus.gd"],
+	["Seed", "res://game/autoload/seed.gd"],
+	["ContentDB", "res://game/autoload/content_db.gd"],
+	["GameState", "res://game/autoload/game_state.gd"],
+	["SaveSystem", "res://game/autoload/save_system.gd"],
+	["RoomManager", "res://game/autoload/room_manager.gd"],
+	["CameraDirector", "res://game/autoload/camera_director.gd"],
+	["AudioDirector", "res://game/autoload/audio_director.gd"],
+	["StalkerDirector", "res://game/autoload/stalker_director.gd"],
+	["ComposureSystem", "res://game/autoload/composure_system.gd"],
+	["MemoryShiftSystem", "res://game/autoload/memory_shift_system.gd"],
+]
+
+const PHYSICS_LAYERS := ["floor", "walls", "hotspots", "camera_triggers", "player", "stalker", "hiding"]
+
+const TRANSLATION_DOMAINS := ["ui", "items", "documents", "tapes", "puzzles", "rooms"]
+const LOCALES := ["en", "fr_CA"]
+
+
+func _init() -> void:
+	var s := {
+		"application/config/name": "Ward Zero",
+		"application/config/description": "Ward Zero / Aile Zéro",
+		"application/run/main_scene": "res://game/main/main.tscn",
+		"display/window/size/viewport_width": 1920,
+		"display/window/size/viewport_height": 1080,
+		"display/window/size/window_width_override": 1280,
+		"display/window/size/window_height_override": 720,
+		"display/window/stretch/mode": "canvas_items",
+		"display/window/stretch/aspect": "keep",
+		"rendering/renderer/rendering_method": "gl_compatibility",
+		"rendering/renderer/rendering_method.mobile": "gl_compatibility",
+		"rendering/textures/vram_compression/import_etc2_astc": false,
+		"rendering/textures/vram_compression/import_s3tc_bptc": true,
+		"rendering/anti_aliasing/quality/msaa_3d": 1,
+		"audio/general/default_playback_type.web": 1,  # Sample
+		"internationalization/locale/fallback": "en",
+		"internationalization/locale/test": "",
+		"gui/theme/custom_font": "",
+		"debug/gdscript/warnings/untyped_declaration": 1,  # warn
+		"debug/gdscript/warnings/inferred_declaration": 0,
+		"debug/gdscript/warnings/unsafe_property_access": 0,
+		"debug/gdscript/warnings/unsafe_method_access": 0,
+	}
+	for key in s:
+		ProjectSettings.set_setting(key, s[key])
+
+	for i in PHYSICS_LAYERS.size():
+		ProjectSettings.set_setting("layer_names/3d_physics/layer_%d" % (i + 1), PHYSICS_LAYERS[i])
+
+	var order := 1
+	for entry in AUTOLOADS:
+		var key := "autoload/%s" % entry[0]
+		ProjectSettings.set_setting(key, "*" + entry[1])
+		ProjectSettings.set_order(key, order)
+		order += 1
+
+	var translations := PackedStringArray()
+	for domain in TRANSLATION_DOMAINS:
+		for locale in LOCALES:
+			var path := "res://game/localization/%s.%s.translation" % [domain, locale]
+			if FileAccess.file_exists(path):
+				translations.append(path)
+	ProjectSettings.set_setting("internationalization/locale/translations", translations)
+
+	_set_actions()
+	var err := ProjectSettings.save()
+	print("setup_project: saved (%s), %d translations" % [error_string(err), translations.size()])
+	quit(0 if err == OK else 1)
+
+
+func _set_actions() -> void:
+	_action("move_click", [_mouse(MOUSE_BUTTON_LEFT)])
+	_action("cancel", [_mouse(MOUSE_BUTTON_RIGHT)])
+	_action("open_inventory", [_key(KEY_I)])
+	_action("open_files", [_key(KEY_F)])
+	_action("open_map", [_key(KEY_M)])
+	_action("pause", [_key(KEY_ESCAPE)])
+	_action("hold_breath", [_key(KEY_SPACE)])
+	_action("debug_overlay", [_key(KEY_F9)])
+
+
+func _action(action_name: String, events: Array) -> void:
+	ProjectSettings.set_setting("input/" + action_name, {"deadzone": 0.2, "events": events})
+
+
+func _key(code: Key) -> InputEventKey:
+	var e := InputEventKey.new()
+	e.physical_keycode = code
+	e.device = -1
+	return e
+
+
+func _mouse(button: MouseButton) -> InputEventMouseButton:
+	var e := InputEventMouseButton.new()
+	e.button_index = button
+	e.device = -1
+	return e

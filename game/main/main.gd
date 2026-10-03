@@ -1,6 +1,6 @@
 extends Node
-## Boot scene. Replaced by the title menu in M1.
+## Boot scene. M1 replaces this with the title menu.
 
 
 func _ready() -> void:
-	print(tr("ui.title"))
+	get_tree().change_scene_to_file.call_deferred("res://game/main/game.tscn")

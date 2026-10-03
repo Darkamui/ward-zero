@@ -41,6 +41,13 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
+[importer_defaults]
+
+texture={
+"detect_3d/compress_to": 0,
+"mipmaps/generate": false
+}
+
 [input]
 
 move_click={
@@ -86,7 +93,7 @@ debug_overlay={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://game/localization/ui.en.translation", "res://game/localization/ui.fr_CA.translation")
+locale/translations=PackedStringArray("res://game/localization/ui.en.translation", "res://game/localization/ui.fr_CA.translation", "res://game/localization/rooms.en.translation", "res://game/localization/rooms.fr_CA.translation")
 
 [layer_names]
 
@@ -98,9 +105,25 @@ locale/translations=PackedStringArray("res://game/localization/ui.en.translation
 3d_physics/layer_6="stalker"
 3d_physics/layer_7="hiding"
 
+[navigation]
+
+3d/default_cell_size=0.1
+3d/default_cell_height=0.1
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_s3tc_bptc=true
 anti_aliasing/quality/msaa_3d=1
+
+[shader_globals]
+
+wz_background={
+"type": "sampler2D",
+"value": ""
+}
+wz_debug_proxies={
+"type": "float",
+"value": 0.0
+}

@@ -9,6 +9,8 @@ const ErrorCapture := preload("res://tests/framework/error_capture.gd")
 
 
 func _ready() -> void:
+	# Let the root finish setting up so tests can add nodes to it.
+	await get_tree().process_frame
 	var filter := ""
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--filter="):

@@ -1,1 +1,8 @@
 keys,en,fr_CA
+rooms.g01.name,Dayroom,Salle de jour
+rooms.g01.radio.examine,"An old valve radio. The dial glows faintly, though nothing is plugged in.","Une vieille radio à lampes. Le cadran luit faiblement, même si rien n’est branché."
+rooms.g01.notice.examine,"A notice pinned to the wall: QUIET HOURS.","Un avis épinglé au mur : HEURES DE SILENCE."
+rooms.g01.recorder.examine,"A reel-to-reel tape recorder. The reels are still turning.","Un magnétophone à bobines. Les bobines tournent encore."
+rooms.g01.bin.examine,"A metal chest stencilled EFFETS PERSONNELS.","Un coffre en métal marqué EFFETS PERSONNELS au pochoir."
+rooms.g01.couch.examine,"The cushions still hold the shape of someone who sat here a long time.","Les coussins gardent encore la forme de quelqu’un qui s’est assis ici longtemps."
+rooms.g01.door.chained,"The door is chained shut from this side.","La porte est fermée par une chaîne de ce côté-ci."

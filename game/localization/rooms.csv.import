@@ -6,7 +6,10 @@ uid="uid://bhs2rihjaahsj"
 
 [deps]
 
+files=["res://game/localization/rooms.en.translation", "res://game/localization/rooms.fr_CA.translation"]
+
 source_file="res://game/localization/rooms.csv"
+dest_files=["res://game/localization/rooms.en.translation", "res://game/localization/rooms.fr_CA.translation"]
 
 [params]
 

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_d20pn"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="2_mfhes"]
+[ext_resource type="Texture2D" path="res://game/rooms/g01_dayroom/bg/cam_a.webp" id="2_qoyki"]
+[ext_resource type="Texture2D" path="res://game/rooms/g01_dayroom/bg/cam_b.webp" id="3_2gxry"]
+[ext_resource type="PackedScene" path="res://game/rooms/g01_dayroom/g01_dayroom.tscn" id="3_qoyki"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="4_2gxry"]
+
+[sub_resource type="Resource" id="Resource_qoyki"]
+script = ExtResource("1_d20pn")
+id = &"cam_a"
+background = ExtResource("2_qoyki")
+
+[sub_resource type="Resource" id="Resource_2gxry"]
+script = ExtResource("1_d20pn")
+id = &"cam_b"
+background = ExtResource("3_2gxry")
+
+[sub_resource type="Resource" id="Resource_i8565"]
+script = ExtResource("2_mfhes")
+id = &"to_g02"
+target_room = &"G02"
+target_spawn = &"spawn_from_g01"
+lock_flag = &"g01.chain_released"
+locked_message_key = "rooms.g01.door.chained"
+
+[resource]
+script = ExtResource("4_2gxry")
+id = &"G01"
+name_key = "rooms.g01.name"
+scene = ExtResource("3_qoyki")
+cameras = Array[ExtResource("1_d20pn")]([SubResource("Resource_qoyki"), SubResource("Resource_2gxry")])
+exits = Array[ExtResource("2_mfhes")]([SubResource("Resource_i8565")])
+access = 2
+safe_room = true
+has_memory_variant = true
+map_rect = Rect2(40, 300, 180, 140)

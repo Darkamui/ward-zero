@@ -7,3 +7,5 @@ ui.save.error_bad_checksum,"This save code is damaged. Copy it again in full.","
 ui.save.error_too_new,This save comes from a newer version of the game.,Cette sauvegarde provient d’une version plus récente du jeu.
 ui.save.error_write_failed,The game could not be saved.,La partie n’a pas pu être sauvegardée.
 ui.test.greeting,"Hello, {name}.","Bonjour, {name}."
+ui.inventory.full,There's no room to carry that.,Je n’ai plus de place pour transporter ça.
+ui.use.nothing,That doesn't work here.,Ça ne fonctionne pas ici.

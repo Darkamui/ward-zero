@@ -43,6 +43,12 @@ func _init() -> void:
 		"internationalization/locale/fallback": "en",
 		"internationalization/locale/test": "",
 		"gui/theme/custom_font": "",
+		"navigation/3d/default_cell_size": 0.1,
+		"navigation/3d/default_cell_height": 0.1,
+		"shader_globals/wz_background": {"type": "sampler2D", "value": ""},
+		"shader_globals/wz_debug_proxies": {"type": "float", "value": 0.0},
+		# Backgrounds must stay lossless and un-mipmapped (docs/01-foundation.md §8.2).
+		"importer_defaults/texture": {"detect_3d/compress_to": 0, "mipmaps/generate": false},
 		"debug/gdscript/warnings/untyped_declaration": 1,  # warn
 		"debug/gdscript/warnings/inferred_declaration": 0,
 		"debug/gdscript/warnings/unsafe_property_access": 0,

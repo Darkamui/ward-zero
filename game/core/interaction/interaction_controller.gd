@@ -29,6 +29,13 @@ func is_blocked() -> bool:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if player and player.is_hidden():
+		# Hidden: only coming out is possible (right-click, or clicking the spot again).
+		if event is InputEventMouseButton and event.pressed:
+			if event.button_index == MOUSE_BUTTON_RIGHT or pick_hotspot(event.position) == player.hiding_in:
+				player.leave_hiding()
+			get_viewport().set_input_as_handled()
+		return
 	if is_blocked():
 		return
 	if event is InputEventMouseMotion:
@@ -91,7 +98,7 @@ func pick_hotspot(screen_pos: Vector2) -> Interactable:
 	if result.is_empty():
 		return null
 	var h := result["collider"] as Interactable
-	return h if h and h.is_active() else null
+	return h if h and (h.is_active() or (player and h == player.hiding_in)) else null
 
 
 func pick_floor(screen_pos: Vector2) -> Variant:

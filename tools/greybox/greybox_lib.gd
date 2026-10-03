@@ -239,6 +239,27 @@ func hotspot(
 	return h
 
 
+## Hiding spot (GDD §5.3) with an Inside marker where the hidden player waits.
+func hiding_spot(
+	node_name: String, center: Vector3, size: Vector3, approach: Vector3, inside: Vector3
+) -> HidingSpot:
+	var h := HidingSpot.new()
+	h.position = center
+	_child(hotspots, node_name, h)
+	var cs := CollisionShape3D.new()
+	var shape := BoxShape3D.new()
+	shape.size = size
+	cs.shape = shape
+	_child(h, "Shape", cs)
+	var a := Marker3D.new()
+	a.position = approach - center
+	_child(h, "Approach", a)
+	var i := Marker3D.new()
+	i.position = inside - center
+	_child(h, "Inside", i)
+	return h
+
+
 func hotspot_examine(
 	node_name: String, center: Vector3, size: Vector3, approach: Vector3, text_key: String
 ) -> Interactable:

@@ -15,6 +15,8 @@ const RUN_NOISE_INTERVAL := 1.5
 const GRAVITY := 9.8
 
 var running := false
+## The HidingSpot the player is in, or null.
+var hiding_in: HidingSpot
 var locomotion: StringName = &"idle"
 var _moving := false
 var _on_arrive: Callable
@@ -59,8 +61,36 @@ func is_moving() -> bool:
 	return _moving
 
 
+func is_hidden() -> bool:
+	return hiding_in != null
+
+
+## Hides in a spot: invisible, no collision, no movement (GDD §5.3).
+func hide_in(spot: HidingSpot) -> void:
+	stop()
+	hiding_in = spot
+	global_position = spot.inside_position()
+	visible = false
+	collision_layer = 0
+	EventBus.ui_opened.emit(&"hiding")
+
+
+func leave_hiding() -> void:
+	if hiding_in == null:
+		return
+	var spot := hiding_in
+	hiding_in = null
+	spot.compromised = false
+	global_position = spot.approach_position()
+	visible = true
+	collision_layer = 1 << 4
+	EventBus.ui_closed.emit(&"hiding")
+
+
 ## Places the player at a spawn marker, facing its -Z.
 func teleport(marker: Node3D) -> void:
+	if hiding_in:
+		leave_hiding()
 	stop()
 	global_position = marker.global_position
 	rotation.y = marker.global_rotation.y

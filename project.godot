@@ -132,3 +132,7 @@ wz_threat={
 "type": "float",
 "value": 0.0
 }
+wz_composure={
+"type": "float",
+"value": 0.0
+}

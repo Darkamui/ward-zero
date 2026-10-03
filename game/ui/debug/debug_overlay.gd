@@ -5,8 +5,11 @@ extends CanvasLayer
 ## While it is open (docs/02-milestone-1.md M1-08):
 ##   1-6  warp to G01-G06 (first spawn)      I  give every Act 1 item
 ##   P    solve the puzzle in this room       M  toggle memory (rooms with a variant)
+##   T    stalker test level (T02, AI on)     N  emit a 2-hop noise here
 ## Not created in builds with the "release" feature tag.
 
+## Test level lives under tests/ (not exported), so this only works in the editor/debug.
+const STALKER_LEVEL := "res://tests/levels/stalker/stalker_level.gd"
 const WARP_ROOMS := [&"G01", &"G02", &"G03", &"G04", &"G05", &"G06"]
 const ACT1_ITEMS := [
 	"item_photograph",
@@ -54,6 +57,12 @@ func _debug_key(key: Key) -> void:
 			GameState.give_item(item)
 	elif key == KEY_M:
 		MemoryShiftSystem.toggle()
+	elif key == KEY_T and ResourceLoader.exists(STALKER_LEVEL):
+		load(STALKER_LEVEL).register()
+		RoomManager.go_to(&"T02", &"spawn_from_t01")
+		StalkerDirector.activate([&"T02", &"T03", &"T04"], &"T04")
+	elif key == KEY_N:
+		EventBus.noise_emitted.emit(StringName(GameState.current_room), 2)
 	elif key == KEY_P:
 		for p in ContentDB.puzzles.values():
 			if String(p.room_id) == GameState.current_room and not GameState.is_puzzle_solved(String(p.id)):

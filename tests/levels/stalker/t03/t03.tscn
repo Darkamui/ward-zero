@@ -1,0 +1,208 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/core/room/room.gd" id="1_a6cgj"]
+[ext_resource type="Script" path="res://game/core/room/camera_trigger.gd" id="2_hbw24"]
+[ext_resource type="Script" path="res://game/core/interactable/interactable.gd" id="3_amp4j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uqcwd"]
+size = Vector3(8, 0.1, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1cva4"]
+size = Vector3(8, 0.1, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yp8hc"]
+size = Vector3(3.3, 3, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vghth"]
+size = Vector3(3.3, 3, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_voopf"]
+size = Vector3(1.4, 0.8, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kk18t"]
+size = Vector3(8, 3, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2p1wa"]
+size = Vector3(0.2, 3, 2.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nbhhy"]
+size = Vector3(0.2, 3, 2.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m7880"]
+size = Vector3(0.2, 0.8, 1.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ogddg"]
+size = Vector3(0.2, 3, 2.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_priim"]
+size = Vector3(0.2, 3, 2.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_emmn8"]
+size = Vector3(0.2, 0.8, 1.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7lq52"]
+size = Vector3(8, 2, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2u1jp"]
+size = Vector3(1.4, 2.2, 1.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nn1b7"]
+size = Vector3(1.4, 2.2, 1.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n73df"]
+size = Vector3(1.4, 2.2, 1.4)
+
+[node name="T03" type="Node3D" unique_id=71230232]
+script = ExtResource("1_a6cgj")
+
+[node name="Geometry" type="Node3D" parent="." unique_id=141083578]
+
+[node name="floor_main" type="MeshInstance3D" parent="Geometry" unique_id=1531866176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+mesh = SubResource("BoxMesh_uqcwd")
+metadata/clay_color = Color(0.42, 0.44, 0.4, 1)
+
+[node name="art_ceiling" type="MeshInstance3D" parent="Geometry" unique_id=985887404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.05, 0)
+mesh = SubResource("BoxMesh_1cva4")
+metadata/clay_color = Color(0.75, 0.74, 0.7, 1)
+
+[node name="col_wall_n_0" type="MeshInstance3D" parent="Geometry" unique_id=1071162742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35, 1.5, -3.1)
+mesh = SubResource("BoxMesh_yp8hc")
+metadata/clay_color = Color(0.6, 0.6, 0.58, 1)
+
+[node name="col_wall_n_1" type="MeshInstance3D" parent="Geometry" unique_id=315605497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35, 1.5, -3.1)
+mesh = SubResource("BoxMesh_vghth")
+metadata/clay_color = Color(0.6, 0.6, 0.58, 1)
+
+[node name="art_lintel_n_2" type="MeshInstance3D" parent="Geometry" unique_id=1045482819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, -3.1)
+mesh = SubResource("BoxMesh_voopf")
+metadata/clay_color = Color(0.6, 0.6, 0.58, 1)
+
+[node name="col_wall_s_0" type="MeshInstance3D" parent="Geometry" unique_id=934381202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 3.1)
+mesh = SubResource("BoxMesh_kk18t")
+metadata/clay_color = Color(0.6, 0.6, 0.58, 1)
+
+[node name="col_wall_e_0" type="MeshInstance3D" parent="Geometry" unique_id=1191796618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1, 1.5, -1.85)
+mesh = SubResource("BoxMesh_2p1wa")
+metadata/clay_color = Color(0.6, 0.6, 0.58, 1)
+
+[node name="col_wall_e_1" type="MeshInstance3D" parent="Geometry" unique_id=130686870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1, 1.5, 1.85)
+mesh = SubResource("BoxMesh_nbhhy")
+metadata/clay_color = Color(0.6, 0.6, 0.58, 1)
+
+[node name="art_lintel_e_2" type="MeshInstance3D" parent="Geometry" unique_id=64262899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1, 2.6, 0)
+mesh = SubResource("BoxMesh_m7880")
+metadata/clay_color = Color(0.6, 0.6, 0.58, 1)
+
+[node name="col_wall_w_0" type="MeshInstance3D" parent="Geometry" unique_id=1067827099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1, 1.5, -1.85)
+mesh = SubResource("BoxMesh_ogddg")
+metadata/clay_color = Color(0.6, 0.6, 0.58, 1)
+
+[node name="col_wall_w_1" type="MeshInstance3D" parent="Geometry" unique_id=1846947547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1, 1.5, 1.85)
+mesh = SubResource("BoxMesh_priim")
+metadata/clay_color = Color(0.6, 0.6, 0.58, 1)
+
+[node name="art_lintel_w_2" type="MeshInstance3D" parent="Geometry" unique_id=631449152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1, 2.6, 0)
+mesh = SubResource("BoxMesh_emmn8")
+metadata/clay_color = Color(0.6, 0.6, 0.58, 1)
+
+[node name="Navigation" type="NavigationRegion3D" parent="." unique_id=480019693]
+
+[node name="Cameras" type="Node3D" parent="." unique_id=1052278231]
+
+[node name="cam_a" type="Camera3D" parent="Cameras" unique_id=1240310129]
+transform = Transform3D(0.59748137, -0.26213947, 0.75782514, 0, 0.9450572, 0.32690498, -0.8018828, -0.19531964, 0.56465405, 3.6, 2.7, 2.6)
+fov = 60.0
+far = 60.0
+
+[node name="LightRig" type="Node3D" parent="Cameras/cam_a" unique_id=986581913]
+top_level = true
+
+[node name="Key" type="DirectionalLight3D" parent="Cameras/cam_a/LightRig" unique_id=290253344]
+transform = Transform3D(0.8660254, -0.38302222, 0.32139382, 0, 0.64278764, 0.76604444, -0.5, -0.66341394, 0.5566704, 0, 0, 0)
+light_energy = 1.1
+shadow_enabled = true
+directional_shadow_max_distance = 20.0
+
+[node name="Fill" type="OmniLight3D" parent="Cameras/cam_a/LightRig" unique_id=577099257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 2.7, 2.6)
+light_energy = 0.7
+light_cull_mask = 2
+omni_range = 14.0
+
+[node name="Triggers" type="Node3D" parent="." unique_id=474074322]
+
+[node name="trigger_cam_a" type="Area3D" parent="Triggers" unique_id=1752574223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("2_hbw24")
+camera_id = &"cam_a"
+
+[node name="Shape" type="CollisionShape3D" parent="Triggers/trigger_cam_a" unique_id=914644076]
+shape = SubResource("BoxShape3D_7lq52")
+
+[node name="Spawns" type="Node3D" parent="." unique_id=843264030]
+
+[node name="spawn_from_t02" type="Marker3D" parent="Spawns" unique_id=602069904]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.4, 0, 0)
+
+[node name="spawn_from_t04" type="Marker3D" parent="Spawns" unique_id=640813897]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -2.4)
+
+[node name="spawn_from_t05" type="Marker3D" parent="Spawns" unique_id=345993972]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.4, 0, 0)
+
+[node name="Hotspots" type="Node3D" parent="." unique_id=585055277]
+
+[node name="hs_to_t02_0" type="Area3D" parent="Hotspots" unique_id=411215719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.1, 0)
+script = ExtResource("3_amp4j")
+kind = 3
+exit_id = &"to_t02_0"
+
+[node name="Shape" type="CollisionShape3D" parent="Hotspots/hs_to_t02_0" unique_id=2021457019]
+shape = SubResource("BoxShape3D_2u1jp")
+
+[node name="Approach" type="Marker3D" parent="Hotspots/hs_to_t02_0" unique_id=1736278230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5999999, -1.1, 0)
+
+[node name="hs_to_t04_1" type="Area3D" parent="Hotspots" unique_id=1730964271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -3)
+script = ExtResource("3_amp4j")
+kind = 3
+exit_id = &"to_t04_1"
+
+[node name="Shape" type="CollisionShape3D" parent="Hotspots/hs_to_t04_1" unique_id=53439780]
+shape = SubResource("BoxShape3D_nn1b7")
+
+[node name="Approach" type="Marker3D" parent="Hotspots/hs_to_t04_1" unique_id=401590878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0.5999999)
+
+[node name="hs_to_t05_2" type="Area3D" parent="Hotspots" unique_id=342966499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.1, 0)
+script = ExtResource("3_amp4j")
+kind = 3
+exit_id = &"to_t05_2"
+
+[node name="Shape" type="CollisionShape3D" parent="Hotspots/hs_to_t05_2" unique_id=516950242]
+shape = SubResource("BoxShape3D_n73df")
+
+[node name="Approach" type="Marker3D" parent="Hotspots/hs_to_t05_2" unique_id=1321367572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5999999, -1.1, 0)
+
+[node name="RenderLights" type="Node3D" parent="." unique_id=1417927213]
+
+[node name="Sun" type="DirectionalLight3D" parent="RenderLights" unique_id=1211045385]
+transform = Transform3D(0.8660254, -0.38302222, 0.32139382, 0, 0.64278764, 0.76604444, -0.5, -0.66341394, 0.5566704, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 25.0

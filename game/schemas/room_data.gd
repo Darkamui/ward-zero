@@ -16,6 +16,8 @@ const SCHEMA_VERSION := 1
 @export var access: Access = Access.SCRIPTED
 @export var map_floor: Floor = Floor.GROUND
 @export var safe_room: bool = false
+## Dark rooms slowly lower composure (GDD §5.4).
+@export var unlit: bool = false
 @export var has_memory_variant: bool = false
 ## Paths (inside the room scene) to hiding spot nodes.
 @export var hiding_spots: Array[NodePath] = []

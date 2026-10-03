@@ -13,6 +13,8 @@ uniform float aberration : hint_range(0.0, 0.01) = 0.0015;
 uniform float vignette : hint_range(0.0, 1.0) = 0.35;
 // Stalker telegraph (ThreatCue): desaturates and darkens the screen edges.
 global uniform float wz_threat;
+// Composure loss 0..1 (ComposureSystem): pulsing vignette and slight desaturation.
+global uniform float wz_composure;
 
 vec3 apply_lut(vec3 c) {
 	float size = 32.0;
@@ -44,7 +46,10 @@ void fragment() {
 	float edge = smoothstep(0.25, 0.85, length(uv - 0.5));
 	float grey = dot(col, vec3(0.299, 0.587, 0.114));
 	col = mix(col, vec3(grey), clamp(wz_threat * edge * 1.5, 0.0, 1.0));
-	float v = smoothstep(0.85, 0.25, length(uv - 0.5));
+	float shaken = smoothstep(0.34, 1.0, wz_composure);
+	col = mix(col, vec3(grey), shaken * 0.35);
+	float pulse = shaken * (0.5 + 0.5 * sin(TIME * 5.0)) * 0.25;
+	float v = smoothstep(0.85, 0.25 - pulse, length(uv - 0.5));
 	col *= mix(1.0, v, clamp(vignette + wz_threat * 0.35, 0.0, 1.0));
 	COLOR = vec4(col, 1.0);
 }

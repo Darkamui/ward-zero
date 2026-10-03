@@ -28,6 +28,7 @@ func _ready() -> void:
 	pause_menu = _add(PauseMenu.new())
 	game_over = _add(GameOverScreen.new())
 	end_of_slice = _add(EndOfSliceScreen.new())
+	_add(HidingHud.new())
 	if not OS.has_feature("release"):
 		add_child(DebugOverlay.new())
 	StalkerDirector.reset()

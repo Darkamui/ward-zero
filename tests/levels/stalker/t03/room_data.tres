@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_w66pb"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_gqls6"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_rv0xh"]
+[ext_resource type="PackedScene" path="res://tests/levels/stalker/t03/t03.tscn" id="4_okn7g"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_hb1kq"]
+
+[sub_resource type="Resource" id="Resource_2w05b"]
+script = ExtResource("1_w66pb")
+id = &"cam_a"
+
+[sub_resource type="Resource" id="Resource_umej2"]
+script = ExtResource("3_rv0xh")
+id = &"to_t02_0"
+target_room = &"T02"
+target_spawn = &"spawn_from_t03"
+
+[sub_resource type="Resource" id="Resource_kxuwg"]
+script = ExtResource("3_rv0xh")
+id = &"to_t04_1"
+target_room = &"T04"
+target_spawn = &"spawn_from_t03"
+
+[sub_resource type="Resource" id="Resource_6isup"]
+script = ExtResource("3_rv0xh")
+id = &"to_t05_2"
+target_room = &"T05"
+target_spawn = &"spawn_from_t03"
+
+[resource]
+script = ExtResource("5_hb1kq")
+id = &"T03"
+name_key = "ui.title"
+scene = ExtResource("4_okn7g")
+cameras = Array[ExtResource("1_w66pb")]([SubResource("Resource_2w05b")])
+exits = Array[ExtResource("3_rv0xh")]([SubResource("Resource_umej2"), SubResource("Resource_kxuwg"), SubResource("Resource_6isup")])
+access = 0

@@ -105,3 +105,7 @@ ui.save.need_cassette,You need a blank cassette to record.,Il vous faut une cass
 ui.game_over.load_last,Load last save,Charger la dernière sauvegarde
 ui.map.title,Evacuation plan,Plan d’évacuation
 ui.map.legend,! = something left to find or open   ✓ = cleared   ● = you are here   ◆ = unsolved puzzle (Easy),! = il reste quelque chose à trouver ou à ouvrir   ✓ = terminé   ● = vous êtes ici   ◆ = énigme non résolue (Facile)
+ui.glint.nothing,There’s nothing there. There never was.,Il n’y a rien. Il n’y a jamais rien eu.
+ui.breath.hold,Hold SPACE to hold your breath,Maintenez ESPACE pour retenir votre souffle
+ui.breath.coming,He is coming closer…,Il s’approche…
+ui.hiding.hint,Hidden. Right-click to come out.,Caché. Clic droit pour sortir.

@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://game/characters/man_in_white/man_in_white.gd" id="1"]
+
+[sub_resource type="CapsuleShape3D" id="shape"]
+radius = 0.3
+height = 1.95
+
+[sub_resource type="CapsuleMesh" id="body"]
+radius = 0.27
+height = 1.95
+
+[sub_resource type="StandardMaterial3D" id="white"]
+albedo_color = Color(0.93, 0.93, 0.9, 1)
+roughness = 0.6
+
+[sub_resource type="CylinderMesh" id="cap"]
+top_radius = 0.2
+bottom_radius = 0.22
+height = 0.12
+
+[sub_resource type="StandardMaterial3D" id="cap_mat"]
+albedo_color = Color(0.98, 0.98, 0.96, 1)
+
+[node name="ManInWhite" type="CharacterBody3D"]
+script = ExtResource("1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.975, 0)
+shape = SubResource("shape")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.975, 0)
+layers = 2
+mesh = SubResource("body")
+surface_material_override/0 = SubResource("white")
+
+[node name="Cap" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98, 0)
+layers = 2
+mesh = SubResource("cap")
+surface_material_override/0 = SubResource("cap_mat")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

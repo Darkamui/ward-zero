@@ -28,10 +28,23 @@ func _ready() -> void:
 	end_of_slice = _add(EndOfSliceScreen.new())
 	if not OS.has_feature("release"):
 		add_child(DebugOverlay.new())
+	StalkerDirector.reset()
+	StalkerDirector.player_caught.connect(_on_player_caught)
 	RoomManager.setup(world, player)
 	if GameState.current_room == "":
 		NewGame.start("patient", "normal")
 	RoomManager.go_to(StringName(GameState.current_room), StringName(GameState.current_spawn))
+
+
+func _exit_tree() -> void:
+	if StalkerDirector.player_caught.is_connected(_on_player_caught):
+		StalkerDirector.player_caught.disconnect(_on_player_caught)
+
+
+func _on_player_caught() -> void:
+	game_over.checkpoint = StalkerDirector.checkpoint
+	await get_tree().create_timer(1.0).timeout
+	game_over.show_screen()
 
 
 func _add(node: Node) -> Variant:

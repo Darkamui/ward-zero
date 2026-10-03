@@ -119,14 +119,14 @@ func run(_tree: SceneTree, _args: PackedStringArray) -> int:
 		"hs_door", Vector3(2.5, 1.1, -3.45), Vector3(1.2, 2.2, 0.3), Vector3(2.5, 0, -2.75), &"to_g02"
 	)
 
-	var exit := ExitDef.new()
-	exit.id = &"to_g02"
-	exit.target_room = &"G02"
-	exit.target_spawn = &"spawn_from_g01"
-	exit.lock_flag = &"g01.chain_released"
-	exit.locked_message_key = "rooms.g01.door.chained"
-
+	var exit := g.exit_def("to_g02", "G02", "spawn_from_g01", "g01.chain_released", "rooms.g01.door.chained")
 	var data := g.room_data(DIR, ["cam_a", "cam_b"], [exit])
+	data.enter_triggers = [
+		GB.on_enter([], [GB.tape("tape_01_claire")], "intro.done"),
+		GB.on_enter(
+			[GB.flag("act1.chase_done")], [GB.text("rooms.g01.safe_after_chase")], "g01.safe_after_chase"
+		),
+	]
 	data.name_key = "rooms.g01.name"
 	data.access = RoomData.Access.NEVER
 	data.safe_room = true

@@ -11,6 +11,8 @@ uniform float lut_strength : hint_range(0.0, 1.0) = 1.0;
 uniform float grain : hint_range(0.0, 0.3) = 0.06;
 uniform float aberration : hint_range(0.0, 0.01) = 0.0015;
 uniform float vignette : hint_range(0.0, 1.0) = 0.35;
+// Stalker telegraph (ThreatCue): desaturates and darkens the screen edges.
+global uniform float wz_threat;
 
 vec3 apply_lut(vec3 c) {
 	float size = 32.0;
@@ -39,7 +41,10 @@ void fragment() {
 	}
 	float n = hash(uv * vec2(1920.0, 1080.0) + fract(TIME * 7.0) * 100.0) - 0.5;
 	col += n * grain;
+	float edge = smoothstep(0.25, 0.85, length(uv - 0.5));
+	float grey = dot(col, vec3(0.299, 0.587, 0.114));
+	col = mix(col, vec3(grey), clamp(wz_threat * edge * 1.5, 0.0, 1.0));
 	float v = smoothstep(0.85, 0.25, length(uv - 0.5));
-	col *= mix(1.0, v, vignette);
+	col *= mix(1.0, v, clamp(vignette + wz_threat * 0.35, 0.0, 1.0));
 	COLOR = vec4(col, 1.0);
 }

@@ -21,6 +21,8 @@ const SCHEMA_VERSION := 1
 @export var hiding_spots: Array[NodePath] = []
 ## Rectangle on the floor map, in map texture pixels.
 @export var map_rect: Rect2
+## Run in order on every entry (see EnterTrigger).
+@export var enter_triggers: Array[EnterTrigger] = []
 @export var ambience_present: AudioStream
 @export var ambience_memory: AudioStream
 

@@ -6,18 +6,47 @@
 [ext_resource type="Texture2D" path="res://game/rooms/g01_dayroom/bg/cam_b.webp" id="3_2gxry"]
 [ext_resource type="PackedScene" path="res://game/rooms/g01_dayroom/g01_dayroom.tscn" id="3_qoyki"]
 [ext_resource type="Script" path="res://game/schemas/room_data.gd" id="4_2gxry"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="4_gvkgq"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="5_sfpbb"]
+[ext_resource type="Script" path="res://game/core/actions/play_tape.gd" id="6_6rwki"]
+[ext_resource type="Script" path="res://game/core/conditions/condition.gd" id="7_pqrr7"]
+[ext_resource type="Script" path="res://game/core/actions/show_text.gd" id="8_odkqs"]
+[ext_resource type="Script" path="res://game/core/conditions/flag_is.gd" id="9_yu4ae"]
 
-[sub_resource type="Resource" id="Resource_qoyki"]
+[sub_resource type="Resource" id="Resource_ewwph"]
 script = ExtResource("1_d20pn")
 id = &"cam_a"
 background = ExtResource("2_qoyki")
 
-[sub_resource type="Resource" id="Resource_2gxry"]
+[sub_resource type="Resource" id="Resource_7cu60"]
 script = ExtResource("1_d20pn")
 id = &"cam_b"
 background = ExtResource("3_2gxry")
 
-[sub_resource type="Resource" id="Resource_i8565"]
+[sub_resource type="Resource" id="Resource_me7kr"]
+script = ExtResource("6_6rwki")
+tape_id = &"tape_01_claire"
+
+[sub_resource type="Resource" id="Resource_2d87a"]
+script = ExtResource("4_gvkgq")
+actions = Array[ExtResource("5_sfpbb")]([SubResource("Resource_me7kr")])
+once_flag = &"intro.done"
+
+[sub_resource type="Resource" id="Resource_ykpdf"]
+script = ExtResource("8_odkqs")
+key = "rooms.g01.safe_after_chase"
+
+[sub_resource type="Resource" id="Resource_4xjqi"]
+script = ExtResource("9_yu4ae")
+flag = &"act1.chase_done"
+
+[sub_resource type="Resource" id="Resource_rlal0"]
+script = ExtResource("4_gvkgq")
+conditions = Array[ExtResource("7_pqrr7")]([SubResource("Resource_4xjqi")])
+actions = Array[ExtResource("5_sfpbb")]([SubResource("Resource_ykpdf")])
+once_flag = &"g01.safe_after_chase"
+
+[sub_resource type="Resource" id="Resource_uay6y"]
 script = ExtResource("2_mfhes")
 id = &"to_g02"
 target_room = &"G02"
@@ -30,9 +59,10 @@ script = ExtResource("4_2gxry")
 id = &"G01"
 name_key = "rooms.g01.name"
 scene = ExtResource("3_qoyki")
-cameras = Array[ExtResource("1_d20pn")]([SubResource("Resource_qoyki"), SubResource("Resource_2gxry")])
-exits = Array[ExtResource("2_mfhes")]([SubResource("Resource_i8565")])
+cameras = Array[ExtResource("1_d20pn")]([SubResource("Resource_ewwph"), SubResource("Resource_7cu60")])
+exits = Array[ExtResource("2_mfhes")]([SubResource("Resource_uay6y")])
 access = 2
 safe_room = true
 has_memory_variant = true
 map_rect = Rect2(40, 300, 180, 140)
+enter_triggers = Array[ExtResource("4_gvkgq")]([SubResource("Resource_2d87a"), SubResource("Resource_rlal0")])

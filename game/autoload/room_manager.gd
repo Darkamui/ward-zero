@@ -66,6 +66,14 @@ func go_to(room_id: StringName, spawn: StringName) -> void:
 	transitioning = false
 	EventBus.ui_closed.emit(UI_NAME)
 	room_entered.emit(room_id)
+	run_enter_triggers(data)
+
+
+func run_enter_triggers(data: RoomData) -> void:
+	GameState.set_flag("%s.visited" % String(data.id).to_lower(), true)
+	for t in data.enter_triggers:
+		if t.should_run():
+			t.run()
 
 
 ## Synchronous swap without fades (used by go_to, save loading and tests).
@@ -99,6 +107,17 @@ func set_timeline(memory: bool) -> void:
 	if current:
 		current.set_timeline(memory)
 	timeline_switched.emit(memory)
+
+
+## Brief full-screen flash (memory shift, being caught). Colour and timings are
+## reduced with the photosensitivity option.
+func flash(color: Color, hold := 0.15) -> void:
+	var gentle: bool = Settings.get_value("photosensitivity")
+	_fader.color = color
+	await _fade(0.6 if gentle else 1.0, 0.35 if gentle else 0.12)
+	await get_tree().create_timer(hold).timeout
+	await _fade(0.0, 0.6)
+	_fader.color = Color.BLACK
 
 
 func _fade(target: float, duration: float) -> void:

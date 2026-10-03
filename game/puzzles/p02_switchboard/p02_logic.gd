@@ -22,6 +22,7 @@ const ALL_ROLES := [
 	"boiler_room",
 	"director",
 ]
+const MAX_CABLES_PER_JACK := 2
 
 var patches: Array = []  # Array of [ext_a, ext_b], a < b
 

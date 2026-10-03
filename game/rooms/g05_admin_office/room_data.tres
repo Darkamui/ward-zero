@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_7xxau"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_at56n"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_cee5w"]
+[ext_resource type="PackedScene" path="res://game/rooms/g05_admin_office/g05_admin_office.tscn" id="4_ngejy"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_txt21"]
+
+[sub_resource type="Resource" id="Resource_mk6sf"]
+script = ExtResource("1_7xxau")
+id = &"cam_a"
+
+[sub_resource type="Resource" id="Resource_kj70f"]
+script = ExtResource("1_7xxau")
+id = &"cam_b"
+
+[sub_resource type="Resource" id="Resource_akltl"]
+script = ExtResource("3_cee5w")
+id = &"to_g04"
+target_room = &"G04"
+target_spawn = &"spawn_from_g05"
+
+[resource]
+script = ExtResource("5_txt21")
+id = &"G05"
+name_key = "rooms.g05.name"
+scene = ExtResource("4_ngejy")
+cameras = Array[ExtResource("1_7xxau")]([SubResource("Resource_mk6sf"), SubResource("Resource_kj70f")])
+exits = Array[ExtResource("3_cee5w")]([SubResource("Resource_akltl")])
+map_rect = Rect2(180, 60, 120, 80)

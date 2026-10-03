@@ -128,3 +128,7 @@ wz_debug_proxies={
 "type": "float",
 "value": 0.0
 }
+wz_threat={
+"type": "float",
+"value": 0.0
+}

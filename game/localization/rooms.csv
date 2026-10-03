@@ -1,8 +1,29 @@
 keys,en,fr_CA
 rooms.g01.name,Dayroom,Salle de jour
 rooms.g01.radio.examine,"An old valve radio. The dial glows faintly, though nothing is plugged in.","Une vieille radio à lampes. Le cadran luit faiblement, même si rien n’est branché."
-rooms.g01.notice.examine,"A notice pinned to the wall: QUIET HOURS.","Un avis épinglé au mur : HEURES DE SILENCE."
-rooms.g01.recorder.examine,"A reel-to-reel tape recorder. The reels are still turning.","Un magnétophone à bobines. Les bobines tournent encore."
-rooms.g01.bin.examine,"A metal chest stencilled EFFETS PERSONNELS.","Un coffre en métal marqué EFFETS PERSONNELS au pochoir."
-rooms.g01.couch.examine,"The cushions still hold the shape of someone who sat here a long time.","Les coussins gardent encore la forme de quelqu’un qui s’est assis ici longtemps."
-rooms.g01.door.chained,"The door is chained shut from this side.","La porte est fermée par une chaîne de ce côté-ci."
+rooms.g01.notice.examine,A notice pinned to the wall: QUIET HOURS.,Un avis épinglé au mur : HEURES DE SILENCE.
+rooms.g01.recorder.examine,A reel-to-reel tape recorder. The reels are still turning.,Un magnétophone à bobines. Les bobines tournent encore.
+rooms.g01.bin.examine,A metal chest stencilled EFFETS PERSONNELS.,Un coffre en métal marqué EFFETS PERSONNELS au pochoir.
+rooms.g01.couch.examine,The cushions still hold the shape of someone who sat here a long time.,Les coussins gardent encore la forme de quelqu’un qui s’est assis ici longtemps.
+rooms.g01.door.chained,The door is chained shut from this side.,La porte est fermée par une chaîne de ce côté-ci.
+rooms.g01.radio.solved,The radio hisses softly. The station is gone.,La radio grésille doucement. La station a disparu.
+rooms.g01.safe_after_chase,The footsteps stop at the door. He doesn’t come in. Not here.,Les pas s’arrêtent à la porte. Il n’entre pas. Pas ici.
+rooms.g02.name,Main Lobby,Hall principal
+rooms.g02.barricade,Something heavy is wedged against this door from the other side.,Quelque chose de lourd bloque cette porte de l’autre côté.
+rooms.g02.corridor.locked,"The barricade is gone, but the door is locked. A flame is engraved around the keyhole.","La barricade a disparu, mais la porte est verrouillée. Une flamme est gravée autour de la serrure."
+rooms.g02.gate.locked,An electric gate. It needs to be released from somewhere else.,Une grille électrique. Il faut la déverrouiller d’ailleurs.
+rooms.g03.name,Reception,Réception
+rooms.g03.switchboard.solved,"Somewhere in the building, a phone stops ringing.","Quelque part dans l’édifice, un téléphone cesse de sonner."
+rooms.g04.name,Records Office,Bureau des archives
+rooms.g04.catalog.solved,The drawers are all shut again.,Les tiroirs sont tous refermés.
+rooms.g04.cabinets.examine,"Rows of numbered filing cabinets, 1 to 12.","Des rangées de classeurs numérotés, de 1 à 12."
+rooms.g05.name,Administrator’s Office,Bureau de l’administrateur
+rooms.g05.safe.open,"The safe hangs open, empty now.","Le coffre est ouvert, vide maintenant."
+rooms.g05.desk.examine,"A blotter, a dry inkwell and a calendar stopped in 1981.","Un sous-main, un encrier sec et un calendrier arrêté en 1981."
+rooms.g06.name,Chapel,Chapelle
+rooms.g06.board.solved,The hymn board is complete again.,Le tableau des cantiques est de nouveau complet.
+rooms.g06.altar.resonant,"The air above the altar hums. The light flickers, as if waiting for something.","L’air au-dessus de l’autel bourdonne. La lumière vacille, comme si elle attendait quelque chose."
+rooms.g06.altar.use_anchor,The photograph feels warm in my pocket. Maybe I should hold it up here.,La photographie est tiède dans ma poche. Je devrais peut-être la tenir ici.
+rooms.g06.altar.wrong_item,Nothing happens.,Rien ne se passe.
+rooms.g06.loft.locked,"The choir loft gate is locked. A small slot is cut into it, like a mail slot.","La grille du jubé est verrouillée. Une petite fente y est découpée, comme une fente à courrier."
+rooms.g06.crank.taken,The loft gate swung open. A small brass crank lay on the top step.,La grille du jubé s’est ouverte. Une petite manivelle en laiton était sur la dernière marche.

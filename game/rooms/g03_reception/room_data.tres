@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="RoomData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/camera_def.gd" id="1_kp0nm"]
+[ext_resource type="Script" path="res://game/schemas/enter_trigger.gd" id="2_pdyhb"]
+[ext_resource type="Script" path="res://game/schemas/exit_def.gd" id="3_pwjf0"]
+[ext_resource type="PackedScene" path="res://game/rooms/g03_reception/g03_reception.tscn" id="4_jbrwb"]
+[ext_resource type="Script" path="res://game/schemas/room_data.gd" id="5_m0wgj"]
+
+[sub_resource type="Resource" id="Resource_mm63k"]
+script = ExtResource("1_kp0nm")
+id = &"cam_a"
+
+[sub_resource type="Resource" id="Resource_xlsgo"]
+script = ExtResource("3_pwjf0")
+id = &"to_g02"
+target_room = &"G02"
+target_spawn = &"spawn_from_g03"
+
+[resource]
+script = ExtResource("5_m0wgj")
+id = &"G03"
+name_key = "rooms.g03.name"
+scene = ExtResource("4_jbrwb")
+cameras = Array[ExtResource("1_kp0nm")]([SubResource("Resource_mm63k")])
+exits = Array[ExtResource("3_pwjf0")]([SubResource("Resource_xlsgo")])
+map_rect = Rect2(280, 180, 100, 80)

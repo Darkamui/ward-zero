@@ -22,3 +22,6 @@ signal tape_requested(tape_id: StringName)
 signal sfx_requested(stream: AudioStream)
 @warning_ignore("unused_signal")
 signal script_requested(script_name: StringName)
+## Generic UI request (save screen, effects bin, ...) from actions like OpenUi.
+@warning_ignore("unused_signal")
+signal ui_requested(ui_name: StringName)

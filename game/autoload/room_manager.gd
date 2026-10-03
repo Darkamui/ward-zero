@@ -34,6 +34,12 @@ func _ready() -> void:
 
 ## Called by the game scene once its World and Player exist.
 func setup(world_node: Node3D, player_node: Player) -> void:
+	# A new game scene means the old world (and its room) is gone.
+	if current and is_instance_valid(current):
+		CameraDirector.unregister_room()
+	current = null
+	transitioning = false
+	_fader.modulate.a = 0.0
 	world = world_node
 	player = player_node
 

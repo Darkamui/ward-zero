@@ -19,6 +19,7 @@ var _last_cursor := Interactable.Cursor.NONE
 
 
 func _ready() -> void:
+	add_to_group(&"interaction_controller")
 	EventBus.ui_opened.connect(func(_n: StringName) -> void: _ui_open += 1)
 	EventBus.ui_closed.connect(func(_n: StringName) -> void: _ui_open = maxi(0, _ui_open - 1))
 

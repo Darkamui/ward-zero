@@ -2,7 +2,7 @@ extends TestCase
 ## Loads every script and scene under game/ and tools/ so parse errors (including
 ## warnings treated as errors) fail CI even when no other test touches the file.
 
-const ROOTS := ["res://game", "res://tools"]
+const ROOTS := ["res://game", "res://tools", "res://tests"]
 
 
 func test_every_script_and_scene_loads() -> void:

@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://game/schemas/tape_data.gd" id="1_pj4ji"]
 [ext_resource type="Script" path="res://game/schemas/sub_line.gd" id="2_37i51"]
 
-[sub_resource type="Resource" id="Resource_0yp5r"]
+[sub_resource type="Resource" id="Resource_pj4ji"]
 script = ExtResource("2_37i51")
 start = 0.3
 end = 4.5
 key = "tape.vo_p01_radio.line1"
 
-[sub_resource type="Resource" id="Resource_0x7wc"]
+[sub_resource type="Resource" id="Resource_37i51"]
 script = ExtResource("2_37i51")
 start = 4.8
 end = 6.5
@@ -19,5 +19,5 @@ key = "tape.vo_p01_radio.line2"
 script = ExtResource("1_pj4ji")
 id = &"vo_p01_radio"
 title_key = "tape.vo_p01_radio.title"
-subtitles = Array[ExtResource("2_37i51")]([SubResource("Resource_0yp5r"), SubResource("Resource_0x7wc")])
+subtitles = Array[ExtResource("2_37i51")]([SubResource("Resource_pj4ji"), SubResource("Resource_37i51")])
 listed_in_files = false

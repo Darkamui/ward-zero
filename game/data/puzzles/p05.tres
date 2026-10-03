@@ -4,13 +4,14 @@
 [ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_pg23v"]
 [ext_resource type="Script" path="res://game/core/actions/set_flag.gd" id="3_yx1ar"]
 [ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="4_o5jeo"]
+[ext_resource type="PackedScene" path="res://game/puzzles/p05_hymn_board/p05.tscn" id="4_pg23v"]
 [ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="5_vejm2"]
 
-[sub_resource type="Resource" id="Resource_v7mg6"]
+[sub_resource type="Resource" id="Resource_yx1ar"]
 script = ExtResource("3_yx1ar")
 flag = &"g06.loft_open"
 
-[sub_resource type="Resource" id="Resource_eevby"]
+[sub_resource type="Resource" id="Resource_o5jeo"]
 script = ExtResource("5_vejm2")
 name = &"hymns"
 kind = 3
@@ -22,6 +23,7 @@ count = 3
 script = ExtResource("4_o5jeo")
 id = &"P05"
 room_id = &"G06"
+scene = ExtResource("4_pg23v")
 logic_script = ExtResource("1_ixp10")
 name_key = "puzzle.p05.name"
 params = {
@@ -35,6 +37,6 @@ params = {
 "rows": 3
 }
 }
-seed_fields = Array[ExtResource("5_vejm2")]([SubResource("Resource_eevby")])
-rewards = Array[ExtResource("2_pg23v")]([SubResource("Resource_v7mg6")])
+seed_fields = Array[ExtResource("5_vejm2")]([SubResource("Resource_o5jeo")])
+rewards = Array[ExtResource("2_pg23v")]([SubResource("Resource_yx1ar")])
 solved_flag = &"p05.solved"

@@ -56,7 +56,7 @@ func _random_input(id: StringName, logic: PuzzleLogic, rng: RandomNumberGenerato
 				0:
 					logic.connect_jacks(jacks[rng.randi() % jacks.size()], jacks[rng.randi() % jacks.size()])
 				1:
-					logic.unplug(jacks[rng.randi() % jacks.size()])
+					logic.unplug_link(jacks[rng.randi() % jacks.size()], jacks[rng.randi() % jacks.size()])
 				2:
 					if not logic.patches.is_empty():
 						var saved: Array = logic.patches.duplicate(true)
@@ -72,7 +72,7 @@ func _random_input(id: StringName, logic: PuzzleLogic, rng: RandomNumberGenerato
 			if logic.wheels != logic.code():
 				logic.pull()
 		&"P05":
-			var r := rng.randi() % logic.rows()
+			var r: int = rng.randi() % logic.rows()
 			if rng.randf() < 0.3:
 				logic.clear(r, rng.randi() % 3)
 			else:
@@ -146,16 +146,19 @@ func test_serialize_round_trip() -> void:
 	assert_eq(copy5.board[1][2], 7)
 
 
-func test_p02_cables_limited_and_jacks_exclusive() -> void:
+func test_p02_cable_rules() -> void:
 	var p := _logic(&"P02") as P02Logic
 	var j: Array = p.jacks()
 	assert_true(p.connect_jacks(j[0], j[1]))
-	assert_false(p.connect_jacks(j[1], j[2]), "jack already in use")
+	assert_false(p.connect_jacks(j[1], j[0]), "same link twice")
 	assert_false(p.connect_jacks(j[3], j[3]), "same jack")
-	p.connect_jacks(j[2], j[3])
-	p.connect_jacks(j[4], j[5])
+	assert_true(p.connect_jacks(j[1], j[2]), "a jack takes a second cable (chain)")
+	assert_false(p.connect_jacks(j[1], j[4]), "but not a third")
+	assert_true(p.connect_jacks(j[4], j[5]))
 	assert_false(p.connect_jacks(j[6], j[7]), "no cables left")
 	assert_eq(p.patches.size(), p.cable_count())
+	p.unplug_link(j[1], j[2])
+	assert_eq(p.patches.size(), p.cable_count() - 1)
 
 
 func test_p03_swapped_drawer_leads_to_card() -> void:

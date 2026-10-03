@@ -15,6 +15,7 @@ const AUTOLOADS := [
 	["StalkerDirector", "res://game/autoload/stalker_director.gd"],
 	["ComposureSystem", "res://game/autoload/composure_system.gd"],
 	["MemoryShiftSystem", "res://game/autoload/memory_shift_system.gd"],
+	["Settings", "res://game/autoload/settings.gd"],
 ]
 
 const PHYSICS_LAYERS := ["floor", "walls", "hotspots", "camera_triggers", "player", "stalker", "hiding"]

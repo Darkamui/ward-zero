@@ -36,6 +36,7 @@ func _ready() -> void:
 			triggers.append(t)
 	if not render_mode:
 		_bake_navigation()
+		_restore_dropped_items()
 	_apply_timeline_groups(GameState.in_memory())
 
 
@@ -87,6 +88,54 @@ func _apply_timeline_groups(memory: bool) -> void:
 
 func set_timeline(memory: bool) -> void:
 	_apply_timeline_groups(memory)
+
+
+## Leaves an item on the floor as a TAKE hotspot, remembered in the room state.
+func add_dropped_item(item_id: String, at: Vector3) -> Interactable:
+	var vars: Dictionary = GameState.room_state(String(room_id()))["vars"]
+	var dropped: Array = vars.get("dropped", [])
+	var entry := {"item": item_id, "pos": [at.x, at.y, at.z], "id": "drop_%d" % Time.get_ticks_usec()}
+	dropped.append(entry)
+	vars["dropped"] = dropped
+	return _spawn_dropped(entry)
+
+
+func _restore_dropped_items() -> void:
+	var state: Dictionary = GameState.room_states.get(String(room_id()), {})
+	for entry in state.get("vars", {}).get("dropped", []):
+		if not GameState.is_taken(String(room_id()), entry["id"]):
+			_spawn_dropped(entry)
+
+
+func _spawn_dropped(entry: Dictionary) -> Interactable:
+	var hotspots_node := get_node_or_null("Hotspots")
+	if hotspots_node == null:
+		hotspots_node = Node3D.new()
+		hotspots_node.name = "Hotspots"
+		add_child(hotspots_node)
+	var h := Interactable.new()
+	h.name = entry["id"]
+	h.kind = Interactable.Kind.TAKE
+	h.item_id = StringName(entry["item"])
+	var p: Array = entry["pos"]
+	h.position = Vector3(p[0], p[1] + 0.15, p[2])
+	var cs := CollisionShape3D.new()
+	var shape := BoxShape3D.new()
+	shape.size = Vector3(0.4, 0.3, 0.4)
+	cs.shape = shape
+	h.add_child(cs)
+	var mesh := MeshInstance3D.new()
+	var box := BoxMesh.new()
+	box.size = Vector3(0.25, 0.1, 0.2)
+	mesh.mesh = box
+	mesh.layers = 1 << (ProxyProcessor.VISUAL_CHARACTERS - 1)
+	h.add_child(mesh)
+	var approach := Marker3D.new()
+	approach.name = "Approach"
+	approach.position = Vector3(0, -0.15, 0.5)
+	h.add_child(approach)
+	hotspots_node.add_child(h)
+	return h
 
 
 func _bake_navigation() -> void:

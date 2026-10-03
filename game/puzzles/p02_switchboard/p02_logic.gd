@@ -2,6 +2,7 @@ class_name P02Logic
 extends PuzzleLogic
 ## P02 Reception switchboard: patch cables along the route given by the desk memo (by
 ## role); the staff directory maps roles to extensions. Press ring to test.
+## A route is a chain, so a jack takes up to two cables (one in, one out).
 ## Lamps (with a ✓) show each correctly patched link, never colour alone (rule R5).
 ##
 ## params.route: role ids in route order (n roles = n-1 cables).
@@ -68,24 +69,43 @@ func required_links() -> Array:
 	return result
 
 
-func jack_in_use(ext: int) -> bool:
+const MAX_CABLES_PER_JACK := 2
+
+
+func jack_load(ext: int) -> int:
+	var n := 0
 	for p in patches:
 		if p.has(ext):
-			return true
-	return false
+			n += 1
+	return n
 
 
-## Connects two free jacks with a spare cable. Returns false if not possible.
+func jack_in_use(ext: int) -> bool:
+	return jack_load(ext) > 0
+
+
+func has_link(a: int, b: int) -> bool:
+	return patches.has(_link(a, b))
+
+
+## Connects two jacks with a spare cable. Returns false if not possible.
 func connect_jacks(a: int, b: int) -> bool:
-	if a == b or not jacks().has(a) or not jacks().has(b):
+	if a == b or not jacks().has(a) or not jacks().has(b) or has_link(a, b):
 		return false
-	if jack_in_use(a) or jack_in_use(b) or patches.size() >= cable_count():
+	if jack_load(a) >= MAX_CABLES_PER_JACK or jack_load(b) >= MAX_CABLES_PER_JACK:
+		return false
+	if patches.size() >= cable_count():
 		return false
 	patches.append(_link(a, b))
 	return true
 
 
-## Pulls the cable plugged into ext, if any.
+## Pulls the cable between a and b, if there is one.
+func unplug_link(a: int, b: int) -> void:
+	patches.erase(_link(a, b))
+
+
+## Pulls every cable plugged into ext.
 func unplug(ext: int) -> void:
 	for p in patches.duplicate():
 		if p.has(ext):

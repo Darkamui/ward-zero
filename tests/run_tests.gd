@@ -21,6 +21,9 @@ func _ready() -> void:
 	var failed: Array[String] = []
 	for path in _find_tests(TEST_ROOT):
 		var script: GDScript = load(path)
+		if script == null or not script.can_instantiate():
+			failed.append("%s\n    test script failed to compile" % path)
+			continue
 		for method in script.get_script_method_list():
 			var name: String = method["name"]
 			if not name.begins_with("test_"):

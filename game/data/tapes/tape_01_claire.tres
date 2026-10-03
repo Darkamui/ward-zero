@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://game/schemas/tape_data.gd" id="1_ah5d4"]
 [ext_resource type="Script" path="res://game/schemas/sub_line.gd" id="2_uns4m"]
 
-[sub_resource type="Resource" id="Resource_ei1id"]
+[sub_resource type="Resource" id="Resource_ah5d4"]
 script = ExtResource("2_uns4m")
 start = 0.5
 end = 3.0
 key = "tape.01_claire.line1"
 
-[sub_resource type="Resource" id="Resource_0ppyo"]
+[sub_resource type="Resource" id="Resource_uns4m"]
 script = ExtResource("2_uns4m")
 start = 3.5
 end = 7.0
@@ -19,4 +19,4 @@ key = "tape.01_claire.line2"
 script = ExtResource("1_ah5d4")
 id = &"tape_01_claire"
 title_key = "tape.01_claire.title"
-subtitles = Array[ExtResource("2_uns4m")]([SubResource("Resource_ei1id"), SubResource("Resource_0ppyo")])
+subtitles = Array[ExtResource("2_uns4m")]([SubResource("Resource_ah5d4"), SubResource("Resource_uns4m")])

@@ -21,3 +21,83 @@ ui.month.9,September,septembre
 ui.month.10,October,octobre
 ui.month.11,November,novembre
 ui.month.12,December,décembre
+ui.common.back,Back,Retour
+ui.inventory.title,Satchel,Sacoche
+ui.inventory.key_pouch,Key pouch,Pochette à clés
+ui.inventory.examine,Examine,Examiner
+ui.inventory.use,Use,Utiliser
+ui.inventory.combine,Combine,Combiner
+ui.inventory.drop,Drop,Déposer
+ui.inventory.combine_pick,Choose the item to combine it with.,Choisissez l’objet avec lequel le combiner.
+ui.inventory.no_combine,Those don’t go together.,Ça ne va pas ensemble.
+ui.inventory.examine_hint,Drag to turn. Scroll to zoom. Right-click to stop.,Faites glisser pour tourner. Molette pour zoomer. Clic droit pour arrêter.
+ui.bin.title,Effects bin,Coffre d’effets
+ui.bin.hint,Double-click an item in the bin to take it.,Double-cliquez sur un objet du coffre pour le prendre.
+ui.bin.store,Store,Ranger
+ui.files.title,Patient file,Dossier du patient
+ui.files.documents,Documents,Documents
+ui.files.tapes,Tapes,Cassettes
+ui.files.fragments,Fragments,Fragments
+ui.options.title,Options,Options
+ui.options.language,Language,Langue
+ui.options.lang_en,English,English
+ui.options.lang_fr_ca,Français,Français
+ui.options.subtitles,Subtitles,Sous-titres
+ui.options.subtitle_size,Subtitle size,Taille des sous-titres
+ui.options.size_small,Small,Petit
+ui.options.size_medium,Medium,Moyen
+ui.options.size_large,Large,Grand
+ui.options.subtitle_background,Subtitle background,Fond des sous-titres
+ui.options.volume_master,Master volume,Volume général
+ui.options.volume_music,Music,Musique
+ui.options.volume_ambience,Ambience,Ambiance
+ui.options.volume_sfx,Sound effects,Effets sonores
+ui.options.volume_voice,Voices,Voix
+ui.options.skip_door,Skip door animations,Passer les animations de porte
+ui.options.fullscreen,Fullscreen,Plein écran
+ui.options.storage_warning,Browsers can erase saved games. Export your save as text from a tape recorder to keep a copy.,Les navigateurs peuvent effacer les sauvegardes. Exportez votre sauvegarde en texte à partir d’un magnétophone pour en garder une copie.
+ui.save.title,Tape recorder,Magnétophone
+ui.save.mode_save,Record (save),Enregistrer
+ui.save.mode_load,Play back (load),Rejouer (charger)
+ui.save.empty,empty,vide
+ui.save.autosave,Autosave,Sauvegarde auto
+ui.save.slot,Tape {n},Cassette {n}
+ui.save.saved,Recorded.,Enregistré.
+ui.save.exported,Save code copied. Keep it somewhere safe.,Code de sauvegarde copié. Gardez-le en lieu sûr.
+ui.save.export_label,Save code (export or paste to import):,Code de sauvegarde (exporter ou coller pour importer) :
+ui.save.export,Export as text,Exporter en texte
+ui.save.import,Import,Importer
+ui.pause.title,Paused,Pause
+ui.pause.resume,Resume,Reprendre
+ui.pause.quit,Quit to title,Retour au titre
+ui.menu.new_game,New game,Nouvelle partie
+ui.menu.load,Load,Charger
+ui.menu.import,Import save code,Importer un code de sauvegarde
+ui.menu.quit,Quit,Quitter
+ui.menu.start,Begin,Commencer
+ui.difficulty.threat,Threat,Menace
+ui.difficulty.puzzle,Puzzles,Énigmes
+ui.difficulty.observer,Observer,Observateur
+ui.difficulty.patient,Patient,Patient
+ui.difficulty.committed,Committed,Interné
+ui.difficulty.easy,Easy,Facile
+ui.difficulty.normal,Normal,Normal
+ui.difficulty.hard,Hard,Difficile
+ui.difficulty.threat_observer,Being caught is not fatal. Autosave in every room.,Être attrapé n’est pas fatal. Sauvegarde automatique dans chaque pièce.
+ui.difficulty.threat_patient,Being caught is fatal. Save at tape recorders as often as you like.,Être attrapé est fatal. Sauvegardez aux magnétophones aussi souvent que vous le voulez.
+ui.difficulty.threat_committed,Being caught is fatal. Each save uses a blank cassette.,Être attrapé est fatal. Chaque sauvegarde utilise une cassette vierge.
+ui.difficulty.puzzle_easy,Direct clues and fewer steps.,Indices directs et moins d’étapes.
+ui.difficulty.puzzle_normal,Puzzles as designed.,Les énigmes telles que conçues.
+ui.difficulty.puzzle_hard,"Riddles, extra cipher layers and more parts.","Devinettes, couches de chiffrement en plus et plus d’éléments."
+ui.difficulty.coming,Other settings arrive in a later build.,Les autres réglages arriveront dans une version ultérieure.
+ui.game_over.title,He found you.,Il vous a trouvé.
+ui.game_over.retry,Try again,Réessayer
+ui.game_over.quit,Return to title,Retour au titre
+ui.slice.title,End of the vertical slice,Fin de la tranche verticale
+ui.slice.stats,"Puzzles solved: {solved} / {total}
+Truth fragments: {fragments}
+Play time: {time}","Énigmes résolues : {solved} / {total}
+Fragments de vérité : {fragments}
+Temps de jeu : {time}"
+ui.slice.thanks,Thank you for playing. Please tell us where you got stuck.,Merci d’avoir joué. Dites-nous où vous avez bloqué.
+ui.door.unlocked,You use the {item}.,Vous utilisez {item}.

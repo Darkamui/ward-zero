@@ -62,6 +62,8 @@ def load_keys(errors: list[str], warnings: list[str]) -> set[str]:
                     f" vs fr {sorted(set(PLACEHOLDER_RE.findall(fr)))}"
                 )
             check_french_typography(where, key, fr, warnings)
+            if "\u202f" in en or "\u202f" in fr:
+                errors.append(f"{where}: '{key}' uses U+202F, which the document fonts lack; use U+00A0")
     return keys
 
 
@@ -112,7 +114,9 @@ def check_references(keys: set[str], errors: list[str]) -> None:
                 if value not in keys:
                     errors.append(f"{rel}: {m.group(1)} uses missing key '{value}'")
                 continue
-            if value.strip() and not value.startswith(("res://", "%")):
+            # Symbols and numbers (▶, —, [, \n) need no translation; words do.
+            words = re.sub(r"\\[ntr]", "", value)
+            if any(c.isalpha() for c in words) and not value.startswith(("res://", "%")):
                 errors.append(f"{rel}: user-facing literal in {m.group(1)}: \"{value}\" (use a translation key)")
 
 

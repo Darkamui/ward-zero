@@ -4,28 +4,29 @@
 [ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_clb2s"]
 [ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="3_7rnlt"]
 [ext_resource type="Script" path="res://game/core/actions/open_document.gd" id="4_5s1tu"]
+[ext_resource type="PackedScene" path="res://game/puzzles/p04_wall_safe/p04.tscn" id="5_clb2s"]
 [ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="5_in40q"]
 [ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="6_rqbym"]
 
-[sub_resource type="Resource" id="Resource_e4gdd"]
+[sub_resource type="Resource" id="Resource_7rnlt"]
 script = ExtResource("3_7rnlt")
 item_id = &"item_choleric_key"
 
-[sub_resource type="Resource" id="Resource_8ecbi"]
+[sub_resource type="Resource" id="Resource_5s1tu"]
 script = ExtResource("3_7rnlt")
 item_id = &"item_f02_fire_clipping"
 
-[sub_resource type="Resource" id="Resource_60sf3"]
+[sub_resource type="Resource" id="Resource_in40q"]
 script = ExtResource("4_5s1tu")
 document_id = &"doc_f02_fire_clipping"
 
-[sub_resource type="Resource" id="Resource_ipfbc"]
+[sub_resource type="Resource" id="Resource_rqbym"]
 script = ExtResource("6_rqbym")
 name = &"founding_year"
 min_value = 1890
 max_value = 1925
 
-[sub_resource type="Resource" id="Resource_x4io3"]
+[sub_resource type="Resource" id="Resource_e4gdd"]
 script = ExtResource("6_rqbym")
 name = &"shift"
 min_value = 1
@@ -34,6 +35,7 @@ min_value = 1
 script = ExtResource("5_in40q")
 id = &"P04"
 room_id = &"G05"
+scene = ExtResource("5_clb2s")
 logic_script = ExtResource("1_xp2bn")
 name_key = "puzzle.p04.name"
 params = {
@@ -43,6 +45,6 @@ params = {
 },
 "normal": {}
 }
-seed_fields = Array[ExtResource("6_rqbym")]([SubResource("Resource_ipfbc"), SubResource("Resource_x4io3")])
-rewards = Array[ExtResource("2_clb2s")]([SubResource("Resource_e4gdd"), SubResource("Resource_8ecbi"), SubResource("Resource_60sf3")])
+seed_fields = Array[ExtResource("6_rqbym")]([SubResource("Resource_rqbym"), SubResource("Resource_e4gdd")])
+rewards = Array[ExtResource("2_clb2s")]([SubResource("Resource_7rnlt"), SubResource("Resource_5s1tu"), SubResource("Resource_in40q")])
 solved_flag = &"p04.solved"

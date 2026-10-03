@@ -39,5 +39,5 @@ M0 was run against a **greybox** G01 Dayroom: geometry built by `tools/greybox/b
 - Run one room through Blender → render → AI paintover → glTF proxy (§8.1–8.3), and repeat the occlusion check. Log hours per step in `time_log.csv`.
 - fps / frame-time p95 in Chrome and Firefox on an integrated GPU.
 - Does a low-pass on the `Ambience` bus work in web Sample playback mode?
-- `user://` persistence across hard reload and browser restart in each browser (testable once SaveSystem has UI, M1).
+- `user://` persistence: ✅ survives a page reload in Chromium (the act-start autosave enables Load after reload). Still to check: browser restart, and Firefox/Edge.
 - Choose and lock the LUT.

@@ -2,7 +2,19 @@ class_name DebugOverlay
 extends CanvasLayer
 ## F9 overlay: room, camera, timeline, seed, fps, recent flags and noise, and a magenta
 ## tint over proxies for the occlusion check (docs/01-foundation.md §8.4).
+## While it is open (docs/02-milestone-1.md M1-08):
+##   1-6  warp to G01-G06 (first spawn)      I  give every Act 1 item
+##   P    solve the puzzle in this room       M  toggle memory (rooms with a variant)
 ## Not created in builds with the "release" feature tag.
+
+const WARP_ROOMS := [&"G01", &"G02", &"G03", &"G04", &"G05", &"G06"]
+const ACT1_ITEMS := [
+	"item_photograph",
+	"item_choleric_key",
+	"item_music_box_crank",
+	"item_f01_admission_file",
+	"item_f02_fire_clipping",
+]
 
 var _label: Label
 var _recent_flags: Array[String] = []
@@ -26,6 +38,29 @@ func _unhandled_input(event: InputEvent) -> void:
 		visible = not visible
 		RenderingServer.global_shader_parameter_set(&"wz_debug_proxies", 1.0 if visible else 0.0)
 		get_viewport().set_input_as_handled()
+	elif visible and event is InputEventKey and event.pressed and not event.echo:
+		_debug_key(event.physical_keycode)
+
+
+func _debug_key(key: Key) -> void:
+	if key >= KEY_1 and key <= KEY_6:
+		var data: RoomData = ContentDB.get_room(WARP_ROOMS[key - KEY_1])
+		var spawns := data.scene.instantiate() as Room
+		var first: StringName = spawns.spawn_names()[0]
+		spawns.free()
+		RoomManager.go_to(data.id, first)
+	elif key == KEY_I:
+		for item in ACT1_ITEMS:
+			GameState.give_item(item)
+	elif key == KEY_M:
+		MemoryShiftSystem.toggle()
+	elif key == KEY_P:
+		for p in ContentDB.puzzles.values():
+			if String(p.room_id) == GameState.current_room and not GameState.is_puzzle_solved(String(p.id)):
+				GameState.mark_puzzle_solved(String(p.id))
+				if p.solved_flag != &"":
+					GameState.set_flag(p.solved_flag, true)
+				Action.run_all(p.rewards)
 
 
 func _process(_delta: float) -> void:

@@ -11,8 +11,14 @@ const SCHEMA_VERSION := 1
 @export var id: StringName
 @export var title_key: String
 @export var body_key: String
+## Optional per-puzzle-difficulty body ("easy"/"hard"); falls back to body_key.
+@export var body_key_by_difficulty: Dictionary[String, String] = {}
 @export var fragment_id: StringName
 ## Placeholder name -> source. Sources: "seed:<puzzle>.<field>" or "flag:<flag name>".
 @export var placeholders: Dictionary[StringName, String] = {}
 @export var style: Style = Style.TYPEWRITER
 @export var composure_delta: float = 0.0
+
+
+func body_key_for(difficulty: String) -> String:
+	return body_key_by_difficulty.get(difficulty, body_key)

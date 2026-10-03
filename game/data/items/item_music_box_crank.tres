@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_8muw1"]
+[ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_xtw6t"]
+
+[resource]
+script = ExtResource("2_xtw6t")
+id = &"item_music_box_crank"
+name_key = "item.music_box_crank.name"
+desc_key = "item.music_box_crank.desc"
+kind = 5

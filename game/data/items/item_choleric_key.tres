@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_nexmn"]
+[ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_88rfm"]
+
+[resource]
+script = ExtResource("2_88rfm")
+id = &"item_choleric_key"
+name_key = "item.choleric_key.name"
+desc_key = "item.choleric_key.desc"
+storage = 1
+kind = 1
+droppable = false

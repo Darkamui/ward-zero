@@ -6,7 +6,10 @@ uid="uid://dnkndw5l6wcm4"
 
 [deps]
 
+files=["res://game/localization/puzzles.en.translation", "res://game/localization/puzzles.fr_CA.translation"]
+
 source_file="res://game/localization/puzzles.csv"
+dest_files=["res://game/localization/puzzles.en.translation", "res://game/localization/puzzles.fr_CA.translation"]
 
 [params]
 

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_vphje"]
+[ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_f0o7j"]
+
+[resource]
+script = ExtResource("2_f0o7j")
+id = &"item_f01_admission_file"
+name_key = "item.f01_admission_file.name"
+desc_key = "item.f01_admission_file.desc"
+storage = 1
+kind = 3
+droppable = false
+fragment_id = &"F01"

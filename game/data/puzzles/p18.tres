@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3]
+
+[ext_resource type="Script" path="res://game/puzzles/p18_grandfather_clock/p18_logic.gd" id="1_y6767"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_csmar"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="3_ayuoc"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="4_tlf8u"]
+
+[sub_resource type="Resource" id="Resource_u8tga"]
+script = ExtResource("4_tlf8u")
+name = &"fire_hour"
+min_value = 1
+max_value = 4
+
+[sub_resource type="Resource" id="Resource_o3ket"]
+script = ExtResource("4_tlf8u")
+name = &"fire_minute"
+kind = 1
+max_value = 55
+step = 5
+
+[resource]
+script = ExtResource("3_ayuoc")
+id = &"P18"
+room_id = &"U06"
+logic_script = ExtResource("1_y6767")
+name_key = "puzzle.p18.name"
+seed_fields = Array[ExtResource("4_tlf8u")]([SubResource("Resource_u8tga"), SubResource("Resource_o3ket")])
+solved_flag = &"p18.solved"

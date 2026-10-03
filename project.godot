@@ -93,7 +93,7 @@ debug_overlay={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://game/localization/ui.en.translation", "res://game/localization/ui.fr_CA.translation", "res://game/localization/rooms.en.translation", "res://game/localization/rooms.fr_CA.translation")
+locale/translations=PackedStringArray("res://game/localization/ui.en.translation", "res://game/localization/ui.fr_CA.translation", "res://game/localization/items.en.translation", "res://game/localization/items.fr_CA.translation", "res://game/localization/documents.en.translation", "res://game/localization/documents.fr_CA.translation", "res://game/localization/tapes.en.translation", "res://game/localization/tapes.fr_CA.translation", "res://game/localization/puzzles.en.translation", "res://game/localization/puzzles.fr_CA.translation", "res://game/localization/rooms.en.translation", "res://game/localization/rooms.fr_CA.translation")
 
 [layer_names]
 

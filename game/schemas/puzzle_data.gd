@@ -8,6 +8,9 @@ const SCHEMA_VERSION := 1
 @export var id: StringName
 @export var room_id: StringName
 @export var scene: PackedScene
+## PuzzleLogic subclass with the rules (testable without UI).
+@export var logic_script: Script
+@export var name_key: String
 ## Parameter sets keyed "easy", "normal", "hard". Missing sets fall back to "normal".
 @export var params: Dictionary = {"normal": {}}
 @export var seed_fields: Array[SeedField] = []

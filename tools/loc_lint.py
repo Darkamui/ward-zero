@@ -37,6 +37,8 @@ def load_keys(errors: list[str], warnings: list[str]) -> set[str]:
         if not rows or rows[0] != HEADER:
             errors.append(f"{rel}: header must be {','.join(HEADER)}")
             continue
+        if len([r for r in rows[1:] if r and any(c.strip() for c in r)]) == 0:
+            errors.append(f"{rel}: no rows (every domain listed in setup_project.gd needs at least one)")
         for line_no, row in enumerate(rows[1:], start=2):
             if not row or all(not c.strip() for c in row):
                 continue

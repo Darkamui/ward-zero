@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3]
+
+[ext_resource type="Script" path="res://game/puzzles/p03_card_catalog/p03_logic.gd" id="1_7h3vi"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_ib7i3"]
+[ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="3_xidaa"]
+[ext_resource type="Script" path="res://game/core/actions/open_document.gd" id="4_u2ouo"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="5_drubf"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="6_6yex0"]
+
+[sub_resource type="Resource" id="Resource_j4ttn"]
+script = ExtResource("3_xidaa")
+item_id = &"item_f01_admission_file"
+
+[sub_resource type="Resource" id="Resource_rtq42"]
+script = ExtResource("4_u2ouo")
+document_id = &"doc_f01_admission_file"
+
+[sub_resource type="Resource" id="Resource_7r84s"]
+script = ExtResource("3_xidaa")
+item_id = &"item_photograph"
+
+[sub_resource type="Resource" id="Resource_jyh13"]
+script = ExtResource("6_6yex0")
+name = &"birth_day"
+min_value = 1
+max_value = 28
+
+[sub_resource type="Resource" id="Resource_opu5o"]
+script = ExtResource("6_6yex0")
+name = &"birth_month"
+min_value = 1
+max_value = 12
+
+[sub_resource type="Resource" id="Resource_sbe5v"]
+script = ExtResource("6_6yex0")
+name = &"cabinet"
+min_value = 1
+max_value = 12
+
+[sub_resource type="Resource" id="Resource_cet3q"]
+script = ExtResource("6_6yex0")
+name = &"swap_offset"
+min_value = 1
+max_value = 11
+
+[resource]
+script = ExtResource("5_drubf")
+id = &"P03"
+room_id = &"G04"
+logic_script = ExtResource("1_7h3vi")
+name_key = "puzzle.p03.name"
+params = {
+"easy": {
+"swapped": false
+},
+"hard": {
+"swapped": true
+},
+"normal": {
+"swapped": true
+}
+}
+seed_fields = Array[ExtResource("6_6yex0")]([SubResource("Resource_jyh13"), SubResource("Resource_opu5o"), SubResource("Resource_sbe5v"), SubResource("Resource_cet3q")])
+rewards = Array[ExtResource("2_ib7i3")]([SubResource("Resource_j4ttn"), SubResource("Resource_rtq42"), SubResource("Resource_7r84s")])
+solved_flag = &"p03.solved"

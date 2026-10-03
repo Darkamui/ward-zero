@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_1ysfp"]
+[ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_3hhkl"]
+
+[resource]
+script = ExtResource("2_3hhkl")
+id = &"item_f02_fire_clipping"
+name_key = "item.f02_fire_clipping.name"
+desc_key = "item.f02_fire_clipping.desc"
+storage = 1
+kind = 3
+droppable = false
+fragment_id = &"F02"

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3]
+
+[ext_resource type="Script" path="res://game/puzzles/p01_radio/p01_logic.gd" id="1_0g70v"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_1uvnp"]
+[ext_resource type="Script" path="res://game/core/actions/set_flag.gd" id="3_wvigb"]
+[ext_resource type="Script" path="res://game/core/actions/play_tape.gd" id="4_p7ftj"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="5_pw4kf"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="6_5ut17"]
+
+[sub_resource type="Resource" id="Resource_0x8sq"]
+script = ExtResource("3_wvigb")
+flag = &"g01.chain_released"
+
+[sub_resource type="Resource" id="Resource_4x8fd"]
+script = ExtResource("4_p7ftj")
+tape_id = &"vo_p01_radio"
+
+[sub_resource type="Resource" id="Resource_d1lo0"]
+script = ExtResource("6_5ut17")
+name = &"frequency"
+kind = 1
+min_value = 550
+max_value = 1600
+step = 10
+
+[resource]
+script = ExtResource("5_pw4kf")
+id = &"P01"
+room_id = &"G01"
+logic_script = ExtResource("1_0g70v")
+name_key = "puzzle.p01.name"
+seed_fields = Array[ExtResource("6_5ut17")]([SubResource("Resource_d1lo0")])
+fail_noise_hops = 0
+rewards = Array[ExtResource("2_1uvnp")]([SubResource("Resource_0x8sq"), SubResource("Resource_4x8fd")])
+solved_flag = &"p01.solved"

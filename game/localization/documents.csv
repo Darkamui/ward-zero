@@ -1,1 +1,117 @@
 keys,en,fr_CA
+doc.quiet_hours.title,Quiet Hours,Heures de silence
+doc.quiet_hours.body,"INSTITUT SAINTE-ODILE — DAYROOM
+
+QUIET HOURS: 13:00 to 15:00 and after 20:00.
+
+The radio may be played only during evening recreation, tuned to the station approved by the Board ({frequency} kHz).
+Volume to be kept low. Patients will not touch the dial.
+
+— The Administration","INSTITUT SAINTE-ODILE — SALLE DE JOUR
+
+HEURES DE SILENCE : de 13 h à 15 h et après 20 h.
+
+La radio n’est permise que pendant la récréation du soir, sur la station approuvée par le Conseil ({frequency} kHz).
+Le volume doit rester bas. Les patients ne doivent pas toucher au cadran.
+
+— L’Administration"
+doc.staff_directory.title,Staff Extension Directory,Annuaire des postes du personnel
+doc.staff_directory.body,"INTERNAL EXTENSIONS
+
+Reception ........ {ext_reception}
+Night Desk ....... {ext_night_desk}
+Relay (Admin wing) {ext_relay}
+Administrator .... {ext_administrator}
+Records .......... {ext_records}
+Chaplain ......... {ext_chaplain}
+Kitchen .......... {ext_kitchen}
+Pharmacy ......... {ext_pharmacy}
+Boiler Room ...... {ext_boiler_room}
+Director ......... {ext_director}","POSTES INTERNES
+
+Réception ........ {ext_reception}
+Poste de nuit .... {ext_night_desk}
+Relais (aile admin.) {ext_relay}
+Administrateur ... {ext_administrator}
+Archives ......... {ext_records}
+Aumônier ......... {ext_chaplain}
+Cuisine .......... {ext_kitchen}
+Pharmacie ........ {ext_pharmacy}
+Chaufferie ....... {ext_boiler_room}
+Directeur ........ {ext_director}"
+doc.desk_memo.title,Desk Memo,Note de service
+doc.desk_memo.body,"After hours the Administrator’s line only rings through the chain:
+Reception to the Night Desk,
+Night Desk to the Admin wing relay,
+relay to the Administrator.
+One cable per link. Then press RING.
+— G.","Après les heures, la ligne de l’administrateur ne sonne qu’en passant par la chaîne :
+la Réception au Poste de nuit,
+le Poste de nuit au relais de l’aile administrative,
+le relais à l’Administrateur.
+Un câble par lien. Puis appuyez sur SONNER.
+— G."
+doc.founding_plaque.title,Founding Plaque,Plaque de fondation
+doc.founding_plaque.body,"INSTITUT SAINTE-ODILE
+Founded in {year}
+by the Sisters of Charity
+“In silence, healing.”","INSTITUT SAINTE-ODILE
+Fondé en {year}
+par les Sœurs de la Charité
+« Dans le silence, la guérison. »"
+doc.cipher_memo.title,Memo to the Administrator,Note à l’administrateur
+doc.cipher_memo.body,"Re: the wall safe.
+
+As agreed, the combination is the year the Institute was founded, with each figure advanced by {shift}. A 9 advanced past 9 starts again at 0.
+Please destroy this note.
+— Records","Objet : le coffre mural.
+
+Tel que convenu, la combinaison est l’année de fondation de l’Institut, chaque chiffre augmenté de {shift}. Un 9 qui dépasse 9 recommence à 0.
+Veuillez détruire cette note.
+— Archives"
+doc.wristband_note.title,Wristband,Bracelet d’identité
+doc.wristband_note.body,"Printed inside the wristband:
+LAVOIE, M.
+Date of birth: {birthdate}","Imprimé à l’intérieur du bracelet :
+LAVOIE, M.
+Date de naissance : {birthdate}"
+doc.catalog_card.title,Index Card,Fiche
+doc.catalog_card.body,"LAVOIE, Mathieu
+Born {birthdate}
+Admitted 1976
+File: cabinet {cabinet}","LAVOIE, Mathieu
+Né le {birthdate}
+Admis en 1976
+Dossier : classeur {cabinet}"
+doc.f01_admission_file.title,Admission File (1976),Dossier d’admission (1976)
+doc.f01_admission_file.body,"PATIENT: LAVOIE, Mathieu — born {birthdate}, age 9.
+REFERRED BY: Juvenile Court, district of Arthabaska.
+REASON: Mutism and night terrors following a house fire in which his younger sister died. The boy insists she is still in the house.
+DISPOSITION: Children’s ward. Observation.","PATIENT : LAVOIE, Mathieu — né le {birthdate}, 9 ans.
+RÉFÉRÉ PAR : Cour juvénile, district d’Arthabaska.
+MOTIF : Mutisme et terreurs nocturnes à la suite d’un incendie résidentiel où sa sœur cadette est décédée. L’enfant affirme qu’elle est encore dans la maison.
+DISPOSITION : Aile des enfants. Observation."
+doc.f02_fire_clipping.title,Clipping: House Fire,Coupure : incendie
+doc.f02_fire_clipping.body,"GIRL, 6, DIES IN NIGHT FIRE
+
+Firefighters were called to a farmhouse on the 4th Range at {fire_time} on Sunday. A six-year-old girl could not be reached in time. Her brother, 9, was found unharmed in the yard. The cause of the fire has not been made public.","UNE FILLETTE DE 6 ANS PÉRIT DANS UN INCENDIE NOCTURNE
+
+Les pompiers ont été appelés à une ferme du 4e Rang à {fire_time} dimanche. Une fillette de six ans n’a pu être secourue à temps. Son frère de 9 ans a été retrouvé indemne dans la cour. La cause de l’incendie n’a pas été rendue publique."
+doc.hymn_board_1976.title,Hymn Board (1976),Tableau des cantiques (1976)
+doc.hymn_board_1976.body,"The hymn board, as it was:
+{h1}
+{h2}
+{h3}","Le tableau des cantiques, tel qu’il était :
+{h1}
+{h2}
+{h3}"
+doc.visitor_notice.title,Notice to Visitors,Avis aux visiteurs
+doc.visitor_notice.body,"Visitors must sign in at Reception.
+Do not bring sharp objects, matches or lighters into the wards.
+Children under 14 are not admitted beyond the Lobby.","Les visiteurs doivent s’inscrire à la Réception.
+N’apportez ni objets tranchants, ni allumettes, ni briquets dans les ailes.
+Les enfants de moins de 14 ans ne sont pas admis au-delà du hall."
+doc.hymnal_page.title,Hymnal Page,Page de cantique
+doc.hymnal_page.body,"A page torn from a hymnal. Someone has underlined one line in pencil, over and over:
+“And the fire shall not burn thee.”","Une page arrachée d’un recueil de cantiques. Quelqu’un a souligné une ligne au crayon, encore et encore :
+« Et la flamme ne te consumera pas. »"

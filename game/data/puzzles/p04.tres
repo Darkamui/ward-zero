@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3]
+
+[ext_resource type="Script" path="res://game/puzzles/p04_wall_safe/p04_logic.gd" id="1_xp2bn"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_clb2s"]
+[ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="3_7rnlt"]
+[ext_resource type="Script" path="res://game/core/actions/open_document.gd" id="4_5s1tu"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="5_in40q"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="6_rqbym"]
+
+[sub_resource type="Resource" id="Resource_e4gdd"]
+script = ExtResource("3_7rnlt")
+item_id = &"item_choleric_key"
+
+[sub_resource type="Resource" id="Resource_8ecbi"]
+script = ExtResource("3_7rnlt")
+item_id = &"item_f02_fire_clipping"
+
+[sub_resource type="Resource" id="Resource_60sf3"]
+script = ExtResource("4_5s1tu")
+document_id = &"doc_f02_fire_clipping"
+
+[sub_resource type="Resource" id="Resource_ipfbc"]
+script = ExtResource("6_rqbym")
+name = &"founding_year"
+min_value = 1890
+max_value = 1925
+
+[sub_resource type="Resource" id="Resource_x4io3"]
+script = ExtResource("6_rqbym")
+name = &"shift"
+min_value = 1
+
+[resource]
+script = ExtResource("5_in40q")
+id = &"P04"
+room_id = &"G05"
+logic_script = ExtResource("1_xp2bn")
+name_key = "puzzle.p04.name"
+params = {
+"easy": {},
+"hard": {
+"reverse": true
+},
+"normal": {}
+}
+seed_fields = Array[ExtResource("6_rqbym")]([SubResource("Resource_ipfbc"), SubResource("Resource_x4io3")])
+rewards = Array[ExtResource("2_clb2s")]([SubResource("Resource_e4gdd"), SubResource("Resource_8ecbi"), SubResource("Resource_60sf3")])
+solved_flag = &"p04.solved"

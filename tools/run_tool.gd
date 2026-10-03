@@ -11,7 +11,8 @@ func _ready() -> void:
 		get_tree().quit(2)
 		return
 	var script: GDScript = load(args[0])
-	if script == null:
+	if script == null or not script.can_instantiate():
+		push_error("run_tool: %s failed to load or compile" % args[0])
 		get_tree().quit(2)
 		return
 	# Let the root finish setting up its children before tools add nodes to it.

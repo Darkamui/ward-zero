@@ -6,7 +6,10 @@ uid="uid://cbqtegsh4omvl"
 
 [deps]
 
+files=["res://game/localization/tapes.en.translation", "res://game/localization/tapes.fr_CA.translation"]
+
 source_file="res://game/localization/tapes.csv"
+dest_files=["res://game/localization/tapes.en.translation", "res://game/localization/tapes.fr_CA.translation"]
 
 [params]
 

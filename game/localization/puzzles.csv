@@ -1,1 +1,26 @@
 keys,en,fr_CA
+puzzle.p01.name,Radio,Radio
+puzzle.p01.hint,Drag the dial. Release it on a station.,Faites glisser le cadran. Relâchez-le sur une station.
+puzzle.p01.signal,Signal,Signal
+puzzle.p02.name,Switchboard,Standard téléphonique
+puzzle.p02.hint,Click two jacks to connect them. Click a patched jack to unplug it.,Cliquez sur deux prises pour les relier. Cliquez sur une prise branchée pour la débrancher.
+puzzle.p02.ring,RING,SONNER
+puzzle.p02.cables,Cables left: {n},Câbles restants : {n}
+puzzle.p02.wrong,The line buzzes and goes dead.,"La ligne grésille, puis plus rien."
+puzzle.p03.name,Card Catalog,Fichier
+puzzle.p03.hint,Drawers are labelled by birth month. Open a drawer to read its cards.,Les tiroirs sont étiquetés par mois de naissance. Ouvrez un tiroir pour lire ses fiches.
+puzzle.p03.drawer_contents,The cards inside are all born in {month}.,Les fiches à l’intérieur sont toutes nées en {month}.
+puzzle.p03.card_found,Your own card is here.,Votre propre fiche est ici.
+puzzle.p03.cabinets,Filing cabinets,Classeurs
+puzzle.p03.wrong_cabinet,The cabinet rattles. It’s not this one.,Le classeur cliquette. Ce n’est pas celui-là.
+puzzle.p04.name,Wall Safe,Coffre mural
+puzzle.p04.hint,"Turn the wheels, then pull the handle.","Tournez les molettes, puis tirez la poignée."
+puzzle.p04.pull,PULL,TIRER
+puzzle.p04.wrong,The handle clanks and stays shut.,La poignée claque et reste fermée.
+puzzle.p05.name,Hymn Board,Tableau des cantiques
+puzzle.p05.hint,"Click a slot, then a number card. Right-click a slot to take its card back.","Cliquez sur une case, puis sur une carte. Clic droit sur une case pour reprendre sa carte."
+puzzle.p05.submit,Hang the numbers,Accrocher les numéros
+puzzle.p05.wrong,The cards rattle on their hooks. Something is wrong.,Les cartes cliquettent sur leurs crochets. Quelque chose cloche.
+puzzle.common.back,Back,Retour
+puzzle.common.solved,Solved,Résolu
+puzzle.p18.name,Grandfather Clock,Horloge grand-père

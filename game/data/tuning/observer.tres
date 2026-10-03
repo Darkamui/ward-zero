@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="StalkerTuning" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/stalker_tuning.gd" id="1_34ocw"]
+
+[resource]
+script = ExtResource("1_34ocw")
+threat = "observer"
+catch_lethal = false
+autosave_every_room = true
+close_ups_pause = true
+walk_speed = 1.2
+run_speed = 2.2
+hearing_bonus = -1
+search_time = 6.0
+breath_required = 1.5
+breath_capacity = 6.0

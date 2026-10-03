@@ -8,6 +8,7 @@ signal noise_heard(room_id: StringName, hops: int)
 signal chase_started
 signal chase_ended(escaped: bool)
 signal player_caught
+signal observer_recovered(safe_room: StringName)
 
 enum State { DORMANT, PATROL, INVESTIGATE, SEARCH, CHASE, LOSE }
 
@@ -95,13 +96,47 @@ func _on_room_exited(_room_id: StringName) -> void:
 func _on_caught() -> void:
 	if not chase_active:
 		return
+	var was_act1 := RoomManager.current != null and RoomManager.current.room_id() == ACT1_CHASE_ROOM
 	chase_active = false
 	cue.stop()
 	set_state(State.DORMANT)
 	if RoomManager.player:
 		RoomManager.player.stop()
 	RoomManager.flash(Color(0.95, 0.95, 0.92), 0.6)
-	player_caught.emit()
+	if Difficulty.tuning().catch_lethal:
+		player_caught.emit()
+		return
+	if was_act1:
+		GameState.set_flag("act1.chase_done", true)
+		GameState.set_flag("g02.barricade_broken", true)
+	observer_recover()
+
+
+## Observer catch (GDD §8.1): the screen whites out and the player wakes in the nearest
+## safe room; one droppable slot item stays where they were caught; composure drops.
+func observer_recover() -> void:
+	var room := RoomManager.current
+	if room == null:
+		return
+	var droppable: Array[String] = []
+	for item_id in GameState.inventory:
+		var item: ItemData = ContentDB.get_item(item_id)
+		if item and item.droppable:
+			droppable.append(item_id)
+	if not droppable.is_empty() and RoomManager.player:
+		var lost := droppable[randi() % droppable.size()]
+		GameState.remove_item(lost)
+		room.add_dropped_item(lost, RoomManager.player.global_position)
+	GameState.set_composure(GameState.composure - Difficulty.tuning().observer_composure_penalty)
+	var safe := RoomGraph.nearest(room.room_id(), func(d: RoomData) -> bool: return d.safe_room)
+	if safe == &"":
+		return
+	var scene := ContentDB.get_room(safe).scene.instantiate() as Room
+	var spawn: StringName = scene.spawn_names()[0]
+	scene.free()
+	observer_recovered.emit(safe)
+	await get_tree().create_timer(0.8).timeout
+	RoomManager.go_to(safe, spawn)
 
 
 func _end(escaped: bool) -> void:

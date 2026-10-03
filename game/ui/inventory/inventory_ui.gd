@@ -242,10 +242,24 @@ func _on_combine() -> void:
 
 
 func _on_use() -> void:
+	if consume(selected):
+		return
 	var controller := get_tree().get_first_node_in_group(&"interaction_controller") as InteractionController
 	if controller:
 		controller.held_item = StringName(selected)
 	close()
+
+
+## Uses up a consumable (e.g. Sedatives). Returns false if the item isn't one.
+func consume(item_id: String) -> bool:
+	var item: ItemData = ContentDB.get_item(item_id)
+	if item == null or item.kind != ItemData.Kind.CONSUMABLE or item.use_actions.is_empty():
+		return false
+	GameState.remove_item(item_id)
+	Action.run_all(item.use_actions)
+	selected = ""
+	_refresh()
+	return true
 
 
 func _on_drop() -> void:

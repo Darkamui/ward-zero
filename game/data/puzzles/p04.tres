@@ -8,25 +8,25 @@
 [ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="5_in40q"]
 [ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="6_rqbym"]
 
-[sub_resource type="Resource" id="Resource_7rnlt"]
+[sub_resource type="Resource" id="Resource_clb2s"]
 script = ExtResource("3_7rnlt")
 item_id = &"item_choleric_key"
 
-[sub_resource type="Resource" id="Resource_5s1tu"]
+[sub_resource type="Resource" id="Resource_7rnlt"]
 script = ExtResource("3_7rnlt")
 item_id = &"item_f02_fire_clipping"
 
-[sub_resource type="Resource" id="Resource_in40q"]
+[sub_resource type="Resource" id="Resource_5s1tu"]
 script = ExtResource("4_5s1tu")
 document_id = &"doc_f02_fire_clipping"
 
-[sub_resource type="Resource" id="Resource_rqbym"]
+[sub_resource type="Resource" id="Resource_in40q"]
 script = ExtResource("6_rqbym")
 name = &"founding_year"
 min_value = 1890
 max_value = 1925
 
-[sub_resource type="Resource" id="Resource_e4gdd"]
+[sub_resource type="Resource" id="Resource_rqbym"]
 script = ExtResource("6_rqbym")
 name = &"shift"
 min_value = 1
@@ -45,6 +45,6 @@ params = {
 },
 "normal": {}
 }
-seed_fields = Array[ExtResource("6_rqbym")]([SubResource("Resource_rqbym"), SubResource("Resource_e4gdd")])
-rewards = Array[ExtResource("2_clb2s")]([SubResource("Resource_7rnlt"), SubResource("Resource_5s1tu"), SubResource("Resource_in40q")])
+seed_fields = Array[ExtResource("6_rqbym")]([SubResource("Resource_in40q"), SubResource("Resource_rqbym")])
+rewards = Array[ExtResource("2_clb2s")]([SubResource("Resource_clb2s"), SubResource("Resource_7rnlt"), SubResource("Resource_5s1tu")])
 solved_flag = &"p04.solved"

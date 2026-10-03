@@ -7,4 +7,8 @@ script = ExtResource("1_rd7bg")
 id = &"doc_desk_memo"
 title_key = "doc.desk_memo.title"
 body_key = "doc.desk_memo.body"
+body_key_by_difficulty = Dictionary[String, String]({
+"easy": "doc.desk_memo.body_easy",
+"hard": "doc.desk_memo.body_hard"
+})
 style = 1

@@ -32,8 +32,26 @@ func show_screen() -> void:
 	box.add_child(UiStyle.label("ui.game_over.title", 44, UiStyle.ACCENT))
 	if checkpoint != "":
 		box.add_child(UiStyle.button("ui.game_over.retry", _retry))
+	if latest_slot() != -1:
+		box.add_child(UiStyle.button("ui.game_over.load_last", _load_last))
 	box.add_child(UiStyle.button("ui.game_over.quit", _quit))
 	EventBus.ui_opened.emit(UI_NAME)
+
+
+## Most recently written save slot, or -1.
+static func latest_slot() -> int:
+	var best := -1
+	var best_time := ""
+	for info in SaveSystem.list_slots():
+		if String(info["saved_at"]) > best_time:
+			best_time = String(info["saved_at"])
+			best = int(info["slot"])
+	return best
+
+
+func _load_last() -> void:
+	if SaveSystem.load_slot(latest_slot()) == SaveSystem.SaveError.OK:
+		SaveScreen.restart_game(get_tree())
 
 
 func _retry() -> void:

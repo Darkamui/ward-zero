@@ -150,6 +150,29 @@ func run(_tree: SceneTree, _args: PackedStringArray) -> int:
 		[GB.flag("g06.loft_open")]
 	)
 	crank.item_id = &"item_music_box_crank"
+	var cassette_rule := DifficultyIs.new()
+	cassette_rule.threat = "committed"
+	var cassette := g.hotspot(
+		"hs_blank_cassette",
+		kind.TAKE,
+		Vector3(1.8, 0.95, 2.8),
+		Vector3(0.6, 0.4, 0.6),
+		Vector3(0.1, 0, 2.8),
+		[],
+		[cassette_rule]
+	)
+	cassette.item_id = &"item_blank_cassette"
+	var index_rule := DifficultyIs.new()
+	index_rule.puzzle = "hard"
+	g.hotspot(
+		"hs_hymnal_index",
+		kind.EXAMINE,
+		Vector3(-1.8, 0.95, -0.4),
+		Vector3(2.4, 0.3, 0.6),
+		Vector3(-0.1, 0, -0.4),
+		[GB.doc("doc_hymnal_index")],
+		[index_rule]
+	)
 	var data := g.room_data(DIR, ["cam_a", "cam_b"], [g.exit_def("to_g02", "G02", "spawn_from_g06")])
 	data.name_key = "rooms.g06.name"
 	data.access = RoomData.Access.SCRIPTED

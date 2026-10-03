@@ -36,6 +36,14 @@ func _items() -> void:
 	_item("item_photograph", "photograph", ItemData.Storage.KEY_POUCH, ItemData.Kind.ANCHOR)
 	_item("item_choleric_key", "choleric_key", ItemData.Storage.KEY_POUCH, ItemData.Kind.KEY)
 	_item("item_music_box_crank", "music_box_crank", ItemData.Storage.SLOT, ItemData.Kind.TOOL)
+	_item("item_blank_cassette", "blank_cassette", ItemData.Storage.SLOT, ItemData.Kind.CONSUMABLE)
+	var sedatives := _item(
+		"item_sedatives", "sedatives", ItemData.Storage.SLOT, ItemData.Kind.CONSUMABLE, false
+	)
+	var calm := ChangeComposure.new()
+	calm.delta = 0.4
+	sedatives.use_actions = [calm]
+	_save_item(sedatives)
 	var f01 := _item(
 		"item_f01_admission_file",
 		"f01_admission_file",
@@ -77,19 +85,40 @@ func _save_item(it: ItemData) -> void:
 
 
 func _documents() -> void:
-	_doc("doc_quiet_hours", "quiet_hours", DocumentData.Style.NOTICE, {"frequency": "puzzle:P01.frequency"})
+	_doc(
+		"doc_quiet_hours",
+		"quiet_hours",
+		DocumentData.Style.NOTICE,
+		{"frequency": "puzzle:P01.frequency", "a": "puzzle:P01.riddle_a", "b": "puzzle:P01.riddle_b"},
+		&"",
+		{"hard": "doc.quiet_hours.body_hard"}
+	)
 	var dir := {}
 	for role in P02Logic.ALL_ROLES:
 		dir["ext_" + role] = "puzzle:P02.ext_" + role
 	_doc("doc_staff_directory", "staff_directory", DocumentData.Style.PRINT, dir)
-	_doc("doc_desk_memo", "desk_memo", DocumentData.Style.HANDWRITTEN, {})
+	_doc(
+		"doc_desk_memo",
+		"desk_memo",
+		DocumentData.Style.HANDWRITTEN,
+		{},
+		&"",
+		{"easy": "doc.desk_memo.body_easy", "hard": "doc.desk_memo.body_hard"}
+	)
 	_doc(
 		"doc_founding_plaque",
 		"founding_plaque",
 		DocumentData.Style.PRINT,
 		{"year": "puzzle:P04.founding_year"}
 	)
-	_doc("doc_cipher_memo", "cipher_memo", DocumentData.Style.TYPEWRITER, {"shift": "puzzle:P04.shift"})
+	_doc(
+		"doc_cipher_memo",
+		"cipher_memo",
+		DocumentData.Style.TYPEWRITER,
+		{"shift": "puzzle:P04.shift"},
+		&"",
+		{"hard": "doc.cipher_memo.body_hard"}
+	)
 	_doc(
 		"doc_wristband_note", "wristband_note", DocumentData.Style.NOTE, {"birthdate": "puzzle:P03.birthdate"}
 	)
@@ -117,14 +146,32 @@ func _documents() -> void:
 		"doc_hymn_board_1976",
 		"hymn_board_1976",
 		DocumentData.Style.NOTE,
-		{"h1": "puzzle:P05.hymns[0]", "h2": "puzzle:P05.hymns[1]", "h3": "puzzle:P05.hymns[2]"}
+		{
+			"h1": "puzzle:P05.hymns[0]",
+			"h2": "puzzle:P05.hymns[1]",
+			"h3": "puzzle:P05.hymns[2]",
+			"t1": "trpuzzle:P05.title_key_0",
+			"t2": "trpuzzle:P05.title_key_1",
+			"t3": "trpuzzle:P05.title_key_2",
+		},
+		&"",
+		{"easy": "doc.hymn_board_1976.body_easy", "hard": "doc.hymn_board_1976.body_hard"}
 	)
+	var index := {}
+	for i in P05Logic.TITLE_COUNT:
+		index["n%d" % i] = "puzzle:P05.number_%d" % i
+	_doc("doc_hymnal_index", "hymnal_index", DocumentData.Style.PRINT, index)
 	_doc("doc_visitor_notice", "visitor_notice", DocumentData.Style.NOTICE, {})
 	_doc("doc_hymnal_page", "hymnal_page", DocumentData.Style.PRINT, {})
 
 
 func _doc(
-	id: String, key: String, style: DocumentData.Style, placeholders: Dictionary, fragment := &""
+	id: String,
+	key: String,
+	style: DocumentData.Style,
+	placeholders: Dictionary,
+	fragment := &"",
+	by_difficulty := {}
 ) -> void:
 	var d := DocumentData.new()
 	d.id = StringName(id)
@@ -132,6 +179,8 @@ func _doc(
 	d.body_key = "doc.%s.body" % key
 	d.style = style
 	d.fragment_id = fragment
+	for k in by_difficulty:
+		d.body_key_by_difficulty[k] = by_difficulty[k]
 	for k in placeholders:
 		d.placeholders[StringName(k)] = placeholders[k]
 	_save(d, "%s/documents/%s.tres" % [DATA, id])
@@ -205,7 +254,10 @@ func _puzzles() -> void:
 	_save_puzzle(p04)
 
 	var p05 := _puzzle("P05", "G06", "p05_hymn_board", P05Logic, 1, &"p05.solved")
-	p05.seed_fields = [_field("hymns", SeedField.Kind.UNIQUE_INTS, 100, 699, 1, 3)]
+	p05.seed_fields = [
+		_field("hymns", SeedField.Kind.UNIQUE_INTS, 100, 699, 1, 3),
+		_field("hymn_titles", SeedField.Kind.UNIQUE_INTS, 0, P05Logic.TITLE_COUNT - 1, 1, 3),
+	]
 	p05.params = {"easy": {"rows": 2}, "normal": {"rows": 3}, "hard": {"rows": 3}}
 	p05.rewards = [_set_flag("g06.loft_open")]
 	_save_puzzle(p05)

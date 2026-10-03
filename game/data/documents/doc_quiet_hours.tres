@@ -7,7 +7,12 @@ script = ExtResource("1_50ee4")
 id = &"doc_quiet_hours"
 title_key = "doc.quiet_hours.title"
 body_key = "doc.quiet_hours.body"
+body_key_by_difficulty = Dictionary[String, String]({
+"hard": "doc.quiet_hours.body_hard"
+})
 placeholders = Dictionary[StringName, String]({
+&"a": "puzzle:P01.riddle_a",
+&"b": "puzzle:P01.riddle_b",
 &"frequency": "puzzle:P01.frequency"
 })
 style = 3

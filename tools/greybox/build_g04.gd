@@ -66,6 +66,10 @@ func run(_tree: SceneTree, _args: PackedStringArray) -> int:
 		Vector3(-2.9, 0, 0.6),
 		[GB.text("rooms.g04.cabinets.examine")]
 	)
+	var sedatives := g.hotspot(
+		"hs_sedatives", kind.TAKE, Vector3(1.6, 1.1, -2.6), Vector3(0.6, 0.4, 0.4), Vector3(1.6, 0, -1.9)
+	)
+	sedatives.item_id = &"item_sedatives"
 	var data := g.room_data(
 		DIR,
 		["cam_a", "cam_b"],

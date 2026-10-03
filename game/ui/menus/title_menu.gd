@@ -2,8 +2,8 @@ extends Control
 ## Title screen: New Game (difficulty selectors, GDD §8), Load, Import save code, Options.
 ## M1 enables Patient threat and Normal puzzles only; the others arrive in M2.
 
-const ENABLED_THREAT := ["patient"]
-const ENABLED_PUZZLE := ["normal"]
+const ENABLED_THREAT := ["observer", "patient", "committed"]
+const ENABLED_PUZZLE := ["easy", "normal", "hard"]
 
 var _threat := "patient"
 var _puzzle := "normal"
@@ -57,7 +57,6 @@ func _new_game() -> void:
 	box.add_child(UiStyle.label("ui.difficulty.puzzle", 28))
 	box.add_child(_choice_row(GameState.PUZZLE_LEVELS, ENABLED_PUZZLE, "puzzle"))
 	box.add_child(UiStyle.label("ui.difficulty.puzzle_%s" % _puzzle, 22, UiStyle.INK_DIM))
-	box.add_child(UiStyle.label("ui.difficulty.coming", 20, UiStyle.INK_DIM))
 	var row := HBoxContainer.new()
 	row.add_child(UiStyle.button("ui.menu.start", _start, 32))
 	row.add_child(UiStyle.button("ui.common.back", _main, 32))

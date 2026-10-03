@@ -101,3 +101,5 @@ Fragments de vérité : {fragments}
 Temps de jeu : {time}"
 ui.slice.thanks,Thank you for playing. Please tell us where you got stuck.,Merci d’avoir joué. Dites-nous où vous avez bloqué.
 ui.door.unlocked,You use the {item}.,Vous utilisez {item}.
+ui.save.need_cassette,You need a blank cassette to record.,Il vous faut une cassette vierge pour enregistrer.
+ui.game_over.load_last,Load last save,Charger la dernière sauvegarde

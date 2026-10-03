@@ -35,7 +35,7 @@ func open(puzzle_id: StringName) -> void:
 	back.position = Vector2(60, 980)
 	_root.add_child(back)
 	EventBus.ui_opened.emit(UI_NAME)
-	if data.pauses_on_observer and GameState.threat_difficulty == "observer":
+	if data.pauses_on_observer and Difficulty.tuning().close_ups_pause:
 		get_tree().paused = true
 
 

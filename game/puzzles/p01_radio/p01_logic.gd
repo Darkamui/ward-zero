@@ -51,3 +51,14 @@ func deserialize(d: Dictionary) -> void:
 
 func solution() -> Variant:
 	return float(frequency())
+
+
+## Hard: the notice gives the station as a sum, riddle_a + riddle_b (GDD §8.2).
+static func computed_value(v: Dictionary, field: StringName) -> Variant:
+	var f := int(v.get(&"frequency", 700))
+	var a := 200 + (f * 37) % 300
+	if field == &"riddle_a":
+		return a
+	if field == &"riddle_b":
+		return f - a
+	return null

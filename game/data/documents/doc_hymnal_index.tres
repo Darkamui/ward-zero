@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DocumentData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/document_data.gd" id="1_tbfuo"]
+
+[resource]
+script = ExtResource("1_tbfuo")
+id = &"doc_hymnal_index"
+title_key = "doc.hymnal_index.title"
+body_key = "doc.hymnal_index.body"
+placeholders = Dictionary[StringName, String]({
+&"n0": "puzzle:P05.number_0",
+&"n1": "puzzle:P05.number_1",
+&"n10": "puzzle:P05.number_10",
+&"n11": "puzzle:P05.number_11",
+&"n2": "puzzle:P05.number_2",
+&"n3": "puzzle:P05.number_3",
+&"n4": "puzzle:P05.number_4",
+&"n5": "puzzle:P05.number_5",
+&"n6": "puzzle:P05.number_6",
+&"n7": "puzzle:P05.number_7",
+&"n8": "puzzle:P05.number_8",
+&"n9": "puzzle:P05.number_9"
+})
+style = 2

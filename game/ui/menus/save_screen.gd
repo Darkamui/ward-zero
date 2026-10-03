@@ -4,6 +4,7 @@ extends CanvasLayer
 ## (OpenUi "save_screen"). Save to a slot, load, or export/import a save as text.
 
 const UI_NAME := &"save_screen"
+const BLANK_CASSETTE := "item_blank_cassette"
 
 var _root: Control
 var _slots: SlotList
@@ -84,9 +85,24 @@ func _on_slot(slot: int) -> void:
 	if _mode_load:
 		_load(slot)
 		return
-	var err := SaveSystem.save(slot)
-	_message.text = tr("ui.save.saved") if err == SaveSystem.SaveError.OK else tr(SaveSystem.error_key(err))
+	_message.text = tr(SaveScreen.save_with_rules(slot))
 	_slots.refresh()
+
+
+## Saves under the current threat rules (Committed consumes a blank cassette, GDD §8.1).
+## Returns the translation key of the result message.
+static func save_with_rules(slot: int) -> String:
+	var cost := Difficulty.tuning().saves_cost_cassette
+	if cost and not GameState.has_item(BLANK_CASSETTE):
+		return "ui.save.need_cassette"
+	if cost:
+		GameState.remove_item(BLANK_CASSETTE)
+	var err := SaveSystem.save(slot)
+	if err != SaveSystem.SaveError.OK:
+		if cost:
+			GameState.give_item(BLANK_CASSETTE)
+		return SaveSystem.error_key(err)
+	return "ui.save.saved"
 
 
 func _load(slot: int) -> void:

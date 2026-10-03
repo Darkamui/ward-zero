@@ -45,12 +45,36 @@ func _through(room: Room, exit_hotspot: String) -> Room:
 	return enter(e.target_room, e.target_spawn)
 
 
+func before_each() -> void:
+	super.before_each()
+	SaveSystem.save_dir = "user://test_saves"
+
+
+func after_each() -> void:
+	for slot in SaveSystem.SLOT_COUNT:
+		SaveSystem.delete_slot(slot)
+	SaveSystem.save_dir = SaveSystem.SAVE_DIR
+	super.after_each()
+
+
 func test_act1_start_to_finish() -> void:
 	for s in [11, 222, 3333]:
 		StalkerDirector.reset()
 		NewGame.start("patient", "normal", s)
 		await _play_act1(s)
 		CameraDirector.unregister_room()
+
+
+## M2-10: Act 1 completes on all 9 threat x puzzle combinations.
+func test_act1_on_every_difficulty_combination() -> void:
+	var s := 500
+	for threat in GameState.THREAT_LEVELS:
+		for puzzle in GameState.PUZZLE_LEVELS:
+			StalkerDirector.reset()
+			NewGame.start(threat, puzzle, s)
+			await _play_act1(s)
+			CameraDirector.unregister_room()
+			s += 1
 
 
 func _play_act1(s: int) -> void:
@@ -126,12 +150,9 @@ func test_save_and_load_mid_act() -> void:
 	NewGame.start("patient", "normal", 77)
 	enter(&"G01", &"spawn_start")
 	_solve(&"P01")
-	SaveSystem.save_dir = "user://test_saves"
 	SaveSystem.save(2)
 	GameState.reset()
 	assert_eq(SaveSystem.load_slot(2), SaveSystem.SaveError.OK)
-	SaveSystem.delete_slot(2)
-	SaveSystem.save_dir = SaveSystem.SAVE_DIR
 	assert_true(GameState.get_flag("g01.chain_released"))
 	assert_true(GameState.is_puzzle_solved("P01"))
 	assert_true(GameState.has_item("item_wristband"))

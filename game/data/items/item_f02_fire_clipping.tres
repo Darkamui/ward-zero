@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_1ysfp"]
 [ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_3hhkl"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_3hhkl"]
 
 [resource]
 script = ExtResource("2_3hhkl")

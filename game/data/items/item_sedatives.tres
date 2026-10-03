@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_lqd1y"]
+[ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_i26fp"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_njqdl"]
+[ext_resource type="Script" path="res://game/core/actions/change_composure.gd" id="4_msxow"]
+
+[sub_resource type="Resource" id="Resource_lqd1y"]
+script = ExtResource("4_msxow")
+delta = 0.4
+
+[resource]
+script = ExtResource("2_i26fp")
+id = &"item_sedatives"
+name_key = "item.sedatives.name"
+desc_key = "item.sedatives.desc"
+kind = 4
+use_actions = Array[ExtResource("3_njqdl")]([SubResource("Resource_lqd1y")])

@@ -8,15 +8,15 @@
 [ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="5_pw4kf"]
 [ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="6_5ut17"]
 
-[sub_resource type="Resource" id="Resource_wvigb"]
+[sub_resource type="Resource" id="Resource_1uvnp"]
 script = ExtResource("3_wvigb")
 flag = &"g01.chain_released"
 
-[sub_resource type="Resource" id="Resource_p7ftj"]
+[sub_resource type="Resource" id="Resource_wvigb"]
 script = ExtResource("4_p7ftj")
 tape_id = &"vo_p01_radio"
 
-[sub_resource type="Resource" id="Resource_pw4kf"]
+[sub_resource type="Resource" id="Resource_p7ftj"]
 script = ExtResource("6_5ut17")
 name = &"frequency"
 kind = 1
@@ -31,7 +31,7 @@ room_id = &"G01"
 scene = ExtResource("5_1uvnp")
 logic_script = ExtResource("1_0g70v")
 name_key = "puzzle.p01.name"
-seed_fields = Array[ExtResource("6_5ut17")]([SubResource("Resource_pw4kf")])
+seed_fields = Array[ExtResource("6_5ut17")]([SubResource("Resource_p7ftj")])
 fail_noise_hops = 0
-rewards = Array[ExtResource("2_1uvnp")]([SubResource("Resource_wvigb"), SubResource("Resource_p7ftj")])
+rewards = Array[ExtResource("2_1uvnp")]([SubResource("Resource_1uvnp"), SubResource("Resource_wvigb")])
 solved_flag = &"p01.solved"

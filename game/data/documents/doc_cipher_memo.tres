@@ -7,6 +7,9 @@ script = ExtResource("1_4los4")
 id = &"doc_cipher_memo"
 title_key = "doc.cipher_memo.title"
 body_key = "doc.cipher_memo.body"
+body_key_by_difficulty = Dictionary[String, String]({
+"hard": "doc.cipher_memo.body_hard"
+})
 placeholders = Dictionary[StringName, String]({
 &"shift": "puzzle:P04.shift"
 })

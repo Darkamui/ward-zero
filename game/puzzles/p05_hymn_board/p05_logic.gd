@@ -4,6 +4,8 @@ extends PuzzleLogic
 ## on the complete 1976 board. Digit cards come from a tray and can always go back.
 ## values: hymns (3 unique numbers, 100-699). params.rows: how many numbers (Easy 2).
 
+const TITLE_COUNT := 12
+
 var board: Array = []  # rows x 3 digits; -1 = empty slot
 
 
@@ -75,3 +77,23 @@ func deserialize(d: Dictionary) -> void:
 
 func solution() -> Variant:
 	return hymns()
+
+
+## Hard (GDD §8.2): the 1976 board shows hymn titles; the hymnal index maps every title to
+## a number. title_key_<k>: title of hymn k. number_<i>: index entry for title i.
+static func computed_value(v: Dictionary, field: StringName) -> Variant:
+	var f := String(field)
+	var titles: Array = v.get(&"hymn_titles", [0, 1, 2])
+	var hymn_numbers: Array = v.get(&"hymns", [100, 200, 300])
+	if f.begins_with("title_key_"):
+		return "hymn.title.%d" % int(titles[int(f.trim_prefix("title_key_"))])
+	if f.begins_with("number_"):
+		var i := int(f.trim_prefix("number_"))
+		var k := titles.find(i)
+		if k != -1:
+			return int(hymn_numbers[k])
+		var n := 100 + (i * 53 + int(hymn_numbers[0])) % 600
+		while hymn_numbers.has(n):
+			n = 100 + (n - 99) % 600
+		return n
+	return null

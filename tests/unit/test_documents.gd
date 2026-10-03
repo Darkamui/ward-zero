@@ -89,3 +89,49 @@ func test_item_text_translated() -> void:
 		for item in ContentDB.items.values():
 			assert_ne(tr(item.name_key), item.name_key, "%s name (%s)" % [item.id, locale])
 			assert_ne(tr(item.desc_key), item.desc_key, "%s desc (%s)" % [item.id, locale])
+
+
+func test_hard_clues_match_solutions() -> void:
+	GameState.set_difficulty("patient", "hard")
+	for s in 20:
+		Seed.set_seed(s * 7 + 1)
+		# P01: the two addends sum to the station.
+		var a: int = PuzzleValues.value(&"P01", &"riddle_a")
+		var b: int = PuzzleValues.value(&"P01", &"riddle_b")
+		assert_eq(a + b, PuzzleValues.value(&"P01", &"frequency"))
+		var notice := _body(&"doc_quiet_hours")
+		assert_true(notice.contains(str(a)) and notice.contains(str(b)))
+		assert_false(notice.contains("%d kHz" % (a + b)), "Hard notice doesn't give the answer directly")
+		# P04: memo says to reverse; the logic reverses.
+		assert_true(_body(&"doc_cipher_memo").contains("right to left"))
+		var p04 := PuzzleValues.make_logic(ContentDB.get_puzzle(&"P04")) as P04Logic
+		assert_true(p04.params.get("reverse", false))
+		# P05: board titles + hymnal index give the three numbers, in order.
+		var board := _body(&"doc_hymn_board_1976")
+		var index := _body(&"doc_hymnal_index").split("\n")
+		var hymns: Array = PuzzleValues.value(&"P05", &"hymns")
+		for k in 3:
+			var title := tr(PuzzleValues.value(&"P05", StringName("title_key_%d" % k)))
+			assert_true(board.contains(title), "board shows title %s" % title)
+			var found := false
+			for line in index:
+				if line.begins_with(title + " ....."):
+					found = line.ends_with(" " + str(hymns[k]))
+			assert_true(found, "index maps %s to %d" % [title, hymns[k]])
+		var all_numbers := {}
+		for line in index.slice(2):
+			all_numbers[line.get_slice(" ..... ", 1)] = true
+		assert_eq(all_numbers.size(), P05Logic.TITLE_COUNT, "index numbers are unique")
+
+
+func test_easy_clues() -> void:
+	GameState.set_difficulty("patient", "easy")
+	for s in 10:
+		Seed.set_seed(s + 50)
+		var board := _body(&"doc_hymn_board_1976")
+		var hymns: Array = PuzzleValues.value(&"P05", &"hymns")
+		assert_true(board.contains(str(hymns[0])) and board.contains(str(hymns[1])))
+		assert_false(board.contains(str(hymns[2])), "Easy board shows only the 2 needed numbers")
+		var p02 := PuzzleValues.make_logic(ContentDB.get_puzzle(&"P02")) as P02Logic
+		assert_eq(p02.cable_count(), 2)
+		assert_true(_body(&"doc_desk_memo").contains("Two cables"))

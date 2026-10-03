@@ -59,6 +59,18 @@ func run(_tree: SceneTree, _args: PackedStringArray) -> int:
 		Vector3(1.0, 0, 0.45),
 		[GB.doc("doc_desk_memo")]
 	)
+	var cassette_rule := DifficultyIs.new()
+	cassette_rule.threat = "committed"
+	var cassette := g.hotspot(
+		"hs_blank_cassette",
+		kind.TAKE,
+		Vector3(-1.8, 1.0, 1.2),
+		Vector3(0.5, 0.4, 0.5),
+		Vector3(-1.8, 0, 0.5),
+		[],
+		[cassette_rule]
+	)
+	cassette.item_id = &"item_blank_cassette"
 	var data := g.room_data(DIR, ["cam_a"], [g.exit_def("to_g02", "G02", "spawn_from_g03")])
 	data.name_key = "rooms.g03.name"
 	data.access = RoomData.Access.SCRIPTED

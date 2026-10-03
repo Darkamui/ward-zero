@@ -13,3 +13,7 @@ item.f01_admission_file.name,Admission File,Dossier d’admission
 item.f01_admission_file.desc,My own admission file. 1976.,Mon propre dossier d’admission. 1976.
 item.f02_fire_clipping.name,Newspaper Clipping,Coupure de journal
 item.f02_fire_clipping.desc,A yellowed clipping about a house fire.,Une coupure jaunie au sujet d’un incendie.
+item.blank_cassette.name,Blank Cassette,Cassette vierge
+item.blank_cassette.desc,"An unused cassette, still in its case. Enough for one recording.","Une cassette inutilisée, encore dans son boîtier. Assez pour un enregistrement."
+item.sedatives.name,Sedatives,Sédatifs
+item.sedatives.desc,A small bottle of pills. They would steady my hands.,Un petit flacon de comprimés. Ils calmeraient mes mains.

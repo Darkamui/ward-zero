@@ -115,3 +115,83 @@ doc.hymnal_page.title,Hymnal Page,Page de cantique
 doc.hymnal_page.body,"A page torn from a hymnal. Someone has underlined one line in pencil, over and over:
 “And the fire shall not burn thee.”","Une page arrachée d’un recueil de cantiques. Quelqu’un a souligné une ligne au crayon, encore et encore :
 « Et la flamme ne te consumera pas. »"
+doc.quiet_hours.body_hard,"INSTITUT SAINTE-ODILE — DAYROOM
+
+QUIET HOURS: 13:00 to 15:00 and after 20:00.
+
+The radio may be played only during evening recreation. The Board’s station is found by adding {a} to {b} on the dial.
+Patients will not touch the dial.
+
+— The Administration","INSTITUT SAINTE-ODILE — SALLE DE JOUR
+
+HEURES DE SILENCE : de 13 h à 15 h et après 20 h.
+
+La radio n’est permise que pendant la récréation du soir. La station du Conseil s’obtient en ajoutant {a} à {b} sur le cadran.
+Les patients ne doivent pas toucher au cadran.
+
+— L’Administration"
+doc.desk_memo.body_easy,"After hours, patch Reception to the Night Desk, and the Night Desk to the Administrator. Two cables. Then press RING.
+— G.","Après les heures, reliez la Réception au Poste de nuit, et le Poste de nuit à l’Administrateur. Deux câbles. Puis appuyez sur SONNER.
+— G."
+doc.desk_memo.body_hard,"Since the Admin relay was rewired, the after-hours chain is longer:
+Reception to the Night Desk,
+Night Desk to the relay,
+the relay through Records,
+Records to the Administrator.
+One cable per link. Then RING.
+— G.","Depuis qu’on a recâblé le relais administratif, la chaîne d’après les heures est plus longue :
+la Réception au Poste de nuit,
+le Poste de nuit au relais,
+le relais en passant par les Archives,
+les Archives à l’Administrateur.
+Un câble par lien. Puis SONNER.
+— G."
+doc.cipher_memo.body_hard,"Re: the wall safe.
+
+As agreed, the combination is the year the Institute was founded, with each figure advanced by {shift} (a 9 advanced past 9 starts again at 0), then read from right to left.
+Please destroy this note.
+— Records","Objet : le coffre mural.
+
+Tel que convenu, la combinaison est l’année de fondation de l’Institut, chaque chiffre augmenté de {shift} (un 9 qui dépasse 9 recommence à 0), puis lue de droite à gauche.
+Veuillez détruire cette note.
+— Archives"
+doc.hymn_board_1976.body_easy,"The hymn board, as it was:
+{h1}
+{h2}","Le tableau des cantiques, tel qu’il était :
+{h1}
+{h2}"
+doc.hymn_board_1976.body_hard,"The hymn board, as it was. Today’s hymns, by name:
+{t1}
+{t2}
+{t3}","Le tableau des cantiques, tel qu’il était. Les cantiques du jour, par leur nom :
+{t1}
+{t2}
+{t3}"
+doc.hymnal_index.title,Hymnal Index,Table du recueil
+doc.hymnal_index.body,"HYMNAL — INDEX OF HYMNS
+
+Abide With Me ..... {n0}
+Ave Maria ..... {n1}
+Holy God, We Praise Thy Name ..... {n2}
+O Sacred Head ..... {n3}
+Be Thou My Vision ..... {n4}
+Lead, Kindly Light ..... {n5}
+Nearer, My God, to Thee ..... {n6}
+O Come, All Ye Faithful ..... {n7}
+Silent Night ..... {n8}
+Amazing Grace ..... {n9}
+The King of Love ..... {n10}
+Salve Regina ..... {n11}","RECUEIL — TABLE DES CANTIQUES
+
+Reste avec nous ..... {n0}
+Ave Maria ..... {n1}
+Grand Dieu, nous te bénissons ..... {n2}
+Ô tête ensanglantée ..... {n3}
+Sois ma lumière ..... {n4}
+Douce lumière ..... {n5}
+Plus près de toi, mon Dieu ..... {n6}
+Adeste Fideles ..... {n7}
+Douce nuit ..... {n8}
+Grâce infinie ..... {n9}
+Le Roi d’amour ..... {n10}
+Salve Regina ..... {n11}"

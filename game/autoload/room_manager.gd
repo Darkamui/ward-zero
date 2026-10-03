@@ -74,6 +74,9 @@ func run_enter_triggers(data: RoomData) -> void:
 	for t in data.enter_triggers:
 		if t.should_run():
 			t.run()
+	# Observer autosaves on every room entry (GDD §8.1).
+	if Difficulty.tuning().autosave_every_room and not StalkerDirector.chase_active:
+		SaveSystem.save(SaveSystem.AUTOSAVE_SLOT)
 
 
 ## Synchronous swap without fades (used by go_to, save loading and tests).

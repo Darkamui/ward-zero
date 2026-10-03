@@ -19,5 +19,7 @@ const SCHEMA_VERSION := 1
 @export var storage: Storage = Storage.SLOT
 @export var kind: Kind = Kind.NORMAL
 @export var droppable: bool = true
+## Consumables: run on "Use" from the inventory, then the item is used up.
+@export var use_actions: Array[Action] = []
 ## For fragments: the GDD fragment id (F01..F12).
 @export var fragment_id: StringName

@@ -7,9 +7,16 @@ script = ExtResource("1_18drn")
 id = &"doc_hymn_board_1976"
 title_key = "doc.hymn_board_1976.title"
 body_key = "doc.hymn_board_1976.body"
+body_key_by_difficulty = Dictionary[String, String]({
+"easy": "doc.hymn_board_1976.body_easy",
+"hard": "doc.hymn_board_1976.body_hard"
+})
 placeholders = Dictionary[StringName, String]({
 &"h1": "puzzle:P05.hymns[0]",
 &"h2": "puzzle:P05.hymns[1]",
-&"h3": "puzzle:P05.hymns[2]"
+&"h3": "puzzle:P05.hymns[2]",
+&"t1": "trpuzzle:P05.title_key_0",
+&"t2": "trpuzzle:P05.title_key_1",
+&"t3": "trpuzzle:P05.title_key_2"
 })
 style = 4

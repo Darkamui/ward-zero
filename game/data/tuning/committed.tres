@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="StalkerTuning" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/stalker_tuning.gd" id="1_gb715"]
+
+[resource]
+script = ExtResource("1_gb715")
+threat = "committed"
+saves_cost_cassette = true
+walk_speed = 1.7
+run_speed = 3.1
+hearing_bonus = 1
+search_time = 14.0
+breath_required = 3.5
+breath_capacity = 4.2

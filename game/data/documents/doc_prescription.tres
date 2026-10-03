@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DocumentData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/document_data.gd" id="1_hnvbq"]
+
+[resource]
+script = ExtResource("1_hnvbq")
+id = &"doc_prescription"
+title_key = "doc.prescription.title"
+body_key = "doc.prescription.body"
+body_key_by_difficulty = Dictionary[String, String]({
+"hard": "doc.prescription.body_hard"
+})
+placeholders = Dictionary[StringName, String]({
+&"dose": "puzzle:P15.target"
+})
+style = 1

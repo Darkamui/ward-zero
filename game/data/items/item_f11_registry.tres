@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_rdijt"]
+[ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_dfkyt"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_byqg0"]
+
+[resource]
+script = ExtResource("2_dfkyt")
+id = &"item_f11_registry"
+name_key = "item.f11_registry.name"
+desc_key = "item.f11_registry.desc"
+storage = 1
+kind = 3
+droppable = false
+fragment_id = &"F11"

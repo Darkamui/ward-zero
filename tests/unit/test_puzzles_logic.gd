@@ -18,6 +18,14 @@ const IDS := [
 	&"P11",
 	&"P12",
 	&"P13",
+	&"P14",
+	&"P15",
+	&"P16",
+	&"P17",
+	&"P18",
+	&"P19",
+	&"P20",
+	&"P21",
 ]
 
 
@@ -61,6 +69,9 @@ func test_deterministic_per_seed() -> void:
 		Seed.set_seed(42)
 		var b: Variant = _logic(id).solution()
 		assert_eq(str(a), str(b), "%s same seed same solution" % id)
+		var data := ContentDB.get_puzzle(id)
+		if data.seed_fields.is_empty() and data.values_from == &"":
+			continue  # P21: the timeline is fixed by the story
 		var differs := false
 		for s in range(43, 53):
 			Seed.set_seed(s)
@@ -172,3 +183,43 @@ func test_p13_red_is_loud_but_recoverable() -> void:
 		"all valves open pushes a gauge into the red"
 	)
 	assert_true(p.apply_solution(), "and it can still be solved")
+
+
+func test_p15_every_target_reachable() -> void:
+	for difficulty in ["easy", "normal", "hard"]:
+		var p := _logic(&"P15", difficulty) as P15Logic
+		var r := p.reachable()
+		for t in range(5, 32):
+			assert_true(r.has(t), "P15 %d reachable (%s)" % [t, difficulty])
+	var easy := _logic(&"P15", "easy") as P15Logic
+	easy.set_weight(0, -1)
+	assert_eq(easy.placement[0], 0, "one pan only below Hard")
+
+
+func test_act34_wrong_answers_fail() -> void:
+	Seed.set_seed(11)
+	var p14 := _logic(&"P14") as P14Logic
+	var order: Array = p14.correct_order()
+	for i in order.size():
+		p14.place(i, order[order.size() - 1 - i])
+	assert_false(p14.submit(), "books reversed")
+	var p19 := _logic(&"P19") as P19Logic
+	assert_false(p19.open_drawer(p19.target() % P19Logic.DRAWERS + 1))
+	assert_false((_logic(&"P20") as P20Logic).submit(), "empty panel")
+	var p18 := _logic(&"P18") as P18Logic
+	p18.hour = p18.solution()[0] % 12 + 1
+	assert_false(p18.try_time())
+
+
+func test_p21_score_counts_correct_slots() -> void:
+	var p := _logic(&"P21") as P21Logic
+	p.setup(p.values, {"available": ["F01", "F02", "F04"]})
+	p.place(0, "F04")
+	p.place(1, "F01")
+	p.place(5, "F09")
+	assert_eq(p.slots[5], "", "fragments not held can't be placed")
+	assert_true(p.seal())
+	assert_eq(p.score, 1)
+	p.setup(p.values, {})
+	assert_true(p.apply_solution())
+	assert_eq(p.score, 12)

@@ -43,3 +43,19 @@ item.f06_scratchings.name,Wall Scratchings,Gravures au mur
 item.f06_scratchings.desc,I copied what was scratched into the cell wall.,J’ai recopié ce qui était gravé dans le mur de la cellule.
 item.f07_tape.name,Tape: Session 1,Cassette : séance 1
 item.f07_tape.desc,"A cassette labelled “Dr. H. Bouchard – L., session 1 – 1998”.","Une cassette étiquetée « Dre H. Bouchard – L., séance 1 – 1998 »."
+item.projector_key.name,Projector Key,Clé du projecteur
+item.projector_key.desc,A small brass key. The tag reads: THEATRE – PROJ.,Une petite clé de laiton. L’étiquette indique : AMPHI – PROJ.
+item.sanguine_key.name,Sanguine Key,Clé sanguine
+item.sanguine_key.desc,A red lacquered key stamped with a feather and the word SANGUINE.,Une clé laquée rouge frappée d’une plume et du mot SANGUIN.
+item.crayon_drawing.name,The Drawing,Le dessin
+item.crayon_drawing.desc,A child’s crayon drawing of a room with a high window and a man in white. It was folded very small.,"Un dessin d’enfant aux crayons de cire : une pièce, une haute fenêtre et un homme en blanc. Il était plié tout petit."
+item.f08_journal.name,Director’s Journal,Journal du directeur
+item.f08_journal.desc,"A leather journal, the last pages torn out.","Un journal relié de cuir, les dernières pages arrachées."
+item.f09_label.name,Pharmacy Label,Étiquette de pharmacie
+item.f09_label.desc,A printed label peeled from a pill bottle.,Une étiquette imprimée décollée d’un flacon.
+item.f10_case_slide.name,Lecture Slide,Diapositive de cours
+item.f10_case_slide.desc,A glass slide in a cardboard frame: CASE STUDY.,Une diapositive de verre dans un cadre de carton : ÉTUDE DE CAS.
+item.f11_registry.name,Morgue Registry Page,Page du registre de la morgue
+item.f11_registry.desc,A page from the 1976 morgue registry.,Une page du registre de la morgue de 1976.
+item.f12_tape.name,Tape: Last Night,Cassette : hier soir
+item.f12_tape.desc,A cassette in my own handwriting. I don’t remember recording it.,Une cassette annotée de ma main. Je ne me souviens pas de l’avoir enregistrée.

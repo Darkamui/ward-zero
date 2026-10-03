@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3]
+
+[ext_resource type="Script" path="res://game/puzzles/p20_humors/p20_logic.gd" id="1_luubb"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_jied3"]
+[ext_resource type="Script" path="res://game/core/actions/set_flag.gd" id="3_tqjke"]
+[ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="4_hlsyj"]
+[ext_resource type="Script" path="res://game/core/actions/play_tape.gd" id="5_x5dng"]
+[ext_resource type="PackedScene" path="res://game/puzzles/p20_humors/p20.tscn" id="6_h72ho"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="7_44xwi"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="8_c1dad"]
+
+[sub_resource type="Resource" id="Resource_axnj3"]
+script = ExtResource("3_tqjke")
+flag = &"b04.vault_open"
+
+[sub_resource type="Resource" id="Resource_c36ql"]
+script = ExtResource("4_hlsyj")
+item_id = &"item_f12_tape"
+
+[sub_resource type="Resource" id="Resource_biwc1"]
+script = ExtResource("5_x5dng")
+tape_id = &"tape_05_last_night"
+
+[sub_resource type="Resource" id="Resource_0k16t"]
+script = ExtResource("8_c1dad")
+name = &"season_order"
+kind = 3
+max_value = 3
+count = 4
+
+[resource]
+script = ExtResource("7_44xwi")
+id = &"P20"
+room_id = &"B04"
+scene = ExtResource("6_h72ho")
+logic_script = ExtResource("1_luubb")
+name_key = "puzzle.p20.name"
+params = {
+"easy": {
+"elements": true
+},
+"hard": {},
+"normal": {}
+}
+seed_fields = Array[ExtResource("8_c1dad")]([SubResource("Resource_0k16t")])
+rewards = Array[ExtResource("2_jied3")]([SubResource("Resource_axnj3"), SubResource("Resource_c36ql"), SubResource("Resource_biwc1")])
+solved_flag = &"p20.solved"

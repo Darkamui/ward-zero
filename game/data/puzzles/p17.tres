@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3]
+
+[ext_resource type="Script" path="res://game/core/puzzle/code_lock_logic.gd" id="1_kuvhk"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_5gc2f"]
+[ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="3_qleo0"]
+[ext_resource type="Script" path="res://game/core/actions/open_document.gd" id="4_bhqmj"]
+[ext_resource type="PackedScene" path="res://game/puzzles/p17_director_safe/p17.tscn" id="5_47wks"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="6_t2sm3"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="7_ql6dy"]
+
+[sub_resource type="Resource" id="Resource_mxe4r"]
+script = ExtResource("3_qleo0")
+item_id = &"item_sanguine_key"
+
+[sub_resource type="Resource" id="Resource_qjgvb"]
+script = ExtResource("3_qleo0")
+item_id = &"item_f08_journal"
+
+[sub_resource type="Resource" id="Resource_i4svx"]
+script = ExtResource("4_bhqmj")
+document_id = &"doc_f08_journal"
+
+[resource]
+script = ExtResource("6_t2sm3")
+id = &"P17"
+room_id = &"U06"
+scene = ExtResource("5_47wks")
+logic_script = ExtResource("1_kuvhk")
+name_key = "puzzle.p17.name"
+params = {
+"normal": {
+"code_field": "safe_code",
+"digits": 4
+}
+}
+values_from = &"P16"
+rewards = Array[ExtResource("2_5gc2f")]([SubResource("Resource_mxe4r"), SubResource("Resource_qjgvb"), SubResource("Resource_i4svx")])
+solved_flag = &"p17.solved"

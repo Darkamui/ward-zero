@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DocumentData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/document_data.gd" id="1_xs5wt"]
+
+[resource]
+script = ExtResource("1_xs5wt")
+id = &"doc_slide_overlay"
+title_key = "doc.slide_overlay.title"
+body_key = "doc.slide_overlay.body"
+placeholders = Dictionary[StringName, String]({
+&"d0": "puzzle:P16.code_0",
+&"d1": "puzzle:P16.code_1",
+&"d2": "puzzle:P16.code_2",
+&"d3": "puzzle:P16.code_3"
+})
+style = 4

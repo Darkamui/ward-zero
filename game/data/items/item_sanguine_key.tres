@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_nk0h7"]
+[ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_6k1qi"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_dpbxn"]
+
+[resource]
+script = ExtResource("2_6k1qi")
+id = &"item_sanguine_key"
+name_key = "item.sanguine_key.name"
+desc_key = "item.sanguine_key.desc"
+storage = 1
+kind = 1
+droppable = false

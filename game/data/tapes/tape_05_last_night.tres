@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="TapeData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/tape_data.gd" id="1_lharh"]
+[ext_resource type="Script" path="res://game/schemas/sub_line.gd" id="2_oerey"]
+
+[sub_resource type="Resource" id="Resource_vuyf1"]
+script = ExtResource("2_oerey")
+start = 0.5
+end = 4.0
+key = "tape.05_last_night.line1"
+
+[sub_resource type="Resource" id="Resource_cip5t"]
+script = ExtResource("2_oerey")
+start = 4.5
+end = 9.0
+key = "tape.05_last_night.line2"
+
+[sub_resource type="Resource" id="Resource_n10s4"]
+script = ExtResource("2_oerey")
+start = 9.5
+end = 13.0
+key = "tape.05_last_night.line3"
+
+[sub_resource type="Resource" id="Resource_xcmy5"]
+script = ExtResource("2_oerey")
+start = 13.5
+end = 18.0
+key = "tape.05_last_night.line4"
+
+[resource]
+script = ExtResource("1_lharh")
+id = &"tape_05_last_night"
+title_key = "tape.05_last_night.title"
+subtitles = Array[ExtResource("2_oerey")]([SubResource("Resource_vuyf1"), SubResource("Resource_cip5t"), SubResource("Resource_n10s4"), SubResource("Resource_xcmy5")])
+fragment_id = &"F12"

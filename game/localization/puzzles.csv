@@ -102,3 +102,66 @@ puzzle.p09.drawing_5,A white building with many windows.,Un bâtiment blanc avec
 puzzle.p09.turn,Turn the drawings over,Retourner les dessins
 puzzle.p12.cell,Cell {n},Cellule {n}
 puzzle.p12.dust,· dust falls ·,· la poussière tombe ·
+book.title.0,On the Temperaments,Des tempéraments
+book.title.1,The Hysterical Child,L’enfant hystérique
+book.title.2,Grief and Its Cures,Le deuil et ses remèdes
+book.title.3,A Treatise on Insomnia,Traité de l’insomnie
+book.title.4,The Burned Hand,La main brûlée
+book.title.5,Forgetting as Medicine,L’oubli comme remède
+book.title.6,Small Fires,Petits feux
+slide.topic.0,Admission and first interview,Admission et premier entretien
+slide.topic.1,The night terrors,Les terreurs nocturnes
+slide.topic.2,The imaginary sister,La sœur imaginaire
+slide.topic.3,Isolation therapy,Thérapie d’isolement
+slide.topic.4,Induced forgetting,Oubli provoqué
+slide.topic.5,Prognosis,Pronostic
+slide.pair,“{a}” comes just before “{b}”.,« {a} » vient juste avant « {b} ».
+puzzle.p14.name,Library Shelf,Rayon de la bibliothèque
+puzzle.p14.hint,"Pick a book from the cart, then a gap on the shelf. Then push the shelf.","Choisissez un livre sur le chariot, puis une place sur le rayon. Puis poussez le rayon."
+puzzle.p14.push,Push the shelf,Pousser le rayon
+puzzle.p14.wrong,The shelf doesn’t move. Something is out of place.,Le rayon ne bouge pas. Quelque chose n’est pas à sa place.
+puzzle.p15.name,Pharmacy Scale,Balance de la pharmacie
+puzzle.p15.hint,Put weights on the pans until the scale balances at the prescribed dose.,Placez des poids sur les plateaux jusqu’à ce que la balance s’équilibre à la dose prescrite.
+puzzle.p15.weigh,Release the beam,Libérer le fléau
+puzzle.p15.total,Total: {g} g,Total : {g} g
+puzzle.p15.left,Left,Gauche
+puzzle.p15.right,Right,Droite
+puzzle.p15.off,Off,Retiré
+puzzle.p15.wrong,The beam tips and the pan clatters.,Le fléau bascule et le plateau claque.
+puzzle.p16.name,Slide Projector,Projecteur de diapositives
+puzzle.p16.hint,Load the slides into the carousel in lecture order.,Chargez les diapositives dans le carrousel dans l’ordre du cours.
+puzzle.p16.run,Run the projector,Lancer le projecteur
+puzzle.p16.slot,Slot {n},Case {n}
+puzzle.p16.wrong,The images flicker past. They make no sense in this order.,"Les images défilent. Dans cet ordre, elles n’ont aucun sens."
+puzzle.p17.name,Director’s Safe,Coffre du directeur
+puzzle.p18.hint,"Set the hands, then pull the chain.","Réglez les aiguilles, puis tirez la chaîne."
+puzzle.p18.hour,Hour hand,Petite aiguille
+puzzle.p18.minute,Minute hand,Grande aiguille
+puzzle.p18.pull,Pull the chain,Tirer la chaîne
+puzzle.p18.wrong,"The clock strikes, once, too loud.","L’horloge sonne un coup, trop fort."
+puzzle.p19.name,Morgue Drawers,Tiroirs de la morgue
+puzzle.p19.hint,Open the drawer the registry gives.,Ouvrez le tiroir indiqué par le registre.
+puzzle.p19.drawer,{n},{n}
+puzzle.p19.wrong,Empty. The steel rattles in the dark.,Vide. L’acier résonne dans le noir.
+puzzle.p20.name,Humors Panel,Panneau des humeurs
+puzzle.p20.hint,Put each temperament key in the slot of its season.,Placez chaque clé de tempérament dans la fente de sa saison.
+puzzle.p20.turn,Turn the keys,Tourner les clés
+puzzle.p20.wrong,The keys won’t turn together.,Les clés refusent de tourner ensemble.
+puzzle.p20.need_keys,Four keyholes. I need all four temperament keys.,Quatre serrures. Il me faut les quatre clés de tempérament.
+season.spring,Spring,Printemps
+season.summer,Summer,Été
+season.autumn,Autumn,Automne
+season.winter,Winter,Hiver
+element.air,air,air
+element.fire,fire,feu
+element.earth,earth,terre
+element.water,water,eau
+temperament.choleric,Choleric,Colérique
+temperament.melancholic,Melancholic,Mélancolique
+temperament.phlegmatic,Phlegmatic,Flegmatique
+temperament.sanguine,Sanguine,Sanguin
+puzzle.p21.name,My File,Mon dossier
+puzzle.p21.hint,Put each piece of my life where it belongs. Then close the file.,Remettez chaque morceau de ma vie à sa place. Puis fermez le dossier.
+puzzle.p21.seal,Close the file,Fermer le dossier
+puzzle.p21.confirm,Close the file? I won’t be able to change it.,Fermer le dossier ? Je ne pourrai plus le modifier.
+puzzle.p21.empty,(missing),(manquant)

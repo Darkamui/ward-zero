@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/examine_reveal.gd" id="1_66yd3"]
+[ext_resource type="Script" path="res://game/schemas/item_data.gd" id="2_qhjgf"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="3_gbwfj"]
+
+[resource]
+script = ExtResource("2_qhjgf")
+id = &"item_f09_label"
+name_key = "item.f09_label.name"
+desc_key = "item.f09_label.desc"
+storage = 1
+kind = 3
+droppable = false
+fragment_id = &"F09"

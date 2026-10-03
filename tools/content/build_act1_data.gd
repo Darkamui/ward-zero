@@ -63,6 +63,7 @@ func _items() -> void:
 	)
 	f02.fragment_id = &"F02"
 	_save_item(f02)
+	_act34_items()
 
 
 func _act2_items() -> void:
@@ -186,6 +187,7 @@ func _documents() -> void:
 	_act2_documents()
 	_doc("doc_visitor_notice", "visitor_notice", DocumentData.Style.NOTICE, {})
 	_doc("doc_hymnal_page", "hymnal_page", DocumentData.Style.PRINT, {})
+	_act34_documents()
 
 
 func _act2_documents() -> void:
@@ -300,6 +302,14 @@ func _tapes() -> void:
 		"tape_02_bouchard", "02_bouchard", [[0.5, 4.5], [5.0, 9.5], [10.0, 14.0], [14.5, 18.0]], true, &"F07"
 	)
 	_tape("tape_03_lullaby", "03_lullaby", [[0.5, 6.0], [6.5, 10.0]], true)
+	_tape("tape_04_director", "04_director", [[0.5, 5.0], [5.5, 10.0], [10.5, 15.0]], true)
+	_tape(
+		"tape_05_last_night",
+		"05_last_night",
+		[[0.5, 4.0], [4.5, 9.0], [9.5, 13.0], [13.5, 18.0]],
+		true,
+		&"F12"
+	)
 
 
 func _tape(id: String, key: String, timings: Array, listed: bool, fragment := &"") -> void:
@@ -373,11 +383,7 @@ func _puzzles() -> void:
 
 	_act2_puzzles()
 
-	var p18 := _puzzle("P18", "U06", "p18_grandfather_clock", P18Logic, 1, &"p18.solved")
-	p18.seed_fields = [
-		_field("fire_hour", SeedField.Kind.INT, 1, 4), _field("fire_minute", SeedField.Kind.STEPPED, 0, 55, 5)
-	]
-	_save_puzzle(p18)
+	_act34_puzzles()
 
 
 func _act2_puzzles() -> void:
@@ -453,6 +459,153 @@ func _act2_puzzles() -> void:
 		_play_tape("tape_02_bouchard")
 	]
 	_save_puzzle(p13)
+
+
+func _act34_items() -> void:
+	_item("item_projector_key", "projector_key", ItemData.Storage.KEY_POUCH, ItemData.Kind.KEY)
+	_item("item_sanguine_key", "sanguine_key", ItemData.Storage.KEY_POUCH, ItemData.Kind.KEY)
+	_item("item_crayon_drawing", "crayon_drawing", ItemData.Storage.KEY_POUCH, ItemData.Kind.ANCHOR)
+	for f in [
+		["F08", "f08_journal"],
+		["F09", "f09_label"],
+		["F10", "f10_case_slide"],
+		["F11", "f11_registry"],
+		["F12", "f12_tape"]
+	]:
+		var frag := _item("item_" + f[1], f[1], ItemData.Storage.KEY_POUCH, ItemData.Kind.FRAGMENT, false)
+		frag.fragment_id = StringName(f[0])
+		_save_item(frag)
+
+
+func _act34_documents() -> void:
+	var reading := {}
+	for i in P14Logic.TITLES:
+		reading["t%d" % i] = "trpuzzle:P14.title_key_%d" % i
+		reading["c%d" % i] = "puzzle:P14.catalog_%d" % i
+	_doc(
+		"doc_reading_list",
+		"reading_list",
+		DocumentData.Style.TYPEWRITER,
+		reading,
+		&"",
+		{"easy": "doc.reading_list.body_easy", "hard": "doc.reading_list.body_hard"}
+	)
+	_doc(
+		"doc_prescription",
+		"prescription",
+		DocumentData.Style.HANDWRITTEN,
+		{"dose": "puzzle:P15.target"},
+		&"",
+		{"hard": "doc.prescription.body_hard"}
+	)
+	_doc("doc_f09_label", "f09_label", DocumentData.Style.PRINT, {}, &"F09")
+	var lecture := {}
+	for k in P16Logic.SLIDES:
+		lecture["t%d" % k] = "trpuzzle:P16.topic_key_%d" % k
+	for k in P16Logic.SLIDES - 1:
+		lecture["p%d" % k] = "puzzle:P16.pair_%d" % k
+	_doc(
+		"doc_lecture_notes",
+		"lecture_notes",
+		DocumentData.Style.TYPEWRITER,
+		lecture,
+		&"",
+		{"hard": "doc.lecture_notes.body_hard"}
+	)
+	var overlay := {}
+	for i in 4:
+		overlay["d%d" % i] = "puzzle:P16.code_%d" % i
+	_doc("doc_slide_overlay", "slide_overlay", DocumentData.Style.NOTE, overlay)
+	_doc("doc_f10_case_slide", "f10_case_slide", DocumentData.Style.TYPEWRITER, {}, &"F10")
+	_doc("doc_f08_journal", "f08_journal", DocumentData.Style.HANDWRITTEN, {}, &"F08")
+	_doc(
+		"doc_clock_note",
+		"clock_note",
+		DocumentData.Style.HANDWRITTEN,
+		{},
+		&"",
+		{"easy": "doc.clock_note.body_easy", "hard": "doc.clock_note.body_hard"}
+	)
+	var registry := {}
+	for k in 5:
+		registry["d%d" % k] = "puzzle:P19.drawer_%d" % k
+	_doc(
+		"doc_death_registry",
+		"death_registry",
+		DocumentData.Style.PRINT,
+		registry,
+		&"",
+		{"hard": "doc.death_registry.body_hard"}
+	)
+	_doc("doc_f11_registry", "f11_registry", DocumentData.Style.PRINT, {}, &"F11")
+	_doc(
+		"doc_humors_mural",
+		"humors_mural",
+		DocumentData.Style.NOTICE,
+		{},
+		&"",
+		{"hard": "doc.humors_mural.body_hard"}
+	)
+	_doc("doc_mural_damaged", "mural_damaged", DocumentData.Style.NOTICE, {})
+	_doc("doc_vault_rules", "vault_rules", DocumentData.Style.TYPEWRITER, {})
+	_doc("doc_claire_hint", "claire_hint", DocumentData.Style.HANDWRITTEN, {})
+
+
+func _act34_puzzles() -> void:
+	var p14 := _puzzle("P14", "U02", "p14_library", P14Logic, 1, &"p14.solved")
+	p14.seed_fields = [_field("catalog", SeedField.Kind.UNIQUE_INTS, 100, 999, 1, P14Logic.TITLES)]
+	p14.params = {"easy": {"books": 3}, "normal": {"books": 5}, "hard": {"books": 7}}
+	p14.rewards = [_set_flag("u02.secret_open")]
+	_save_puzzle(p14)
+
+	var p15 := _puzzle("P15", "U04", "p15_balance", P15Logic, 1, &"p15.solved")
+	p15.seed_fields = [_field("target", SeedField.Kind.INT, 5, 31)]
+	p15.params = {
+		"easy": {"weights": [1, 2, 4, 8, 16], "show_total": true},
+		"normal": {"weights": [1, 2, 4, 8, 16]},
+		"hard": {"weights": [1, 3, 9, 27], "two_pans": true},
+	}
+	p15.rewards = [_give("item_projector_key"), _give("item_f09_label"), _open_doc("doc_f09_label")]
+	_save_puzzle(p15)
+
+	var p16 := _puzzle("P16", "U05", "p16_projector", P16Logic, 0, &"p16.solved")
+	p16.seed_fields = [
+		_field("order", SeedField.Kind.UNIQUE_INTS, 0, P16Logic.SLIDES - 1, 1, P16Logic.SLIDES),
+		_field("safe_code", SeedField.Kind.INT, 1000, 9999),
+	]
+	p16.params = {"easy": {"numbered": true}, "normal": {}, "hard": {}}
+	p16.rewards = [
+		_set_flag("u05.slides_aligned"), _give("item_f10_case_slide"), _open_doc("doc_f10_case_slide")
+	]
+	_save_puzzle(p16)
+
+	var p17 := _puzzle("P17", "U06", "p17_director_safe", CodeLockLogic, 1, &"p17.solved")
+	p17.values_from = &"P16"
+	p17.params = {"normal": {"code_field": "safe_code", "digits": 4}}
+	p17.rewards = [_give("item_sanguine_key"), _give("item_f08_journal"), _open_doc("doc_f08_journal")]
+	_save_puzzle(p17)
+
+	var p18 := _puzzle("P18", "U06", "p18_grandfather_clock", P18Logic, 1, &"p18.solved")
+	p18.seed_fields = [
+		_field("fire_hour", SeedField.Kind.INT, 1, 4), _field("fire_minute", SeedField.Kind.STEPPED, 0, 55, 5)
+	]
+	p18.rewards = [_set_flag("u06.dumbwaiter_open")]
+	_save_puzzle(p18)
+
+	var p19 := _puzzle("P19", "B03", "p19_morgue", P19Logic, 1, &"p19.solved")
+	p19.seed_fields = [_field("drawers", SeedField.Kind.UNIQUE_INTS, 1, P19Logic.DRAWERS, 1, 5)]
+	p19.rewards = [_give("item_crayon_drawing"), _give("item_f11_registry"), _open_doc("doc_f11_registry")]
+	_save_puzzle(p19)
+
+	var p20 := _puzzle("P20", "B04", "p20_humors", P20Logic, 1, &"p20.solved")
+	p20.seed_fields = [_field("season_order", SeedField.Kind.UNIQUE_INTS, 0, 3, 1, 4)]
+	p20.params = {"easy": {"elements": true}, "normal": {}, "hard": {}}
+	p20.rewards = [_set_flag("b04.vault_open"), _give("item_f12_tape"), _play_tape("tape_05_last_night")]
+	_save_puzzle(p20)
+
+	var p21 := _puzzle("P21", "B06", "p21_timeline", P21Logic, 0, &"p21.solved")
+	p21.rewards = [_set_flag("b06.file_sealed")]
+	_save_puzzle(p21)
 
 
 func _puzzle(

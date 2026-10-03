@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3]
+
+[ext_resource type="Script" path="res://game/puzzles/p15_balance/p15_logic.gd" id="1_1dnde"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_5ptoi"]
+[ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="3_8qkk2"]
+[ext_resource type="Script" path="res://game/core/actions/open_document.gd" id="4_q05rn"]
+[ext_resource type="PackedScene" path="res://game/puzzles/p15_balance/p15.tscn" id="5_54ufb"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="6_m6oe5"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="7_6wk7s"]
+
+[sub_resource type="Resource" id="Resource_is2c4"]
+script = ExtResource("3_8qkk2")
+item_id = &"item_projector_key"
+
+[sub_resource type="Resource" id="Resource_apc15"]
+script = ExtResource("3_8qkk2")
+item_id = &"item_f09_label"
+
+[sub_resource type="Resource" id="Resource_eiqb0"]
+script = ExtResource("4_q05rn")
+document_id = &"doc_f09_label"
+
+[sub_resource type="Resource" id="Resource_aph2s"]
+script = ExtResource("7_6wk7s")
+name = &"target"
+min_value = 5
+max_value = 31
+
+[resource]
+script = ExtResource("6_m6oe5")
+id = &"P15"
+room_id = &"U04"
+scene = ExtResource("5_54ufb")
+logic_script = ExtResource("1_1dnde")
+name_key = "puzzle.p15.name"
+params = {
+"easy": {
+"show_total": true,
+"weights": [1, 2, 4, 8, 16]
+},
+"hard": {
+"two_pans": true,
+"weights": [1, 3, 9, 27]
+},
+"normal": {
+"weights": [1, 2, 4, 8, 16]
+}
+}
+seed_fields = Array[ExtResource("7_6wk7s")]([SubResource("Resource_aph2s")])
+rewards = Array[ExtResource("2_5ptoi")]([SubResource("Resource_is2c4"), SubResource("Resource_apc15"), SubResource("Resource_eiqb0")])
+solved_flag = &"p15.solved"

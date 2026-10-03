@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="DocumentData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/document_data.gd" id="1_tdq0u"]
+
+[resource]
+script = ExtResource("1_tdq0u")
+id = &"doc_reading_list"
+title_key = "doc.reading_list.title"
+body_key = "doc.reading_list.body"
+body_key_by_difficulty = Dictionary[String, String]({
+"easy": "doc.reading_list.body_easy",
+"hard": "doc.reading_list.body_hard"
+})
+placeholders = Dictionary[StringName, String]({
+&"c0": "puzzle:P14.catalog_0",
+&"c1": "puzzle:P14.catalog_1",
+&"c2": "puzzle:P14.catalog_2",
+&"c3": "puzzle:P14.catalog_3",
+&"c4": "puzzle:P14.catalog_4",
+&"c5": "puzzle:P14.catalog_5",
+&"c6": "puzzle:P14.catalog_6",
+&"t0": "trpuzzle:P14.title_key_0",
+&"t1": "trpuzzle:P14.title_key_1",
+&"t2": "trpuzzle:P14.title_key_2",
+&"t3": "trpuzzle:P14.title_key_3",
+&"t4": "trpuzzle:P14.title_key_4",
+&"t5": "trpuzzle:P14.title_key_5",
+&"t6": "trpuzzle:P14.title_key_6"
+})

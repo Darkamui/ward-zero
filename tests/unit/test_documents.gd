@@ -193,3 +193,46 @@ func test_act2_clues_match_solutions() -> void:
 				_body(&"doc_lid_sheet").ends_with(" ".join(names)), "lid sheet = melody (%s)" % difficulty
 			)
 	GameState.set_difficulty("patient", "normal")
+
+
+func test_act34_clues_match_solutions() -> void:
+	for difficulty in ["easy", "normal", "hard"]:
+		GameState.set_difficulty("patient", difficulty)
+		for s in 15:
+			Seed.set_seed(s * 37 + 3)
+			# P14: the reading list gives each cart book's call number; shelving by number
+			# is the solution.
+			var p14 := PuzzleValues.make_logic(ContentDB.get_puzzle(&"P14")) as P14Logic
+			var lines := _body(&"doc_reading_list").split("\n")
+			var listed := 0
+			for i in p14.count():
+				var line := "%s ......... %d" % [tr("book.title.%d" % i), p14.catalog_of(i)]
+				if lines.has(line):
+					listed += 1
+			assert_eq(listed, p14.count(), "reading list covers the cart (%s)" % difficulty)
+			var order: Array = p14.correct_order()
+			for k in order.size() - 1:
+				assert_true(p14.catalog_of(order[k]) < p14.catalog_of(order[k + 1]))
+			# P15: the prescription gives the target weight.
+			var p15 := PuzzleValues.make_logic(ContentDB.get_puzzle(&"P15")) as P15Logic
+			assert_true(_body(&"doc_prescription").contains("%d g" % p15.target()))
+			# P16: the notes give the lecture order (Hard: the consecutive pairs).
+			var p16 := PuzzleValues.make_logic(ContentDB.get_puzzle(&"P16")) as P16Logic
+			var slides: Array = p16.correct_order()
+			var notes := _body(&"doc_lecture_notes")
+			if difficulty == "hard":
+				for k in slides.size() - 1:
+					var pair := tr("slide.pair").format(
+						{"a": tr("slide.topic.%d" % slides[k]), "b": tr("slide.topic.%d" % slides[k + 1])}
+					)
+					assert_true(notes.contains(pair), "pair %d listed" % k)
+			else:
+				for k in slides.size():
+					assert_true(notes.contains("%d. %s" % [k + 1, tr("slide.topic.%d" % slides[k])]))
+			# P16 overlay shows the P17 safe code.
+			var p17 := PuzzleValues.make_logic(ContentDB.get_puzzle(&"P17")) as CodeLockLogic
+			assert_true(_body(&"doc_slide_overlay").ends_with("%d  %d  %d  %d" % p17.code()))
+			# P19: the fire victim's registry line gives the drawer.
+			var p19 := PuzzleValues.make_logic(ContentDB.get_puzzle(&"P19")) as P19Logic
+			var victim := "Drawer %d: %s" % [p19.target(), "F, 6." if difficulty == "hard" else "Female, 6."]
+			assert_true(_body(&"doc_death_registry").contains(victim), "registry (%s)" % difficulty)

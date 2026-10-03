@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3]
+
+[ext_resource type="Script" path="res://game/puzzles/p19_morgue/p19_logic.gd" id="1_xw7ml"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_gwqgr"]
+[ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="3_yn36i"]
+[ext_resource type="Script" path="res://game/core/actions/open_document.gd" id="4_u5y3y"]
+[ext_resource type="PackedScene" path="res://game/puzzles/p19_morgue/p19.tscn" id="5_hnubx"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="6_schwu"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="7_qd4ys"]
+
+[sub_resource type="Resource" id="Resource_lc72q"]
+script = ExtResource("3_yn36i")
+item_id = &"item_crayon_drawing"
+
+[sub_resource type="Resource" id="Resource_4l4fy"]
+script = ExtResource("3_yn36i")
+item_id = &"item_f11_registry"
+
+[sub_resource type="Resource" id="Resource_62mjs"]
+script = ExtResource("4_u5y3y")
+document_id = &"doc_f11_registry"
+
+[sub_resource type="Resource" id="Resource_g4vin"]
+script = ExtResource("7_qd4ys")
+name = &"drawers"
+kind = 3
+min_value = 1
+max_value = 12
+count = 5
+
+[resource]
+script = ExtResource("6_schwu")
+id = &"P19"
+room_id = &"B03"
+scene = ExtResource("5_hnubx")
+logic_script = ExtResource("1_xw7ml")
+name_key = "puzzle.p19.name"
+seed_fields = Array[ExtResource("7_qd4ys")]([SubResource("Resource_g4vin")])
+rewards = Array[ExtResource("2_gwqgr")]([SubResource("Resource_lc72q"), SubResource("Resource_4l4fy"), SubResource("Resource_62mjs")])
+solved_flag = &"p19.solved"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DocumentData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/document_data.gd" id="1_pkhpx"]
+
+[resource]
+script = ExtResource("1_pkhpx")
+id = &"doc_humors_mural"
+title_key = "doc.humors_mural.title"
+body_key = "doc.humors_mural.body"
+body_key_by_difficulty = Dictionary[String, String]({
+"hard": "doc.humors_mural.body_hard"
+})
+style = 3

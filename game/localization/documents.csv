@@ -326,3 +326,151 @@ Pea soup — fish — bread pudding
 No second helpings.","VENDREDI
 Soupe aux pois — poisson — pouding au pain
 Pas de deuxième portion."
+doc.reading_list.title,Reading List,Liste de lecture
+doc.reading_list.body,"DIRECTOR’S READING LIST – return to shelf D by call number
+
+{t0} ......... {c0}
+{t1} ......... {c1}
+{t2} ......... {c2}
+{t3} ......... {c3}
+{t4} ......... {c4}","LISTE DE LECTURE DU DIRECTEUR – remettre au rayon D par cote
+
+{t0} ......... {c0}
+{t1} ......... {c1}
+{t2} ......... {c2}
+{t3} ......... {c3}
+{t4} ......... {c4}"
+doc.reading_list.body_easy,"DIRECTOR’S READING LIST – return to shelf D, lowest number first
+
+{t0} ......... {c0}
+{t1} ......... {c1}
+{t2} ......... {c2}","LISTE DE LECTURE DU DIRECTEUR – remettre au rayon D, plus petite cote d’abord
+
+{t0} ......... {c0}
+{t1} ......... {c1}
+{t2} ......... {c2}"
+doc.reading_list.body_hard,"DIRECTOR’S READING LIST – return to shelf D by call number
+
+{t0} ......... {c0}
+{t1} ......... {c1}
+{t2} ......... {c2}
+{t3} ......... {c3}
+{t4} ......... {c4}
+{t5} ......... {c5}
+{t6} ......... {c6}","LISTE DE LECTURE DU DIRECTEUR – remettre au rayon D par cote
+
+{t0} ......... {c0}
+{t1} ......... {c1}
+{t2} ......... {c2}
+{t3} ......... {c3}
+{t4} ......... {c4}
+{t5} ......... {c5}
+{t6} ......... {c6}"
+doc.prescription.title,Prescription,Ordonnance
+doc.prescription.body,"Rx – Patient L.
+Chloral, {dose} g. Weigh exactly. Night dose only.
+– Dir.","Rx – Patient L.
+Chloral, {dose} g. Peser exactement. Dose de nuit seulement.
+– Dir."
+doc.prescription.body_hard,"Rx – Patient L.
+Chloral, {dose} g, weighed exactly. The small weights are lost: use the 1, 3, 9 and 27, on either pan.
+– Dir.","Rx – Patient L.
+Chloral, {dose} g, pesé exactement. Les petits poids sont perdus : utilisez le 1, le 3, le 9 et le 27, sur l’un ou l’autre plateau.
+– Dir."
+doc.f09_label.title,Pharmacy Label,Étiquette de pharmacie
+doc.f09_label.body,"CENTRE HOSPITALIER SAINTE-ODILE – UNITÉ 4
+LAVOIE, MATHIEU – Room 12
+Clonazepam 0.5 mg – at bedtime
+Dispensed: 1998-03-02","CENTRE HOSPITALIER SAINTE-ODILE – UNITÉ 4
+LAVOIE, MATHIEU – Chambre 12
+Clonazépam 0,5 mg – au coucher
+Servi le : 1998-03-02"
+doc.lecture_notes.title,Lecture Notes,Notes de cours
+doc.lecture_notes.body,"LECTURE: PATIENT L., A CASE OF TRAUMATIC FORGETTING
+Slides, in order:
+1. {t0}
+2. {t1}
+3. {t2}
+4. {t3}
+5. {t4}
+6. {t5}","COURS : PATIENT L., UN CAS D’OUBLI TRAUMATIQUE
+Diapositives, dans l’ordre :
+1. {t0}
+2. {t1}
+3. {t2}
+4. {t3}
+5. {t4}
+6. {t5}"
+doc.lecture_notes.body_hard,"LECTURE: PATIENT L., A CASE OF TRAUMATIC FORGETTING
+My notes are out of order. What I remember:
+{p0}
+{p1}
+{p2}
+{p3}
+{p4}","COURS : PATIENT L., UN CAS D’OUBLI TRAUMATIQUE
+Mes notes sont en désordre. Ce dont je me souviens :
+{p0}
+{p1}
+{p2}
+{p3}
+{p4}"
+doc.slide_overlay.title,On the Screen,Sur l’écran
+doc.slide_overlay.body,"Two slides overlap on the screen. Where the shadows cross, four numbers stand out:
+
+{d0}  {d1}  {d2}  {d3}","Deux diapositives se superposent à l’écran. Là où les ombres se croisent, quatre chiffres ressortent :
+
+{d0}  {d1}  {d2}  {d3}"
+doc.f10_case_slide.title,Case Study: Patient L.,Étude de cas : patient L.
+doc.f10_case_slide.body,"CASE STUDY: PATIENT L. (1976–1981)
+Male, admitted age 9 after a fatal house fire. Total amnesia for the event. Persistent belief that the deceased sister is alive and ""lost in the building"".
+Outcome: discharged 1981. Readmitted as an adult, 1998.","ÉTUDE DE CAS : PATIENT L. (1976–1981)
+Garçon, admis à 9 ans après un incendie mortel. Amnésie totale de l’événement. Croit fermement que sa sœur décédée est vivante et « perdue dans le bâtiment ».
+Issue : congé en 1981. Réadmis à l’âge adulte en 1998."
+doc.f08_journal.title,Director’s Journal,Journal du directeur
+doc.f08_journal.body,"October 1979. The Lavoie boy asked me again where his sister sleeps. I told him the truth for the first time. He looked at me as if I had struck him, then asked again, politely, as if the question were new. The mind protects what it cannot carry. I have decided we will stop telling him.","Octobre 1979. Le petit Lavoie m’a encore demandé où dort sa sœur. Pour la première fois, je lui ai dit la vérité. Il m’a regardé comme si je l’avais frappé, puis il a reposé la question, poliment, comme si elle était nouvelle. L’esprit protège ce qu’il ne peut pas porter. J’ai décidé que nous cesserions de le lui dire."
+doc.clock_note.title,Note on the Clock,Note sur l’horloge
+doc.clock_note.body,He stopped every clock in the house at the hour it happened. Wind this one and it will open.,Il a arrêté toutes les horloges de la maison à l’heure où c’est arrivé. Remontez celle-ci et elle s’ouvrira.
+doc.clock_note.body_easy,"He stopped every clock at the hour of the fire, the time in the newspaper clipping. Set this one to it.","Il a arrêté toutes les horloges à l’heure de l’incendie, celle de la coupure de journal. Réglez celle-ci à cette heure."
+doc.clock_note.body_hard,Time stopped when the farmhouse burned. Make it stop again.,Le temps s’est arrêté quand la ferme a brûlé. Arrêtez-le de nouveau.
+doc.death_registry.title,Death Registry,Registre des décès
+doc.death_registry.body,"MORGUE REGISTRY – MARCH 1976
+Drawer {d0}: Male, 71. Heart.
+Drawer {d1}: Female, 64. Pneumonia.
+Drawer {d2}: Female, 6. Burns – farmhouse fire, 4th Range. Name not entered.
+Drawer {d3}: Male, 45. Drowning.
+Drawer {d4}: Male, 82. Age.","REGISTRE DE LA MORGUE – MARS 1976
+Tiroir {d0} : Homme, 71 ans. Cœur.
+Tiroir {d1} : Femme, 64 ans. Pneumonie.
+Tiroir {d2} : Fille, 6 ans. Brûlures – incendie de ferme, 4e Rang. Nom non inscrit.
+Tiroir {d3} : Homme, 45 ans. Noyade.
+Tiroir {d4} : Homme, 82 ans. Vieillesse."
+doc.death_registry.body_hard,"MORGUE REGISTRY – MARCH 1976
+Drawer {d0}: M, 71. Cardiac.
+Drawer {d1}: F, 64. Pulmonary.
+Drawer {d2}: F, 6. Smoke.
+Drawer {d3}: M, 45. Water.
+Drawer {d4}: M, 82. –","REGISTRE DE LA MORGUE – MARS 1976
+Tiroir {d0} : H, 71. Cardiaque.
+Tiroir {d1} : F, 64. Pulmonaire.
+Tiroir {d2} : F, 6. Fumée.
+Tiroir {d3} : H, 45. Eau.
+Tiroir {d4} : H, 82. –"
+doc.f11_registry.title,Registry Page (1976),Page du registre (1976)
+doc.f11_registry.body,"The whole year, every name. No LAVOIE. No Claire. Whoever she was, she was never brought here.","Toute l’année, chaque nom. Aucun LAVOIE. Aucune Claire. Qui qu’elle soit, elle n’a jamais été amenée ici."
+doc.humors_mural.title,The Four Humors,Les quatre humeurs
+doc.humors_mural.body,"The mural, as it was painted:
+CHOLERIC – yellow bile – fire – SUMMER
+MELANCHOLIC – black bile – earth – AUTUMN
+PHLEGMATIC – phlegm – water – WINTER
+SANGUINE – blood – air – SPRING","La murale, telle qu’elle a été peinte :
+COLÉRIQUE – bile jaune – feu – ÉTÉ
+MÉLANCOLIQUE – bile noire – terre – AUTOMNE
+FLEGMATIQUE – flegme – eau – HIVER
+SANGUIN – sang – air – PRINTEMPS"
+doc.humors_mural.body_hard,The mural shows four figures. A man red with anger stands in a wheat field under a hot sun. A pale woman gathers fallen leaves. A sleeper lies by a frozen river. A laughing boy runs among blossoms.,La murale montre quatre figures. Un homme rouge de colère se tient dans un champ de blé sous un soleil brûlant. Une femme pâle ramasse des feuilles mortes. Un dormeur est étendu près d’une rivière gelée. Un garçon rieur court parmi les fleurs.
+doc.mural_damaged.title,The Mural,La murale
+doc.mural_damaged.body,"Water has run down the wall for years. Four painted figures, too faded to read.","L’eau a coulé sur le mur pendant des années. Quatre figures peintes, trop effacées pour être lues."
+doc.vault_rules.title,Archive Instructions,Consignes des archives
+doc.vault_rules.body,PATIENT FILES ARE TO BE KEPT IN ORDER OF EVENTS. A file closed out of order will be returned to the ward.,LES DOSSIERS DES PATIENTS DOIVENT ÊTRE CLASSÉS DANS L’ORDRE DES ÉVÉNEMENTS. Un dossier fermé dans le désordre sera renvoyé à l’unité.
+doc.claire_hint.title,A Note in My Writing,Une note de ma main
+doc.claire_hint.body,"Every night I run from him. Maybe the door was never the way out. Next time, when he comes, I will put the whole file together, and I will stay.","Chaque nuit, je le fuis. Peut-être que la porte n’a jamais été la sortie. La prochaine fois, quand il viendra, je remettrai tout le dossier en ordre, et je resterai."

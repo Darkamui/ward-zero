@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="TapeData" format=3]
+
+[ext_resource type="Script" path="res://game/schemas/tape_data.gd" id="1_iyhtb"]
+[ext_resource type="Script" path="res://game/schemas/sub_line.gd" id="2_w54jy"]
+
+[sub_resource type="Resource" id="Resource_kacpw"]
+script = ExtResource("2_w54jy")
+start = 0.5
+end = 5.0
+key = "tape.04_director.line1"
+
+[sub_resource type="Resource" id="Resource_3kal7"]
+script = ExtResource("2_w54jy")
+start = 5.5
+end = 10.0
+key = "tape.04_director.line2"
+
+[sub_resource type="Resource" id="Resource_6rlc3"]
+script = ExtResource("2_w54jy")
+start = 10.5
+end = 15.0
+key = "tape.04_director.line3"
+
+[resource]
+script = ExtResource("1_iyhtb")
+id = &"tape_04_director"
+title_key = "tape.04_director.title"
+subtitles = Array[ExtResource("2_w54jy")]([SubResource("Resource_kacpw"), SubResource("Resource_3kal7"), SubResource("Resource_6rlc3")])

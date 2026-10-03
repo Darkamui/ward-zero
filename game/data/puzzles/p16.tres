@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3]
+
+[ext_resource type="Script" path="res://game/puzzles/p16_projector/p16_logic.gd" id="1_lkm01"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_xdn0p"]
+[ext_resource type="Script" path="res://game/core/actions/set_flag.gd" id="3_3wow7"]
+[ext_resource type="Script" path="res://game/core/actions/give_item.gd" id="4_2ouaq"]
+[ext_resource type="Script" path="res://game/core/actions/open_document.gd" id="5_hmvsg"]
+[ext_resource type="PackedScene" path="res://game/puzzles/p16_projector/p16.tscn" id="6_leyij"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="7_p5ae7"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="8_t3q4v"]
+
+[sub_resource type="Resource" id="Resource_b5yx8"]
+script = ExtResource("3_3wow7")
+flag = &"u05.slides_aligned"
+
+[sub_resource type="Resource" id="Resource_kdw3s"]
+script = ExtResource("4_2ouaq")
+item_id = &"item_f10_case_slide"
+
+[sub_resource type="Resource" id="Resource_xujml"]
+script = ExtResource("5_hmvsg")
+document_id = &"doc_f10_case_slide"
+
+[sub_resource type="Resource" id="Resource_rk1pa"]
+script = ExtResource("8_t3q4v")
+name = &"order"
+kind = 3
+max_value = 5
+count = 6
+
+[sub_resource type="Resource" id="Resource_tffqc"]
+script = ExtResource("8_t3q4v")
+name = &"safe_code"
+min_value = 1000
+max_value = 9999
+
+[resource]
+script = ExtResource("7_p5ae7")
+id = &"P16"
+room_id = &"U05"
+scene = ExtResource("6_leyij")
+logic_script = ExtResource("1_lkm01")
+name_key = "puzzle.p16.name"
+params = {
+"easy": {
+"numbered": true
+},
+"hard": {},
+"normal": {}
+}
+seed_fields = Array[ExtResource("8_t3q4v")]([SubResource("Resource_rk1pa"), SubResource("Resource_tffqc")])
+fail_noise_hops = 0
+rewards = Array[ExtResource("2_xdn0p")]([SubResource("Resource_b5yx8"), SubResource("Resource_kdw3s"), SubResource("Resource_xujml")])
+solved_flag = &"p16.solved"

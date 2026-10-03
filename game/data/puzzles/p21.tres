@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3]
+
+[ext_resource type="Script" path="res://game/puzzles/p21_timeline/p21_logic.gd" id="1_hqvdr"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_4uri5"]
+[ext_resource type="Script" path="res://game/core/actions/set_flag.gd" id="3_potx7"]
+[ext_resource type="PackedScene" path="res://game/puzzles/p21_timeline/p21.tscn" id="4_s3opc"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="5_h3f0k"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="6_r0b16"]
+
+[sub_resource type="Resource" id="Resource_aad17"]
+script = ExtResource("3_potx7")
+flag = &"b06.file_sealed"
+
+[resource]
+script = ExtResource("5_h3f0k")
+id = &"P21"
+room_id = &"B06"
+scene = ExtResource("4_s3opc")
+logic_script = ExtResource("1_hqvdr")
+name_key = "puzzle.p21.name"
+fail_noise_hops = 0
+rewards = Array[ExtResource("2_4uri5")]([SubResource("Resource_aad17")])
+solved_flag = &"p21.solved"

@@ -1,28 +1,36 @@
 [gd_resource type="Resource" script_class="PuzzleData" format=3]
 
-[ext_resource type="Script" path="res://game/puzzles/p18_grandfather_clock/p18_logic.gd" id="1_y6767"]
-[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_csmar"]
-[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="3_ayuoc"]
-[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="4_tlf8u"]
+[ext_resource type="Script" path="res://game/puzzles/p18_grandfather_clock/p18_logic.gd" id="1_ayuoc"]
+[ext_resource type="Script" path="res://game/core/actions/action.gd" id="2_tlf8u"]
+[ext_resource type="Script" path="res://game/core/actions/set_flag.gd" id="3_u8tga"]
+[ext_resource type="PackedScene" path="res://game/puzzles/p18_grandfather_clock/p18.tscn" id="4_o3ket"]
+[ext_resource type="Script" path="res://game/schemas/puzzle_data.gd" id="5_wuuio"]
+[ext_resource type="Script" path="res://game/schemas/seed_field.gd" id="6_8lqar"]
 
-[sub_resource type="Resource" id="Resource_y6767"]
-script = ExtResource("4_tlf8u")
+[sub_resource type="Resource" id="Resource_slr7c"]
+script = ExtResource("3_u8tga")
+flag = &"u06.dumbwaiter_open"
+
+[sub_resource type="Resource" id="Resource_42leq"]
+script = ExtResource("6_8lqar")
 name = &"fire_hour"
 min_value = 1
 max_value = 4
 
-[sub_resource type="Resource" id="Resource_csmar"]
-script = ExtResource("4_tlf8u")
+[sub_resource type="Resource" id="Resource_2yqgd"]
+script = ExtResource("6_8lqar")
 name = &"fire_minute"
 kind = 1
 max_value = 55
 step = 5
 
 [resource]
-script = ExtResource("3_ayuoc")
+script = ExtResource("5_wuuio")
 id = &"P18"
 room_id = &"U06"
-logic_script = ExtResource("1_y6767")
+scene = ExtResource("4_o3ket")
+logic_script = ExtResource("1_ayuoc")
 name_key = "puzzle.p18.name"
-seed_fields = Array[ExtResource("4_tlf8u")]([SubResource("Resource_y6767"), SubResource("Resource_csmar")])
+seed_fields = Array[ExtResource("6_8lqar")]([SubResource("Resource_42leq"), SubResource("Resource_2yqgd")])
+rewards = Array[ExtResource("2_tlf8u")]([SubResource("Resource_slr7c")])
 solved_flag = &"p18.solved"

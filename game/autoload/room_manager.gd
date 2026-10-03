@@ -83,6 +83,7 @@ func run_enter_triggers(data: RoomData) -> void:
 func load_room_now(data: RoomData, spawn: StringName) -> Room:
 	if current:
 		var old_id := current.room_id()
+		MapStatus.store(current)
 		CameraDirector.unregister_room()
 		world.remove_child(current)
 		current.queue_free()

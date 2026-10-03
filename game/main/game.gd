@@ -7,6 +7,7 @@ var document_viewer: DocumentViewer
 var tape_player: TapePlayer
 var inventory: InventoryUi
 var files: FilesUi
+var map: MapUi
 var save_screen: SaveScreen
 var pause_menu: PauseMenu
 var game_over: GameOverScreen
@@ -22,6 +23,7 @@ func _ready() -> void:
 	tape_player = _add(TapePlayer.new())
 	inventory = _add(InventoryUi.new())
 	files = _add(FilesUi.new())
+	map = _add(MapUi.new())
 	save_screen = _add(SaveScreen.new())
 	pause_menu = _add(PauseMenu.new())
 	game_over = _add(GameOverScreen.new())

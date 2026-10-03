@@ -49,6 +49,13 @@ func run(tree: SceneTree, args: PackedStringArray) -> int:
 	EventBus.tape_requested.emit(&"tape_01_claire")
 	await _wait(4.0)
 	await _shot("m1_tape_subtitle" + suffix)
+	for r in ["G02", "G03", "G04", "G05", "G06"]:
+		GameState.set_flag("%s.visited" % r.to_lower(), true)
+	GameState.room_state("G03")["status"] = MapStatus.CLEARED
+	game.map.open()
+	await _wait(0.2)
+	await _shot("m1_map" + suffix)
+	game.map.close()
 	var options := OptionsPanel.new()
 	game.add_child(options)
 	await _wait(0.2)

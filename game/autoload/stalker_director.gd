@@ -337,14 +337,25 @@ func _on_script_requested(script_name: StringName) -> void:
 			GameState.set_flag("act", 2)
 			if not ai_active:
 				activate(ACT2_ROUTE, ACT2_START)
+			_act_autosave()
 		&"act3_start":
 			GameState.set_flag("act", 3)
 			deactivate()
 			activate(ACT3_ROUTE, ACT3_START, "act3")
+			_act_autosave()
 		&"act4_start":
 			GameState.set_flag("act", 4)
 			deactivate()
 			activate(ACT4_ROUTE, ACT4_START, "act4")
+			_act_autosave()
+
+
+## Act-start autosave (GDD §8.1), with the AI already running so loading resumes it.
+func _act_autosave() -> void:
+	if not Difficulty.tuning().autosave_act_start:
+		return
+	GameState.stalker = snapshot()
+	SaveSystem.save(SaveSystem.AUTOSAVE_SLOT)
 
 
 func set_state(new_state: State) -> void:

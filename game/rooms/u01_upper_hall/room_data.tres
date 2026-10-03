@@ -12,55 +12,55 @@
 [ext_resource type="PackedScene" path="res://game/rooms/u01_upper_hall/u01_upper_hall.tscn" id="7_biq2o"]
 [ext_resource type="Script" path="res://game/schemas/room_data.gd" id="8_t83q3"]
 
-[sub_resource type="Resource" id="Resource_biq2o"]
+[sub_resource type="Resource" id="Resource_6aa7s"]
 script = ExtResource("1_c7pai")
 id = &"cam_a"
 background = ExtResource("2_6aa7s")
 
-[sub_resource type="Resource" id="Resource_t83q3"]
+[sub_resource type="Resource" id="Resource_k7rn5"]
 script = ExtResource("1_c7pai")
 id = &"cam_b"
 background = ExtResource("3_k7rn5")
 
-[sub_resource type="Resource" id="Resource_ws03w"]
+[sub_resource type="Resource" id="Resource_v7nbl"]
 script = ExtResource("1_c7pai")
 id = &"cam_c"
 background = ExtResource("4_v7nbl")
 
-[sub_resource type="Resource" id="Resource_3rmrq"]
+[sub_resource type="Resource" id="Resource_biq2o"]
 script = ExtResource("4_6aa7s")
 script_name = &"act3_start"
 
-[sub_resource type="Resource" id="Resource_icvsn"]
+[sub_resource type="Resource" id="Resource_t83q3"]
 script = ExtResource("2_esvk7")
-actions = Array[ExtResource("3_fmnri")]([SubResource("Resource_3rmrq")])
+actions = Array[ExtResource("3_fmnri")]([SubResource("Resource_biq2o")])
 once_flag = &"act3.started"
 
-[sub_resource type="Resource" id="Resource_ecmch"]
+[sub_resource type="Resource" id="Resource_ws03w"]
 script = ExtResource("6_v7nbl")
 id = &"to_g09"
 target_room = &"G09"
 target_spawn = &"spawn_from_u01"
 
-[sub_resource type="Resource" id="Resource_vrf30"]
+[sub_resource type="Resource" id="Resource_3rmrq"]
 script = ExtResource("6_v7nbl")
 id = &"to_u02"
 target_room = &"U02"
 target_spawn = &"spawn_from_u01"
 
-[sub_resource type="Resource" id="Resource_vquj6"]
+[sub_resource type="Resource" id="Resource_icvsn"]
 script = ExtResource("6_v7nbl")
 id = &"to_u03"
 target_room = &"U03"
 target_spawn = &"spawn_from_u01"
 
-[sub_resource type="Resource" id="Resource_xn38v"]
+[sub_resource type="Resource" id="Resource_ecmch"]
 script = ExtResource("6_v7nbl")
 id = &"to_u05"
 target_room = &"U05"
 target_spawn = &"spawn_from_u01"
 
-[sub_resource type="Resource" id="Resource_1ou6q"]
+[sub_resource type="Resource" id="Resource_vrf30"]
 script = ExtResource("6_v7nbl")
 id = &"to_u04"
 target_room = &"U04"
@@ -71,9 +71,9 @@ script = ExtResource("8_t83q3")
 id = &"U01"
 name_key = "rooms.u01.name"
 scene = ExtResource("7_biq2o")
-cameras = Array[ExtResource("1_c7pai")]([SubResource("Resource_biq2o"), SubResource("Resource_t83q3"), SubResource("Resource_ws03w")])
-exits = Array[ExtResource("6_v7nbl")]([SubResource("Resource_ecmch"), SubResource("Resource_vrf30"), SubResource("Resource_vquj6"), SubResource("Resource_xn38v"), SubResource("Resource_1ou6q")])
+cameras = Array[ExtResource("1_c7pai")]([SubResource("Resource_6aa7s"), SubResource("Resource_k7rn5"), SubResource("Resource_v7nbl")])
+exits = Array[ExtResource("6_v7nbl")]([SubResource("Resource_ws03w"), SubResource("Resource_3rmrq"), SubResource("Resource_icvsn"), SubResource("Resource_ecmch"), SubResource("Resource_vrf30")])
 access = 0
 map_floor = 3
 map_rect = Rect2(100, 150, 300, 50)
-enter_triggers = Array[ExtResource("2_esvk7")]([SubResource("Resource_icvsn")])
+enter_triggers = Array[ExtResource("2_esvk7")]([SubResource("Resource_t83q3")])

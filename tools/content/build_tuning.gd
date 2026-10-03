@@ -27,6 +27,7 @@ const TABLE := {
 	"committed":
 	{
 		"saves_cost_cassette": true,
+		"autosave_act_start": false,
 		"walk_speed": 1.7,
 		"run_speed": 3.1,
 		"hearing_bonus": 1,

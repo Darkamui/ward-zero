@@ -12,43 +12,43 @@
 [ext_resource type="PackedScene" path="res://game/rooms/b02_basement_corridor/b02_basement_corridor.tscn" id="7_gmg83"]
 [ext_resource type="Script" path="res://game/schemas/room_data.gd" id="8_r8pcg"]
 
-[sub_resource type="Resource" id="Resource_gmg83"]
+[sub_resource type="Resource" id="Resource_q132a"]
 script = ExtResource("1_m6awv")
 id = &"cam_a"
 background = ExtResource("2_q132a")
 
-[sub_resource type="Resource" id="Resource_r8pcg"]
+[sub_resource type="Resource" id="Resource_36rm3"]
 script = ExtResource("1_m6awv")
 id = &"cam_b"
 background = ExtResource("3_36rm3")
 
-[sub_resource type="Resource" id="Resource_g2u1t"]
+[sub_resource type="Resource" id="Resource_amkpu"]
 script = ExtResource("1_m6awv")
 id = &"cam_c"
 background = ExtResource("4_amkpu")
 
-[sub_resource type="Resource" id="Resource_bx81p"]
+[sub_resource type="Resource" id="Resource_gmg83"]
 script = ExtResource("4_q132a")
 script_name = &"act4_start"
 
-[sub_resource type="Resource" id="Resource_yrpji"]
+[sub_resource type="Resource" id="Resource_r8pcg"]
 script = ExtResource("2_8k7s8")
-actions = Array[ExtResource("3_bk18n")]([SubResource("Resource_bx81p")])
+actions = Array[ExtResource("3_bk18n")]([SubResource("Resource_gmg83")])
 once_flag = &"act4.started"
 
-[sub_resource type="Resource" id="Resource_dtg7f"]
+[sub_resource type="Resource" id="Resource_g2u1t"]
 script = ExtResource("6_amkpu")
 id = &"to_b01"
 target_room = &"B01"
 target_spawn = &"spawn_from_b02"
 
-[sub_resource type="Resource" id="Resource_ts2b6"]
+[sub_resource type="Resource" id="Resource_bx81p"]
 script = ExtResource("6_amkpu")
 id = &"to_b03"
 target_room = &"B03"
 target_spawn = &"spawn_from_b02"
 
-[sub_resource type="Resource" id="Resource_y4lkf"]
+[sub_resource type="Resource" id="Resource_yrpji"]
 script = ExtResource("6_amkpu")
 id = &"to_b04"
 target_room = &"B04"
@@ -56,13 +56,13 @@ target_spawn = &"spawn_from_b02"
 required_key = &"item_sanguine_key"
 locked_message_key = "rooms.b02.treatment.locked"
 
-[sub_resource type="Resource" id="Resource_v3mdn"]
+[sub_resource type="Resource" id="Resource_dtg7f"]
 script = ExtResource("6_amkpu")
 id = &"to_b05"
 target_room = &"B05"
 target_spawn = &"spawn_from_b02"
 
-[sub_resource type="Resource" id="Resource_2y186"]
+[sub_resource type="Resource" id="Resource_ts2b6"]
 script = ExtResource("6_amkpu")
 id = &"to_b07"
 target_room = &"B07"
@@ -75,10 +75,10 @@ script = ExtResource("8_r8pcg")
 id = &"B02"
 name_key = "rooms.b02.name"
 scene = ExtResource("7_gmg83")
-cameras = Array[ExtResource("1_m6awv")]([SubResource("Resource_gmg83"), SubResource("Resource_r8pcg"), SubResource("Resource_g2u1t")])
-exits = Array[ExtResource("6_amkpu")]([SubResource("Resource_dtg7f"), SubResource("Resource_ts2b6"), SubResource("Resource_y4lkf"), SubResource("Resource_v3mdn"), SubResource("Resource_2y186")])
+cameras = Array[ExtResource("1_m6awv")]([SubResource("Resource_q132a"), SubResource("Resource_36rm3"), SubResource("Resource_amkpu")])
+exits = Array[ExtResource("6_amkpu")]([SubResource("Resource_g2u1t"), SubResource("Resource_bx81p"), SubResource("Resource_yrpji"), SubResource("Resource_dtg7f"), SubResource("Resource_ts2b6")])
 access = 0
 map_floor = 4
 unlit = true
 map_rect = Rect2(290, 40, 30, 220)
-enter_triggers = Array[ExtResource("2_8k7s8")]([SubResource("Resource_yrpji")])
+enter_triggers = Array[ExtResource("2_8k7s8")]([SubResource("Resource_r8pcg")])

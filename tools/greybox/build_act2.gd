@@ -309,6 +309,7 @@ func _content_g07(g: GB, _w: float, _d: float, _h: float) -> void:
 		Vector3(0, 0, -4.2),
 		[GB.doc("doc_dining_menu")]
 	)
+	_cassette(g, Vector3(3.0, 0.9, 2.4), Vector3(3.0, 0, 3.4))
 
 
 func _content_g08(g: GB, _w: float, _d: float, _h: float) -> void:
@@ -459,6 +460,7 @@ func _content_e05(g: GB, _w: float, _d: float, _h: float) -> void:
 		Vector3(3.6, 0, 1.6),
 		[GB.puzzle_or_text("P08L", "rooms.e05.lockbox.solved")]
 	)
+	_cassette(g, Vector3(-4.4, 0.2, 2.6), Vector3(-3.6, 0, 2.6))
 
 
 func _content_w01(g: GB, _w: float, _d: float, _h: float) -> void:
@@ -652,6 +654,7 @@ func _content_w04(g: GB, _w: float, _d: float, _h: float) -> void:
 		[GB.text("rooms.w04.toy_1976")],
 		[GB.in_memory()]
 	)
+	_cassette(g, Vector3(3.2, 0.2, -2.4), Vector3(3.2, 0, -1.6))
 
 
 func _content_w05(g: GB, _w: float, _d: float, _h: float) -> void:
@@ -703,6 +706,7 @@ func _content_w06(g: GB, _w: float, _d: float, _h: float) -> void:
 		Vector3(1.2, 0, -1.15),
 		[GB.tape("tape_03_lullaby")]
 	)
+	_cassette(g, Vector3(-1.0, 0.9, -1.9), Vector3(-1.0, 0, -1.1))
 
 
 func _content_b01(g: GB, _w: float, _d: float, _h: float) -> void:
@@ -731,6 +735,7 @@ func _content_b01(g: GB, _w: float, _d: float, _h: float) -> void:
 		Vector3(-3.6, 0, 1.4),
 		[GB.doc("doc_boiler_manual")]
 	)
+	_cassette(g, Vector3(4.0, 0.2, -3.2), Vector3(3.2, 0, -3.2))
 
 
 ## Resonant spot (GDD §4.1): the anchor shifts the room to 1976; using it again (or any
@@ -754,6 +759,14 @@ func _resonant(
 	)
 	h.accepts_items = {StringName(anchor): [MemoryShift.new()]}
 	h.reject_item_key = "rooms.g06.altar.wrong_item"
+
+
+## Committed-only Blank Cassette pickup (GDD §8.1: about 12 in the whole game).
+func _cassette(g: GB, center: Vector3, approach: Vector3) -> void:
+	var rule := DifficultyIs.new()
+	rule.threat = "committed"
+	var h := g.hotspot("hs_blank_cassette", KIND.TAKE, center, Vector3(0.5, 0.4, 0.5), approach, [], [rule])
+	h.item_id = &"item_blank_cassette"
 
 
 # --- Layout helpers ----------------------------------------------------------------

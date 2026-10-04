@@ -15,6 +15,16 @@
     "sha256": "6a116cf416765392e5cfad80906ec9b62e68a211f77ea8e36ac0dc24c13e4ce6"
   },
   {
+    "path": "art/menus/act1_dictaphone.png",
+    "bytes": 1718575,
+    "sha256": "84d9ebbc35d4714f7c71cc0fbeb6fdfbb9010466fe1112282eb8e5f01a1ccce2"
+  },
+  {
+    "path": "art/menus/title_corridor.png",
+    "bytes": 2058352,
+    "sha256": "1ff34b6d9535b27356e08aab6f4d85a030db94673abecd94011548be944ae4ea"
+  },
+  {
     "path": "art/puzzle-bases/hymn-board.png",
     "bytes": 2824572,
     "sha256": "a72344ad87dbbebfd0e5e7d2eb56c0c1f892dbe4a2fe4bc087eeaa87f6b1bb40"

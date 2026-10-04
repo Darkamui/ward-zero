@@ -1,6 +1,5 @@
 extends Control
-## Title screen: New Game (difficulty selectors, GDD §8), Load, Import save code, Options.
-## M1 enables Patient threat and Normal puzzles only; the others arrive in M2.
+## Illustrated front end; existing save and difficulty flows share the same backdrop.
 
 const ENABLED_THREAT := ["observer", "patient", "committed"]
 const ENABLED_PUZZLE := ["easy", "normal", "hard"]
@@ -9,45 +8,53 @@ var _threat := "patient"
 var _puzzle := "normal"
 var _ng_plus := false
 var _panel: Control
+var _options_panel: OptionsPanel
+var _starting := false
 
 
 func _ready() -> void:
 	theme = UiStyle.theme()
-	set_anchors_preset(Control.PRESET_FULL_RECT)
-	var bg := ColorRect.new()
-	bg.color = Color(0.02, 0.02, 0.025)
-	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
-	add_child(bg)
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	MenuStyle.backdrop(self)
+	MenuStyle.ambience(self)
 	_main()
+	MenuStyle.reveal(self)
 
 
 func _clear() -> void:
 	if _panel:
+		_panel.hide()
 		_panel.queue_free()
 	_panel = Control.new()
-	_panel.set_anchors_preset(Control.PRESET_FULL_RECT)
 	add_child(_panel)
+	_panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 
 
 func _main() -> void:
 	_clear()
-	var title := UiStyle.label("ui.title", 96, UiStyle.INK)
-	title.position = Vector2(160, 200)
-	_panel.add_child(title)
+	MenuStyle.eyebrow(_panel, "ui.front.institute", Vector2(140, 125))
+	var title := MenuStyle.label_at(_panel, "ui.title", Vector2(130, 192), 122)
+	title.uppercase = true
+	MenuStyle.rule(_panel, Vector2(140, 368), 90)
+	MenuStyle.paragraph(_panel, "ui.front.tagline", Vector2(140, 395), 620, 25)
 	var box := VBoxContainer.new()
-	box.position = Vector2(170, 460)
-	box.add_theme_constant_override("separation", 16)
+	box.position = Vector2(140, 505)
+	box.custom_minimum_size.x = 550
+	box.add_theme_constant_override("separation", 4)
 	_panel.add_child(box)
-	box.add_child(UiStyle.button("ui.menu.new_game", _begin.bind(false), 32))
+	var begin := MenuStyle.button("ui.menu.new_game", _begin.bind(false), true, 32)
+	box.add_child(begin)
 	if Profile.ng_plus_unlocked():
-		box.add_child(UiStyle.button("ui.menu.new_game_plus", _begin.bind(true), 32))
-	var load_btn := UiStyle.button("ui.menu.load", _load, 32)
+		box.add_child(MenuStyle.button("ui.menu.new_game_plus", _begin.bind(true)))
+	var load_btn := MenuStyle.button("ui.menu.load", _load)
 	load_btn.disabled = SaveSystem.list_slots().is_empty()
 	box.add_child(load_btn)
-	box.add_child(UiStyle.button("ui.menu.import", _import, 32))
-	box.add_child(UiStyle.button("ui.options.title", _options, 32))
+	box.add_child(MenuStyle.button("ui.options.title", _options))
+	box.add_child(MenuStyle.button("ui.menu.import", _import, false, 24))
 	if not OS.has_feature("web"):
-		box.add_child(UiStyle.button("ui.menu.quit", func() -> void: get_tree().quit(), 32))
+		box.add_child(MenuStyle.button("ui.menu.quit", func() -> void: get_tree().quit(), false, 24))
+	MenuStyle.footer(_panel, "ui.front.headphones")
+	begin.grab_focus.call_deferred()
 
 
 func _begin(ng_plus: bool) -> void:
@@ -57,26 +64,39 @@ func _begin(ng_plus: bool) -> void:
 
 func _new_game() -> void:
 	_clear()
-	var box := UiStyle.centered_panel(_panel, Vector2(1100, 700))
-	box.add_child(
-		UiStyle.label("ui.menu.new_game_plus" if _ng_plus else "ui.menu.new_game", 40, UiStyle.ACCENT)
+	MenuStyle.eyebrow(_panel, "ui.front.admission", Vector2(140, 115))
+	MenuStyle.label_at(
+		_panel, "ui.menu.new_game_plus" if _ng_plus else "ui.menu.new_game", Vector2(135, 166), 72
 	)
-	box.add_child(UiStyle.label("ui.difficulty.threat", 28))
-	box.add_child(_choice_row(GameState.THREAT_LEVELS, ENABLED_THREAT, "threat"))
-	box.add_child(UiStyle.label("ui.difficulty.threat_%s" % _threat, 22, UiStyle.INK_DIM))
-	box.add_child(UiStyle.label("ui.difficulty.puzzle", 28))
-	box.add_child(_choice_row(GameState.PUZZLE_LEVELS, ENABLED_PUZZLE, "puzzle"))
-	box.add_child(UiStyle.label("ui.difficulty.puzzle_%s" % _puzzle, 22, UiStyle.INK_DIM))
-	var row := HBoxContainer.new()
-	row.add_child(UiStyle.button("ui.menu.start", _start, 32))
-	row.add_child(UiStyle.button("ui.common.back", _main, 32))
-	box.add_child(row)
+	MenuStyle.paragraph(_panel, "ui.front.difficulty_hint", Vector2(140, 280), 800)
+	MenuStyle.rule(_panel, Vector2(140, 350), 850)
+	MenuStyle.eyebrow(_panel, "ui.difficulty.threat", Vector2(140, 390))
+	var threat_row := _choice_row(GameState.THREAT_LEVELS, ENABLED_THREAT, "threat")
+	threat_row.position = Vector2(140, 440)
+	_panel.add_child(threat_row)
+	MenuStyle.paragraph(_panel, "ui.difficulty.threat_%s" % _threat, Vector2(140, 520), 820, 24)
+	MenuStyle.eyebrow(_panel, "ui.difficulty.puzzle", Vector2(140, 630))
+	var puzzle_row := _choice_row(GameState.PUZZLE_LEVELS, ENABLED_PUZZLE, "puzzle")
+	puzzle_row.position = Vector2(140, 675)
+	_panel.add_child(puzzle_row)
+	MenuStyle.paragraph(_panel, "ui.difficulty.puzzle_%s" % _puzzle, Vector2(140, 755), 820, 24)
+	var begin := MenuStyle.button("ui.menu.start", _start, true, 30)
+	begin.position = Vector2(140, 860)
+	begin.size.x = 320
+	_panel.add_child(begin)
+	var back := MenuStyle.button("ui.common.back", _main)
+	back.position = Vector2(500, 860)
+	_panel.add_child(back)
+	MenuStyle.footer(_panel, "ui.front.headphones")
+	begin.grab_focus.call_deferred()
 
 
 func _choice_row(levels: Array, enabled: Array, which: String) -> HBoxContainer:
 	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 12)
 	for level in levels:
-		var b := UiStyle.button("ui.difficulty.%s" % level, _choose.bind(which, level))
+		var b := MenuStyle.button("ui.difficulty.%s" % level, _choose.bind(which, level))
+		b.custom_minimum_size.x = 250
 		b.toggle_mode = true
 		b.button_pressed = level == (_threat if which == "threat" else _puzzle)
 		b.disabled = not enabled.has(level)
@@ -90,11 +110,17 @@ func _choose(which: String, level: String) -> void:
 	else:
 		_puzzle = level
 	_new_game()
+	for b in _panel.find_children("*", "Button", true, false):
+		if b.text == "ui.difficulty.%s" % level:
+			b.grab_focus.call_deferred()
 
 
 func _start() -> void:
+	if _starting:
+		return
+	_starting = true
 	NewGame.start(_threat, _puzzle, -1, _ng_plus)
-	get_tree().change_scene_to_file("res://game/main/game.tscn")
+	get_tree().change_scene_to_file("res://game/main/act1_intro.tscn")
 
 
 func _load() -> void:
@@ -145,6 +171,17 @@ func _on_import(text: TextEdit, msg: Label) -> void:
 
 
 func _options() -> void:
-	var o := OptionsPanel.new()
-	o.closed.connect(_main)
-	add_child(o)
+	if is_instance_valid(_options_panel):
+		return
+	_panel.hide()
+	_options_panel = OptionsPanel.new()
+	_options_panel.closed.connect(_main)
+	add_child(_options_panel)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if is_instance_valid(_options_panel):
+		return
+	if event.is_action_pressed(&"pause") or InventoryUi._is_right_click(event):
+		get_viewport().set_input_as_handled()
+		_main()

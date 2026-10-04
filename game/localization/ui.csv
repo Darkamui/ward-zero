@@ -137,3 +137,28 @@ ending.claire.body,"I stop running. He walks up to me and lifts his hand to his 
 ending.stats,Fragments in place: {score} / 12   ·   Puzzles solved: {solved} / {total}   ·   Time: {time},Fragments à leur place : {score} / 12   ·   Énigmes résolues : {solved} / {total}   ·   Temps : {time}
 ending.ng_plus_unlocked,"New Game+ unlocked: new codes, and your Files carry over.","Nouvelle partie+ débloquée : nouveaux codes, et vos dossiers sont conservés."
 ending.to_title,Return to title,Retour au titre
+ui.front.institute,INSTITUT SAINTE-ODILE,INSTITUT SAINTE-ODILE
+ui.front.tagline,Some doors were never meant to be opened.,Certaines portes auraient dû rester fermées.
+ui.front.headphones,Headphones recommended  /  A psychological survival horror experience,Casque recommandé  /  Une expérience d’horreur psychologique
+ui.front.navigation,↑ ↓ Navigate    ·    Enter Select    ·    Esc Back,↑ ↓ Naviguer    ·    Entrée Choisir    ·    Échap Retour
+ui.front.preferences,PERSONAL PREFERENCES,PRÉFÉRENCES PERSONNELLES
+ui.front.admission,BEFORE YOU ENTER,AVANT D’ENTRER
+ui.front.difficulty_hint,Choose how you face the institute.,Choisissez comment affronter l’institut.
+ui.options.autosaved,Changes are applied and saved automatically.,Les changements sont appliqués et sauvegardés automatiquement.
+ui.options.tab_audio,Audio,Audio
+ui.options.tab_display,Display & comfort,Affichage et confort
+ui.options.tab_accessibility,Language & subtitles,Langue et sous-titres
+ui.options.volume_ui,Interface,Interface
+ui.options.on,On,Activé
+ui.options.off,Off,Désactivé
+ui.options.photosensitivity,Gentle transitions,Transitions douces
+ui.options.display_hint,Gentle transitions soften the flash during memory shifts. Door animations can be skipped independently.,Les transitions douces atténuent le flash des souvenirs. Les animations de porte peuvent être désactivées séparément.
+ui.options.preview,Mathieu… come find me.,Mathieu… viens me chercher.
+ui.intro.act,ACT I  /  01,ACTE I  /  01
+ui.intro.title,Arrival,L’arrivée
+ui.intro.body,"You wake in a room you do not remember.
+A dictaphone waits beside you.","Vous vous réveillez dans une pièce inconnue.
+Un dictaphone repose à vos côtés."
+ui.intro.listen,"Somewhere in the static, a familiar voice.","Quelque part dans les parasites, une voix familière."
+ui.intro.enter,Open your eyes,Ouvrir les yeux
+ui.intro.controls,Enter Continue    ·    Esc Skip intro,Entrée Continuer    ·    Échap Passer l’introduction

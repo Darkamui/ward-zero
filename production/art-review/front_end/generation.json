@@ -1,0 +1,19 @@
+{
+  "provider": "Built-in image_gen",
+  "assets": [
+    {
+      "path": "assets/art/menus/title_corridor.png",
+      "prompt": "Use case: stylized-concept. Asset type: production background plate for the main menu of Ward Zero, a psychological survival horror game set in the derelict Institut Sainte-Odile in rural Quebec, 1998. Create a cinematic 16:9 landscape image, ideally 1920x1080 or larger. An abandoned institutional corridor, peeling muted sage-green paint below worn cream plaster, aged dark wooden doors and trim, worn dark terrazzo floor. On the RIGHT half, a single old wooden wheelchair stands obliquely near an open doorway with cool foggy daylight spilling through a tall window beyond, soft shafts catching suspended dust. Deep quiet darkness and very subtle wall texture on the entire LEFT 45 percent to provide generous readable space for an overlaid title and vertical menu. The right-hand hallway recedes into atmospheric shadow; restrained warm brass and tobacco tones against desaturated grey green. Premium art-directed pre-rendered survival horror environment, convincing materials and photographic lighting, fine analog film texture, unsettling stillness, no overt horror. Eye-level 35mm composition. No people, no figures, no blood, no text, no letters, no logos, no UI, no watermark. Preserve soft shadow detail, not pure crushed black. One full-bleed environment image, not a collage or screenshot."
+    },
+    {
+      "path": "assets/art/menus/act1_dictaphone.png",
+      "prompt": "Use case: stylized-concept. Asset type: cinematic Act I opening chapter background plate for Ward Zero, psychological survival horror in a derelict Quebec asylum in 1998. Single 16:9 full-bleed landscape image. Extreme atmospheric close-up still life: a battered small charcoal-black 1980s microcassette dictaphone lies diagonally on a worn institutional bedside table, alongside a faded off-white blank patient wristband. Composition places both props in the RIGHT half, dictaphone large and clearly recognizable, with analog buttons, speaker grille, scratched plastic and a small tape window, no legible labeling. Beyond the tabletop, soft out-of-focus peeling sage-green and cream hospital walls and cold window light. Entire LEFT 50 percent is a deep atmospheric charcoal-green shadow with very little detail, reserved for chapter typography to be added in code. Camera close and low, tactile grain and cinematic photography, a very subtle warm glint on the recorder, cold diffused dawn light from the upper right, subtle dust, ominous quiet. Cohesive premium pre-rendered survival horror art. No people, hands, body parts, blood, text, letters, numbers, logos, graphic overlays or watermarks. Not a UI mockup, just the clean background plate."
+    }
+  ],
+  "reused": [
+    "game/ui/fonts/IBMPlexSans.ttf",
+    "game/ui/fonts/CourierPrime-Regular.ttf",
+    "game/audio/g01/dayroom_loop.ogg",
+    "game/audio/g01/ui_click.wav"
+  ]
+}

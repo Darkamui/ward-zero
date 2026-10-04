@@ -1,5 +1,9 @@
 # Asset sources
 
+## Front end screens — 2026-10-03
+
+`assets/art/menus/title_corridor.png` and `assets/art/menus/act1_dictaphone.png` are original generated background plates produced with the built-in `image_gen` tool. Exact prompts are retained in `production/art-review/front_end/generation.json`. They contain no interface text; labels and controls are localized Godot elements. These are generated assets, not CC0 library photographs. Menu ambience and clicks reuse the previously credited G01 audio, and typography uses the existing bundled fonts.
+
 ## G01 first camera art study — 2026-10-03
 
 | Asset | Author / source | Licence | Usage |

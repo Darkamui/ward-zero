@@ -18,7 +18,7 @@ font = ExtResource("3_font")
 font_size = 48
 outline_size = 0
 modulate = Color(0.12, 0.14, 0.12, 1)
-text = "INSTITUT\nSAINTE-ODILE"
+text = "item.wristband.front_print"
 double_sided = false
 
 [node name="InsidePrint" type="Label3D" parent="."]

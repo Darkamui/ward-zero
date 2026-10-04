@@ -4,4 +4,6 @@ extends "res://game/items/supplied_prop_materials.gd"
 
 func _ready() -> void:
 	super._ready()
-	$InsidePrint.text = "LAVOIE, M.\n%s" % DocumentRenderer.resolve("puzzle:P03.birthdate")
+	$InsidePrint.text = tr("item.wristband.inside_print").format(
+		{"birthdate": DocumentRenderer.resolve("puzzle:P03.birthdate")}
+	)

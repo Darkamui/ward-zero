@@ -32,7 +32,7 @@ ui.inventory.combine,Combine,Combiner
 ui.inventory.drop,Drop,Déposer
 ui.inventory.combine_pick,Choose the item to combine it with.,Choisissez l’objet avec lequel le combiner.
 ui.inventory.no_combine,Those don’t go together.,Ça ne va pas ensemble.
-ui.inventory.examine_hint,Drag / arrows: turn. Wheel / + −: zoom. Home: reset.,Glisser / flèches : tourner. Molette / + − : zoomer. Début : réinitialiser.
+ui.inventory.examine_hint,Drag / arrows: turn. Wheel / + −: zoom. Home: reset.,Glisser / flèches : tourner. Molette / + − : zoomer. Début : réinitialiser.
 ui.document.larger,Larger text (+),Agrandir le texte (+)
 ui.document.smaller,Smaller text (−),Réduire le texte (−)
 ui.document.controls,Scroll / PgUp / PgDn to read,Molette / Page préc. / Page suiv. pour lire

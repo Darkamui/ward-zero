@@ -3,6 +3,12 @@ item.dictaphone.name,Dictaphone,Dictaphone
 item.dictaphone.desc,A pocket dictaphone. There is a tape inside. I don’t remember buying it.,Un dictaphone de poche. Il y a une cassette dedans. Je ne me souviens pas de l’avoir acheté.
 item.wristband.name,Wristband,Bracelet d’identité
 item.wristband.desc,A hospital wristband on my left wrist. Something is printed on the inside.,Un bracelet d’hôpital à mon poignet gauche. Quelque chose est imprimé à l’intérieur.
+item.wristband.front_print,"INSTITUT
+SAINTE-ODILE","INSTITUT
+SAINTE-ODILE"
+item.wristband.inside_print,"LAVOIE, M.
+{birthdate}","LAVOIE, M.
+{birthdate}"
 item.photograph.name,Photograph,Photographie
 item.photograph.desc,"Two children on a porch, squinting at the sun. 1975, written on the back.","Deux enfants sur une galerie, plissés par le soleil. 1975, écrit au dos."
 item.choleric_key.name,Choleric Key,Clé colérique

@@ -80,33 +80,37 @@ func run(_tree: SceneTree, _args: PackedStringArray) -> int:
 	g.spawn("spawn_start", Vector3(-1.9, 0, -1.4), 90.0)
 	g.spawn("spawn_from_g02", Vector3(2.5, 0, -2.7), 180.0)
 
-	g.hotspot_examine(
+	g.hotspot(
 		"hs_radio",
+		Interactable.Kind.USE,
 		Vector3(4.05, 0.9, -1.4),
 		Vector3(0.5, 0.5, 0.6),
 		Vector3(3.2, 0, -1.4),
-		"rooms.g01.radio.examine"
+		[GB.puzzle_or_text("P01", "rooms.g01.radio.solved")]
 	)
-	g.hotspot_examine(
+	g.hotspot(
 		"hs_notice",
+		Interactable.Kind.EXAMINE,
 		Vector3(0.5, 1.6, -3.4),
 		Vector3(0.7, 0.9, 0.2),
 		Vector3(0.5, 0, -2.75),
-		"rooms.g01.notice.examine"
+		[GB.doc("doc_quiet_hours")]
 	)
-	g.hotspot_examine(
+	g.hotspot(
 		"hs_recorder",
+		Interactable.Kind.USE,
 		Vector3(-3.7, 0.85, -2.8),
 		Vector3(0.5, 0.3, 0.4),
 		Vector3(-3.0, 0, -2.4),
-		"rooms.g01.recorder.examine"
+		[GB.ui("save_screen")]
 	)
-	g.hotspot_examine(
+	g.hotspot(
 		"hs_bin",
+		Interactable.Kind.USE,
 		Vector3(-4.0, 0.4, -0.4),
 		Vector3(0.7, 0.8, 1.1),
 		Vector3(-3.3, 0, -0.4),
-		"rooms.g01.bin.examine"
+		[GB.ui("effects_bin")]
 	)
 	g.hotspot_examine(
 		"hs_couch",

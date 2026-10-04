@@ -101,9 +101,78 @@ func test_examine_hotspot_shows_text() -> void:
 	var got := []
 	var on_text := func(k: String) -> void: got.append(k)
 	EventBus.text_requested.connect(on_text)
-	(room.get_node("Hotspots/hs_radio") as Interactable).interact()
+	(room.get_node("Hotspots/hs_couch") as Interactable).interact()
 	EventBus.text_requested.disconnect(on_text)
-	assert_eq(got, ["rooms.g01.radio.examine"])
+	assert_eq(got, ["rooms.g01.couch.examine"])
+
+
+func test_notice_opens_seeded_document_and_keeps_it_in_files() -> void:
+	var room := _load(&"spawn_start")
+	var reader := DocumentViewer.new()
+	_world.add_child(reader)
+	var notice := room.get_node("Hotspots/hs_notice") as Interactable
+	assert_eq(notice.cursor(), Interactable.Cursor.EXAMINE)
+	notice.interact()
+	assert_true(reader.is_open())
+	assert_eq(reader.doc.id, &"doc_quiet_hours")
+	assert_has(GameState.documents, "doc_quiet_hours")
+	assert_true(reader.shown_text().contains(str(PuzzleValues.value(&"P01", &"frequency"))))
+	reader.close()
+	notice.interact()
+	assert_true(reader.is_open(), "notice can be read again")
+	assert_eq(GameState.documents.count("doc_quiet_hours"), 1)
+	reader.close()
+
+
+func test_radio_opens_puzzle_and_solution_unlocks_door() -> void:
+	var room := _load(&"spawn_start")
+	var host := PuzzleHost.new()
+	_world.add_child(host)
+	var radio := room.get_node("Hotspots/hs_radio") as Interactable
+	var door := room.get_node("Hotspots/hs_door") as Interactable
+	assert_eq(radio.cursor(), Interactable.Cursor.HAND)
+	assert_true(door.is_locked())
+	radio.interact()
+	assert_true(host.is_open())
+	if host.current == null:
+		return
+	assert_eq(host.current.data.id, &"P01")
+	assert_true(host.current.logic.apply_solution())
+	host.current.report_attempt(true)
+	assert_true(GameState.is_puzzle_solved("P01"))
+	assert_false(door.is_locked())
+	host.close()
+	var got := []
+	var on_text := func(k: String) -> void: got.append(k)
+	EventBus.text_requested.connect(on_text)
+	radio.interact()
+	EventBus.text_requested.disconnect(on_text)
+	assert_false(host.is_open(), "solved radio does not restart the puzzle")
+	assert_eq(got, ["rooms.g01.radio.solved"])
+
+
+func test_recorder_opens_save_screen() -> void:
+	var room := _load(&"spawn_start")
+	var screen := SaveScreen.new()
+	_world.add_child(screen)
+	var recorder := room.get_node("Hotspots/hs_recorder") as Interactable
+	assert_eq(recorder.cursor(), Interactable.Cursor.HAND)
+	recorder.interact()
+	assert_true(screen.is_open())
+	screen.close()
+
+
+func test_effects_bin_opens_storage_inventory() -> void:
+	var room := _load(&"spawn_start")
+	var inventory := InventoryUi.new()
+	_world.add_child(inventory)
+	var bin := room.get_node("Hotspots/hs_bin") as Interactable
+	assert_eq(bin.cursor(), Interactable.Cursor.HAND)
+	bin.interact()
+	assert_true(inventory.is_open())
+	assert_true(inventory._bin_mode, "opens storage, not the regular inventory")
+	assert_true(is_instance_valid(inventory._bin))
+	inventory.close()
 
 
 func test_chained_door_locked_until_flag() -> void:

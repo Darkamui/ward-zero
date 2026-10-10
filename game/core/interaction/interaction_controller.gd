@@ -55,13 +55,20 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_left_click(screen_pos: Vector2, double: bool) -> void:
 	var hotspot := pick_hotspot(screen_pos)
 	if hotspot:
-		var item := held_item
-		held_item = &""
-		player.walk_to(hotspot.approach_position(), double, _arrive_at.bind(hotspot, item))
+		interact_with(hotspot, double)
 		return
 	var hit: Variant = pick_floor(screen_pos)
 	if hit != null:
 		player.walk_to(hit, double)
+
+
+## Shared by world clicks and visible action labels; always walk before interacting.
+func interact_with(hotspot: Interactable, run := false) -> void:
+	if is_blocked() or not is_instance_valid(hotspot) or not hotspot.is_active():
+		return
+	var item := held_item
+	held_item = &""
+	player.walk_to(hotspot.approach_position(), run, _arrive_at.bind(hotspot, item))
 
 
 func _arrive_at(hotspot: Interactable, item: StringName) -> void:

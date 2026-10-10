@@ -27,7 +27,12 @@ func _ready() -> void:
 	_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	_label.add_theme_font_size_override("font_size", 30)
 	_label.add_theme_color_override("font_color", Color(0.92, 0.9, 0.85))
-	_panel.add_child(_label)
+	var column := VBoxContainer.new()
+	column.add_child(_label)
+	var hint := UiStyle.label("ui.interaction.continue", 20, UiStyle.ACCENT)
+	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	column.add_child(hint)
+	_panel.add_child(column)
 	add_child(_panel)
 	_panel.visible = false
 	EventBus.text_requested.connect(show_key)

@@ -7,6 +7,8 @@ enum Kind { EXAMINE, TAKE, USE, EXIT }
 enum Cursor { NONE, EXAMINE, HAND, EXIT, LOCKED }
 
 @export var kind: Kind = Kind.EXAMINE
+## Optional localized action label shown in the room (e.g. "Tune radio").
+@export var prompt_key: String = ""
 ## Hotspot exists only while all these are met.
 @export var visible_if: Array[Condition] = []
 ## Run on interact (after the built-in TAKE/EXIT behaviour).

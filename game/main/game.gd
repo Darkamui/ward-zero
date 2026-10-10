@@ -13,6 +13,7 @@ var pause_menu: PauseMenu
 var game_over: GameOverScreen
 var end_of_slice: EndOfSliceScreen
 var ending_screen: EndingScreen
+var interaction_hud: InteractionHud
 
 @onready var world: Node3D = $World
 @onready var player: Player = $Player
@@ -30,6 +31,13 @@ func _ready() -> void:
 	game_over = _add(GameOverScreen.new())
 	end_of_slice = _add(EndOfSliceScreen.new())
 	ending_screen = _add(EndingScreen.new())
+	interaction_hud = InteractionHud.new()
+	interaction_hud.controller = $InteractionController
+	interaction_hud.inventory_requested.connect(inventory.open)
+	interaction_hud.files_requested.connect(files.open)
+	interaction_hud.map_requested.connect(map.open)
+	interaction_hud.pause_requested.connect(pause_menu.open)
+	_add(interaction_hud)
 	_add(HidingHud.new())
 	if not OS.has_feature("release"):
 		add_child(DebugOverlay.new())

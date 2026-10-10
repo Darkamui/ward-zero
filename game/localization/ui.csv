@@ -162,3 +162,27 @@ Un dictaphone repose à vos côtés."
 ui.intro.listen,"Somewhere in the static, a familiar voice.","Quelque part dans les parasites, une voix familière."
 ui.intro.enter,Open your eyes,Ouvrir les yeux
 ui.intro.controls,Enter Continue    ·    Esc Skip intro,Entrée Continuer    ·    Échap Passer l’introduction
+ui.interaction.inventory,Inventory [I],Inventaire [I]
+ui.interaction.files,Files [F],Dossiers [F]
+ui.interaction.map,Map [M],Carte [M]
+ui.interaction.pause,Pause [Esc],Pause [Échap]
+ui.interaction.move,Click the floor to walk · Double-click to run · Click a labeled object to interact,Cliquez au sol pour marcher · Double-cliquez pour courir · Cliquez sur un objet indiqué pour interagir
+ui.interaction.dayroom,"Find the radio on the right side of the room. Click Tune radio to open its knobs, then drag left or right.","Trouvez la radio à droite dans la pièce. Cliquez sur Régler la radio pour ouvrir ses boutons, puis glissez à gauche ou à droite."
+ui.interaction.dayroom_done,The chain is released. Click Leave room at the door to continue.,La chaîne est libérée. Cliquez sur Sortir près de la porte pour continuer.
+ui.interaction.held,Use {item}: click a room object · Right-click to cancel,Utiliser {item} : cliquez sur un objet dans la pièce · Clic droit pour annuler
+ui.interaction.click,Click: {action},Cliquez : {action}
+ui.interaction.walking,Walking to the selected spot… · Right-click to stop,Déplacement vers le point choisi… · Clic droit pour arrêter
+ui.interaction.continue,Click / Space / Enter: continue,Clic / Espace / Entrée : continuer
+ui.interaction.radio,Tune radio,Régler la radio
+ui.interaction.radio_done,Examine radio,Examiner la radio
+ui.interaction.notice,Read notice,Lire l’avis
+ui.interaction.recorder,Save at recorder,Sauvegarder au magnétophone
+ui.interaction.bin,Open storage,Ouvrir le coffre
+ui.interaction.couch,Examine couch,Examiner le divan
+ui.interaction.door,Leave room,Sortir
+ui.interaction.locked,Check locked door,Examiner la porte verrouillée
+ui.interaction.take,Pick up,Ramasser
+ui.interaction.use,Use,Utiliser
+ui.interaction.exit,Leave room,Sortir
+ui.interaction.examine,Examine,Examiner
+ui.interaction.items,To use an item: open Inventory [I] → select an item → Use → click a room object.,Pour utiliser un objet : ouvrez Inventaire [I] → choisissez un objet → Utiliser → cliquez dans la pièce.

@@ -1,0 +1,20 @@
+{
+  "walk": {
+    "file": "Walking.fbx",
+    "duration": 1.0333333333333334,
+    "native_speed": 1.663737793168778,
+    "horizontal_travel_removed_m": 1.7191957196077374
+  },
+  "idle": {
+    "file": "Breathing Idle.fbx",
+    "duration": 9.933333333333334,
+    "native_speed": 2.9785301703727973e-09,
+    "horizontal_travel_removed_m": 2.9586733025703122e-08
+  },
+  "run": {
+    "file": "Running.fbx",
+    "duration": 0.7,
+    "native_speed": 4.4248086508121505,
+    "horizontal_travel_removed_m": 3.0973660555685054
+  }
+}

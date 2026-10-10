@@ -56,3 +56,7 @@ Radio static, tuning detent and cassette transport reuse the supplied synthesize
 - Voice post-processing is project code in `tools/prepare_g01_voice_music.py`: mono 48 kHz, modest filtering/saturation, low-level deterministic hiss, padding and fades. No pitch shifting or time compression. Cassette and chain effects retain the preceding pass's source credits. Runtime outputs total approximately 1.54 MB including the music.
 
 Source pages checked on 2026-10-03: OpenGameArt explicitly lists CC0 for the music; [fal's endpoint page](https://fal.ai/models/google/gemini-3.8-flash-tts) labels the voice model for commercial use. Published generation pricing was $0.045 per 1,000 characters; this is a rate record, not an account invoice.
+
+## Mathieu ? Mixamo character and locomotion ? 2026-10-10
+
+User-supplied Mixamo Ch08 character (`mathieu-tpose.fbx`) and `Walking.fbx`, `Breathing Idle.fbx`, `Running.fbx`. Source: [Adobe Mixamo](https://www.mixamo.com/); usage information: [Adobe Mixamo FAQ](https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html). Vendor assets remain subject to Adobe/Mixamo terms, not CC0. No additional third-party assets were downloaded for this pass. Conversion, atlas preparation, retargeting and runtime integration are project code. Original vendor FBXs are preserved locally and excluded from Godot import; source hashes and transformations are recorded in `art-review/mathieu/conversion.json`.

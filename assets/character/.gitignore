@@ -1,0 +1,5 @@
+# User-supplied working sources; only prepared runtime assets are versioned.
+*.fbx
+*.zip
+*.blend
+*.fbm/

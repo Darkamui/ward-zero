@@ -1,0 +1,42 @@
+{
+  "source": "User-supplied Mixamo Ch08 character",
+  "source_triangles": 56258,
+  "runtime_triangles": 23797,
+  "components": {
+    "Ch08_Body": 6999,
+    "Ch08_Hoodie": 6000,
+    "Ch08_Pants": 3498,
+    "Ch08_Hair": 4000,
+    "Ch08_Beard": 1500,
+    "Ch08_Sneakers": 1800
+  },
+  "materials": 2,
+  "height_m": 1.75,
+  "bones": 65,
+  "clips": {
+    "walk": {
+      "file": "Walking.fbx",
+      "duration": 1.0333333333333334,
+      "native_speed": 1.663737793168778,
+      "horizontal_travel_removed_m": 1.7191957196077374
+    },
+    "idle": {
+      "file": "Breathing Idle.fbx",
+      "duration": 9.933333333333334,
+      "native_speed": 2.9785301703727973e-09,
+      "horizontal_travel_removed_m": 2.9586733025703122e-08
+    },
+    "run": {
+      "file": "Running.fbx",
+      "duration": 0.7,
+      "native_speed": 4.4248086508121505,
+      "horizontal_travel_removed_m": 3.0973660555685054
+    }
+  },
+  "sources": {
+    "Breathing Idle.fbx": "b707a175347a956ca1dcc459497af8c58d601f811c25377e532ffe23b17d3a07",
+    "mathieu-tpose.fbx": "d1d936fa5c5b8e071a90c64bebfc2f2bcec54e5d98b60e45cfec456dcc57e99a",
+    "Running.fbx": "c1b662eb8fa9e6cccffa630873241622b2300dc40eef4d01d8a6932a4d6f3050",
+    "Walking.fbx": "e7c6eb5e56c0c4df357638ae2cfedc073f8e081d3482d150ea6b8cd7364f7048"
+  }
+}
